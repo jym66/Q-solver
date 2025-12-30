@@ -41,8 +41,6 @@
     </div>
   </div>
 
-  <!-- Voice Overlay -->
-  <VoiceOverlay :isRecording="isRecording" :text="voiceText" />
 
   <!-- Settings Modal -->
   <div v-if="uiState.showSettings" class="modal" id="settings-modal" style="display: flex">
@@ -173,19 +171,6 @@
 
         <div v-show="uiState.activeTab === 'general'">
           <div class="form-group">
-            <div class="context-setting">
-              <div class="setting-row" :class="{ disabled: !voiceAvailable }">
-                <div class="setting-info">
-                  <span class="setting-title">🎙️ 语音监听(扬声器)</span>
-                  <span class="setting-desc" v-if="voiceAvailable">开启后，自动监听扬声器声音并进行语音识别</span>
-                  <span class="setting-desc" v-else style="color: #ff7875;">语音模型文件缺失，功能不可用</span>
-                </div>
-                <label class="switch">
-                  <input type="checkbox" v-model="tempSettings.voiceListening" :disabled="!voiceAvailable">
-                  <span class="slider round"></span>
-                </label>
-              </div>
-            </div>
 
             <div class="context-setting">
               <div class="setting-row">
@@ -267,9 +252,8 @@ import ErrorView from './components/ErrorView.vue'
 import LoadingView from './components/LoadingView.vue'
 // import InitLoading from './components/InitLoading.vue'
 import TopBar from './components/TopBar.vue'
-import VoiceOverlay from './components/VoiceOverlay.vue'
 import { EventsOn, Quit } from '../wailsjs/runtime/runtime'
-import { StopRecordingKey, StartVoiceInput, StopVoiceInput, SelectResume, ClearResume, RestoreFocus, RemoveFocus, ParseResume, GetInitStatus, IsVoiceAvailable, IsVoiceRecording } from '../wailsjs/go/main/App'
+import { StopRecordingKey, SelectResume, ClearResume, RestoreFocus, RemoveFocus, ParseResume, GetInitStatus } from '../wailsjs/go/main/App'
 
 import { useUI } from './composables/useUI'
 import { useStatus } from './composables/useStatus'
@@ -348,7 +332,7 @@ async function parseResume() {
 }
 
 const {
-  statusText, statusIcon, isRecording, resetStatus
+  statusText, statusIcon, resetStatus
 } = useStatus(settings)
 
 const {
@@ -371,7 +355,6 @@ settingsCallbacks.onKeyChange = () => { tempBalance.value = null }
 settingsCallbacks.closeSettings = closeSettings
 
 const modelSelectRef = ref(null)
-const voiceText = ref('正在聆听...')
 
 function openSettings() {
   RestoreFocus()
@@ -414,114 +397,25 @@ function selectModel(model) {
   uiState.isModelDropdownOpen = false
 }
 
-const solveShortcut = computed(() => shortcuts.solve?.keyName || 'Alt+~')
+const solveShortcut = computed(() => shortcuts.solve?.keyName || 'F8')
 
-// 语音监听状态变化时重置状态显示（实际启动/停止由后端配置变更回调处理）
-watch(() => settings.voiceListening, () => {
-  resetStatus()
-})
-
-const committedText = ref('')
 const initStatus = ref('initializing')
-const voiceAvailable = ref(true) // 语音功能是否可用
-
-// 同步语音状态的函数
-async function syncVoiceStatus() {
-  try {
-    const available = await IsVoiceAvailable()
-    voiceAvailable.value = available
-    console.log('[Voice] IsVoiceAvailable:', available)
-    
-    if (!available) {
-      settings.voiceListening = false
-      tempSettings.voiceListening = false
-      console.log('[Voice] 语音不可用，设置为 false')
-    } else {
-      const isRecordingNow = await IsVoiceRecording()
-      console.log('[Voice] IsVoiceRecording:', isRecordingNow)
-      settings.voiceListening = isRecordingNow
-      tempSettings.voiceListening = isRecordingNow
-      console.log('[Voice] 设置 voiceListening 为:', isRecordingNow)
-    }
-    resetStatus()
-  } catch (e) {
-    console.error('检查语音状态失败:', e)
-    voiceAvailable.value = false
-  }
-}
-
 // Lifecycle
 onMounted(() => {
   // localStorage.clear()
   GetInitStatus().then(status => {
     initStatus.value = status
-    // 如果已经是 ready 状态，立即同步语音状态
-    if (status === 'ready') {
-      syncVoiceStatus()
-    }
   })
   
   EventsOn('init-status', (status) => {
     initStatus.value = status
-    // 初始化完成后同步语音状态
-    if (status === 'ready') {
-      syncVoiceStatus()
-    }
   })
 
   loadSettings().then(() => {
     resetStatus()
-    // 注意：语音状态同步由 init-status === 'ready' 触发
-    // 这里不再调用 IsVoiceAvailable，避免在初始化完成前调用
   })
 
   // Event Listeners
-  EventsOn('startRecording', () => {
-    if (!settings.voiceListening) return
-    isRecording.value = true
-    statusText.value = '正在聆听...'
-    statusIcon.value = '🎙️'
-    voiceText.value = '正在聆听...'
-    committedText.value = ''
-    
-    // 如果当前正在显示“正在思考”或“AI 正在思考”的加载动画，说明被打断了
-    // 此时应该暂停思考动画，给用户一个明确的反馈
-    if (isLoading.value || isAppending.value) {
-      isLoading.value = false
-      isAppending.value = false
-      // 如果内容是空的，显示一个占位符，避免屏幕突然变白
-      if (!renderedContent.value) {
-        renderedContent.value = '<div class="interrupted-placeholder">已打断，正在聆听新指令...</div>'
-      }
-    }
-  })
-
-  EventsOn('asr_result', (data) => {
-    if (data.text) {
-      let text = data.text;
-      
-      // isFinal=true 表示一句话结束，返回的是整句的最终结果
-      // isFinal=false 表示正在说话，返回的是当前句子的累积临时结果
-      // 所以只在 isFinal=true 时累加到 committedText 是安全的，不会丢字
-      if (data.isFinal) {
-        committedText.value += text;
-      }
-      
-      // 显示内容 = 之前已确定的句子 + 当前正在说的句子(临时结果)
-      let display = committedText.value + (data.isFinal ? "" : text);
-      
-      if (display.length > 25) {
-        display = "..." + display.slice(-22);
-      }
-      voiceText.value = display;
-    }
-  })
-
-  EventsOn('stopRecording', () => {
-    isRecording.value = false
-    resetStatus()
-  })
-
   EventsOn('key-recorded', (data) => {
     if (data && data.action) {
       if (tempShortcuts[data.action]) {
@@ -599,7 +493,7 @@ onMounted(() => {
 
   EventsOn('solution', (data) => {
     statusText.value = '解题完成'
-    statusIcon.value = settings.voiceListening ? '🟢' : '📝'
+    statusIcon.value = '📝'
     handleSolution(data)
     fetchBalance()
   })

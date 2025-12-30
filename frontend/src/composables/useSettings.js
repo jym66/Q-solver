@@ -24,8 +24,7 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
     compressionQuality: 80,
     sharpening: 0,
     grayscale: true,
-    noCompression: false,
-    voiceListening: false  // 语音监听状态
+    noCompression: false
   })
 
   // 临时编辑的配置（用于设置面板）
@@ -75,7 +74,7 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
 
       // 从后端获取配置
       const backendConfig = await GetSettings()
-      
+
       // 应用配置到本地状态
       applyConfig(backendConfig)
 
@@ -108,7 +107,6 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
     settings.sharpening = config.sharpening || 0
     settings.grayscale = config.grayscale !== undefined ? config.grayscale : true
     settings.noCompression = config.noCompression || false
-    settings.voiceListening = config.voiceListening || false
     settings.keepContext = config.keepContext || false
     settings.resumePath = config.resumePath || ''
     settings.resumeContent = config.resumeContent || ''
@@ -234,7 +232,6 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
         model: tempSettings.model,
         prompt: tempSettings.prompt,
         opacity: 1.0 - tempSettings.transparency,
-        voiceListening: tempSettings.voiceListening,
         keepContext: tempSettings.keepContext,
         interruptThinking: tempSettings.interruptThinking,
         screenshotMode: tempSettings.screenshotMode,
@@ -250,7 +247,7 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
 
       // 发送到后端保存（后端会持久化到文件）
       const err = await SyncSettingsToDefaultSettings(JSON.stringify(configToSave))
-      
+
       if (err) {
         if (callbacks.showToast) callbacks.showToast(err)
       } else {
@@ -287,10 +284,10 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
     // 复制配置到临时变量
     Object.assign(tempSettings, JSON.parse(JSON.stringify(settings)))
     Object.assign(tempShortcuts, JSON.parse(JSON.stringify(shortcuts)))
-    
+
     // 更新 lastApiKey 避免触发 watch
     lastApiKey = settings.apiKey
-    
+
     // 如果有 API Key，标记为已验证
     if (settings.apiKey) {
       uiState.isKeyValid = true

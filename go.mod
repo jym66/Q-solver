@@ -3,16 +3,12 @@ module Q-Solver
 go 1.24.1
 
 require (
-	github.com/k2-fsa/sherpa-onnx-go v1.12.17
 	github.com/kbinani/screenshot v0.0.0-20250624051815-089614a94018
 	github.com/openai/openai-go v1.12.0
 	github.com/wailsapp/wails/v2 v2.11.0
 )
 
 require (
-	github.com/k2-fsa/sherpa-onnx-go-linux v1.12.17 // indirect
-	github.com/k2-fsa/sherpa-onnx-go-macos v1.12.17 // indirect
-	github.com/k2-fsa/sherpa-onnx-go-windows v1.12.17 // indirect
 	github.com/stretchr/testify v1.11.1 // indirect
 	github.com/tidwall/gjson v1.14.4 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
@@ -24,7 +20,6 @@ require (
 require (
 	github.com/bep/debounce v1.2.1 // indirect
 	github.com/disintegration/imaging v1.6.2
-	github.com/gen2brain/malgo v0.11.24
 	github.com/gen2brain/shm v0.1.0 // indirect
 	github.com/go-ole/go-ole v1.3.0 // indirect
 	github.com/godbus/dbus/v5 v5.1.0 // indirect
@@ -55,5 +50,3 @@ require (
 	golang.org/x/sys v0.30.0 // indirect
 	golang.org/x/text v0.22.0 // indirect
 )
-
-// replace github.com/wailsapp/wails/v2 v2.11.0 => C:\Users\wdxhl\go\pkg\mod

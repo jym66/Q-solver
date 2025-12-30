@@ -1,7 +1,6 @@
 package main
 
 import (
-	"Q-Solver/pkg/audio"
 	"Q-Solver/pkg/config"
 	"Q-Solver/pkg/llm"
 	"Q-Solver/pkg/logger"
@@ -24,7 +23,6 @@ type App struct {
 	configManager *config.ConfigManager
 	stateManager  *state.StateManager
 	taskManager   *task.TaskCoordinator
-	audioManager  *audio.Manager
 
 	// 业务服务
 	llmService      *llm.Service
@@ -32,9 +30,6 @@ type App struct {
 	shortcutService *shortcut.Service
 	screenService   *screen.Service
 	solver          *solution.Solver
-
-	// 上一次的配置状态（用于变更检测）
-	lastVoiceListening bool
 }
 
 // NewApp 创建 App 实例
@@ -47,9 +42,6 @@ func NewApp() *App {
 		taskManager:   task.NewTaskCoordinator(),
 		screenService: screen.NewService(),
 	}
-
-	// 创建音频管理器，传入 App 作为 delegate
-	app.audioManager = audio.NewManager(app)
 
 	return app
 }
@@ -76,11 +68,6 @@ func (a *App) Startup(ctx context.Context) {
 	// 初始化简历服务
 	a.resumeService = resume.NewService(a.configManager.GetPtr())
 
-	// 初始化音频（传入 VoiceDelegate）
-	if err := a.audioManager.Initialize(a); err != nil {
-		logger.Printf("音频初始化失败: %v", err)
-	}
-
 	// 初始化快捷键服务
 	a.shortcutService = shortcut.NewService(a)
 	a.shortcutService.SetShortcuts(a.configManager.Get().Shortcuts)
@@ -91,21 +78,8 @@ func (a *App) Startup(ctx context.Context) {
 	a.configManager.Subscribe(a.onConfigChanged)
 	logger.Println("配置变更订阅已注册")
 
-	// 记录初始语音监听状态
-	a.lastVoiceListening = a.configManager.Get().VoiceListening
-
-	// 如果初始配置开启了语音监听，检查语音功能是否可用并启动服务
-	if a.lastVoiceListening {
-		if a.audioManager.IsVoiceAvailable() {
-			a.audioManager.Start()
-		} else {
-			// 语音功能不可用，更新配置状态为关闭
-			logger.Println("语音功能不可用，自动关闭语音监听配置")
-			a.lastVoiceListening = false
-			// 注意：这里不调用 configManager.Update 避免触发配置变更回调
-			// 前端会在加载设置时检查 IsVoiceAvailable 并同步状态
-		}
-	}
+	// 直接设置为就绪状态
+	a.stateManager.UpdateInitStatus(state.StatusReady)
 }
 
 // onConfigChanged 配置变更回调
@@ -119,18 +93,6 @@ func (a *App) onConfigChanged(cfg config.Config) {
 	// 更新快捷键
 	a.shortcutService.SetShortcuts(cfg.Shortcuts)
 
-	// 只有语音监听状态真正变化时才处理
-	if cfg.VoiceListening != a.lastVoiceListening {
-		a.lastVoiceListening = cfg.VoiceListening
-		if cfg.VoiceListening {
-			logger.Println("语音监听已开启")
-			a.audioManager.Start()
-		} else {
-			logger.Println("语音监听已关闭")
-			a.audioManager.Stop()
-		}
-	}
-
 	// 如果关闭了上下文，清空历史
 	if !cfg.KeepContext && a.solver != nil {
 		a.solver.ClearHistory()
@@ -139,23 +101,10 @@ func (a *App) onConfigChanged(cfg config.Config) {
 	logger.Println("配置已更新并应用")
 }
 
-// OnAudioInitStatusChange 音频初始化状态变更回调（实现 AudioDelegate）
-func (a *App) OnAudioInitStatusChange(status string) {
-	switch status {
-	case "loading-model":
-		a.stateManager.UpdateInitStatus(state.StatusLoadingModel)
-	case "ready":
-		a.stateManager.UpdateInitStatus(state.StatusReady)
-	}
-}
-
 // OnShutdown Wails 关闭回调
 func (a *App) OnShutdown(ctx context.Context) {
 	if a.shortcutService != nil {
 		a.shortcutService.Stop()
-	}
-	if a.audioManager != nil {
-		a.audioManager.Shutdown()
 	}
 	// 保存配置
 	if err := a.configManager.Save(); err != nil {
@@ -184,11 +133,6 @@ func (a *App) GetSettings() config.Config {
 
 // UpdateSettings 更新配置（从前端 JSON）
 func (a *App) UpdateSettings(configJson string) string {
-	// 确保音频初始化完成
-	if !a.audioManager.IsInitialized() {
-		_ = a.audioManager.Initialize(a)
-	}
-
 	if err := a.configManager.UpdateFromJSON(configJson); err != nil {
 		return err.Error()
 	}
@@ -244,7 +188,7 @@ func (a *App) TriggerSolve() {
 	ctx, taskID := a.taskManager.StartTask("solve")
 
 	go func() {
-		success := a.solveInternal(ctx, "")
+		success := a.solveInternal(ctx)
 
 		if success {
 			a.taskManager.CompleteTask(taskID)
@@ -252,13 +196,8 @@ func (a *App) TriggerSolve() {
 	}()
 }
 
-// Solve 由 VoiceAssistant 调用
-func (a *App) Solve(ctx context.Context, text string) bool {
-	return a.solveInternal(ctx, text)
-}
-
 // solveInternal 内部解题逻辑
-func (a *App) solveInternal(ctx context.Context, audioText string) bool {
+func (a *App) solveInternal(ctx context.Context) bool {
 	cfg := a.configManager.Get()
 
 	if cfg.APIKey == "" {
@@ -287,7 +226,6 @@ func (a *App) solveInternal(ctx context.Context, audioText string) bool {
 
 	req := solution.Request{
 		Config:           cfg,
-		AudioText:        audioText,
 		ScreenshotBase64: previewResult.Base64,
 		ResumeBase64:     resumeBase64,
 	}
@@ -398,36 +336,4 @@ func (a *App) GetModels(apiKey string) ([]string, error) {
 		ctx = context.Background()
 	}
 	return a.llmService.GetModels(ctx, apiKey)
-}
-
-// ==================== 语音相关 ====================
-
-// StartVoiceInput 开始语音输入
-func (a *App) StartVoiceInput() {
-	if a.audioManager != nil {
-		a.audioManager.Start()
-	}
-}
-
-// StopVoiceInput 停止语音输入
-func (a *App) StopVoiceInput() {
-	if a.audioManager != nil {
-		a.audioManager.Stop()
-	}
-}
-
-// IsVoiceAvailable 检查语音功能是否可用
-func (a *App) IsVoiceAvailable() bool {
-	if a.audioManager != nil {
-		return a.audioManager.IsVoiceAvailable()
-	}
-	return false
-}
-
-// IsVoiceRecording 检查语音是否正在录音（返回实际状态）
-func (a *App) IsVoiceRecording() bool {
-	if a.audioManager != nil {
-		return a.audioManager.IsRecording()
-	}
-	return false
 }

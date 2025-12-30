@@ -2,8 +2,7 @@ import { ref } from 'vue'
 
 export function useStatus(settings) {
   const statusText = ref('就绪')
-  const statusIcon = ref('🟢')
-  const isRecording = ref(false)
+  const statusIcon = ref('📝')
 
   function resetStatus() {
     if (!settings.apiKey) {
@@ -12,19 +11,13 @@ export function useStatus(settings) {
       return
     }
 
-    if (settings.voiceListening) {
-      statusText.value = '就绪'
-      statusIcon.value = '🟢'
-    } else {
-      statusText.value = '就绪'
-      statusIcon.value = '📝'
-    }
+    statusText.value = '就绪'
+    statusIcon.value = '📝'
   }
 
   return {
     statusText,
     statusIcon,
-    isRecording,
     resetStatus
   }
 }

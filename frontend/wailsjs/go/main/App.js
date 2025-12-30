@@ -46,20 +46,8 @@ export function IsInterruptThinkingEnabled() {
   return window['go']['main']['App']['IsInterruptThinkingEnabled']();
 }
 
-export function IsVoiceAvailable() {
-  return window['go']['main']['App']['IsVoiceAvailable']();
-}
-
-export function IsVoiceRecording() {
-  return window['go']['main']['App']['IsVoiceRecording']();
-}
-
 export function MoveWindow(arg1, arg2) {
   return window['go']['main']['App']['MoveWindow'](arg1, arg2);
-}
-
-export function OnAudioInitStatusChange(arg1) {
-  return window['go']['main']['App']['OnAudioInitStatusChange'](arg1);
 }
 
 export function ParseResume() {
@@ -82,24 +70,12 @@ export function SelectResume() {
   return window['go']['main']['App']['SelectResume']();
 }
 
-export function Solve(arg1, arg2) {
-  return window['go']['main']['App']['Solve'](arg1, arg2);
-}
-
 export function StartRecordingKey(arg1) {
   return window['go']['main']['App']['StartRecordingKey'](arg1);
 }
 
-export function StartVoiceInput() {
-  return window['go']['main']['App']['StartVoiceInput']();
-}
-
 export function StopRecordingKey() {
   return window['go']['main']['App']['StopRecordingKey']();
-}
-
-export function StopVoiceInput() {
-  return window['go']['main']['App']['StopVoiceInput']();
 }
 
 export function SyncSettingsToDefaultSettings(arg1) {

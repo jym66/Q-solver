@@ -41,12 +41,6 @@
           <span class="tooltip-value">{{ statusText }}</span>
         </div>
         <div class="tooltip-row">
-          <span class="tooltip-label">语音监听:</span>
-          <span class="tooltip-value" :style="{ color: settings.voiceListening ? '#52c41a' : '#ff4d4f' }">
-            {{ settings.voiceListening ? '已开启' : '已关闭' }}
-          </span>
-        </div>
-        <div class="tooltip-row">
           <span class="tooltip-label">API状态:</span>
           <span class="tooltip-value">
 {{ statusText === '已连接' ? '✅ 接口通畅' : (statusText === 'Key无效' ? '🚫 Key无效' : (statusText === '连接失败' ? '❌ 连接失败' : (isRefreshingBalance ? '验证中...' : '未配置'))) }}          </span>
@@ -213,41 +207,6 @@ function hideSettingsTooltip() {
   font-family: monospace;
 }
 
-/* Voice Button Styles */
-.voice-btn {
-  transition: all 0.3s ease;
-}
-
-.voice-btn.recording-active {
-  background: rgba(255, 77, 79, 0.1);
-  box-shadow: 0 0 8px rgba(255, 77, 79, 0.4);
-  border-radius: 12px;
-}
-
-.voice-btn.recording-active .label {
-  color: #ff4d4f;
-  text-shadow: 0 0 5px rgba(255, 77, 79, 0.3);
-}
-
-.voice-btn .icon {
-  margin-right: 4px;
-  font-size: 1.1em;
-}
-
-.voice-btn.recording-active .icon {
-  filter: drop-shadow(0 0 2px #ff4d4f);
-}
-
-@keyframes pulse-red {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.1); opacity: 0.8; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-.icon-pulse {
-  display: inline-block;
-  animation: pulse-red 1.5s infinite ease-in-out;
-}
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translate(-50%, -5px); }

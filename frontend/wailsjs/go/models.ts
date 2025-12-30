@@ -10,7 +10,6 @@ export namespace config {
 	    compressionQuality: number;
 	    sharpening: number;
 	    grayscale: boolean;
-	    voiceListening: boolean;
 	    keepContext: boolean;
 	    interruptThinking: boolean;
 	    screenshotMode: string;
@@ -34,7 +33,6 @@ export namespace config {
 	        this.compressionQuality = source["compressionQuality"];
 	        this.sharpening = source["sharpening"];
 	        this.grayscale = source["grayscale"];
-	        this.voiceListening = source["voiceListening"];
 	        this.keepContext = source["keepContext"];
 	        this.interruptThinking = source["interruptThinking"];
 	        this.screenshotMode = source["screenshotMode"];
