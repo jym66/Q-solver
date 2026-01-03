@@ -14,7 +14,7 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
     baseURL: '',
     model: '',
     prompt: '',
-    transparency: 1.0,
+    transparency: 0,  // 0 = 不透明 (opacity=1), 1 = 完全透明 (opacity=0)
     mode: 'interview',
     keepContext: false,
     screenshotMode: 'window',
@@ -107,14 +107,16 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
     settings.useMarkdownResume = config.useMarkdownResume || false
     settings.screenshotMode = config.screenshotMode || 'window'
 
-    // 透明度转换
-    if (config.opacity !== undefined) {
-      settings.transparency = 1.0 - config.opacity
-      const app = document.getElementById('app')
-      if (app) {
-        // 基础色使用设计系统的 bg-base 颜色 (rgb(17, 24, 39))
-        app.style.backgroundColor = `rgba(17, 24, 39, ${0.85 + config.opacity * 0.15})`
-      }
+    // 透明度转换：opacity 来自后端，默认 1.0（完全不透明）
+    // transparency = 1 - opacity，所以 opacity=1 时 transparency=0
+    const opacity = config.opacity !== undefined ? config.opacity : 1.0
+    settings.transparency = 1.0 - opacity
+    
+    // 应用透明度到 UI
+    const app = document.getElementById('app')
+    if (app) {
+      // 基础色使用设计系统的 bg-base 颜色 (rgb(17, 24, 39))
+      app.style.backgroundColor = `rgba(17, 24, 39, ${0.85 + opacity * 0.15})`
     }
 
     // 同步到 tempSettings，确保设置面板显示正确的值
@@ -251,10 +253,13 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
    */
   function resetTempSettings() {
     Object.assign(tempSettings, settings)
-    // 恢复 UI 透明度
+    // 恢复 UI 透明度 - 使用与 applyConfig 和 watch 一致的逻辑
     const opacity = 1.0 - settings.transparency
     const app = document.getElementById('app')
-    if (app) app.style.backgroundColor = `rgba(0, 0, 0, ${opacity * 0.8})`
+    if (app) {
+      // 基础色使用设计系统的 bg-base 颜色 (rgb(17, 24, 39))
+      app.style.backgroundColor = `rgba(17, 24, 39, ${0.85 + opacity * 0.15})`
+    }
   }
 
   /**
@@ -274,7 +279,7 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
 
     // 如果有 API Key，自动加载模型列表
     if (settings.apiKey) {
-      fetchModels(settings.apiKey)
+      fetchModels(settings.apiKey, settings.baseURL)
     }
   }
 

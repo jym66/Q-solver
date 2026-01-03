@@ -300,7 +300,7 @@ function openSettings() {
 
   // 加载模型列表
   if (settings.apiKey) {
-    fetchModels(settings.apiKey)
+    fetchModels(settings.apiKey, settings.baseURL)
   }
 
   // 加载简历内容
