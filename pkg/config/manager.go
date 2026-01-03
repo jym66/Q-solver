@@ -178,6 +178,9 @@ func (cm *ConfigManager) applyPatch(patch ConfigPatch) {
 	if patch.APIKey != nil {
 		cm.config.APIKey = *patch.APIKey
 	}
+	if patch.Provider != nil {
+		cm.config.Provider = *patch.Provider
+	}
 	if patch.BaseURL != nil {
 		cm.config.BaseURL = *patch.BaseURL
 	}

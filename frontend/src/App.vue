@@ -95,7 +95,7 @@
             </div>
 
             <p v-if="!tempSettings.apiKey" class="hint-text" style="color: #ff9800; margin-top: 8px;">
-              ⚠️ 请先在账户页面填写 API Key
+              ⚠️ 请先填写 API Key
             </p>
           </div>
 

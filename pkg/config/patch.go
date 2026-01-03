@@ -4,6 +4,7 @@ import "Q-Solver/pkg/shortcut"
 
 type ConfigPatch struct {
 	APIKey             *string                        `json:"apiKey,omitempty"`
+	Provider           *string                        `json:"provider,omitempty"`
 	BaseURL            *string                        `json:"baseURL,omitempty"`
 	Model              *string                        `json:"model,omitempty"`
 	Prompt             *string                        `json:"prompt,omitempty"`

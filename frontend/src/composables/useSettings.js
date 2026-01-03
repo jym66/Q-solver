@@ -59,13 +59,9 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
 
   /**
    * 从后端加载配置
-   * 先尝试迁移 localStorage，然后完全依赖后端
    */
   async function loadSettings() {
     try {
-      // 先迁移 localStorage（如果存在）
-      await migrateLocalStorage()
-
       // 从后端获取配置
       const backendConfig = await GetSettings()
 
@@ -119,24 +115,6 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
     Object.assign(tempSettings, JSON.parse(JSON.stringify(settings)))
   }
 
-  /**
-   * 迁移旧的 localStorage 配置到后端（只执行一次）
-   */
-  async function migrateLocalStorage() {
-    const localConfigStr = localStorage.getItem('ghost_solver_config')
-    if (!localConfigStr) return
-
-    try {
-      const localConfig = JSON.parse(localConfigStr)
-      // 发送到后端
-      await SyncSettingsToDefaultSettings(JSON.stringify(localConfig))
-      // 删除 localStorage
-      localStorage.removeItem('ghost_solver_config')
-      console.log('已迁移 localStorage 配置到后端')
-    } catch (e) {
-      console.error('迁移 localStorage 配置失败', e)
-    }
-  }
 
   /**
    * 刷新模型列表

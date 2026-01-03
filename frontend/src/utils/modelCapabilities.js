@@ -25,6 +25,14 @@ const PROVIDER_NAMES = {
     '01ai': '01.AI (Yi)'
 }
 
+export const PROVIDER_BASE_URLS = {
+    google: 'https://generativelanguage.googleapis.com/v1beta/openai/',
+    openai: 'https://api.openai.com/v1',
+    deepseek: 'https://api.deepseek.com',
+    anthropic: 'https://api.anthropic.com/v1',
+    custom: ''
+}
+
 /**
  * Returns the capabilities object for a given model
  * @param {string} model - The model identifier (e.g. "gemini-1.5-pro")
