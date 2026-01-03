@@ -59,12 +59,18 @@ func (s *Service) TestConnection(ctx context.Context, apiKey, baseURL, model str
 }
 
 // GetModels 获取模型列表
-func (s *Service) GetModels(ctx context.Context, apiKey string) ([]string, error) {
+func (s *Service) GetModels(ctx context.Context, apiKey string, baseURL string) ([]string, error) {
 	var provider *OpenAIProvider
 
-	// 如果提供了临时的 apiKey，使用临时 provider
-	if apiKey != "" && apiKey != s.config.GetAPIKey() {
-		provider = NewOpenAIProvider(apiKey, s.config.GetBaseURL(), s.config.GetModel())
+	// 如果提供了临时的 apiKey 或 baseURL，使用临时 provider
+	if (apiKey != "" && apiKey != s.config.GetAPIKey()) || (baseURL != "" && baseURL != s.config.GetBaseURL()) {
+		if baseURL == "" {
+			baseURL = s.config.GetBaseURL()
+		}
+		if apiKey == "" {
+			apiKey = s.config.GetAPIKey()
+		}
+		provider = NewOpenAIProvider(apiKey, baseURL, s.config.GetModel())
 	} else {
 		// 尝试将接口转换为具体类型
 		var ok bool

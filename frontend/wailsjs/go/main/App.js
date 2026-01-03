@@ -22,8 +22,8 @@ export function GetInitStatus() {
   return window['go']['main']['App']['GetInitStatus']();
 }
 
-export function GetModels(arg1) {
-  return window['go']['main']['App']['GetModels'](arg1);
+export function GetModels(arg1, arg2) {
+  return window['go']['main']['App']['GetModels'](arg1, arg2);
 }
 
 export function GetResumePDF() {

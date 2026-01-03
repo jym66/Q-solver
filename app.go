@@ -322,10 +322,10 @@ func (a *App) TestConnection(apiKey, baseURL, model string) string {
 }
 
 // GetModels 获取模型列表
-func (a *App) GetModels(apiKey string) ([]string, error) {
+func (a *App) GetModels(apiKey string, baseURL string) ([]string, error) {
 	ctx := a.ctx
 	if ctx == nil {
 		ctx = context.Background()
 	}
-	return a.llmService.GetModels(ctx, apiKey)
+	return a.llmService.GetModels(ctx, apiKey, baseURL)
 }

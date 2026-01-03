@@ -130,7 +130,7 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
       if (callbacks.showToast) callbacks.showToast('请先填写 API Key', 'warning')
       return
     }
-    await fetchModels(tempSettings.apiKey)
+    await fetchModels(tempSettings.apiKey, tempSettings.baseURL)
     if (uiState.availableModels.length > 0) {
       if (callbacks.showToast) callbacks.showToast(`已加载 ${uiState.availableModels.length} 个模型`, 'success')
     }
@@ -180,11 +180,11 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
   /**
    * 获取模型列表
    */
-  async function fetchModels(apiKey) {
+  async function fetchModels(apiKey, baseURL) {
     if (!apiKey) return
     uiState.isLoadingModels = true
     try {
-      const models = await GetModels(apiKey)
+      const models = await GetModels(apiKey, baseURL || '')
       if (models && models.length > 0) {
         uiState.availableModels = models
         if (!tempSettings.model || tempSettings.model === 'auto') {

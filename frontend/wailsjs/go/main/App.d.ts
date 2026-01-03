@@ -13,7 +13,7 @@ export function EmitEvent(arg1:string,arg2:Array<any>):Promise<void>;
 
 export function GetInitStatus():Promise<string>;
 
-export function GetModels(arg1:string):Promise<Array<string>>;
+export function GetModels(arg1:string,arg2:string):Promise<Array<string>>;
 
 export function GetResumePDF():Promise<string>;
 
