@@ -1,235 +1,87 @@
-/**
- * 模型能力查询工具
- * 提供模型能力检测、厂商识别等功能
- */
+import modelData from '../config/model-capabilities.json'
 
-import modelConfig from '../config/model-capabilities.json'
+export const PROVIDER_LOGOS = {
+    google: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.5 12L12 22.5L1.5 12L12 1.5L22.5 12Z" fill="#1A73E8"/><path d="M12 2L15 9.5L22.5 12L15 14.5L12 22L9 14.5L1.5 12L9 9.5L12 2Z" fill="url(#gemini-gradient)"/><defs><linearGradient id="gemini-gradient" x1="1.5" y1="1.5" x2="22.5" y2="22.5" gradientUnits="userSpaceOnUse"><stop stop-color="#4E8EF7"/><stop offset="1" stop-color="#E84A5F"/></linearGradient></defs></svg>`,
+    openai: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.9 9.7C20.6 8.5 19.9 7.4 18.9 6.6C18 5.7 16.8 5.1 15.6 4.9V4.8C15.6 3.6 15.1 2.3 14.3 1.4C13.4 0.5 12.2 0 11 0C9.8 0 8.6 0.5 7.7 1.4C6.9 2.3 6.4 3.6 6.4 4.8C5.2 5 4 5.6 3.1 6.6C2.1 7.4 1.4 8.6 1.1 9.7C0.8 10.9 1 12.2 1.6 13.3C1.6 13.3 1.7 13.4 1.7 13.5C2 14.7 2.7 15.8 3.6 16.6C4.5 17.5 5.7 18.1 6.9 18.3V18.4C6.9 19.6 7.4 20.8 8.2 21.8C9.1 22.7 10.3 23.2 11.5 23.2C12.7 23.2 13.9 22.7 14.8 21.8C15.6 20.9 16.1 19.6 16.1 18.4C17.3 18.2 18.5 17.6 19.4 16.6C20.4 15.8 21.1 14.6 21.4 13.5C21.7 12.3 21.5 11 20.9 9.7ZM11.1 2.1C11.9 2.1 12.6 2.4 13.1 3C13.7 3.5 14 4.3 14 5V6.3L13 5.7L8.7 3.2C9.4 2.5 10.2 2.1 11.1 2.1ZM13.8 11.4L11.5 12.7V15.4L10 14.5L7.7 13.2L10 11.8L12.3 10.5L13.8 11.4ZM8.8 4.4L10.3 5.3L12.5 6.6V9.3L10.2 8L7.9 6.7L8.8 4.4ZM6.6 6.6C6.6 6.6 6.6 6.6 6.6 6.6C7.2 6.1 7.9 5.8 8.7 5.8L7.3 9.4L6.2 10V8.2C6.2 7.6 6.3 7.1 6.6 6.6ZM4.8 7.9C5.3 7.4 5.9 7 6.6 6.8V10.2L4.3 8.9L3.4 8.4C3.7 7.7 4.2 7.2 4.8 7.9ZM3.3 11.9C3.1 11.3 3.1 10.7 3.3 10.1L6.7 12.1L8.2 13L6.7 13.9L4.5 15.2C4.1 14.9 3.8 14.4 3.5 13.9C3.3 13.3 3.2 12.6 3.3 11.9ZM5.6 16.5C5 16 4.6 15.4 4.3 14.7L8.6 12.2L10 13.1L10 13.2L10 15.7V17C8.2 17.3 6.7 17.3 5.6 16.5ZM10.5 19.3L9 18.4L6.8 17.1V14.5L9.1 15.8L11.4 17.1L10.5 19.3ZM12.9 17.9L11.5 17L9.3 15.7V13L11.6 14.3L13.8 15.7L12.9 17.9ZM14.4 17.3C13.7 17.9 13 18.1 12.2 18.2L13.6 14.5L14.7 13.9V15.6C14.7 16.2 14.6 16.8 14.4 17.3ZM16.2 16.1C15.6 16.7 15 17 14.3 17.3V13.8L16.6 15.1L17.5 15.6C17.2 16.3 16.8 16.8 16.2 16.1ZM17.7 12.1C17.8 12.7 17.8 13.4 17.7 14L14.2 12L12.7 11.1L14.2 10.2L16.4 8.9C16.8 9.3 17.1 9.7 17.4 10.2C17.6 10.8 17.7 11.5 17.7 12.1ZM15.4 6.7C15.9 7.2 16.3 7.8 16.6 8.5L12.3 11L10.9 10.1L12.4 9.2V6.2C13.5 6.2 14.5 6.3 15.4 6.7Z" fill="currentColor"/></svg>`,
+    anthropic: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 19.5H21L12 3.5L3 19.5H6.5L12 9.5L17.5 19.5Z" fill="#D97757"/></svg>`,
+    deepseek: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#4D6BFE"/><path d="M7 11.5L9.5 9L17 9M7 11.5L9.5 14L17 14" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>`,
+    custom: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.4 15.5C19.7 15.2 20.3 15.1 20.7 15.3C21.8 15.9 22 17.4 21.1 18.3C20.2 19.2 18.7 19 18.1 17.9C17.9 17.5 18 16.9 18.4 16.6L19.4 15.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    // Fallback/Generic icon
+    default: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 16V8L12 3L3 8V16L12 21L21 16Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>`
+}
 
-/**
- * 厂商信息配置
- * logo 使用 SVG data URI，确保图标清晰且无外部依赖
- */
-export const PROVIDERS = {
-    google: {
-        name: 'Google',
-        color: '#4285F4',
-        // Google "G" logo
-        logo: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-    </svg>`
-    },
-    openai: {
-        name: 'OpenAI',
-        color: '#10A37F',
-        // OpenAI logo
-        logo: `<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.8956zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z" fill="#10A37F"/>
-    </svg>`
-    },
-    anthropic: {
-        name: 'Anthropic',
-        color: '#D97706',
-        // Anthropic "A" style logo
-        logo: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.304 3H13.896L20.4 21H23.808L17.304 3Z" fill="#D97706"/>
-      <path d="M6.696 3L0.192 21H3.648L4.992 17.208H11.808L13.152 21H16.608L10.104 3H6.696ZM5.952 14.28L8.4 6.816L10.848 14.28H5.952Z" fill="#D97706"/>
-    </svg>`
-    },
-    alibaba: {
-        name: 'Alibaba',
-        color: '#FF6A00',
-        // Qwen/Alibaba Cloud style
-        logo: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="10" fill="#FF6A00"/>
-      <text x="12" y="16" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Q</text>
-    </svg>`
-    },
-    deepseek: {
-        name: 'DeepSeek',
-        color: '#0066FF',
-        // DeepSeek style
-        logo: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="10" fill="#0066FF"/>
-      <path d="M8 12C8 9.79086 9.79086 8 12 8V8C14.2091 8 16 9.79086 16 12V12C16 14.2091 14.2091 16 12 16V16C9.79086 16 8 14.2091 8 12V12Z" stroke="white" stroke-width="1.5"/>
-      <circle cx="12" cy="12" r="2" fill="white"/>
-    </svg>`
-    },
-    zhipu: {
-        name: '智谱AI',
-        color: '#6366F1',
-        logo: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="2" y="2" width="20" height="20" rx="4" fill="#6366F1"/>
-      <text x="12" y="16" text-anchor="middle" fill="white" font-size="10" font-weight="bold">智</text>
-    </svg>`
-    },
-    moonshot: {
-        name: 'Moonshot',
-        color: '#1a1a2e',
-        // Moon icon
-        logo: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="10" fill="#1a1a2e"/>
-      <path d="M12 4C8.68629 4 6 7.58172 6 12C6 16.4183 8.68629 20 12 20C10.3431 20 9 16.4183 9 12C9 7.58172 10.3431 4 12 4Z" fill="#FFD700"/>
-    </svg>`
-    },
-    '01ai': {
-        name: '01.AI',
-        color: '#EC4899',
-        logo: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="10" fill="#EC4899"/>
-      <text x="12" y="16" text-anchor="middle" fill="white" font-size="8" font-weight="bold">01</text>
-    </svg>`
-    },
-    meta: {
-        name: 'Meta',
-        color: '#0668E1',
-        // Meta infinity style
-        logo: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 10.5C9.5 7 7 5.5 5 5.5C2.5 5.5 1 8 1 12C1 16 2.5 18.5 5 18.5C7 18.5 9.5 17 12 13.5C14.5 17 17 18.5 19 18.5C21.5 18.5 23 16 23 12C23 8 21.5 5.5 19 5.5C17 5.5 14.5 7 12 10.5Z" stroke="#0668E1" stroke-width="2" fill="none"/>
-    </svg>`
-    },
-    mistral: {
-        name: 'Mistral',
-        color: '#F97316',
-        logo: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="2" y="4" width="4" height="4" fill="#F97316"/>
-      <rect x="10" y="4" width="4" height="4" fill="#F97316"/>
-      <rect x="18" y="4" width="4" height="4" fill="#F97316"/>
-      <rect x="2" y="10" width="4" height="4" fill="#F97316"/>
-      <rect x="6" y="10" width="4" height="4" fill="#1a1a1a"/>
-      <rect x="10" y="10" width="4" height="4" fill="#F97316"/>
-      <rect x="14" y="10" width="4" height="4" fill="#1a1a1a"/>
-      <rect x="18" y="10" width="4" height="4" fill="#F97316"/>
-      <rect x="2" y="16" width="4" height="4" fill="#F97316"/>
-      <rect x="10" y="16" width="4" height="4" fill="#F97316"/>
-      <rect x="18" y="16" width="4" height="4" fill="#F97316"/>
-    </svg>`
-    },
-    unknown: {
-        name: '未知',
-        color: '#6B7280',
-        logo: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="10" stroke="#6B7280" stroke-width="2" fill="none"/>
-      <text x="12" y="16" text-anchor="middle" fill="#6B7280" font-size="12" font-weight="bold">?</text>
-    </svg>`
-    }
+// Maps provider codes to display names
+const PROVIDER_NAMES = {
+    google: 'Google Gemini',
+    openai: 'OpenAI',
+    anthropic: 'Anthropic',
+    deepseek: 'DeepSeek',
+    alibaba: 'Alibaba Cloud (Qwen)',
+    zhipu: 'Zhipu AI (GLM)',
+    moonshot: 'Moonshot AI (Kimi)',
+    mistral: 'Mistral AI',
+    xai: 'xAI (Grok)',
+    meta: 'Meta (Llama)',
+    '01ai': '01.AI (Yi)'
 }
 
 /**
- * 能力图标配置
+ * Returns the capabilities object for a given model
+ * @param {string} model - The model identifier (e.g. "gemini-1.5-pro")
+ * @returns {object} Capability object { image: boolean, pdf: boolean, ... }
  */
-export const CAPABILITY_ICONS = {
-    text: { icon: '💬', label: '文本' },
-    image: { icon: '🖼️', label: '图片' },
-    pdf: { icon: '📄', label: 'PDF' },
-    audio: { icon: '🎵', label: '音频' }
+export function getModelCapabilities(model) {
+    if (!model || !modelData.models[model]) {
+        return { text: true, image: false, pdf: false, audio: false }
+    }
+    return modelData.models[model]
 }
 
 /**
- * 根据模型名称获取厂商 ID
+ * Returns the friendly provider name for a given model
+ * @param {string} model - The model identifier
+ * @returns {string} Provider display name
  */
-export function getProviderId(modelName) {
-    if (!modelName) return 'unknown'
+export function getProviderName(model) {
+    if (!model || !modelData.models[model]) return 'Unknown Provider'
 
-    const lower = modelName.toLowerCase()
-
-    // 精确匹配
-    const modelInfo = modelConfig.models[lower]
-    if (modelInfo?.provider) {
-        return modelInfo.provider
-    }
-
-    // 模式匹配
-    for (const [pattern, provider] of Object.entries(modelConfig.providerPatterns)) {
-        if (lower.includes(pattern.toLowerCase())) {
-            return provider
-        }
-    }
-
-    return 'unknown'
+    const providerCode = modelData.models[model].provider
+    return PROVIDER_NAMES[providerCode] || providerCode
 }
 
 /**
- * 获取厂商信息
+ * Returns the SVG logo string for a given model's provider
+ * @param {string} model - The model identifier
+ * @returns {string} SVG string
  */
-export function getProvider(modelName) {
-    const providerId = getProviderId(modelName)
-    return PROVIDERS[providerId] || PROVIDERS.unknown
+export function getProviderLogo(model) {
+    if (!model || !modelData.models[model]) return PROVIDER_LOGOS.default
+
+    const providerCode = modelData.models[model].provider
+
+    // Check if we have a specific logo for this provider
+    if (PROVIDER_LOGOS[providerCode]) {
+        return PROVIDER_LOGOS[providerCode]
+    }
+
+    // Fallback to default
+    return PROVIDER_LOGOS.default
 }
 
 /**
- * 获取厂商 Logo SVG
+ * Get just the provider code for a model
  */
-export function getProviderLogo(modelName) {
-    return getProvider(modelName).logo
+export function getProviderCode(model) {
+    if (!model || !modelData.models[model]) return 'unknown'
+    return modelData.models[model].provider
 }
 
 /**
- * 获取厂商名称
+ * Check if the model supports vision capabilities
+ * @param {string} model - The model identifier
+ * @returns {boolean} True if the model supports images
  */
-export function getProviderName(modelName) {
-    return getProvider(modelName).name
-}
-
-/**
- * 获取模型能力
- */
-export function getModelCapabilities(modelName) {
-    const defaultCaps = { text: true, image: false, pdf: false, audio: false }
-    if (!modelName) return defaultCaps
-
-    const lower = modelName.toLowerCase()
-
-    // 精确匹配
-    if (modelConfig.models[lower]) {
-        const { provider, ...caps } = modelConfig.models[lower]
-        return caps
-    }
-
-    // 模糊匹配
-    for (const [key, value] of Object.entries(modelConfig.models)) {
-        if (lower.includes(key) || key.includes(lower)) {
-            const { provider, ...caps } = value
-            return caps
-        }
-    }
-
-    // 基于厂商的默认能力推断
-    const providerId = getProviderId(modelName)
-    if (providerId === 'google') {
-        return { text: true, image: true, pdf: true, audio: false }
-    }
-    if (providerId === 'anthropic') {
-        return { text: true, image: true, pdf: true, audio: false }
-    }
-
-    return defaultCaps
-}
-
-/**
- * 检查模型是否支持视觉（图片或PDF）
- */
-export function supportsVision(modelName) {
-    const caps = getModelCapabilities(modelName)
-    return caps.image || caps.pdf
-}
-
-/**
- * 获取模型完整显示信息
- */
-export function getModelInfo(modelName) {
-    const provider = getProvider(modelName)
-    const capabilities = getModelCapabilities(modelName)
-
-    return {
-        name: modelName,
-        providerId: getProviderId(modelName),
-        providerName: provider.name,
-        providerColor: provider.color,
-        providerLogo: provider.logo,
-        capabilities,
-        supportsVision: capabilities.image || capabilities.pdf
-    }
+export function supportsVision(model) {
+    if (!model || !modelData.models[model]) return false
+    return !!modelData.models[model].image
 }

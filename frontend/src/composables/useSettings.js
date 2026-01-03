@@ -10,6 +10,7 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
   // 当前生效的配置（从后端同步）
   const settings = reactive({
     apiKey: '',
+    provider: 'google',
     baseURL: '',
     model: '',
     prompt: '',
@@ -93,6 +94,7 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
    */
   function applyConfig(config) {
     settings.apiKey = config.apiKey || ''
+    settings.provider = config.provider || 'google'
     settings.baseURL = config.baseURL || ''
     settings.model = config.model || 'gemini-2.5-flash'
     settings.prompt = config.prompt || ''
@@ -236,6 +238,7 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
         resumePath: tempSettings.resumePath,
         resumeContent: tempSettings.resumeContent,
         useMarkdownResume: tempSettings.useMarkdownResume,
+        provider: tempSettings.provider,
         shortcuts: tempShortcuts
       }
 

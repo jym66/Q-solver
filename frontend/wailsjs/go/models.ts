@@ -2,6 +2,7 @@ export namespace config {
 	
 	export class Config {
 	    apiKey: string;
+	    provider: string;
 	    model: string;
 	    baseURL: string;
 	    prompt: string;
@@ -25,6 +26,7 @@ export namespace config {
 	    constructor(source: any = {}) {
 	        if ('string' === typeof source) source = JSON.parse(source);
 	        this.apiKey = source["apiKey"];
+	        this.provider = source["provider"];
 	        this.model = source["model"];
 	        this.baseURL = source["baseURL"];
 	        this.prompt = source["prompt"];

@@ -7,6 +7,7 @@ import (
 
 type Config struct {
 	APIKey             string                         `json:"apiKey"`
+	Provider           string                         `json:"provider"`
 	Model              string                         `json:"model"`
 	BaseURL            string                         `json:"baseURL"`
 	Prompt             string                         `json:"prompt"`
@@ -51,6 +52,7 @@ func NewDefaultConfig() Config {
 			"scroll_down":  {ComboID: "34+164", KeyName: "Alt+PgDn"},
 		},
 		ResumeBase64: "",
+		Provider:     "google", // Default provider
 	}
 }
 

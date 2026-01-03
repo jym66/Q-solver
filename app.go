@@ -15,7 +15,7 @@ import (
 	"github.com/wailsapp/wails/v2/pkg/runtime"
 )
 
-// App 结构体 - 瘦身版，只作为服务容器和 Wails 绑定层
+// 这个只作为连接前端和后端的中间层
 type App struct {
 	ctx context.Context
 

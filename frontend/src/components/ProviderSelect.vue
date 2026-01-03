@@ -5,17 +5,12 @@
             <!-- 选中项 -->
             <div class="selected-item">
                 <template v-if="modelValue">
-                    <div class="provider-logo" v-html="getProviderLogo(modelValue)"></div>
+                    <div class="provider-logo" v-html="getLogo(modelValue)"></div>
                     <div class="model-info">
-                        <span class="model-name">{{ modelValue }}</span>
-                        <span class="provider-name">{{ getProviderName(modelValue) }}</span>
-                    </div>
-                    <div class="capability-tags">
-                        <span v-if="getModelCapabilities(modelValue).image" class="cap-tag">图片</span>
-                        <span v-if="getModelCapabilities(modelValue).pdf" class="cap-tag">PDF</span>
+                        <span class="model-name">{{ getName(modelValue) }}</span>
                     </div>
                 </template>
-                <span v-else class="placeholder">请选择模型</span>
+                <span v-else class="placeholder">请选择提供商</span>
                 <span class="arrow" :class="{ rotated: isOpen }">
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                         <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
@@ -27,25 +22,15 @@
             <!-- 下拉列表 -->
             <Transition name="dropdown">
                 <div v-if="isOpen" class="dropdown-list">
-                    <div v-if="loading" class="loading-state">
-                        <span class="loading-icon">⏳</span>
-                        <span>加载中...</span>
-                    </div>
-                    <template v-else>
-                        <div v-for="model in models" :key="model" class="dropdown-item"
-                            :class="{ selected: modelValue === model }" @click.stop="selectModel(model)">
-                            <div class="provider-logo" v-html="getProviderLogo(model)"></div>
-                            <div class="model-info">
-                                <span class="model-name">{{ model }}</span>
-                                <span class="provider-name">{{ getProviderName(model) }}</span>
-                            </div>
-                            <div class="capability-tags">
-                                <span v-if="getModelCapabilities(model).image" class="cap-tag">图片</span>
-                                <span v-if="getModelCapabilities(model).pdf" class="cap-tag">PDF</span>
-                            </div>
-                            <span v-if="modelValue === model" class="check-icon">✓</span>
+                    <div v-for="provider in providers" :key="provider.value" class="dropdown-item"
+                        :class="{ selected: modelValue === provider.value }"
+                        @click.stop="selectProvider(provider.value)">
+                        <div class="provider-logo" v-html="provider.logo"></div>
+                        <div class="model-info">
+                            <span class="model-name">{{ provider.label }}</span>
                         </div>
-                    </template>
+                        <span v-if="modelValue === provider.value" class="check-icon">✓</span>
+                    </div>
                 </div>
             </Transition>
         </div>
@@ -54,20 +39,12 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import { getProviderLogo, getProviderName, getModelCapabilities } from '../utils/modelCapabilities'
+import { PROVIDER_LOGOS } from '../utils/modelCapabilities'
 
 const props = defineProps({
     modelValue: {
         type: String,
-        default: ''
-    },
-    models: {
-        type: Array,
-        default: () => []
-    },
-    loading: {
-        type: Boolean,
-        default: false
+        default: 'google'
     },
     disabled: {
         type: Boolean,
@@ -80,14 +57,33 @@ const emit = defineEmits(['update:modelValue'])
 const isOpen = ref(false)
 const selectRef = ref(null)
 
+// Define providers using imported logos (single source of truth)
+const providers = [
+    { value: 'google', label: 'Google Gemini', logo: PROVIDER_LOGOS.google },
+    { value: 'openai', label: 'OpenAI', logo: PROVIDER_LOGOS.openai },
+    { value: 'anthropic', label: 'Anthropic (Claude)', logo: PROVIDER_LOGOS.anthropic },
+    { value: 'deepseek', label: 'DeepSeek', logo: PROVIDER_LOGOS.deepseek },
+    { value: 'custom', label: '自定义 (Custom)', logo: PROVIDER_LOGOS.custom }
+]
+
 function toggle() {
-    if (props.disabled || props.loading) return
+    if (props.disabled) return
     isOpen.value = !isOpen.value
 }
 
-function selectModel(model) {
-    emit('update:modelValue', model)
+function selectProvider(value) {
+    emit('update:modelValue', value)
     isOpen.value = false
+}
+
+function getLogo(value) {
+    // If value not in our list, try to find in PROVIDER_LOGOS, else default
+    return PROVIDER_LOGOS[value] || PROVIDER_LOGOS.default
+}
+
+function getName(value) {
+    const p = providers.find(p => p.value === value)
+    return p ? p.label : value
 }
 
 // 点击外部关闭
@@ -115,7 +111,8 @@ onUnmounted(() => {
     position: relative;
     background: rgba(30, 30, 36, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
+    border-radius: 8px;
+    /* Slightly reduced radius for compact feel */
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -138,17 +135,22 @@ onUnmounted(() => {
 .selected-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
+    gap: 10px;
+    padding: 8px 12px;
+    /* Reduced padding */
+    height: 40px;
+    /* Reduced height from 52px */
 }
 
 .provider-logo {
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    /* Reduced size */
+    height: 20px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #fff;
 }
 
 .provider-logo :deep(svg) {
@@ -161,42 +163,20 @@ onUnmounted(() => {
     min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    justify-content: center;
 }
 
 .model-name {
     font-size: 14px;
+    /* Slightly adjusted font */
     font-weight: 500;
     color: #fff;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.provider-name {
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.capability-tags {
-    display: flex;
-    gap: 4px;
-    flex-shrink: 0;
-}
-
-.cap-tag {
-    font-size: 10px;
-    padding: 2px 6px;
-    border-radius: 10px;
-    background: rgba(76, 175, 80, 0.2);
-    color: #4CAF50;
-    font-weight: 500;
     white-space: nowrap;
 }
 
 .placeholder {
     color: rgba(255, 255, 255, 0.4);
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .arrow {
@@ -218,34 +198,22 @@ onUnmounted(() => {
     top: calc(100% + 4px);
     left: 0;
     right: 0;
-    max-height: 320px;
+    max-height: 280px;
     overflow-y: auto;
     background: rgba(28, 28, 34, 0.98);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
     z-index: 100;
     backdrop-filter: blur(20px);
-}
-
-.dropdown-list::-webkit-scrollbar {
-    width: 6px;
-}
-
-.dropdown-list::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.dropdown-list::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
 }
 
 .dropdown-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 10px 16px;
+    gap: 10px;
+    padding: 8px 12px;
+    /* Reduced padding */
     cursor: pointer;
     transition: background 0.15s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);
@@ -264,56 +232,18 @@ onUnmounted(() => {
 }
 
 .dropdown-item .provider-logo {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
 }
 
 .dropdown-item .model-name {
     font-size: 13px;
 }
 
-.dropdown-item .provider-name {
-    font-size: 10px;
-}
-
 .check-icon {
     color: #4CAF50;
     font-weight: bold;
     margin-left: auto;
-}
-
-.loading-state {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 20px;
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.loading-icon {
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* 下拉动画 */
-.dropdown-enter-active,
-.dropdown-leave-active {
-    transition: all 0.2s ease;
-}
-
-.dropdown-enter-from,
-.dropdown-leave-to {
-    opacity: 0;
-    transform: translateY(-8px);
+    font-size: 12px;
 }
 </style>

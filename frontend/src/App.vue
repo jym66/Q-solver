@@ -12,16 +12,14 @@
 
   <div v-else id="main-interface" class="main-interface" :class="{ visible: mainVisible }">
     <div class="left-panel" id="history-list">
-      <div v-if="history.length === 0" class="history-item placeholder">
-        <div class="history-tag">历史记录</div>
-        <div class="history-preview">暂无记录</div>
+      <div v-if="history.length === 0" class="history-empty">
+        <span class="empty-icon">📝</span>
+        <span class="empty-text">暂无记录</span>
       </div>
-      <div v-for="(h, idx) in history" :key="idx" :class="['history-item', { active: idx === activeHistoryIndex }]"
-        @click="selectHistory(idx)">
-        <div class="history-tag">{{ idx === 0 ? '当前问题' : '历史问题' }}</div>
-        <div class="history-preview" v-html="renderMarkdown(h.summary)"></div>
-        <div class="history-time">{{ h.time }}</div>
-      </div>
+      <HistoryItem v-for="(h, idx) in history" :key="idx" :summary="h.summary" :time="h.time"
+        :isActive="idx === activeHistoryIndex" :isFirst="idx === 0" :previewHtml="renderMarkdown(h.summary)"
+        @select="selectHistory(idx)" @delete="deleteHistory(idx)" @export-markdown="exportMarkdown(idx)"
+        @export-image="exportImage(idx)" />
     </div>
     <div class="right-panel">
       <ErrorView v-if="errorState.show" :errorState="errorState" :solveShortcut="solveShortcut" />
@@ -61,7 +59,7 @@
           <div class="tab" :class="{ active: uiState.activeTab === 'resume' }" @click="uiState.activeTab = 'resume'">
             简历设置</div>
           <div class="tab" :class="{ active: uiState.activeTab === 'account' }" @click="uiState.activeTab = 'account'">
-            账户</div>
+            提供商</div>
         </div>
         <span class="close-btn" @click="closeSettings">&times;</span>
       </div>
@@ -74,15 +72,23 @@
                 style="font-size: 32px; background: rgba(255,255,255,0.08); border-radius: 50%; padding: 10px; color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.18);">🔑</span>
               <div>
                 <div class="account-title"
-                  style="font-size: 22px; font-weight: 700; color: rgba(255,255,255,0.92); letter-spacing: 1px;">账户设置
+                  style="font-size: 22px; font-weight: 700; color: rgba(255,255,255,0.92); letter-spacing: 1px;">提供商配置
                 </div>
                 <div class="account-desc" style="font-size: 14px; color: rgba(255,255,255,0.48); margin-top: 4px;">配置
-                  API 相关信息与代理地址</div>
+                  模型提供商、API Key 与代理地址</div>
               </div>
             </div>
 
-
             <div class="form-group" style="margin-bottom: 22px;">
+              <label
+                style="font-weight: 600; color: rgba(255,255,255,0.72); font-size: 15px; margin-bottom: 8px; display: block;">提供商
+                (Provider)</label>
+              <ProviderSelect v-model="tempSettings.provider" />
+            </div>
+
+
+
+            <div class="form-group" style="margin-bottom: 22px;" v-if="tempSettings.provider === 'custom'">
               <label
                 style="font-weight: 600; color: rgba(255,255,255,0.72); font-size: 15px; margin-bottom: 8px; display: block;">Base
                 URL</label>
@@ -230,12 +236,14 @@
 import { reactive, ref, onMounted, watch, nextTick, computed } from 'vue'
 import ResumeImport from './components/ResumeImport.vue'
 import ScreenshotSettings from './components/ScreenshotSettings.vue'
+import ProviderSelect from './components/ProviderSelect.vue'
 import WelcomeView from './components/WelcomeView.vue'
 import ErrorView from './components/ErrorView.vue'
 import LoadingView from './components/LoadingView.vue'
 // import InitLoading from './components/InitLoading.vue'
 import TopBar from './components/TopBar.vue'
 import ModelSelect from './components/ModelSelect.vue'
+import HistoryItem from './components/HistoryItem.vue'
 import { EventsOn, Quit } from '../wailsjs/runtime/runtime'
 import { StopRecordingKey, SelectResume, ClearResume, RestoreFocus, RemoveFocus, ParseResume, GetInitStatus } from '../wailsjs/go/main/App'
 
@@ -327,7 +335,8 @@ const {
 
 const {
   renderedContent, history, activeHistoryIndex, isLoading, isAppending, shouldOverwriteHistory,
-  errorState, renderMarkdown, selectHistory, handleStreamStart, handleStreamChunk, handleSolution, setStreamBuffer
+  errorState, renderMarkdown, selectHistory, handleStreamStart, handleStreamChunk, handleSolution, setStreamBuffer,
+  deleteHistory, exportMarkdown, exportImage
 } = useSolution(settings)
 
 // Populate callbacks

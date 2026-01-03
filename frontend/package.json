@@ -14,6 +14,7 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
+    "html2canvas": "^1.4.1",
     "marked": "^17.0.0",
     "pdfjs-dist": "^5.4.394",
     "vue": "^3.3.0"

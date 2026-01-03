@@ -1,55 +1,48 @@
 {
-    "version": "1.0.0",
+    "version": "1.1.1",
     "lastUpdated": "2026-01-03",
     "models": {
-        "gemini-2.5-pro": {
+        "gemini-3.0-pro": {
+            "text": true,
+            "image": true,
+            "pdf": true,
+            "audio": true,
+            "provider": "google"
+        },
+        "gemini-3.0-deep-think": {
             "text": true,
             "image": true,
             "pdf": true,
             "audio": false,
+            "provider": "google"
+        },
+        "gemini-2.5-pro": {
+            "text": true,
+            "image": true,
+            "pdf": true,
+            "audio": true,
             "provider": "google"
         },
         "gemini-2.5-flash": {
             "text": true,
             "image": true,
             "pdf": true,
-            "audio": false,
+            "audio": true,
             "provider": "google"
         },
         "gemini-2.0-flash": {
             "text": true,
             "image": true,
             "pdf": true,
-            "audio": false,
+            "audio": true,
             "provider": "google"
         },
-        "gemini-2.0-flash-thinking-exp": {
+        "gpt-4.5-preview": {
             "text": true,
             "image": true,
-            "pdf": true,
+            "pdf": false,
             "audio": false,
-            "provider": "google"
-        },
-        "gemini-1.5-pro": {
-            "text": true,
-            "image": true,
-            "pdf": true,
-            "audio": false,
-            "provider": "google"
-        },
-        "gemini-1.5-flash": {
-            "text": true,
-            "image": true,
-            "pdf": true,
-            "audio": false,
-            "provider": "google"
-        },
-        "gemini-exp": {
-            "text": true,
-            "image": true,
-            "pdf": true,
-            "audio": false,
-            "provider": "google"
+            "provider": "openai"
         },
         "gpt-4o": {
             "text": true,
@@ -58,30 +51,16 @@
             "audio": false,
             "provider": "openai"
         },
+        "gpt-4o-audio-preview": {
+            "text": true,
+            "image": false,
+            "pdf": false,
+            "audio": true,
+            "provider": "openai"
+        },
         "gpt-4o-mini": {
             "text": true,
             "image": true,
-            "pdf": false,
-            "audio": false,
-            "provider": "openai"
-        },
-        "gpt-4-turbo": {
-            "text": true,
-            "image": true,
-            "pdf": false,
-            "audio": false,
-            "provider": "openai"
-        },
-        "gpt-4": {
-            "text": true,
-            "image": false,
-            "pdf": false,
-            "audio": false,
-            "provider": "openai"
-        },
-        "gpt-3.5-turbo": {
-            "text": true,
-            "image": false,
             "pdf": false,
             "audio": false,
             "provider": "openai"
@@ -100,13 +79,6 @@
             "audio": false,
             "provider": "openai"
         },
-        "o1-preview": {
-            "text": true,
-            "image": false,
-            "pdf": false,
-            "audio": false,
-            "provider": "openai"
-        },
         "o3-mini": {
             "text": true,
             "image": false,
@@ -114,21 +86,28 @@
             "audio": false,
             "provider": "openai"
         },
-        "claude-3-opus": {
+        "o4-mini": {
+            "text": true,
+            "image": true,
+            "pdf": false,
+            "audio": false,
+            "provider": "openai"
+        },
+        "claude-4.5-opus": {
             "text": true,
             "image": true,
             "pdf": true,
             "audio": false,
             "provider": "anthropic"
         },
-        "claude-3-sonnet": {
+        "claude-4.5-sonnet": {
             "text": true,
             "image": true,
             "pdf": true,
             "audio": false,
             "provider": "anthropic"
         },
-        "claude-3-haiku": {
+        "claude-4.5-haiku": {
             "text": true,
             "image": true,
             "pdf": true,
@@ -149,68 +128,19 @@
             "audio": false,
             "provider": "anthropic"
         },
-        "qwen-vl-plus": {
+        "qwen2.5-vl-72b": {
             "text": true,
             "image": true,
             "pdf": false,
             "audio": false,
             "provider": "alibaba"
         },
-        "qwen-vl-max": {
-            "text": true,
-            "image": true,
-            "pdf": false,
-            "audio": false,
-            "provider": "alibaba"
-        },
-        "qwen-turbo": {
+        "qwen2.5-coder": {
             "text": true,
             "image": false,
             "pdf": false,
             "audio": false,
             "provider": "alibaba"
-        },
-        "qwen-plus": {
-            "text": true,
-            "image": false,
-            "pdf": false,
-            "audio": false,
-            "provider": "alibaba"
-        },
-        "qwen-max": {
-            "text": true,
-            "image": false,
-            "pdf": false,
-            "audio": false,
-            "provider": "alibaba"
-        },
-        "qwen2.5": {
-            "text": true,
-            "image": false,
-            "pdf": false,
-            "audio": false,
-            "provider": "alibaba"
-        },
-        "deepseek-chat": {
-            "text": true,
-            "image": false,
-            "pdf": false,
-            "audio": false,
-            "provider": "deepseek"
-        },
-        "deepseek-coder": {
-            "text": true,
-            "image": false,
-            "pdf": false,
-            "audio": false,
-            "provider": "deepseek"
-        },
-        "deepseek-reasoner": {
-            "text": true,
-            "image": false,
-            "pdf": false,
-            "audio": false,
-            "provider": "deepseek"
         },
         "deepseek-v3": {
             "text": true,
@@ -219,96 +149,75 @@
             "audio": false,
             "provider": "deepseek"
         },
-        "glm-4v": {
+        "deepseek-r1": {
+            "text": true,
+            "image": false,
+            "pdf": false,
+            "audio": false,
+            "provider": "deepseek"
+        },
+        "deepseek-vl-2": {
+            "text": true,
+            "image": true,
+            "pdf": false,
+            "audio": false,
+            "provider": "deepseek"
+        },
+        "glm-4-plus": {
             "text": true,
             "image": true,
             "pdf": false,
             "audio": false,
             "provider": "zhipu"
         },
-        "glm-4": {
-            "text": true,
-            "image": false,
-            "pdf": false,
-            "audio": false,
-            "provider": "zhipu"
-        },
-        "glm-4-flash": {
-            "text": true,
-            "image": false,
-            "pdf": false,
-            "audio": false,
-            "provider": "zhipu"
-        },
-        "moonshot-v1": {
-            "text": true,
-            "image": false,
-            "pdf": false,
-            "audio": false,
-            "provider": "moonshot"
-        },
-        "kimi": {
-            "text": true,
-            "image": false,
-            "pdf": false,
-            "audio": false,
-            "provider": "moonshot"
-        },
-        "yi-vision": {
-            "text": true,
-            "image": true,
-            "pdf": false,
-            "audio": false,
-            "provider": "01ai"
-        },
-        "yi-large": {
-            "text": true,
-            "image": false,
-            "pdf": false,
-            "audio": false,
-            "provider": "01ai"
-        },
-        "llama-3": {
+        "llama-3.3-70b": {
             "text": true,
             "image": false,
             "pdf": false,
             "audio": false,
             "provider": "meta"
         },
-        "llama-3.1": {
-            "text": true,
-            "image": false,
-            "pdf": false,
-            "audio": false,
-            "provider": "meta"
-        },
-        "llama-3.2": {
+        "llama-3.2-90b-vision": {
             "text": true,
             "image": true,
             "pdf": false,
             "audio": false,
             "provider": "meta"
         },
-        "mistral": {
+        "llama-3.2-11b-vision": {
+            "text": true,
+            "image": true,
+            "pdf": false,
+            "audio": false,
+            "provider": "meta"
+        },
+        "mistral-large-2411": {
             "text": true,
             "image": false,
             "pdf": false,
             "audio": false,
             "provider": "mistral"
         },
-        "mixtral": {
-            "text": true,
-            "image": false,
-            "pdf": false,
-            "audio": false,
-            "provider": "mistral"
-        },
-        "pixtral": {
+        "pixtral-large-2411": {
             "text": true,
             "image": true,
             "pdf": false,
             "audio": false,
             "provider": "mistral"
+        },
+        "grok-2": {
+            "text": true,
+            "image": false,
+            "pdf": false,
+            "audio": false,
+            "provider": "xai"
+        },
+        "grok-2-vision": {
+            "text": true,
+            "image": true,
+            "pdf": false,
+            "audio": false,
+            "provider": "xai"
         }
     },
     "providerPatterns": {
@@ -316,6 +225,7 @@
         "gpt": "openai",
         "o1": "openai",
         "o3": "openai",
+        "o4": "openai",
         "claude": "anthropic",
         "qwen": "alibaba",
         "deepseek": "deepseek",
@@ -326,6 +236,7 @@
         "llama": "meta",
         "mistral": "mistral",
         "mixtral": "mistral",
-        "pixtral": "mistral"
+        "pixtral": "mistral",
+        "grok": "xai"
     }
 }
