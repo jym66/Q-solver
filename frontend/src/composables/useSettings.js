@@ -16,7 +16,6 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
     transparency: 1.0,
     mode: 'interview',
     keepContext: false,
-    interruptThinking: true,
     screenshotMode: 'window',
     resumePath: '',
     resumeContent: '',
@@ -111,7 +110,6 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
     settings.resumePath = config.resumePath || ''
     settings.resumeContent = config.resumeContent || ''
     settings.useMarkdownResume = config.useMarkdownResume || false
-    settings.interruptThinking = config.interruptThinking || false
     settings.screenshotMode = config.screenshotMode || 'window'
 
     // 透明度转换
@@ -233,7 +231,6 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
         prompt: tempSettings.prompt,
         opacity: 1.0 - tempSettings.transparency,
         keepContext: tempSettings.keepContext,
-        interruptThinking: tempSettings.interruptThinking,
         screenshotMode: tempSettings.screenshotMode,
         compressionQuality: tempSettings.compressionQuality,
         sharpening: tempSettings.sharpening,
