@@ -40,7 +40,7 @@ func (s *Solver) ClearHistory() {
 }
 
 func (s *Solver) Solve(ctx context.Context, req Request, cb Callbacks) bool {
-	if req.Config.APIKey == "" {
+	if req.Config.GetAPIKey() == "" {
 		if cb.EmitEvent != nil {
 			cb.EmitEvent("require-login")
 		}
@@ -50,13 +50,13 @@ func (s *Solver) Solve(ctx context.Context, req Request, cb Callbacks) bool {
 	logger.Println("开始解题流程...")
 
 	InitParts := []openai.ChatCompletionContentPartUnionParam{}
-	if req.Config.Prompt != "" {
-		InitParts = append(InitParts, openai.TextContentPart(req.Config.Prompt))
+	if req.Config.GetPrompt() != "" {
+		InitParts = append(InitParts, openai.TextContentPart(req.Config.GetPrompt()))
 	}
 
-	if req.Config.UseMarkdownResume && req.Config.ResumeContent != "" {
+	if req.Config.GetUseMarkdownResume() && req.Config.GetResumeContent() != "" {
 		logger.Println("使用 Markdown 简历内容")
-		InitParts = append(InitParts, openai.TextContentPart("\n\n# 候选人简历内容：\n"+req.Config.ResumeContent))
+		InitParts = append(InitParts, openai.TextContentPart("\n\n# 候选人简历内容：\n"+req.Config.GetResumeContent()))
 	} else if req.ResumeBase64 != "" {
 		InitParts = append(InitParts, openai.TextContentPart("\n\n# 候选人简历已作为附件发送，请参考简历内容回答。"))
 		InitParts = append(InitParts, openai.ImageContentPart(openai.ChatCompletionContentPartImageImageURLParam{
@@ -80,7 +80,7 @@ func (s *Solver) Solve(ctx context.Context, req Request, cb Callbacks) bool {
 		messagesToSend = append(messagesToSend, openai.UserMessage(InitParts))
 	}
 
-	if req.Config.KeepContext {
+	if req.Config.GetKeepContext() {
 		if len(s.chatHistory) > 0 {
 			messagesToSend = append(messagesToSend, s.chatHistory...)
 		}
@@ -114,7 +114,7 @@ func (s *Solver) Solve(ctx context.Context, req Request, cb Callbacks) bool {
 		return false
 	}
 
-	if !req.Config.KeepContext {
+	if !req.Config.GetKeepContext() {
 		if cb.EmitEvent != nil {
 			cb.EmitEvent("solution", answer)
 		}

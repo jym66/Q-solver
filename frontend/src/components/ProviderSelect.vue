@@ -81,18 +81,29 @@
 <script setup>
 import ProviderDropdown from './ProviderDropdown.vue'
 
-defineProps({
+import { watch } from 'vue'
+
+import { PROVIDER_BASE_URLS } from '../utils/modelCapabilities'
+
+const props = defineProps({
     provider: String,
     apiKey: String,
     baseURL: String
 })
 
-defineEmits(['update:provider', 'update:apiKey', 'update:baseURL'])
+const emit = defineEmits(['update:provider', 'update:apiKey', 'update:baseURL'])
+
+watch(() => props.provider, (newProvider) => {
+    if (newProvider && PROVIDER_BASE_URLS[newProvider] !== undefined) {
+        if (newProvider !== 'custom') {
+            emit('update:baseURL', PROVIDER_BASE_URLS[newProvider])
+        }
+    }
+})
 
 </script>
 
 <style scoped>
-/* Premium Account Panel Styles */
 .modern-panel {
     background: linear-gradient(165deg, rgba(32, 32, 36, 0.8) 0%, rgba(20, 20, 25, 0.95) 100%);
     border-radius: 16px;

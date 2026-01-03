@@ -1,23 +1,23 @@
 export namespace config {
 	
 	export class Config {
-	    apiKey: string;
-	    provider: string;
-	    model: string;
-	    baseURL: string;
-	    prompt: string;
-	    opacity: number;
-	    noCompression: boolean;
-	    compressionQuality: number;
-	    sharpening: number;
-	    grayscale: boolean;
-	    keepContext: boolean;
-	    interruptThinking: boolean;
-	    screenshotMode: string;
-	    resumePath: string;
-	    resumeContent: string;
-	    useMarkdownResume: boolean;
-	    shortcuts: Record<string, shortcut.KeyBinding>;
+	    apiKey?: string;
+	    provider?: string;
+	    model?: string;
+	    baseURL?: string;
+	    prompt?: string;
+	    opacity?: number;
+	    noCompression?: boolean;
+	    compressionQuality?: number;
+	    sharpening?: number;
+	    grayscale?: boolean;
+	    keepContext?: boolean;
+	    interruptThinking?: boolean;
+	    screenshotMode?: string;
+	    resumePath?: string;
+	    resumeContent?: string;
+	    useMarkdownResume?: boolean;
+	    shortcuts?: Record<string, shortcut.KeyBinding>;
 	
 	    static createFrom(source: any = {}) {
 	        return new Config(source);

@@ -22,7 +22,7 @@ func NewService(cfg *config.Config) *Service {
 }
 
 func (s *Service) UpdateProvider() {
-	s.provider = NewOpenAIProvider(s.config.APIKey, s.config.BaseURL, s.config.Model)
+	s.provider = NewOpenAIProvider(s.config.GetAPIKey(), s.config.GetBaseURL(), s.config.GetModel())
 }
 
 func (s *Service) GetProvider() Provider {
@@ -41,7 +41,7 @@ func (s *Service) TestConnection(ctx context.Context, apiKey, baseURL, model str
 
 	// 使用传入的参数创建临时 provider
 	if baseURL == "" {
-		baseURL = s.config.BaseURL
+		baseURL = s.config.GetBaseURL()
 	}
 	tempProvider := NewOpenAIProvider(apiKey, baseURL, model)
 
@@ -63,8 +63,8 @@ func (s *Service) GetModels(ctx context.Context, apiKey string) ([]string, error
 	var provider *OpenAIProvider
 
 	// 如果提供了临时的 apiKey，使用临时 provider
-	if apiKey != "" && apiKey != s.config.APIKey {
-		provider = NewOpenAIProvider(apiKey, s.config.BaseURL, s.config.Model)
+	if apiKey != "" && apiKey != s.config.GetAPIKey() {
+		provider = NewOpenAIProvider(apiKey, s.config.GetBaseURL(), s.config.GetModel())
 	} else {
 		// 尝试将接口转换为具体类型
 		var ok bool

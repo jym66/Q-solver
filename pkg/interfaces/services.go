@@ -60,7 +60,6 @@ type ConfigService interface {
 	Save() error
 	Get() config.Config
 	GetPtr() *config.Config
-	Update(patch config.ConfigPatch) error
 	UpdateFromJSON(jsonStr string) error
 	Subscribe(callback func(config.Config))
 }

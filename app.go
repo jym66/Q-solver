@@ -94,7 +94,7 @@ func (a *App) onConfigChanged(cfg config.Config) {
 	a.shortcutService.SetShortcuts(cfg.Shortcuts)
 
 	// 如果关闭了上下文，清空历史
-	if !cfg.KeepContext && a.solver != nil {
+	if !cfg.GetKeepContext() && a.solver != nil {
 		a.solver.ClearHistory()
 	}
 
@@ -177,7 +177,7 @@ func (a *App) RemoveFocus() {
 // TriggerSolve 触发解题（快捷键调用）
 func (a *App) TriggerSolve() {
 	cfg := a.configManager.Get()
-	if cfg.APIKey == "" {
+	if cfg.GetAPIKey() == "" {
 		a.EmitEvent("require-login")
 		return
 	}
@@ -200,7 +200,7 @@ func (a *App) TriggerSolve() {
 func (a *App) solveInternal(ctx context.Context) bool {
 	cfg := a.configManager.Get()
 
-	if cfg.APIKey == "" {
+	if cfg.GetAPIKey() == "" {
 		a.EmitEvent("require-login")
 		return false
 	}
@@ -213,11 +213,11 @@ func (a *App) solveInternal(ctx context.Context) bool {
 
 	// 获取截图
 	previewResult, err := a.GetScreenshotPreview(
-		cfg.CompressionQuality,
-		cfg.Sharpening,
-		cfg.Grayscale,
-		cfg.NoCompression,
-		cfg.ScreenshotMode,
+		cfg.GetCompressionQuality(),
+		cfg.GetSharpening(),
+		cfg.GetGrayscale(),
+		cfg.GetNoCompression(),
+		cfg.GetScreenshotMode(),
 	)
 	if err != nil {
 		logger.Printf("图片编码失败: %v\n", err)
@@ -244,7 +244,7 @@ func (a *App) CancelRunningTask() bool {
 
 // IsInterruptThinkingEnabled 是否允许打断思考
 func (a *App) IsInterruptThinkingEnabled() bool {
-	return a.configManager.Get().InterruptThinking
+	return a.configManager.Get().GetInterruptThinking()
 }
 
 // ==================== 快捷键相关 ====================
@@ -304,7 +304,7 @@ func (a *App) ParseResume() (string, error) {
 func (a *App) GetScreenshotPreview(quality int, sharpen float64, grayscale bool, noCompression bool, screenshotMode string) (screen.PreviewResult, error) {
 	mode := screenshotMode
 	if mode == "" {
-		mode = a.configManager.Get().ScreenshotMode
+		mode = a.configManager.Get().GetScreenshotMode()
 	}
 	return a.screenService.CapturePreview(quality, sharpen, grayscale, noCompression, mode)
 }
