@@ -8,20 +8,20 @@
     --color-primary-hover: #059669;
     --color-primary-light: rgba(16, 185, 129, 0.15);
     --color-primary-glow: rgba(16, 185, 129, 0.4);
-    
+
     /* Background Colors */
     --bg-base: rgba(17, 24, 39, 0.92);
     --bg-elevated: rgba(31, 41, 55, 0.85);
     --bg-card: rgba(55, 65, 81, 0.5);
     --bg-card-hover: rgba(75, 85, 99, 0.6);
     --bg-input: rgba(0, 0, 0, 0.25);
-    
+
     /* Border Colors */
     --border-subtle: rgba(255, 255, 255, 0.08);
     --border-default: rgba(255, 255, 255, 0.12);
     --border-hover: rgba(255, 255, 255, 0.2);
     --border-active: var(--color-primary);
-    
+
     /* Text Colors */
     --text-primary: #f3f4f6;
     --text-secondary: #9ca3af;
@@ -29,13 +29,13 @@
     --text-muted: #6b7280;
     --text-disabled: rgba(107, 114, 128, 0.5);
     --text-inverse: #111827;
-    
+
     /* Semantic Colors */
     --color-success: #10b981;
     --color-warning: #f59e0b;
     --color-error: #ef4444;
     --color-info: #3b82f6;
-    
+
     /* Spacing System (8px base) */
     --space-1: 4px;
     --space-2: 8px;
@@ -45,14 +45,14 @@
     --space-6: 24px;
     --space-8: 32px;
     --space-10: 40px;
-    
+
     /* Border Radius */
     --radius-sm: 6px;
     --radius-md: 10px;
     --radius-lg: 14px;
     --radius-xl: 18px;
     --radius-full: 9999px;
-    
+
     /* Shadows */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
@@ -60,21 +60,21 @@
     --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.4);
     --shadow-glow: 0 0 20px var(--color-primary-glow);
     --shadow-focus: 0 0 0 3px var(--color-primary-light);
-    
+
     /* Scrollbar */
     --scrollbar-thumb: rgba(255, 255, 255, 0.2);
     --scrollbar-thumb-hover: rgba(255, 255, 255, 0.3);
-    
+
     /* Typography */
     --font-sans: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
     --font-mono: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
-    
+
     --text-xs: 11px;
     --text-sm: 13px;
     --text-base: 14px;
     --text-lg: 16px;
     --text-xl: 18px;
-    
+
     /* Transitions */
     --transition-fast: 0.15s ease;
     --transition-base: 0.25s ease;
@@ -237,11 +237,16 @@ body {
     padding: var(--space-1) var(--space-3);
     border-radius: var(--radius-full);
     transition: all var(--transition-fast);
-    cursor: pointer;
+    cursor: default;
     flex-shrink: 0;
 }
 
 .control-group:hover {
+    /* 默认不显示 hover 效果，避免用户误以为可点击 */
+}
+
+/* 只有可点击的 control-group 才显示 hover 效果 */
+.control-group[style*="cursor: pointer"]:hover {
     background: rgba(255, 255, 255, 0.1);
 }
 
@@ -319,9 +324,9 @@ body {
     opacity: 0;
     visibility: hidden;
     transform: translateY(8px);
-    transition: opacity var(--transition-base), 
-                transform var(--transition-base), 
-                visibility var(--transition-base);
+    transition: opacity var(--transition-base),
+        transform var(--transition-base),
+        visibility var(--transition-base);
 }
 
 .main-interface.visible {
@@ -380,8 +385,15 @@ body {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
 }
 
 .empty-text {
@@ -599,14 +611,23 @@ body {
     margin-top: 0;
 }
 
-.markdown-body h1 { font-size: 1.5em; }
-.markdown-body h2 { font-size: 1.3em; }
-.markdown-body h3 { 
+.markdown-body h1 {
+    font-size: 1.5em;
+}
+
+.markdown-body h2 {
+    font-size: 1.3em;
+}
+
+.markdown-body h3 {
     font-size: 1.15em;
     padding-bottom: var(--space-2);
     border-bottom: 1px solid var(--border-subtle);
 }
-.markdown-body h4 { font-size: 1.05em; }
+
+.markdown-body h4 {
+    font-size: 1.05em;
+}
 
 /* Paragraphs */
 .markdown-body p {
@@ -813,6 +834,7 @@ body {
         opacity: 0;
         transform: translateY(-20px) scale(0.98);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -850,6 +872,7 @@ body {
         transform: translateY(-20px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -999,8 +1022,15 @@ body {
 }
 
 @keyframes textPulse {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 .modal-footer {
@@ -1133,8 +1163,15 @@ body {
 }
 
 @keyframes recordingPulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
-    50% { box-shadow: 0 0 0 4px rgba(16, 185, 129, 0); }
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 4px rgba(16, 185, 129, 0);
+    }
 }
 
 /* ========================================
@@ -1267,6 +1304,7 @@ body {
         opacity: 0;
         transform: translateY(-8px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);

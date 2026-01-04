@@ -6,8 +6,8 @@
     :statusIcon="statusIcon" :statusText="statusText" :settings="settings" :isStealthMode="isStealthMode"
     @openSettings="openSettings" @quit="quit" />
 
-  <WelcomeView v-if="!hasStarted" :solveShortcut="solveShortcut" :toggleShortcut="shortcuts.toggle?.keyName || 'Alt+H'"
-    :initStatus="initStatus" />
+  <WelcomeView v-if="!hasStarted || history.length === 0" :solveShortcut="solveShortcut"
+    :toggleShortcut="shortcuts.toggle?.keyName || 'Alt+H'" :initStatus="initStatus" />
 
   <div v-else id="main-interface" class="main-interface" :class="{ visible: mainVisible }">
     <div class="left-panel" id="history-list">
@@ -21,7 +21,8 @@
         @export-image="exportImage(idx)" />
     </div>
     <div class="right-panel">
-      <ErrorView v-if="errorState.show" :errorState="errorState" :solveShortcut="solveShortcut" />
+      <EmptyState v-if="history.length === 0 && !isLoading && !errorState.show" :shortcut="solveShortcut" />
+      <ErrorView v-else-if="errorState.show" :errorState="errorState" :solveShortcut="solveShortcut" />
       <LoadingView v-else-if="isLoading" />
       <div v-else id="content" class="markdown-body">
         <div v-html="renderedContent"></div>
@@ -81,6 +82,7 @@ import ErrorView from './components/ErrorView.vue'
 import LoadingView from './components/LoadingView.vue'
 import TopBar from './components/TopBar.vue'
 import HistoryItem from './components/HistoryItem.vue'
+import EmptyState from './components/EmptyState.vue'
 import { EventsOn, Quit } from '../wailsjs/runtime/runtime'
 import { StopRecordingKey, SelectResume, ClearResume, RestoreFocus, RemoveFocus, ParseResume, GetInitStatus } from '../wailsjs/go/main/App'
 
