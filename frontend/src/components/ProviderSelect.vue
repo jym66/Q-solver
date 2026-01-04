@@ -81,7 +81,7 @@
 <script setup>
 import ProviderDropdown from './ProviderDropdown.vue'
 
-import { watch } from 'vue'
+import { watch, onMounted } from 'vue'
 
 import { PROVIDER_BASE_URLS } from '../utils/modelCapabilities'
 
@@ -93,13 +93,12 @@ const props = defineProps({
 
 const emit = defineEmits(['update:provider', 'update:apiKey', 'update:baseURL'])
 
+// 当 provider 变化时，自动设置对应的 baseURL
 watch(() => props.provider, (newProvider) => {
-    if (newProvider && PROVIDER_BASE_URLS[newProvider] !== undefined) {
-        if (newProvider !== 'custom') {
-            emit('update:baseURL', PROVIDER_BASE_URLS[newProvider])
-        }
+    if (newProvider && newProvider !== 'custom' && PROVIDER_BASE_URLS[newProvider] !== undefined) {
+        emit('update:baseURL', PROVIDER_BASE_URLS[newProvider])
     }
-})
+}, { immediate: true })  // immediate: true 确保首次渲染时也会执行
 
 </script>
 
