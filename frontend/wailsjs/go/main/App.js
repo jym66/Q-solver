@@ -58,6 +58,10 @@ export function RestoreFocus() {
   return window['go']['main']['App']['RestoreFocus']();
 }
 
+export function SaveImageToFile(arg1) {
+  return window['go']['main']['App']['SaveImageToFile'](arg1);
+}
+
 export function ScrollContent(arg1) {
   return window['go']['main']['App']['ScrollContent'](arg1);
 }

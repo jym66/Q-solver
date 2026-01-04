@@ -2,6 +2,7 @@
     <div class="history-item" :class="{ active: isActive }" @click="$emit('select')">
         <div class="history-header">
             <span class="history-tag">{{ isFirst ? '当前问题' : '历史问题' }}</span>
+            <span v-if="roundsCount > 1" class="rounds-badge">{{ roundsCount }} 轮</span>
             <div class="menu-trigger" @click.stop="toggleMenu" ref="menuTriggerRef">
                 <span class="dots">⋮</span>
             </div>
@@ -15,10 +16,6 @@
     <Teleport to="body">
         <Transition name="menu-fade">
             <div v-if="menuOpen" class="history-menu" :style="menuStyle" @click.stop>
-                <div class="menu-item" @click="handleExportMarkdown">
-                    <span class="menu-icon">📋</span>
-                    <span>导出 Markdown</span>
-                </div>
                 <div class="menu-item" @click="handleExportImage">
                     <span class="menu-icon">🖼️</span>
                     <span>导出为图片</span>
@@ -41,10 +38,11 @@ const props = defineProps({
     time: { type: String, default: '' },
     isActive: { type: Boolean, default: false },
     isFirst: { type: Boolean, default: false },
-    previewHtml: { type: String, default: '' }
+    previewHtml: { type: String, default: '' },
+    roundsCount: { type: Number, default: 1 }
 })
 
-const emit = defineEmits(['select', 'delete', 'export-markdown', 'export-image'])
+const emit = defineEmits(['select', 'delete', 'export-image'])
 
 const menuOpen = ref(false)
 const menuTriggerRef = ref(null)
@@ -66,11 +64,6 @@ function closeMenu() {
 
 function handleDelete() {
     emit('delete')
-    closeMenu()
-}
-
-function handleExportMarkdown() {
-    emit('export-markdown')
     closeMenu()
 }
 
@@ -166,6 +159,16 @@ onUnmounted(() => {
 .history-item.active .history-tag {
     background: rgba(16, 185, 129, 0.2);
     color: var(--color-primary);
+}
+
+.rounds-badge {
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    background: rgba(99, 102, 241, 0.15);
+    color: #6366f1;
+    font-weight: 600;
+    margin-left: 4px;
 }
 
 /* Content Preview */

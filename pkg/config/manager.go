@@ -77,85 +77,71 @@ func (cm *ConfigManager) loadFromFile() error {
 	return nil
 }
 
-func (cm *ConfigManager) mergeConfig(src *Config) {
-	// src is partial or full config from file (pointers)
-	// We want to merge non-nil fields info cm.config (initialized with default)
-
-	// Environment variable overrides file if env is set, but here logic was:
-	// if src.APIKey != "" && env == "" -> set
-	// This logic seems to say: File has priority UNLESS Env is set?
-	// The original code:
-	// if src.APIKey != "" && os.Getenv("GHOST_API_KEY") == "" { cm.config.APIKey = src.APIKey }
-	// Meaning: Use file value only if Env is NOT set. (Env > File)
-	// But `loadFromEnv` already set Env values into `cm.config`.
-	// So if Env was set, `cm.config.APIKey` is already the Env value.
-	// So we should only overwrite if `cm.config.APIKey` was NOT set by Env?
-	// Actually `NewDefaultConfig` sets it to empty.
-	// `loadFromEnv` sets it if Env exists.
-	// So if Env exists, `cm.config.APIKey` is set.
-	// If we blindly apply `src.APIKey` (from file), we overwrite Env.
-	// So we check if Env is empty.
-
-	if src.APIKey != nil && os.Getenv("GHOST_API_KEY") == "" {
-		cm.config.APIKey = src.APIKey
+// copyNonNilFields 将 src 中非 nil 的字段复制到 dst
+// checkEnv 为 true 时，APIKey 和 BaseURL 仅在环境变量未设置时才复制
+func copyNonNilFields(src, dst *Config, checkEnv bool) {
+	if src.APIKey != nil {
+		if !checkEnv || os.Getenv("GHOST_API_KEY") == "" {
+			dst.APIKey = src.APIKey
+		}
 	}
-	if src.BaseURL != nil && os.Getenv("GHOST_BASE_URL") == "" {
-		cm.config.BaseURL = src.BaseURL
-	}
-
-	// For other fields, just overwrite if non-nil
-	if src.Model != nil {
-		cm.config.Model = src.Model
+	if src.BaseURL != nil {
+		if !checkEnv || os.Getenv("GHOST_BASE_URL") == "" {
+			dst.BaseURL = src.BaseURL
+		}
 	}
 	if src.Provider != nil {
-		cm.config.Provider = src.Provider
+		dst.Provider = src.Provider
+	}
+	if src.Model != nil {
+		dst.Model = src.Model
 	}
 	if src.Prompt != nil {
-		cm.config.Prompt = src.Prompt
+		dst.Prompt = src.Prompt
 	}
 	if src.Opacity != nil {
-		cm.config.Opacity = src.Opacity
+		dst.Opacity = src.Opacity
 	}
 	if src.ScreenshotMode != nil {
-		cm.config.ScreenshotMode = src.ScreenshotMode
+		dst.ScreenshotMode = src.ScreenshotMode
 	}
 	if src.CompressionQuality != nil {
-		cm.config.CompressionQuality = src.CompressionQuality
+		dst.CompressionQuality = src.CompressionQuality
 	}
 	if src.Sharpening != nil {
-		cm.config.Sharpening = src.Sharpening
+		dst.Sharpening = src.Sharpening
 	}
-	if src.ResumePath != nil {
-		cm.config.ResumePath = src.ResumePath
-	}
-	if src.ResumeContent != nil {
-		cm.config.ResumeContent = src.ResumeContent
-	}
-
 	if src.Grayscale != nil {
-		cm.config.Grayscale = src.Grayscale
+		dst.Grayscale = src.Grayscale
 	}
 	if src.NoCompression != nil {
-		cm.config.NoCompression = src.NoCompression
+		dst.NoCompression = src.NoCompression
 	}
 	if src.KeepContext != nil {
-		cm.config.KeepContext = src.KeepContext
+		dst.KeepContext = src.KeepContext
 	}
 	if src.InterruptThinking != nil {
-		cm.config.InterruptThinking = src.InterruptThinking
+		dst.InterruptThinking = src.InterruptThinking
+	}
+	if src.ResumePath != nil {
+		dst.ResumePath = src.ResumePath
+	}
+	if src.ResumeContent != nil {
+		dst.ResumeContent = src.ResumeContent
 	}
 	if src.UseMarkdownResume != nil {
-		cm.config.UseMarkdownResume = src.UseMarkdownResume
+		dst.UseMarkdownResume = src.UseMarkdownResume
 	}
-
 	if len(src.Shortcuts) > 0 {
-		if cm.config.Shortcuts == nil {
-			cm.config.Shortcuts = make(map[string]shortcut.KeyBinding) // wait, importing shortcut?
-			// The original code used "maps.Copy(cm.config.Shortcuts, src.Shortcuts)"
-			// NewDefaultConfig initializes Shortcuts map.
+		if dst.Shortcuts == nil {
+			dst.Shortcuts = make(map[string]shortcut.KeyBinding)
 		}
-		maps.Copy(cm.config.Shortcuts, src.Shortcuts)
+		maps.Copy(dst.Shortcuts, src.Shortcuts)
 	}
+}
+
+func (cm *ConfigManager) mergeConfig(src *Config) {
+	copyNonNilFields(src, &cm.config, true)
 }
 
 func (cm *ConfigManager) Save() error {
@@ -214,59 +200,7 @@ func (cm *ConfigManager) UpdateFromJSON(jsonStr string) error {
 }
 
 func (cm *ConfigManager) applyConfig(patch Config) {
-	if patch.APIKey != nil {
-		cm.config.APIKey = patch.APIKey
-	}
-	if patch.Provider != nil {
-		cm.config.Provider = patch.Provider
-	}
-	if patch.BaseURL != nil {
-		cm.config.BaseURL = patch.BaseURL
-	}
-	if patch.Model != nil {
-		cm.config.Model = patch.Model
-	}
-	if patch.Prompt != nil {
-		cm.config.Prompt = patch.Prompt
-	}
-	if patch.Opacity != nil {
-		cm.config.Opacity = patch.Opacity
-	}
-	if patch.ScreenshotMode != nil {
-		cm.config.ScreenshotMode = patch.ScreenshotMode
-	}
-	if patch.CompressionQuality != nil {
-		cm.config.CompressionQuality = patch.CompressionQuality
-	}
-	if patch.Sharpening != nil {
-		cm.config.Sharpening = patch.Sharpening
-	}
-	if patch.Grayscale != nil {
-		cm.config.Grayscale = patch.Grayscale
-	}
-	if patch.NoCompression != nil {
-		cm.config.NoCompression = patch.NoCompression
-	}
-	if patch.KeepContext != nil {
-		cm.config.KeepContext = patch.KeepContext
-	}
-	if patch.InterruptThinking != nil {
-		cm.config.InterruptThinking = patch.InterruptThinking
-	}
-	if patch.ResumePath != nil {
-		cm.config.ResumePath = patch.ResumePath
-	}
-	if patch.ResumeContent != nil {
-		cm.config.ResumeContent = patch.ResumeContent
-	}
-	if patch.UseMarkdownResume != nil {
-		cm.config.UseMarkdownResume = patch.UseMarkdownResume
-	}
-	if patch.Shortcuts != nil {
-		for k, v := range patch.Shortcuts {
-			cm.config.Shortcuts[k] = v
-		}
-	}
+	copyNonNilFields(&patch, &cm.config, false)
 }
 
 func (cm *ConfigManager) Subscribe(callback func(Config)) {

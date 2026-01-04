@@ -11,6 +11,8 @@ import (
 	"Q-Solver/pkg/state"
 	"Q-Solver/pkg/task"
 	"context"
+	"encoding/base64"
+	"os"
 
 	"github.com/wailsapp/wails/v2/pkg/runtime"
 )
@@ -224,6 +226,9 @@ func (a *App) solveInternal(ctx context.Context) bool {
 		return false
 	}
 
+	// 发送用户截图到前端（用于导出图片显示用户输入）
+	a.EmitEvent("user-message", previewResult.Base64)
+
 	req := solution.Request{
 		Config:           cfg,
 		ScreenshotBase64: previewResult.Base64,
@@ -328,4 +333,45 @@ func (a *App) GetModels(apiKey string, baseURL string) ([]string, error) {
 		ctx = context.Background()
 	}
 	return a.llmService.GetModels(ctx, apiKey, baseURL)
+}
+
+// ==================== 导出相关 ====================
+
+// SaveImageToFile 保存图片到文件（弹出文件选择对话框）
+func (a *App) SaveImageToFile(base64Data string) (bool, error) {
+	// 弹出文件保存对话框
+	filename, err := runtime.SaveFileDialog(a.ctx, runtime.SaveDialogOptions{
+		Title:           "保存图片",
+		DefaultFilename: "q-solver-export.png",
+		Filters: []runtime.FileFilter{
+			{DisplayName: "PNG 图片", Pattern: "*.png"},
+		},
+	})
+	if err != nil {
+		return false, err
+	}
+	if filename == "" {
+		return false, nil // 用户取消
+	}
+
+	// 解析 base64 数据
+	// 移除 data:image/png;base64, 前缀
+	const prefix = "data:image/png;base64,"
+	data := base64Data
+	if len(data) > len(prefix) && data[:len(prefix)] == prefix {
+		data = data[len(prefix):]
+	}
+
+	// 解码 base64
+	decoded, err := base64.StdEncoding.DecodeString(data)
+	if err != nil {
+		return false, err
+	}
+
+	// 写入文件
+	if err := os.WriteFile(filename, decoded, 0644); err != nil {
+		return false, err
+	}
+
+	return true, nil
 }
