@@ -109,14 +109,7 @@ func (a *OpenAIAdapter) GenerateContentStream(ctx context.Context, messages []Me
 	stream := a.client.Chat.Completions.NewStreaming(ctx, openai.ChatCompletionNewParams{
 		Model:    a.model,
 		Messages: openaiMessages,
-	}, option.WithJSONSet("extra_body", map[string]any{
-		"google": map[string]any{
-			"thinking_config": map[string]any{
-				"thinking_budget":  -1,
-				"include_thoughts": true,
-			},
-		},
-	}))
+	})
 
 	defer stream.Close()
 

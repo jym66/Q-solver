@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"Q-Solver/pkg/config"
+	"Q-Solver/pkg/logger"
 )
 
 // ProviderType 提供商类型
@@ -75,12 +76,14 @@ func DetectProviderType(baseURL, model string) ProviderType {
 func CreateProvider(providerType ProviderType, apiKey, baseURL, model string) Provider {
 	switch providerType {
 	case ProviderGemini:
-		// TODO: 实现 GeminiAdapter
-		return NewOpenAIAdapter(apiKey, baseURL, model)
+		adapter, _ := NewGeminiAdapter(apiKey, model)
+		logger.Println("创建GeminiAdapter")
+		return adapter
 	case ProviderClaude:
-		// TODO: 实现 ClaudeAdapter
+		logger.Println("创建OpenAIAdapter")
 		return NewOpenAIAdapter(apiKey, baseURL, model)
 	default:
+		logger.Println("创建OpenAIAdapter")
 		return NewOpenAIAdapter(apiKey, baseURL, model)
 	}
 }
