@@ -32,7 +32,7 @@
               <div class="thinking-header" @click="round.thinkingExpanded = !round.thinkingExpanded">
                 <div class="thinking-left">
                   <span class="thinking-icon">💭</span>
-                  <span class="thinking-title">深度思考</span>
+                  <span class="thinking-title">思考中</span>
                   <span class="thinking-duration" v-if="round.thinkingDuration">
                     {{ formatDuration(round.thinkingDuration) }}
                   </span>

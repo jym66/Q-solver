@@ -110,10 +110,10 @@ const PROVIDER_NAMES = {
 }
 
 export const PROVIDER_BASE_URLS = {
-    google: 'https://generativelanguage.googleapis.com/v1beta/openai/',
+    google: 'https://generativelanguage.googleapis.com',
     openai: 'https://api.openai.com/v1',
     deepseek: 'https://api.deepseek.com',
-    anthropic: 'https://api.anthropic.com/v1',
+    anthropic: 'https://api.anthropic.com',
     custom: ''
 }
 
