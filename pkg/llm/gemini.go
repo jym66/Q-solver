@@ -6,24 +6,21 @@ import (
 	"fmt"
 	"strings"
 
+	"Q-Solver/pkg/config"
+
 	"google.golang.org/genai"
 )
 
 // GeminiAdapter Gemini 适配器
 type GeminiAdapter struct {
 	client *genai.Client
-	model  string
-	apiKey string
+	config *config.Config
 }
 
 // NewGeminiAdapter 创建 Gemini 适配器
-func NewGeminiAdapter(apiKey, model string) (*GeminiAdapter, error) {
-	if model == "" {
-		model = "gemini-2.0-flash"
-	}
-
+func NewGeminiAdapter(cfg *config.Config) (*GeminiAdapter, error) {
 	client, err := genai.NewClient(context.Background(), &genai.ClientConfig{
-		APIKey:  apiKey,
+		APIKey:  cfg.GetAPIKey(),
 		Backend: genai.BackendGeminiAPI,
 	})
 	if err != nil {
@@ -32,8 +29,7 @@ func NewGeminiAdapter(apiKey, model string) (*GeminiAdapter, error) {
 
 	return &GeminiAdapter{
 		client: client,
-		model:  model,
-		apiKey: apiKey,
+		config: cfg,
 	}, nil
 }
 
@@ -146,22 +142,37 @@ func parseBase64DataURL(dataURL string) (mimeType string, data []byte) {
 func (a *GeminiAdapter) GenerateContentStream(ctx context.Context, messages []Message, onChunk StreamCallback) (Message, error) {
 	contents, systemInstruction := a.toGeminiContents(messages)
 
-	config := &genai.GenerateContentConfig{
+	model := a.config.GetModel()
+	if model == "" {
+		model = "gemini-2.0-flash"
+	}
+
+	maxTokens := int32(a.config.GetMaxTokens())
+	temp := float32(a.config.GetTemperature())
+	topP := float32(a.config.GetTopP())
+	topK := float32(a.config.GetTopK())
+	thinkingBudget := int32(a.config.GetThinkingBudget())
+
+	genConfig := &genai.GenerateContentConfig{
+		MaxOutputTokens: maxTokens,
+		Temperature:     &temp,
+		TopP:            &topP,
+		TopK:            &topK,
 		ThinkingConfig: &genai.ThinkingConfig{
 			IncludeThoughts: true,
+			ThinkingBudget:  &thinkingBudget,
 		},
 	}
 	if systemInstruction != "" {
-		config.SystemInstruction = &genai.Content{
+		genConfig.SystemInstruction = &genai.Content{
 			Parts: []*genai.Part{{Text: systemInstruction}},
 		}
 	}
 
-	// 使用流式生成
 	var fullContent strings.Builder
 	var fullThinking strings.Builder
 
-	for resp := range a.client.Models.GenerateContentStream(ctx, a.model, contents, config) {
+	for resp := range a.client.Models.GenerateContentStream(ctx, model, contents, genConfig) {
 		if resp == nil {
 			continue
 		}
@@ -219,7 +230,12 @@ func (a *GeminiAdapter) TestChat(ctx context.Context) error {
 		MaxOutputTokens: 1,
 	}
 
-	_, err := a.client.Models.GenerateContent(ctx, a.model, contents, config)
+	model := a.config.GetModel()
+	if model == "" {
+		model = "gemini-2.0-flash"
+	}
+
+	_, err := a.client.Models.GenerateContent(ctx, model, contents, config)
 	return err
 }
 

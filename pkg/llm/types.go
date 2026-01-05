@@ -89,3 +89,40 @@ func ImagePart(base64URL string) ContentPart {
 func PDFPart(base64Data string) ContentPart {
 	return ContentPart{Type: ContentPDF, Base64: "data:application/pdf;base64," + base64Data}
 }
+
+// ParseBase64DataURL 解析 data:xxx;base64,... 格式
+// 返回 MIME 类型和 base64 数据（不含前缀）
+func ParseBase64DataURL(dataURL string) (mimeType string, data string) {
+	if len(dataURL) < 5 || dataURL[:5] != "data:" {
+		return "", ""
+	}
+
+	// 找到 base64, 的位置
+	commaIdx := -1
+	for i := 5; i < len(dataURL); i++ {
+		if dataURL[i] == ',' {
+			commaIdx = i
+			break
+		}
+	}
+	if commaIdx == -1 {
+		return "", ""
+	}
+
+	// 解析 MIME 类型
+	header := dataURL[5:commaIdx] // 去掉 "data:"
+	semicolonIdx := -1
+	for i := 0; i < len(header); i++ {
+		if header[i] == ';' {
+			semicolonIdx = i
+			break
+		}
+	}
+	if semicolonIdx != -1 {
+		mimeType = header[:semicolonIdx]
+	} else {
+		mimeType = header
+	}
+
+	return mimeType, dataURL[commaIdx+1:]
+}

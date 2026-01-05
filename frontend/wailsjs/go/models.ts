@@ -18,6 +18,11 @@ export namespace config {
 	    resumeContent?: string;
 	    useMarkdownResume?: boolean;
 	    shortcuts?: Record<string, shortcut.KeyBinding>;
+	    temperature?: number;
+	    topP?: number;
+	    topK?: number;
+	    maxTokens?: number;
+	    thinkingBudget?: number;
 	
 	    static createFrom(source: any = {}) {
 	        return new Config(source);
@@ -42,6 +47,11 @@ export namespace config {
 	        this.resumeContent = source["resumeContent"];
 	        this.useMarkdownResume = source["useMarkdownResume"];
 	        this.shortcuts = this.convertValues(source["shortcuts"], shortcut.KeyBinding, true);
+	        this.temperature = source["temperature"];
+	        this.topP = source["topP"];
+	        this.topK = source["topK"];
+	        this.maxTokens = source["maxTokens"];
+	        this.thinkingBudget = source["thinkingBudget"];
 	    }
 	
 		convertValues(a: any, classs: any, asMap: boolean = false): any {

@@ -37,12 +37,7 @@ func NewService(cfg *config.Config) *Service {
 // UpdateProvider 更新 Provider（配置变更时调用）
 func (s *Service) UpdateProvider() {
 	providerType := DetectProviderType(s.config.GetBaseURL(), s.config.GetModel())
-	s.provider = CreateProvider(
-		providerType,
-		s.config.GetAPIKey(),
-		s.config.GetBaseURL(),
-		s.config.GetModel(),
-	)
+	s.provider = CreateProvider(providerType, s.config)
 }
 
 // GetProvider 获取当前 Provider
@@ -73,18 +68,18 @@ func DetectProviderType(baseURL, model string) ProviderType {
 }
 
 // CreateProvider 工厂函数：根据类型创建对应 Provider
-func CreateProvider(providerType ProviderType, apiKey, baseURL, model string) Provider {
+func CreateProvider(providerType ProviderType, cfg *config.Config) Provider {
 	switch providerType {
 	case ProviderGemini:
-		adapter, _ := NewGeminiAdapter(apiKey, model)
+		adapter, _ := NewGeminiAdapter(cfg)
 		logger.Println("创建GeminiAdapter")
 		return adapter
 	case ProviderClaude:
-		logger.Println("创建OpenAIAdapter")
-		return NewOpenAIAdapter(apiKey, baseURL, model)
+		logger.Println("创建ClaudeAdapter")
+		return NewClaudeAdapter(cfg)
 	default:
 		logger.Println("创建OpenAIAdapter")
-		return NewOpenAIAdapter(apiKey, baseURL, model)
+		return NewOpenAIAdapter(cfg)
 	}
 }
 
@@ -101,8 +96,14 @@ func (s *Service) TestConnection(ctx context.Context, apiKey, baseURL, model str
 		baseURL = s.config.GetBaseURL()
 	}
 
+	// 创建临时 config 用于测试
+	tempConfig := *s.config
+	tempConfig.APIKey = &apiKey
+	tempConfig.BaseURL = &baseURL
+	tempConfig.Model = &model
+
 	providerType := DetectProviderType(baseURL, model)
-	tempProvider := CreateProvider(providerType, apiKey, baseURL, model)
+	tempProvider := CreateProvider(providerType, &tempConfig)
 
 	timeoutCtx, cancel := context.WithTimeout(ctx, 15*time.Second)
 	defer cancel()
@@ -126,8 +127,12 @@ func (s *Service) GetModels(ctx context.Context, apiKey string, baseURL string) 
 
 	// 如果提供了临时参数，使用临时 provider
 	if apiKey != s.config.GetAPIKey() || baseURL != s.config.GetBaseURL() {
+		tempConfig := *s.config
+		tempConfig.APIKey = &apiKey
+		tempConfig.BaseURL = &baseURL
+
 		providerType := DetectProviderType(baseURL, s.config.GetModel())
-		tempProvider := CreateProvider(providerType, apiKey, baseURL, s.config.GetModel())
+		tempProvider := CreateProvider(providerType, &tempConfig)
 		return tempProvider.GetModels(ctx)
 	}
 

@@ -24,6 +24,13 @@ type Config struct {
 	ResumeContent      *string                        `json:"resumeContent,omitempty"`
 	UseMarkdownResume  *bool                          `json:"useMarkdownResume,omitempty"`
 	Shortcuts          map[string]shortcut.KeyBinding `json:"shortcuts,omitempty"`
+
+	// LLM 生成参数
+	Temperature    *float64 `json:"temperature,omitempty"`    // 0.0 - 2.0
+	TopP           *float64 `json:"topP,omitempty"`           // 0.0 - 1.0
+	TopK           *int     `json:"topK,omitempty"`           // 1 - 100
+	MaxTokens      *int     `json:"maxTokens,omitempty"`      // 1 - 200000
+	ThinkingBudget *int     `json:"thinkingBudget,omitempty"` // 思考预算 token 数
 }
 
 const DefaultModel = "gemini-2.5-flash"
@@ -58,7 +65,14 @@ func NewDefaultConfig() Config {
 			"scroll_up":    {ComboID: "33+164", KeyName: "Alt+PgUp"},
 			"scroll_down":  {ComboID: "34+164", KeyName: "Alt+PgDn"},
 		},
-		Provider: ptr("google"), // Default provider
+		Provider: ptr("google"),
+
+		// LLM 生成参数默认值
+		Temperature:    ptr(1.0),
+		TopP:           ptr(0.95),
+		TopK:           ptr(40),
+		MaxTokens:      ptr(8192),
+		ThinkingBudget: ptr(16000),
 	}
 }
 
@@ -202,4 +216,40 @@ func (c Config) GetUseMarkdownResume() bool {
 		return false
 	}
 	return *c.UseMarkdownResume
+}
+
+// LLM 生成参数 Getters
+func (c Config) GetTemperature() float64 {
+	if c.Temperature == nil {
+		return 1.0
+	}
+	return *c.Temperature
+}
+
+func (c Config) GetTopP() float64 {
+	if c.TopP == nil {
+		return 0.95
+	}
+	return *c.TopP
+}
+
+func (c Config) GetTopK() int {
+	if c.TopK == nil {
+		return 40
+	}
+	return *c.TopK
+}
+
+func (c Config) GetMaxTokens() int {
+	if c.MaxTokens == nil {
+		return 8192
+	}
+	return *c.MaxTokens
+}
+
+func (c Config) GetThinkingBudget() int {
+	if c.ThinkingBudget == nil {
+		return 16000
+	}
+	return *c.ThinkingBudget
 }

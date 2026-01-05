@@ -11,8 +11,8 @@
             常规设置</div>
           <div class="tab" :class="{ active: activeTab === 'model' }" @click="activeTab = 'model'">模型设置
           </div>
-          <div class="tab" :class="{ active: activeTab === 'screenshot' }"
-            @click="activeTab = 'screenshot'">截图设置</div>
+          <div class="tab" :class="{ active: activeTab === 'params' }" @click="activeTab = 'params'">生成参数</div>
+          <div class="tab" :class="{ active: activeTab === 'screenshot' }" @click="activeTab = 'screenshot'">截图设置</div>
           <div class="tab" :class="{ active: activeTab === 'resume' }" @click="activeTab = 'resume'">
             简历设置</div>
           <div class="tab" :class="{ active: activeTab === 'account' }" @click="activeTab = 'account'">
@@ -42,8 +42,7 @@
                 </button>
               </div>
             </div>
-            <ModelSelect v-model="tempSettings.model" :models="availableModels"
-              :loading="isLoadingModels" />
+            <ModelSelect v-model="tempSettings.model" :models="availableModels" :loading="isLoadingModels" />
 
             <!-- 连通性测试结果 -->
             <div v-if="connectionStatus" class="connection-status" :class="connectionStatus.type">
@@ -60,11 +59,10 @@
             <div class="prompt-header">
               <label for="prompt-text" style="margin-bottom: 0">系统提示词 (Prompt)</label>
               <div class="prompt-tabs">
-                <div class="prompt-tab" :class="{ active: promptTab === 'edit' }"
-                  @click="promptTab = 'edit'">编辑
+                <div class="prompt-tab" :class="{ active: promptTab === 'edit' }" @click="promptTab = 'edit'">编辑
                 </div>
-                <div class="prompt-tab" :class="{ active: promptTab === 'preview' }"
-                  @click="promptTab = 'preview'">预览</div>
+                <div class="prompt-tab" :class="{ active: promptTab === 'preview' }" @click="promptTab = 'preview'">预览
+                </div>
               </div>
             </div>
 
@@ -74,6 +72,12 @@
             <div v-show="promptTab === 'preview'" class="prompt-preview markdown-body" v-html="renderedPrompt">
             </div>
           </div>
+        </div>
+
+        <div v-show="activeTab === 'params'">
+          <LLMParamsConfig v-model:temperature="tempSettings.temperature" v-model:topP="tempSettings.topP"
+            v-model:topK="tempSettings.topK" v-model:maxTokens="tempSettings.maxTokens"
+            v-model:thinkingBudget="tempSettings.thinkingBudget" />
         </div>
 
         <div v-show="activeTab === 'general'">
@@ -121,10 +125,8 @@
           <ResumeImport :resumePath="tempSettings.resumePath" :rawContent="resumeRawContent"
             :isParsing="isResumeParsing" :currentModel="tempSettings.model"
             v-model:useMarkdownResume="tempSettings.useMarkdownResume"
-            @update:rawContent="$emit('update:resumeRawContent', $event)" 
-            @select-resume="$emit('select-resume')"
-            @clear-resume="$emit('clear-resume')" 
-            @parse-resume="$emit('parse-resume')" />
+            @update:rawContent="$emit('update:resumeRawContent', $event)" @select-resume="$emit('select-resume')"
+            @clear-resume="$emit('clear-resume')" @parse-resume="$emit('parse-resume')" />
         </div>
       </div>
       <div class="modal-footer">
@@ -140,6 +142,7 @@ import ResumeImport from './ResumeImport.vue'
 import ScreenshotSettings from './ScreenshotSettings.vue'
 import ProviderSelect from './ProviderSelect.vue'
 import ModelSelect from './ModelSelect.vue'
+import LLMParamsConfig from './LLMParamsConfig.vue'
 
 const props = defineProps({
   show: Boolean,
