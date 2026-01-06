@@ -70,6 +70,10 @@ export function SelectResume() {
   return window['go']['main']['App']['SelectResume']();
 }
 
+export function StartLiveSession() {
+  return window['go']['main']['App']['StartLiveSession']();
+}
+
 export function StartRecordingKey(arg1) {
   return window['go']['main']['App']['StartRecordingKey'](arg1);
 }

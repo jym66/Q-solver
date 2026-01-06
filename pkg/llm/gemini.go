@@ -183,6 +183,8 @@ func (a *GeminiAdapter) GenerateContentStream(ctx context.Context, messages []Me
 
 	var fullContent strings.Builder
 	var fullThinking strings.Builder
+	// s,_:=a.client.Live.Connect(ctx,"",nil)
+	// s.Receive()
 	for resp := range a.client.Models.GenerateContentStream(ctx, model, contents, genConfig) {
 		if resp == nil {
 			continue

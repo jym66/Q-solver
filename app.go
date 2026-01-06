@@ -179,6 +179,13 @@ func (a *App) RemoveFocus() {
 // TriggerSolve 触发解题（快捷键调用）
 func (a *App) TriggerSolve() {
 	cfg := a.configManager.Get()
+
+	// Live 模式下禁用手动截图
+	if cfg.GetUseLiveApi() {
+		a.EmitEvent("toast", "当前模式不支持手动截图")
+		return
+	}
+
 	if cfg.GetAPIKey() == "" {
 		a.EmitEvent("require-login")
 		return
@@ -374,4 +381,90 @@ func (a *App) SaveImageToFile(base64Data string) (bool, error) {
 	}
 
 	return true, nil
+}
+
+// ==================== Live API ====================
+
+// StartLiveSession 启动 Live API 会话
+func (a *App) StartLiveSession() error {
+	cfg := a.configManager.Get()
+
+	// 检查 Provider 是否支持 Live
+	provider := a.llmService.GetProvider()
+	liveProvider, ok := provider.(llm.LiveProvider)
+	if !ok {
+		a.EmitEvent("live:error", "当前模型不支持 Live API")
+		return nil
+	}
+
+	a.EmitEvent("live:status", "connecting")
+
+	// 连接 Live Session
+	liveCfg := llm.GetLiveConfig(&cfg)
+	session, err := liveProvider.ConnectLive(a.ctx, liveCfg)
+	if err != nil {
+		a.EmitEvent("live:status", "error")
+		a.EmitEvent("live:error", err.Error())
+		return err
+	}
+
+	a.EmitEvent("live:status", "connected")
+
+	// 启动接收协程
+	go a.liveReceiveLoop(session)
+
+	return nil
+}
+
+// liveReceiveLoop 接收 Live 消息的循环
+func (a *App) liveReceiveLoop(session llm.LiveSession) {
+	defer session.Close()
+
+	for {
+		msg, err := session.Receive()
+		if err != nil {
+			a.EmitEvent("live:status", "disconnected")
+			return
+		}
+		if msg == nil {
+			continue
+		}
+
+		switch msg.Type {
+		case llm.LiveMsgTranscript:
+			a.EmitEvent("live:transcript", msg.Text)
+		case llm.LiveMsgAIText:
+			a.EmitEvent("live:ai-text", msg.Text)
+		case llm.LiveMsgToolCall:
+			if msg.ToolName == "get_screenshot" {
+				a.handleLiveScreenshot(session, msg.ToolID)
+			}
+		case llm.LiveMsgDone:
+			a.EmitEvent("live:done")
+		case llm.LiveMsgError:
+			a.EmitEvent("live:error", msg.Text)
+		}
+	}
+}
+
+// handleLiveScreenshot 处理 Live API 的截图请求
+func (a *App) handleLiveScreenshot(session llm.LiveSession, toolID string) {
+	cfg := a.configManager.Get()
+
+	preview, err := a.GetScreenshotPreview(
+		cfg.GetCompressionQuality(),
+		cfg.GetSharpening(),
+		cfg.GetGrayscale(),
+		cfg.GetNoCompression(),
+		cfg.GetScreenshotMode(),
+	)
+	if err != nil {
+		logger.Printf("Live 截图失败: %v", err)
+		_ = session.SendToolResponse(toolID, "截图失败: "+err.Error())
+		return
+	}
+
+	// 发送截图结果给模型
+	_ = session.SendToolResponse(toolID, preview.Base64)
+	logger.Println("Live: 已发送屏幕截图给模型")
 }

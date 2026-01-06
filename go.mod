@@ -4,6 +4,7 @@ go 1.24.1
 
 require (
 	github.com/anthropics/anthropic-sdk-go v1.19.0
+	github.com/gen2brain/malgo v0.11.24
 	github.com/kbinani/screenshot v0.0.0-20250624051815-089614a94018
 	github.com/openai/openai-go v1.12.0
 	github.com/wailsapp/wails/v2 v2.11.0

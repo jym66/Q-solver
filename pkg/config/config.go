@@ -31,6 +31,9 @@ type Config struct {
 	TopK           *int     `json:"topK,omitempty"`           // 1 - 100
 	MaxTokens      *int     `json:"maxTokens,omitempty"`      // 1 - 200000
 	ThinkingBudget *int     `json:"thinkingBudget,omitempty"` // 思考预算 token 数
+
+	// Live API
+	UseLiveApi *bool `json:"useLiveApi,omitempty"` // 启用 Live API 模式
 }
 
 const DefaultModel = "gemini-2.5-flash"
@@ -73,6 +76,9 @@ func NewDefaultConfig() Config {
 		TopK:           ptr(40),
 		MaxTokens:      ptr(8192),
 		ThinkingBudget: ptr(16000),
+
+		// Live API
+		UseLiveApi: ptr(false),
 	}
 }
 
@@ -252,4 +258,11 @@ func (c Config) GetThinkingBudget() int {
 		return 16000
 	}
 	return *c.ThinkingBudget
+}
+
+func (c Config) GetUseLiveApi() bool {
+	if c.UseLiveApi == nil {
+		return false
+	}
+	return *c.UseLiveApi
 }

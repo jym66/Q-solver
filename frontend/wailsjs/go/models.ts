@@ -23,6 +23,7 @@ export namespace config {
 	    topK?: number;
 	    maxTokens?: number;
 	    thinkingBudget?: number;
+	    useLiveApi?: boolean;
 	
 	    static createFrom(source: any = {}) {
 	        return new Config(source);
@@ -52,6 +53,7 @@ export namespace config {
 	        this.topK = source["topK"];
 	        this.maxTokens = source["maxTokens"];
 	        this.thinkingBudget = source["thinkingBudget"];
+	        this.useLiveApi = source["useLiveApi"];
 	    }
 	
 		convertValues(a: any, classs: any, asMap: boolean = false): any {

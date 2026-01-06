@@ -37,6 +37,8 @@ export function ScrollContent(arg1:string):Promise<void>;
 
 export function SelectResume():Promise<string>;
 
+export function StartLiveSession():Promise<void>;
+
 export function StartRecordingKey(arg1:string):Promise<void>;
 
 export function StopRecordingKey():Promise<void>;

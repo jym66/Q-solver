@@ -1,5 +1,9 @@
 package llm
 
+import (
+	"context"
+)
+
 // ChunkType 流式输出块类型
 type ChunkType string
 
@@ -125,4 +129,44 @@ func ParseBase64DataURL(dataURL string) (mimeType string, data string) {
 	}
 
 	return mimeType, dataURL[commaIdx+1:]
+}
+
+// ==================== Live API Types ====================
+
+// LiveMessageType 实时消息类型
+type LiveMessageType string
+
+const (
+	LiveMsgTranscript LiveMessageType = "transcript" // 面试官语音转录
+	LiveMsgAIText     LiveMessageType = "ai_text"    // AI 文本回复
+	LiveMsgToolCall   LiveMessageType = "tool_call"  // 工具调用请求
+	LiveMsgDone       LiveMessageType = "done"       // 对话轮完成
+	LiveMsgError      LiveMessageType = "error"      // 错误
+)
+
+// LiveMessage 实时消息
+type LiveMessage struct {
+	Type     LiveMessageType `json:"type"`
+	Text     string          `json:"text,omitempty"`
+	ToolName string          `json:"toolName,omitempty"` // 工具名称 (如 get_screenshot)
+	ToolID   string          `json:"toolId,omitempty"`   // 工具调用 ID
+}
+
+// LiveConfig 实时会话配置
+type LiveConfig struct {
+	Model             string
+	SystemInstruction string
+}
+
+// LiveSession 实时会话接口
+type LiveSession interface {
+	SendAudio(data []byte) error
+	Receive() (*LiveMessage, error)
+	SendToolResponse(toolID string, result string) error
+	Close() error
+}
+
+// LiveProvider 支持实时对话的 Provider 可选接口
+type LiveProvider interface {
+	ConnectLive(ctx context.Context, cfg *LiveConfig) (LiveSession, error)
 }
