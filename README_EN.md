@@ -51,6 +51,12 @@ Designed for high-focus or written test environments. When activated:
 - **Resume Assistant**: Import PDF/Markdown resumes, and the AI generates personalized answers based on your background (ideal for mock interviews and resume polishing).
 - **Smart Memory**: Supports multi-turn conversation context, automatically clearing when a new topic starts.
 
+### 🎙️ Gemini Live API (Experimental)
+- **Real-time Voice Conversation**: Supports bidirectional real-time voice calls with Gemini models, providing an ultra-low latency interaction experience.
+- **Interviewer Mode**: Simulates real technical interview scenarios, transcribing interviewer questions in real-time, with AI providing instant answer suggestions.
+- **Note**: This feature is currently in an **experimental stage**. Connection instability or audio interruptions may occur due to network conditions.
+- **Supported Models**: Please select `gemini-2.0-flash-exp`.
+
 ### ⚡ Extreme Performance
 - **Go + Wails**: Modern tech stack with native-level performance and extremely low memory footprint.
 - **Vue 3 Frontend**: Responsive, modern UI that is smooth and fluid.
