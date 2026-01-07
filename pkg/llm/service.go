@@ -34,7 +34,7 @@ func NewService(cfg *config.Config, cm *config.ConfigManager) *Service {
 	s.UpdateProvider()
 
 	// 自注册配置变更回调
-	cm.Subscribe(func(c config.Config) {
+	cm.Subscribe(func(NewConfig config.Config,oldConfig config.Config) {
 		s.UpdateProvider()
 		logger.Println("LLM Provider 已更新")
 	})

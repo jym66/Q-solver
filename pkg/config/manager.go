@@ -1,25 +1,28 @@
 package config
 
 import (
+	"Q-Solver/pkg/logger"
 	"encoding/json"
 	"fmt"
 	"os"
 	"path/filepath"
 	"sync"
-	"Q-Solver/pkg/logger"
 )
 
 type ConfigManager struct {
 	config      Config
 	mu          sync.RWMutex
 	configPath  string
-	subscribers []func(Config)
+	oldConfig   Config // 这是老配置
+	subscribers []func(NewConfig Config,oldConfig Config)
+	
 }
 
 func NewConfigManager() *ConfigManager {
 	cm := &ConfigManager{
 		config:      NewDefaultConfig(),
-		subscribers: make([]func(Config), 0),
+		oldConfig:   NewDefaultConfig(),
+		subscribers: make([]func(NewConfig Config,oldConfig Config), 0),
 	}
 	cm.configPath = cm.getConfigPath()
 	return cm
@@ -92,20 +95,22 @@ func (cm *ConfigManager) UpdateFromJSON(jsonStr string) error {
 	}
 
 	cm.mu.Lock()
+	cm.oldConfig = cm.config//保存当前配置为之前的配置
 	cm.config = newConfig
 	configCopy := cm.config
+	oldConfigCopy:=cm.oldConfig
 	subscribers := cm.subscribers
 	cm.mu.Unlock()
 
 	// 通知订阅者
 	for _, sub := range subscribers {
-		sub(configCopy)
+		sub(configCopy,oldConfigCopy)
 	}
 
 	return cm.Save()
 }
 
-func (cm *ConfigManager) Subscribe(callback func(Config)) {
+func (cm *ConfigManager) Subscribe(callback func(NewConfig Config,oldConfig Config)) {
 	cm.mu.Lock()
 	defer cm.mu.Unlock()
 	cm.subscribers = append(cm.subscribers, callback)

@@ -80,8 +80,8 @@ func (a *App) Startup(ctx context.Context) {
 
 	// 初始化快捷键服务
 	a.shortcutService = shortcut.NewService(a, a.configManager.Get().Shortcuts, func(callback func(map[string]shortcut.KeyBinding)) {
-		a.configManager.Subscribe(func(cfg config.Config) {
-			callback(cfg.Shortcuts)
+		a.configManager.Subscribe(func(NewConfig config.Config, oldConfig config.Config) {
+			callback(NewConfig.Shortcuts)
 		})
 	})
 	a.shortcutService.Start()
@@ -96,27 +96,27 @@ func (a *App) Startup(ctx context.Context) {
 }
 
 // onConfigChanged 配置变更回调 - 仅处理需要 app 层处理的逻辑
-func (a *App) onConfigChanged(cfg config.Config) {
+func (a *App) onConfigChanged(NewConfig config.Config, oldConfig config.Config) {
 	// 更新 solver 的 provider
 	if a.solver != nil {
 		a.solver.SetProvider(a.llmService.GetProvider())
 	}
 
 	// 如果关闭了上下文，清空历史
-	if !cfg.KeepContext && a.solver != nil {
+	if !NewConfig.KeepContext && a.solver != nil {
 		a.solver.ClearHistory()
 	}
 
-	//关闭liveApi模式
-	// if cfg.UseLiveApi == false && a.liveSession != nil {
-	// 	a.StopLiveSession()
-	// }
-	// 如果 Live Session 正在运行，则重连
-	if cfg.UseLiveApi == true && a.liveSession != nil {
-		logger.Println("配置变更，重连 Live Session...")
-		a.StopLiveSession()
-		if err := a.StartLiveSession(); err != nil {
-			logger.Printf("Live Session 重连失败: %v", err)
+	if NewConfig.UseLiveApi != oldConfig.UseLiveApi {
+		if NewConfig.UseLiveApi == true && a.liveSession != nil {
+			logger.Println("配置变更，重连 Live Session...")
+			a.StopLiveSession()
+			if err := a.StartLiveSession(); err != nil {
+				logger.Printf("Live Session 重连失败: %v", err)
+			}
+		}
+		if NewConfig.UseLiveApi == false && a.liveSession != nil {
+			a.StopLiveSession()
 		}
 	}
 
