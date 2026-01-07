@@ -25,7 +25,13 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
     sharpening: 0,
     grayscale: true,
     noCompression: false,
-    useLiveApi: false
+    useLiveApi: false,
+    // LLM 生成参数
+    temperature: 1.0,
+    topP: 0.95,
+    topK: 40,
+    maxTokens: 8192,
+    thinkingBudget: 16000
   })
 
   // 临时编辑的配置（用于设置面板）
@@ -108,6 +114,12 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
     settings.useMarkdownResume = config.useMarkdownResume || false
     settings.screenshotMode = config.screenshotMode || 'window'
     settings.useLiveApi = config.useLiveApi || false
+    // LLM 生成参数
+    settings.temperature = config.temperature !== undefined ? config.temperature : 1.0
+    settings.topP = config.topP !== undefined ? config.topP : 0.95
+    settings.topK = config.topK !== undefined ? config.topK : 40
+    settings.maxTokens = config.maxTokens !== undefined ? config.maxTokens : 8192
+    settings.thinkingBudget = config.thinkingBudget !== undefined ? config.thinkingBudget : 16000
 
     // 透明度转换：opacity 来自后端，默认 1.0（完全不透明）
     // transparency = 1 - opacity，所以 opacity=1 时 transparency=0
@@ -228,6 +240,12 @@ export function useSettings(shortcuts, tempShortcuts, uiState, callbacks) {
         useMarkdownResume: tempSettings.useMarkdownResume,
         provider: tempSettings.provider,
         useLiveApi: tempSettings.useLiveApi,
+        // LLM 生成参数
+        temperature: tempSettings.temperature,
+        topP: tempSettings.topP,
+        topK: tempSettings.topK,
+        maxTokens: tempSettings.maxTokens,
+        thinkingBudget: tempSettings.thinkingBudget,
         shortcuts: tempShortcuts
       }
 
