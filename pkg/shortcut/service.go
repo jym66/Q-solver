@@ -11,7 +11,10 @@ type Service struct {
 	delegate ServiceDelegate
 }
 
-func NewService(delegate ServiceDelegate) *Service {
+// SubscribeFunc 配置变更订阅函数类型
+type SubscribeFunc func(callback func(shortcuts map[string]KeyBinding))
+
+func NewService(delegate ServiceDelegate, initialShortcuts map[string]KeyBinding, subscribe SubscribeFunc) *Service {
 	s := &Service{
 		manager:  NewManager(),
 		delegate: delegate,
@@ -20,6 +23,16 @@ func NewService(delegate ServiceDelegate) *Service {
 	s.manager.OnRecord = s.handleRecord
 	s.manager.OnRecordingComplete = s.handleRecordingComplete
 	s.manager.OnError = func(msg string) {}
+
+	// 初始化快捷键
+	maps.Copy(s.manager.Shortcuts, initialShortcuts)
+
+	// 自注册配置变更回调
+	subscribe(func(shortcuts map[string]KeyBinding) {
+		maps.Copy(s.manager.Shortcuts, shortcuts)
+		logger.Println("快捷键配置已更新")
+	})
+
 	return s
 }
 

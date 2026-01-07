@@ -27,11 +27,18 @@ type Service struct {
 }
 
 // NewService 创建 LLM 服务
-func NewService(cfg *config.Config) *Service {
+func NewService(cfg *config.Config, cm *config.ConfigManager) *Service {
 	s := &Service{
 		config: cfg,
 	}
 	s.UpdateProvider()
+
+	// 自注册配置变更回调
+	cm.Subscribe(func(c config.Config) {
+		s.UpdateProvider()
+		logger.Println("LLM Provider 已更新")
+	})
+
 	return s
 }
 

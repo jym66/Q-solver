@@ -70,19 +70,22 @@ func (a *App) Startup(ctx context.Context) {
 	a.screenService.Startup(ctx)
 
 	// 初始化 LLM 服务
-	a.llmService = llm.NewService(a.configManager.GetPtr())
+	a.llmService = llm.NewService(a.configManager.GetPtr(), a.configManager)
 	a.solver = solution.NewSolver(a.llmService.GetProvider())
 
 	// 初始化简历服务
 	a.resumeService = resume.NewService(a.configManager.GetPtr())
 
 	// 初始化快捷键服务
-	a.shortcutService = shortcut.NewService(a)
-	a.shortcutService.SetShortcuts(a.configManager.Get().Shortcuts)
+	a.shortcutService = shortcut.NewService(a, a.configManager.Get().Shortcuts, func(callback func(map[string]shortcut.KeyBinding)) {
+		a.configManager.Subscribe(func(cfg config.Config) {
+			callback(cfg.Shortcuts)
+		})
+	})
 	a.shortcutService.Start()
 	logger.Println("快捷键服务已初始化")
 
-	// 订阅配置变更
+	// 订阅配置变更 - 用于 solver 和其他特殊逻辑
 	a.configManager.Subscribe(a.onConfigChanged)
 	logger.Println("配置变更订阅已注册")
 
@@ -90,16 +93,12 @@ func (a *App) Startup(ctx context.Context) {
 	a.stateManager.UpdateInitStatus(state.StatusReady)
 }
 
-// onConfigChanged 配置变更回调
+// onConfigChanged 配置变更回调 - 仅处理需要 app 层处理的逻辑
 func (a *App) onConfigChanged(cfg config.Config) {
-	// 更新 LLM Provider
-	a.llmService.UpdateProvider()
+	// 更新 solver 的 provider
 	if a.solver != nil {
 		a.solver.SetProvider(a.llmService.GetProvider())
 	}
-
-	// 更新快捷键
-	a.shortcutService.SetShortcuts(cfg.Shortcuts)
 
 	// 如果关闭了上下文，清空历史
 	if !cfg.KeepContext && a.solver != nil {
