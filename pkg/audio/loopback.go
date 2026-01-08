@@ -31,7 +31,7 @@ func NewLoopbackCapture(onData func([]byte)) (*LoopbackCapture, error) {
 	return &LoopbackCapture{
 		ctx:         ctx,
 		onData:      onData,
-		audioBuffer: make([]byte, buffsize*2), //多申请一些防止频繁扩容
+		audioBuffer: make([]byte, 0,buffsize*2), //多申请一些防止频繁扩容
 	}, nil
 }
 

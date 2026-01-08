@@ -14,7 +14,7 @@ type GeminiLiveSession struct {
 }
 
 // ConnectLive 实现 LiveProvider 接口
-func (a *GeminiAdapter) ConnectLive(ctx context.Context, cfg *LiveConfig, config *config.Config) (LiveSession, error) {
+func (a *GeminiAdapter) ConnectLive(ctx context.Context, cfg *LiveConfig) (LiveSession, error) {
 	// Live API 只支持特定模型，用户配置的模型可能不支持 bidiGenerateContent
 	model := cfg.Model
 	if model == "" {
@@ -31,17 +31,20 @@ func (a *GeminiAdapter) ConnectLive(ctx context.Context, cfg *LiveConfig, config
 		},
 	}
 
-	// 连接配置
+	// 连接配置，使用 LiveConfig 中的参数
 	connectCfg := &genai.LiveConnectConfig{
 		Tools:                    []*genai.Tool{screenshotTool},
 		ResponseModalities:       []genai.Modality{genai.ModalityAudio},
-		MaxOutputTokens:          int32(config.MaxTokens),
-		Temperature:              toFloat32Ptr(config.Temperature),
-		TopP:                     toFloat32Ptr(config.TopP),
-		TopK:                     intToFloat32Ptr(config.TopK),
+		MaxOutputTokens:          int32(cfg.MaxTokens),
+		Temperature:              toFloat32Ptr(cfg.Temperature),
+		TopP:                     toFloat32Ptr(cfg.TopP),
+		TopK:                     intToFloat32Ptr(cfg.TopK),
 		InputAudioTranscription:  &genai.AudioTranscriptionConfig{},
 		SpeechConfig:             &genai.SpeechConfig{},
 		OutputAudioTranscription: &genai.AudioTranscriptionConfig{},
+		RealtimeInputConfig: &genai.RealtimeInputConfig{
+			ActivityHandling: genai.ActivityHandlingNoInterruption,
+		},
 	}
 
 	instructionText := cfg.SystemInstruction
@@ -84,9 +87,6 @@ func (s *GeminiLiveSession) Receive() (*LiveMessage, error) {
 func (s *GeminiLiveSession) convertMessage(msg *genai.LiveServerMessage) *LiveMessage {
 	if msg == nil {
 		return nil
-	}
-	if msg.ServerContent != nil && msg.ServerContent.Interrupted {
-		return &LiveMessage{Type: LiveInterrupted, Text: "检测到面试官说话(已打断当前回复)"}
 	}
 	// 输入音频转录 (面试官说话的文字)
 	if msg.ServerContent != nil && msg.ServerContent.InputTranscription != nil {
@@ -175,10 +175,14 @@ func SupportsLive(p Provider) bool {
 }
 
 // GetLiveConfig 从配置创建 LiveConfig
-func GetLiveConfig(cfg *config.Config) *LiveConfig {
+func GetLiveConfig(cfg config.Config) *LiveConfig {
 	return &LiveConfig{
 		Model:             cfg.Model,
 		SystemInstruction: cfg.Prompt,
+		MaxTokens:         cfg.MaxTokens,
+		Temperature:       cfg.Temperature,
+		TopP:              cfg.TopP,
+		TopK:              cfg.TopK,
 	}
 }
 

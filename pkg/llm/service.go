@@ -22,19 +22,20 @@ const (
 
 // Service LLM 服务
 type Service struct {
-	config   *config.Config
+	config   config.Config // 存储配置副本，不是指针
 	provider Provider
 }
 
 // NewService 创建 LLM 服务
-func NewService(cfg *config.Config, cm *config.ConfigManager) *Service {
+func NewService(cfg config.Config, cm *config.ConfigManager) *Service {
 	s := &Service{
-		config: cfg,
+		config: cfg, // 存储配置副本
 	}
 	s.UpdateProvider()
 
 	// 自注册配置变更回调
-	cm.Subscribe(func(NewConfig config.Config,oldConfig config.Config) {
+	cm.Subscribe(func(NewConfig config.Config, oldConfig config.Config) {
+		s.config = NewConfig // 更新配置副本
 		s.UpdateProvider()
 		logger.Println("LLM Provider 已更新")
 	})
@@ -45,7 +46,7 @@ func NewService(cfg *config.Config, cm *config.ConfigManager) *Service {
 // UpdateProvider 更新 Provider（配置变更时调用）
 func (s *Service) UpdateProvider() {
 	providerType := DetectProviderType(s.config.Provider)
-	s.provider = CreateProvider(providerType, s.config)
+	s.provider = CreateProvider(providerType, &s.config) // 传递配置的指针给 Provider
 }
 
 // GetProvider 获取当前 Provider
@@ -101,7 +102,7 @@ func (s *Service) TestConnection(ctx context.Context, apiKey, baseURL, model str
 	}
 
 	// 创建临时 config 用于测试
-	tempConfig := *s.config
+	tempConfig := s.config
 	tempConfig.APIKey = apiKey
 	tempConfig.BaseURL = baseURL
 	tempConfig.Model = model
@@ -131,7 +132,7 @@ func (s *Service) GetModels(ctx context.Context, apiKey string, baseURL string) 
 
 	// 如果提供了临时参数，使用临时 provider
 	if apiKey != s.config.APIKey || baseURL != s.config.BaseURL {
-		tempConfig := *s.config
+		tempConfig := s.config
 		tempConfig.APIKey = apiKey
 		tempConfig.BaseURL = baseURL
 

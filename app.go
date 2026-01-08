@@ -13,6 +13,7 @@ import (
 	"Q-Solver/pkg/task"
 	"context"
 	"encoding/base64"
+	"encoding/json"
 	"os"
 	"strings"
 	"sync"
@@ -72,11 +73,11 @@ func (a *App) Startup(ctx context.Context) {
 	a.screenService.Startup(ctx)
 
 	// 初始化 LLM 服务
-	a.llmService = llm.NewService(a.configManager.GetPtr(), a.configManager)
+	a.llmService = llm.NewService(a.configManager.Get(), a.configManager)
 	a.solver = solution.NewSolver(a.llmService.GetProvider())
 
 	// 初始化简历服务
-	a.resumeService = resume.NewService(a.configManager.GetPtr())
+	a.resumeService = resume.NewService(a.configManager.Get(), a.configManager)
 
 	// 初始化快捷键服务
 	a.shortcutService = shortcut.NewService(a, a.configManager.Get().Shortcuts, func(callback func(map[string]shortcut.KeyBinding)) {
@@ -309,7 +310,13 @@ func (a *App) CopyCode() {
 func (a *App) SelectResume() string {
 	path := a.resumeService.SelectResume(a.ctx)
 	if path != "" {
-		a.configManager.GetPtr().ResumePath = path
+		// 获取配置副本，修改后保存
+		cfg := a.configManager.Get()
+		cfg.ResumePath = path
+		// 序列化并更新配置
+		if jsonData, err := json.Marshal(cfg); err == nil {
+			_ = a.configManager.UpdateFromJSON(string(jsonData))
+		}
 	}
 	return path
 }
@@ -317,10 +324,15 @@ func (a *App) SelectResume() string {
 // ClearResume 清除简历
 func (a *App) ClearResume() {
 	a.resumeService.ClearResume()
-	cfg := a.configManager.GetPtr()
+	// 获取配置副本，修改后保存
+	cfg := a.configManager.Get()
 	cfg.ResumePath = ""
 	cfg.ResumeBase64 = ""
 	cfg.ResumeContent = ""
+	// 序列化并更新配置
+	if jsonData, err := json.Marshal(cfg); err == nil {
+		_ = a.configManager.UpdateFromJSON(string(jsonData))
+	}
 }
 
 // GetResumePDF 获取简历 Base64
@@ -426,8 +438,8 @@ func (a *App) StartLiveSession() error {
 	a.EmitEvent("live:status", "connecting")
 
 	// 连接 Live Session
-	liveCfg := llm.GetLiveConfig(&cfg)
-	session, err := liveProvider.ConnectLive(a.ctx, liveCfg, a.configManager.GetPtr())
+	liveCfg := llm.GetLiveConfig(cfg)
+	session, err := liveProvider.ConnectLive(a.ctx, liveCfg)
 	if err != nil {
 		logger.Println("liveApi连接服务器失败", err)
 		a.EmitEvent("live:status", "error")

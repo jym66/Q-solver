@@ -1,7 +1,6 @@
 package llm
 
 import (
-	"Q-Solver/pkg/config"
 	"context"
 )
 
@@ -159,6 +158,11 @@ type LiveMessage struct {
 type LiveConfig struct {
 	Model             string
 	SystemInstruction string
+	// 模型参数
+	MaxTokens   int
+	Temperature float64
+	TopP        float64
+	TopK        int
 }
 
 // LiveSession 实时会话接口
@@ -172,5 +176,5 @@ type LiveSession interface {
 
 // LiveProvider 支持实时对话的 Provider 可选接口
 type LiveProvider interface {
-	ConnectLive(ctx context.Context, cfg *LiveConfig, config *config.Config) (LiveSession, error)
+	ConnectLive(ctx context.Context, cfg *LiveConfig) (LiveSession, error)
 }

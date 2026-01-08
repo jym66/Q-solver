@@ -13,13 +13,23 @@ import (
 )
 
 type Service struct {
-	config *config.Config
+	config       config.Config // 存储配置副本
+	resumeBase64 string        // 缓存的简历 Base64
 }
 
-func NewService(cfg *config.Config) *Service {
-	return &Service{
+func NewService(cfg config.Config, cm *config.ConfigManager) *Service {
+	s := &Service{
 		config: cfg,
 	}
+	// 订阅配置变更，同步配置
+	cm.Subscribe(func(NewConfig config.Config, oldConfig config.Config) {
+		s.config = NewConfig
+		// 如果简历路径变了，清空缓存
+		if NewConfig.ResumePath != oldConfig.ResumePath {
+			s.resumeBase64 = ""
+		}
+	})
+	return s
 }
 
 // SelectResume 打开文件对话框选择简历，并返回路径
@@ -43,23 +53,22 @@ func (s *Service) SelectResume(ctx context.Context) string {
 		return "" // 用户取消
 	}
 
-	s.config.ResumePath = selection
+	// 不再直接修改配置，由调用者处理
 	return selection
 }
 
-// ClearResume 清除简历
+// ClearResume 清除简历缓存
 func (s *Service) ClearResume() {
-	s.config.ResumePath = ""
-	s.config.ResumeBase64 = ""
-	logger.Println("简历已清除")
+	s.resumeBase64 = ""
+	logger.Println("简历缓存已清除")
 }
 
 // GetResumeBase64 读取简历并转换为 Base64
 func (s *Service) GetResumeBase64() (string, error) {
-	//读一下缓存
-	if len(s.config.ResumeBase64) > 0 {
+	// 读一下缓存
+	if len(s.resumeBase64) > 0 {
 		logger.Println("使用缓存的简历 Base64")
-		return s.config.ResumeBase64, nil
+		return s.resumeBase64, nil
 	}
 	if s.config.ResumePath == "" {
 		return "", nil
@@ -82,9 +91,9 @@ func (s *Service) GetResumeBase64() (string, error) {
 		return "", err
 	}
 
-	// 转换为 Base64
+	// 转换为 Base64 并缓存
 	encoded := base64.StdEncoding.EncodeToString(content)
-	s.config.ResumeBase64 = encoded
+	s.resumeBase64 = encoded
 	return encoded, nil
 }
 

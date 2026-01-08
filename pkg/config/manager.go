@@ -14,15 +14,14 @@ type ConfigManager struct {
 	mu          sync.RWMutex
 	configPath  string
 	oldConfig   Config // 这是老配置
-	subscribers []func(NewConfig Config,oldConfig Config)
-	
+	subscribers []func(NewConfig Config, oldConfig Config)
 }
 
 func NewConfigManager() *ConfigManager {
 	cm := &ConfigManager{
 		config:      NewDefaultConfig(),
 		oldConfig:   NewDefaultConfig(),
-		subscribers: make([]func(NewConfig Config,oldConfig Config), 0),
+		subscribers: make([]func(NewConfig Config, oldConfig Config), 0),
 	}
 	cm.configPath = cm.getConfigPath()
 	return cm
@@ -81,12 +80,6 @@ func (cm *ConfigManager) Get() Config {
 	return cm.config
 }
 
-func (cm *ConfigManager) GetPtr() *Config {
-	cm.mu.RLock()
-	defer cm.mu.RUnlock()
-	return &cm.config
-}
-
 // UpdateFromJSON 从前端 JSON 全量更新配置
 func (cm *ConfigManager) UpdateFromJSON(jsonStr string) error {
 	var newConfig Config
@@ -95,22 +88,22 @@ func (cm *ConfigManager) UpdateFromJSON(jsonStr string) error {
 	}
 
 	cm.mu.Lock()
-	cm.oldConfig = cm.config//保存当前配置为之前的配置
+	cm.oldConfig = cm.config //保存当前配置为之前的配置
 	cm.config = newConfig
 	configCopy := cm.config
-	oldConfigCopy:=cm.oldConfig
+	oldConfigCopy := cm.oldConfig
 	subscribers := cm.subscribers
 	cm.mu.Unlock()
 
 	// 通知订阅者
 	for _, sub := range subscribers {
-		sub(configCopy,oldConfigCopy)
+		sub(configCopy, oldConfigCopy)
 	}
 
 	return cm.Save()
 }
 
-func (cm *ConfigManager) Subscribe(callback func(NewConfig Config,oldConfig Config)) {
+func (cm *ConfigManager) Subscribe(callback func(NewConfig Config, oldConfig Config)) {
 	cm.mu.Lock()
 	defer cm.mu.Unlock()
 	cm.subscribers = append(cm.subscribers, callback)
