@@ -2,7 +2,7 @@
   "elephant-alpha": {
     "provider": "openrouter",
     "name": "Elephant",
-    "description": "Elephant Alpha is a 100B-parameter text model focused on intelligence efficiency, delivering strong reasoning performance while minimizing token usage. It supports a 256K context window with up to 32K output...",
+    "description": "Elephant Alpha is a 100B-parameter text model focused on intelligence efficiency, delivering strong performance while minimizing token usage. It supports a 256K context window with up to 32K output tokens,...",
     "supports_image": false,
     "context_length": 262144,
     "inputs": [
@@ -1928,19 +1928,6 @@
       "text"
     ]
   },
-  "longcat-flash-chat": {
-    "provider": "meituan",
-    "name": "Meituan: LongCat Flash Chat",
-    "description": "LongCat-Flash-Chat is a large-scale Mixture-of-Experts (MoE) model with 560B total parameters, of which 18.6B–31.3B (≈27B on average) are dynamically activated per input. It introduces a shortcut-connected MoE design to reduce...",
-    "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "qwen-plus-2025-07-28": {
     "provider": "qwen",
     "name": "Qwen: Qwen Plus 0728",
@@ -2549,19 +2536,6 @@
       "text"
     ]
   },
-  "mercury": {
-    "provider": "inception",
-    "name": "Inception: Mercury",
-    "description": "Mercury is the first diffusion large language model (dLLM). Applying a breakthrough discrete diffusion approach, the model runs 5-10x faster than even speed optimized models like GPT-4.1 Nano and Claude...",
-    "supports_image": false,
-    "context_length": 128000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "mistral-small-3.2-24b-instruct": {
     "provider": "mistralai",
     "name": "Mistral: Mistral Small 3.2 24B",
@@ -2820,19 +2794,6 @@
       "text"
     ]
   },
-  "mercury-coder": {
-    "provider": "inception",
-    "name": "Inception: Mercury Coder",
-    "description": "Mercury Coder is the first diffusion large language model (dLLM). Applying a breakthrough discrete diffusion approach, the model runs 5-10x faster than even speed optimized models like Claude 3.5 Haiku...",
-    "supports_image": false,
-    "context_length": 128000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "llama-guard-4-12b": {
     "provider": "meta-llama",
     "name": "Meta: Llama Guard 4 12B",
@@ -2957,19 +2918,6 @@
       "text"
     ]
   },
-  "qwen2.5-coder-7b-instruct": {
-    "provider": "qwen",
-    "name": "Qwen: Qwen2.5 Coder 7B Instruct",
-    "description": "Qwen2.5-Coder-7B-Instruct is a 7B parameter instruction-tuned language model optimized for code-related tasks such as code generation, reasoning, and bug fixing. Based on the Qwen2.5 architecture, it incorporates enhancements like RoPE,...",
-    "supports_image": false,
-    "context_length": 32768,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "gpt-4.1": {
     "provider": "openai",
     "name": "OpenAI: GPT-4.1",
@@ -3045,19 +2993,6 @@
     "provider": "x-ai",
     "name": "xAI: Grok 3 Beta",
     "description": "Grok 3 is the latest model from xAI. It's their flagship model that excels at enterprise use cases like data extraction, coding, and text summarization. Possesses deep domain knowledge in...",
-    "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "llama-3.1-nemotron-ultra-253b-v1": {
-    "provider": "nvidia",
-    "name": "NVIDIA: Llama 3.1 Nemotron Ultra 253B v1",
-    "description": "Llama-3.1-Nemotron-Ultra-253B-v1 is a large language model (LLM) optimized for advanced reasoning, human-interactive chat, retrieval-augmented generation (RAG), and tool-calling tasks. Derived from Meta’s Llama-3.1-405B-Instruct, it has been significantly customized using Neural...",
     "supports_image": false,
     "context_length": 131072,
     "inputs": [
@@ -4154,19 +4089,6 @@
     "provider": "google",
     "name": "Google: Gemma 2 27B",
     "description": "Gemma 2 27B by Google is an open model built from the same research and technology used to create the [Gemini models](/models?q=gemini). Gemma models are well-suited for a variety of...",
-    "supports_image": false,
-    "context_length": 8192,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "gemma-2-9b-it": {
-    "provider": "google",
-    "name": "Google: Gemma 2 9B",
-    "description": "Gemma 2 9B by Google is an advanced, open-source language model that sets a new standard for efficiency and performance in its size class. Designed for a wide variety of...",
     "supports_image": false,
     "context_length": 8192,
     "inputs": [
