@@ -1,4 +1,18 @@
 {
+  "claude-opus-4.7": {
+    "provider": "anthropic",
+    "name": "Anthropic: Claude Opus 4.7",
+    "description": "Opus 4.7 is the next generation of Anthropic's Opus family, built for long-running, asynchronous agents. Building on the coding and agentic strengths of Opus 4.6, it delivers stronger performance on...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "elephant-alpha": {
     "provider": "openrouter",
     "name": "Elephant",
@@ -2286,7 +2300,7 @@
     "name": "Qwen: Qwen3 235B A22B Thinking 2507",
     "description": "Qwen3-235B-A22B-Thinking-2507 is a high-performance, open-weight Mixture-of-Experts (MoE) language model optimized for complex reasoning tasks. It activates 22B of its 235B parameters per forward pass and natively supports up to 262,144...",
     "supports_image": false,
-    "context_length": 131072,
+    "context_length": 262144,
     "inputs": [
       "text"
     ],
@@ -3086,19 +3100,6 @@
       "text"
     ]
   },
-  "olmo-2-0325-32b-instruct": {
-    "provider": "allenai",
-    "name": "AllenAI: Olmo 2 32B Instruct",
-    "description": "OLMo-2 32B Instruct is a supervised instruction-finetuned variant of the OLMo-2 32B March 2025 base model. It excels in complex reasoning and instruction-following tasks across diverse benchmarks such as GSM8K,...",
-    "supports_image": false,
-    "context_length": 128000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "gemma-3-4b-it": {
     "provider": "google",
     "name": "Google: Gemma 3 4B",
@@ -3434,7 +3435,7 @@
     "name": "Qwen: Qwen2.5 VL 72B Instruct",
     "description": "Qwen2.5-VL is proficient in recognizing common objects such as flowers, birds, fish, and insects. It is also highly capable of analyzing texts, charts, icons, graphics, and layouts within images.",
     "supports_image": true,
-    "context_length": 32768,
+    "context_length": 32000,
     "inputs": [
       "text",
       "image"
