@@ -135,6 +135,11 @@ export const useSettingsStore = defineStore('settings', () => {
     root.style.setProperty('--app-bg-a', String(opacity))
     root.style.setProperty('--app-panel-a', String(Math.max(0, opacity * 0.5)))
     root.style.setProperty('--text-shadow-a', String(Math.max(0, (1 - opacity) * 0.8)))
+
+    const isLight = root.getAttribute('data-theme') === 'light'
+    root.style.setProperty('--surface-elevated-a', String(opacity * (isLight ? 0.96 : 0.92)))
+    root.style.setProperty('--surface-card-a', String(opacity * (isLight ? 0.78 : 0.80)))
+    root.style.setProperty('--surface-card-hover-a', String(opacity * (isLight ? 0.86 : 0.88)))
   }
 
   async function loadSettings() {

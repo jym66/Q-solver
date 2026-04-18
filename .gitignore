@@ -14,11 +14,19 @@ lib/models/
 config/config.json
 .gocache/
 
-# IDE and OS files
+# IDE, editor and OS files
 .idea/
+.vscode/
 .DS_Store
 **/.DS_Store
 Thumbs.db
+
+# Claude Code
+.claude/
+
+# Environment files
+.env
+.env.*
 
 # Logs
 *.log

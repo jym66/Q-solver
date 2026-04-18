@@ -12,24 +12,27 @@ import (
 var (
 	user32   = syscall.NewLazyDLL("user32.dll")
 	kernel32 = syscall.NewLazyDLL("kernel32.dll")
+	ntdll    = syscall.NewLazyDLL("ntdll.dll")
 
-	procFindWindowW                = user32.NewProc("FindWindowW")
-	procSetWindowDisplayAffinity   = user32.NewProc("SetWindowDisplayAffinity")
-	procGetWindowLongW             = user32.NewProc("GetWindowLongW")
-	procSetWindowLongW             = user32.NewProc("SetWindowLongW")
-	procRegisterHotKey             = user32.NewProc("RegisterHotKey")
-	procUnregisterHotKey           = user32.NewProc("UnregisterHotKey")
-	procGetMessageW                = user32.NewProc("GetMessageW")
-	procSetWindowsHookExW          = user32.NewProc("SetWindowsHookExW")
-	procUnhookWindowsHookEx        = user32.NewProc("UnhookWindowsHookEx")
-	procCallNextHookEx             = user32.NewProc("CallNextHookEx")
-	procGetModuleHandleW           = kernel32.NewProc("GetModuleHandleW")
-	procSetWindowPos               = user32.NewProc("SetWindowPos")
-	procSetLayeredWindowAttributes = user32.NewProc("SetLayeredWindowAttributes")
-	procGetAsyncKeyState           = user32.NewProc("GetAsyncKeyState")
-	procEnumWindows                = user32.NewProc("EnumWindows")
-	procGetWindowThreadProcessId   = user32.NewProc("GetWindowThreadProcessId")
-	procKeybdEvent                 = user32.NewProc("keybd_event")
+	procFindWindowW                    = user32.NewProc("FindWindowW")
+	procSetWindowDisplayAffinity       = user32.NewProc("SetWindowDisplayAffinity")
+	procGetWindowLongW                 = user32.NewProc("GetWindowLongW")
+	procSetWindowLongW                 = user32.NewProc("SetWindowLongW")
+	procRegisterHotKey                 = user32.NewProc("RegisterHotKey")
+	procUnregisterHotKey               = user32.NewProc("UnregisterHotKey")
+	procGetMessageW                    = user32.NewProc("GetMessageW")
+	procSetWindowsHookExW              = user32.NewProc("SetWindowsHookExW")
+	procUnhookWindowsHookEx            = user32.NewProc("UnhookWindowsHookEx")
+	procCallNextHookEx                 = user32.NewProc("CallNextHookEx")
+	procGetModuleHandleW               = kernel32.NewProc("GetModuleHandleW")
+	procSetWindowPos                   = user32.NewProc("SetWindowPos")
+	procSetLayeredWindowAttributes     = user32.NewProc("SetLayeredWindowAttributes")
+	procGetAsyncKeyState               = user32.NewProc("GetAsyncKeyState")
+	procEnumWindows                    = user32.NewProc("EnumWindows")
+	procGetWindowThreadProcessId       = user32.NewProc("GetWindowThreadProcessId")
+	procKeybdEvent                     = user32.NewProc("keybd_event")
+	procSetWindowCompositionAttribute  = user32.NewProc("SetWindowCompositionAttribute")
+	procRtlGetVersion                  = ntdll.NewProc("RtlGetVersion")
 )
 
 // WindowHandle 窗口句柄类型（Windows 为 HWND）
@@ -139,6 +142,37 @@ type MSLLHOOKSTRUCT struct {
 	Time        uint32
 	DwExtraInfo uintptr
 }
+
+// RTL_OSVERSIONINFOW 系统版本信息结构体
+type RTL_OSVERSIONINFOW struct {
+	dwOSVersionInfoSize uint32
+	dwMajorVersion      uint32
+	dwMinorVersion      uint32
+	dwBuildNumber       uint32
+	dwPlatformId        uint32
+	szCSDVersion        [128]uint16
+}
+
+// ACCENT_POLICY 窗口合成属性策略
+type ACCENT_POLICY struct {
+	AccentState   uint32
+	AccentFlags   uint32
+	GradientColor uint32
+	AnimationId   uint32
+}
+
+// WINDOWCOMPOSITIONATTRIBDATA 窗口合成属性数据
+type WINDOWCOMPOSITIONATTRIBDATA struct {
+	Attrib     uint32
+	Data       unsafe.Pointer
+	SizeOfData uintptr
+}
+
+// 窗口合成属性常量
+const (
+	WCA_ACCENT_POLICY                 = 19
+	ACCENT_ENABLE_TRANSPARENTGRADIENT = 2
+)
 
 // MSG Windows 消息结构体
 type MSG struct {
@@ -436,6 +470,34 @@ func getHwndByPid(pid uint32) (uintptr, error) {
 	return hwnd, nil
 }
 
+// isWindows11OrLater 检测是否为 Windows 11 及以上版本
+func isWindows11OrLater() bool {
+	var info RTL_OSVERSIONINFOW
+	info.dwOSVersionInfoSize = uint32(unsafe.Sizeof(info))
+	ret, _, _ := procRtlGetVersion.Call(uintptr(unsafe.Pointer(&info)))
+	if ret != 0 {
+		return false
+	}
+	return info.dwBuildNumber >= 22000
+}
+
+// enableTransparentGradient 在 Win10 上使用 SetWindowCompositionAttribute
+// 覆盖 DWM 的模糊效果，实现无模糊的真透明背景
+func enableTransparentGradient(hwnd uintptr) {
+	accent := ACCENT_POLICY{
+		AccentState:   ACCENT_ENABLE_TRANSPARENTGRADIENT,
+		AccentFlags:   2,
+		GradientColor: 0x00000000,
+		AnimationId:   0,
+	}
+	data := WINDOWCOMPOSITIONATTRIBDATA{
+		Attrib:     WCA_ACCENT_POLICY,
+		Data:       unsafe.Pointer(&accent),
+		SizeOfData: unsafe.Sizeof(accent),
+	}
+	procSetWindowCompositionAttribute.Call(hwnd, uintptr(unsafe.Pointer(&data)))
+}
+
 // applyGhostMode 应用幽灵模式
 func applyGhostMode(hwnd uintptr) {
 	style := GetWindowLong(hwnd, int(GWL_STYLE))
@@ -463,6 +525,13 @@ func applyGhostMode(hwnd uintptr) {
 	// 必须带上 SWP_NOACTIVATE 防止刷新时抢走焦点
 	SetWindowPos(hwnd, 0, 0, 0, 0, 0,
 		uint32(SWP_NOMOVE|SWP_NOSIZE|SWP_NOZORDER|SWP_FRAMECHANGED|SWP_NOACTIVATE))
+
+	// Win10 上 WindowIsTranslucent 会触发 DWM 模糊效果，
+	// 用 SetWindowCompositionAttribute 覆盖为透明渐变，消除模糊
+	if !isWindows11OrLater() {
+		enableTransparentGradient(hwnd)
+		logger.Println("[GhostMode] Win10 透明渐变模式已启用（消除 DWM 模糊）")
+	}
 }
 
 // restoreFocus 恢复焦点
