@@ -1,4 +1,60 @@
 {
+  "gpt-5.4-image-2": {
+    "provider": "openai",
+    "name": "OpenAI: GPT-5.4 Image 2",
+    "description": "[GPT-5.4](https://openrouter.ai/openai/gpt-5.4) Image 2 combines OpenAI's GPT-5.4 model with state-of-the-art image generation capabilities from GPT Image 2. It enables rich multimodal workflows, allowing users to seamlessly move between reasoning, coding, and...",
+    "supports_image": true,
+    "context_length": 272000,
+    "inputs": [
+      "image",
+      "text",
+      "file"
+    ],
+    "outputs": [
+      "image",
+      "text"
+    ]
+  },
+  "ling-2.6-flash": {
+    "provider": "inclusionai",
+    "name": "inclusionAI: Ling-2.6-flash (free)",
+    "description": "Ling-2.6-flash is an instant (instruct) model from inclusionAI with 104B total parameters and 7.4B active parameters, designed for real-world agents that require fast responses, strong execution, and high token efficiency....",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "claude-opus-latest": {
+    "provider": "~anthropic",
+    "name": "Anthropic: Claude Opus Latest",
+    "description": "This model always redirects to the latest model in the Claude Opus family.",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "pareto-code": {
+    "provider": "openrouter",
+    "name": "Pareto Code Router",
+    "description": "The Pareto Router is a way to have OpenRouter always pick a strong coding model for your needs without committing to a specific one. You express a single `min_coding_score` preference...",
+    "supports_image": false,
+    "context_length": 200000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "kimi-k2.6": {
     "provider": "moonshotai",
     "name": "MoonshotAI: Kimi K2.6",
@@ -22,19 +78,6 @@
     "inputs": [
       "text",
       "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "elephant-alpha": {
-    "provider": "openrouter",
-    "name": "Elephant",
-    "description": "Elephant Alpha is a 100B-parameter text model focused on intelligence efficiency, delivering strong performance while minimizing token usage. It supports a 256K context window with up to 32K output tokens,...",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
@@ -672,7 +715,7 @@
     "name": "Z.ai: GLM 5",
     "description": "GLM-5 is Z.ai’s flagship open-source foundation model engineered for complex systems design and long-horizon agent workflows. Built for expert developers, it delivers production-grade performance on large-scale programming tasks, rivaling leading...",
     "supports_image": false,
-    "context_length": 80000,
+    "context_length": 202752,
     "inputs": [
       "text"
     ],
@@ -3338,7 +3381,7 @@
     "name": "Google: Gemini 2.0 Flash",
     "description": "Gemini Flash 2.0 offers a significantly faster time to first token (TTFT) compared to [Gemini Flash 1.5](/google/gemini-flash-1.5), while maintaining quality on par with larger models like [Gemini Pro 1.5](/google/gemini-pro-1.5). It...",
     "supports_image": true,
-    "context_length": 1048576,
+    "context_length": 1000000,
     "inputs": [
       "text",
       "image",
@@ -4303,7 +4346,7 @@
   "auto": {
     "provider": "openrouter",
     "name": "Auto Router",
-    "description": "Your prompt will be processed by a meta-model and routed to one of dozens of models (see below), optimizing for the best possible output. To see which model was used,...",
+    "description": "\"Your prompt will be processed by a meta-model and routed to one of dozens of models (see below), optimizing for the best possible output. To see which model was used,...",
     "supports_image": true,
     "context_length": 2000000,
     "inputs": [
