@@ -1,4 +1,33 @@
 {
+  "mimo-v2.5-pro": {
+    "provider": "xiaomi",
+    "name": "Xiaomi: MiMo-V2.5-Pro",
+    "description": "MiMo-V2.5-Pro is Xiaomi’s flagship model, delivering strong performance in general agentic capabilities, complex software engineering, and long-horizon tasks, with top rankings on benchmarks such as ClawEval, GDPVal, and SWE-bench Pro....",
+    "supports_image": false,
+    "context_length": 1048576,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "mimo-v2.5": {
+    "provider": "xiaomi",
+    "name": "Xiaomi: MiMo-V2.5",
+    "description": "MiMo-V2.5 is a native omnimodal model by Xiaomi. It delivers Pro-level agentic performance at roughly half the inference cost, while surpassing MiMo-V2-Omni in multimodal perception across image and video understanding...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "audio",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "gpt-5.4-image-2": {
     "provider": "openai",
     "name": "OpenAI: GPT-5.4 Image 2",
@@ -49,6 +78,20 @@
     "supports_image": false,
     "context_length": 200000,
     "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "qianfan-ocr-fast": {
+    "provider": "baidu",
+    "name": "Baidu: Qianfan-OCR-Fast (free)",
+    "description": "Qianfan-OCR-Fast is a domain-specific multimodal large model purpose-built for OCR. By leveraging specialized OCR training data while preserving versatile multimodal intelligence, it provides a powerful performance upgrade over Qianfan-OCR.",
+    "supports_image": true,
+    "context_length": 65536,
+    "inputs": [
+      "image",
       "text"
     ],
     "outputs": [
@@ -792,7 +835,7 @@
   },
   "trinity-large-preview": {
     "provider": "arcee-ai",
-    "name": "Arcee AI: Trinity Large Preview (free)",
+    "name": "Arcee AI: Trinity Large Preview",
     "description": "Trinity-Large-Preview is a frontier-scale open-weight language model from Arcee, built as a 400B-parameter sparse Mixture-of-Experts with 13B active parameters per token using 4-of-256 expert routing. It excels in creative writing,...",
     "supports_image": false,
     "context_length": 131000,
@@ -1380,19 +1423,6 @@
       "text",
       "image",
       "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "cogito-v2.1-671b": {
-    "provider": "deepcogito",
-    "name": "Deep Cogito: Cogito v2.1 671B",
-    "description": "Cogito v2.1 671B MoE represents one of the strongest open models globally, matching performance of frontier closed and open models. This model is trained using self play with reinforcement learning...",
-    "supports_image": false,
-    "context_length": 128000,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
@@ -2357,7 +2387,7 @@
     "name": "Qwen: Qwen3 235B A22B Thinking 2507",
     "description": "Qwen3-235B-A22B-Thinking-2507 is a high-performance, open-weight Mixture-of-Experts (MoE) language model optimized for complex reasoning tasks. It activates 22B of its 235B parameters per forward pass and natively supports up to 262,144...",
     "supports_image": false,
-    "context_length": 262144,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -3381,7 +3411,7 @@
     "name": "Google: Gemini 2.0 Flash",
     "description": "Gemini Flash 2.0 offers a significantly faster time to first token (TTFT) compared to [Gemini Flash 1.5](/google/gemini-flash-1.5), while maintaining quality on par with larger models like [Gemini Pro 1.5](/google/gemini-pro-1.5). It...",
     "supports_image": true,
-    "context_length": 1000000,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "image",
