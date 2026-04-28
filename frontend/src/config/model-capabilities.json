@@ -1,4 +1,183 @@
 {
+  "claude-haiku-latest": {
+    "provider": "~anthropic",
+    "name": "Anthropic Claude Haiku Latest",
+    "description": "This model always redirects to the latest model in the Anthropic Claude Haiku family.",
+    "supports_image": true,
+    "context_length": 200000,
+    "inputs": [
+      "image",
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gpt-mini-latest": {
+    "provider": "~openai",
+    "name": "OpenAI GPT Mini Latest",
+    "description": "This model always redirects to the latest model in the OpenAI GPT Mini family.",
+    "supports_image": true,
+    "context_length": 400000,
+    "inputs": [
+      "file",
+      "image",
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gemini-pro-latest": {
+    "provider": "~google",
+    "name": "Google Gemini Pro Latest",
+    "description": "This model always redirects to the latest model in the Google Gemini Pro family.",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "audio",
+      "file",
+      "image",
+      "text",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "kimi-latest": {
+    "provider": "~moonshotai",
+    "name": "MoonshotAI Kimi Latest",
+    "description": "This model always redirects to the latest model in the MoonshotAI Kimi family.",
+    "supports_image": true,
+    "context_length": 256000,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gemini-flash-latest": {
+    "provider": "~google",
+    "name": "Google Gemini Flash Latest",
+    "description": "This model always redirects to the latest model in the Google Gemini Flash family.",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image",
+      "file",
+      "audio",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "claude-sonnet-latest": {
+    "provider": "~anthropic",
+    "name": "Anthropic Claude Sonnet Latest",
+    "description": "This model always redirects to the latest model in the Anthropic Claude Sonnet family.",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gpt-latest": {
+    "provider": "~openai",
+    "name": "OpenAI GPT Latest",
+    "description": "This model always redirects to the latest model in the OpenAI GPT family.",
+    "supports_image": true,
+    "context_length": 1050000,
+    "inputs": [
+      "file",
+      "image",
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "qwen3.5-plus-20260420": {
+    "provider": "qwen",
+    "name": "Qwen: Qwen3.5 Plus 2026-04-20",
+    "description": "Qwen3.5 Plus (April 2026) is a large-scale multimodal language model from Alibaba. It accepts text, image, and video input and produces text output, with a 1M token context window. This...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "qwen3.6-flash": {
+    "provider": "qwen",
+    "name": "Qwen: Qwen3.6 Flash",
+    "description": "Qwen3.6 Flash is a fast, efficient language model from Alibaba's Qwen 3.6 series. It supports text, image, and video input with a 1M token context window. Tiered pricing kicks in...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "qwen3.6-35b-a3b": {
+    "provider": "qwen",
+    "name": "Qwen: Qwen3.6 35B A3B",
+    "description": "Qwen3.6-35B-A3B is an open-weight multimodal model from Alibaba Cloud with 35 billion total parameters and 3 billion active parameters per token. It uses a hybrid sparse mixture-of-experts architecture combining Gated...",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "qwen3.6-max-preview": {
+    "provider": "qwen",
+    "name": "Qwen: Qwen3.6 Max Preview",
+    "description": "Qwen3.6-Max-Preview is a proprietary frontier model from Alibaba Cloud built on a sparse mixture-of-experts architecture with approximately 1 trillion total parameters. It is optimized for agentic coding, tool use, and...",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "qwen3.6-27b": {
+    "provider": "qwen",
+    "name": "Qwen: Qwen3.6 27B",
+    "description": "Qwen3.6 27B is a dense 27-billion-parameter language model from the Qwen Team at Alibaba, released in April 2026. It features hybrid multimodal capabilities — accepting text, image, and video inputs...",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "gpt-5.5-pro": {
     "provider": "openai",
     "name": "OpenAI: GPT-5.5 Pro",
@@ -4000,10 +4179,10 @@
       "text"
     ]
   },
-  "inflection-3-pi": {
+  "inflection-3-productivity": {
     "provider": "inflection",
-    "name": "Inflection: Inflection 3 Pi",
-    "description": "Inflection 3 Pi powers Inflection's [Pi](https://pi.ai) chatbot, including backstory, emotional intelligence, productivity, and safety. It has access to recent news, and excels in scenarios like customer support and roleplay. Pi...",
+    "name": "Inflection: Inflection 3 Productivity",
+    "description": "Inflection 3 Productivity is optimized for following instructions. It is better for tasks requiring JSON output or precise adherence to provided guidelines. It has access to recent news. For emotional...",
     "supports_image": false,
     "context_length": 8000,
     "inputs": [
@@ -4013,10 +4192,10 @@
       "text"
     ]
   },
-  "inflection-3-productivity": {
+  "inflection-3-pi": {
     "provider": "inflection",
-    "name": "Inflection: Inflection 3 Productivity",
-    "description": "Inflection 3 Productivity is optimized for following instructions. It is better for tasks requiring JSON output or precise adherence to provided guidelines. It has access to recent news. For emotional...",
+    "name": "Inflection: Inflection 3 Pi",
+    "description": "Inflection 3 Pi powers Inflection's [Pi](https://pi.ai) chatbot, including backstory, emotional intelligence, productivity, and safety. It has access to recent news, and excels in scenarios like customer support and roleplay. Pi...",
     "supports_image": false,
     "context_length": 8000,
     "inputs": [
@@ -4032,6 +4211,19 @@
     "description": "Rocinante 12B is designed for engaging storytelling and rich prose. Early testers have reported: - Expanded vocabulary with unique and expressive word choices - Enhanced creativity for vivid narratives -...",
     "supports_image": false,
     "context_length": 32768,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "llama-3.2-3b-instruct": {
+    "provider": "meta-llama",
+    "name": "Meta: Llama 3.2 3B Instruct",
+    "description": "Llama 3.2 3B is a 3-billion-parameter multilingual large language model, optimized for advanced natural language processing tasks like dialogue generation, reasoning, and summarization. Designed with the latest transformer architecture, it...",
+    "supports_image": false,
+    "context_length": 80000,
     "inputs": [
       "text"
     ],
@@ -4066,19 +4258,6 @@
       "text"
     ]
   },
-  "llama-3.2-3b-instruct": {
-    "provider": "meta-llama",
-    "name": "Meta: Llama 3.2 3B Instruct",
-    "description": "Llama 3.2 3B is a 3-billion-parameter multilingual large language model, optimized for advanced natural language processing tasks like dialogue generation, reasoning, and summarization. Designed with the latest transformer architecture, it...",
-    "supports_image": false,
-    "context_length": 80000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "qwen-2.5-72b-instruct": {
     "provider": "qwen",
     "name": "Qwen2.5 72B Instruct",
@@ -4092,10 +4271,10 @@
       "text"
     ]
   },
-  "command-r-08-2024": {
+  "command-r-plus-08-2024": {
     "provider": "cohere",
-    "name": "Cohere: Command R (08-2024)",
-    "description": "command-r-08-2024 is an update of the [Command R](/models/cohere/command-r) with improved performance for multilingual retrieval-augmented generation (RAG) and tool use. More broadly, it is better at math, code and reasoning and...",
+    "name": "Cohere: Command R+ (08-2024)",
+    "description": "command-r-plus-08-2024 is an update of the [Command R+](/models/cohere/command-r-plus) with roughly 50% higher throughput and 25% lower latencies as compared to the previous Command R+ version, while keeping the hardware footprint...",
     "supports_image": false,
     "context_length": 128000,
     "inputs": [
@@ -4105,10 +4284,10 @@
       "text"
     ]
   },
-  "command-r-plus-08-2024": {
+  "command-r-08-2024": {
     "provider": "cohere",
-    "name": "Cohere: Command R+ (08-2024)",
-    "description": "command-r-plus-08-2024 is an update of the [Command R+](/models/cohere/command-r-plus) with roughly 50% higher throughput and 25% lower latencies as compared to the previous Command R+ version, while keeping the hardware footprint...",
+    "name": "Cohere: Command R (08-2024)",
+    "description": "command-r-08-2024 is an update of the [Command R](/models/cohere/command-r) with improved performance for multilingual retrieval-augmented generation (RAG) and tool use. More broadly, it is better at math, code and reasoning and...",
     "supports_image": false,
     "context_length": 128000,
     "inputs": [
@@ -4323,10 +4502,10 @@
       "text"
     ]
   },
-  "llama-3-70b-instruct": {
+  "llama-3-8b-instruct": {
     "provider": "meta-llama",
-    "name": "Meta: Llama 3 70B Instruct",
-    "description": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 70B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
+    "name": "Meta: Llama 3 8B Instruct",
+    "description": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 8B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
     "supports_image": false,
     "context_length": 8192,
     "inputs": [
@@ -4336,10 +4515,10 @@
       "text"
     ]
   },
-  "llama-3-8b-instruct": {
+  "llama-3-70b-instruct": {
     "provider": "meta-llama",
-    "name": "Meta: Llama 3 8B Instruct",
-    "description": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 8B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
+    "name": "Meta: Llama 3 70B Instruct",
+    "description": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 70B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
     "supports_image": false,
     "context_length": 8192,
     "inputs": [
@@ -4416,12 +4595,12 @@
       "text"
     ]
   },
-  "gpt-3.5-turbo-0613": {
+  "gpt-4-turbo-preview": {
     "provider": "openai",
-    "name": "OpenAI: GPT-3.5 Turbo (older v0613)",
-    "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
+    "name": "OpenAI: GPT-4 Turbo Preview",
+    "description": "The preview GPT-4 model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Training data: up to Dec 2023. **Note:** heavily rate limited by OpenAI while...",
     "supports_image": false,
-    "context_length": 4095,
+    "context_length": 128000,
     "inputs": [
       "text"
     ],
@@ -4429,12 +4608,12 @@
       "text"
     ]
   },
-  "gpt-4-turbo-preview": {
+  "gpt-3.5-turbo-0613": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4 Turbo Preview",
-    "description": "The preview GPT-4 model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Training data: up to Dec 2023. **Note:** heavily rate limited by OpenAI while...",
+    "name": "OpenAI: GPT-3.5 Turbo (older v0613)",
+    "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
     "supports_image": false,
-    "context_length": 128000,
+    "context_length": 4095,
     "inputs": [
       "text"
     ],
@@ -4577,12 +4756,12 @@
       "text"
     ]
   },
-  "gpt-3.5-turbo": {
+  "gpt-4": {
     "provider": "openai",
-    "name": "OpenAI: GPT-3.5 Turbo",
-    "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
+    "name": "OpenAI: GPT-4",
+    "description": "OpenAI's flagship model, GPT-4 is a large-scale multimodal language model capable of solving difficult problems with greater accuracy than previous models due to its broader general knowledge and advanced reasoning...",
     "supports_image": false,
-    "context_length": 16385,
+    "context_length": 8191,
     "inputs": [
       "text"
     ],
@@ -4603,12 +4782,12 @@
       "text"
     ]
   },
-  "gpt-4": {
+  "gpt-3.5-turbo": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4",
-    "description": "OpenAI's flagship model, GPT-4 is a large-scale multimodal language model capable of solving difficult problems with greater accuracy than previous models due to its broader general knowledge and advanced reasoning...",
+    "name": "OpenAI: GPT-3.5 Turbo",
+    "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
     "supports_image": false,
-    "context_length": 8191,
+    "context_length": 16385,
     "inputs": [
       "text"
     ],
