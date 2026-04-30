@@ -1371,19 +1371,6 @@
       "text"
     ]
   },
-  "mistral-small-creative": {
-    "provider": "mistralai",
-    "name": "Mistral: Mistral Small Creative",
-    "description": "Mistral Small Creative is an experimental small model designed for creative writing, narrative generation, roleplay and character-driven dialogue, general-purpose instruction following, and conversational agents.",
-    "supports_image": false,
-    "context_length": 32768,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "mimo-v2-flash": {
     "provider": "xiaomi",
     "name": "Xiaomi: MiMo-V2-Flash",
