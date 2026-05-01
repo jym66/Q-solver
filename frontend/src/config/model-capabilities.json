@@ -1,4 +1,44 @@
 {
+  "grok-4.3": {
+    "provider": "x-ai",
+    "name": "xAI: Grok 4.3",
+    "description": "Grok 4.3 is a reasoning model from xAI. It accepts text and image inputs with text output, and is suited for agentic workflows, instruction-following tasks, and applications requiring high factual...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "granite-4.1-8b": {
+    "provider": "ibm-granite",
+    "name": "IBM: Granite 4.1 8B",
+    "description": "Granite 4.1 8B is a dense, decoder-only 8-billion-parameter language model from IBM, part of the Granite 4.1 family. It supports a 131K-token context window and is designed for enterprise tasks...",
+    "supports_image": false,
+    "context_length": 131072,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "owl-alpha": {
+    "provider": "openrouter",
+    "name": "Owl Alpha",
+    "description": "Owl Alpha is a high-performance foundation model designed for agentic workloads. Natively supports tool use, and long-context tasks, with strong performance in code generation, automated workflows, and complex instruction execution....",
+    "supports_image": false,
+    "context_length": 1048756,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "nemotron-3-nano-omni-30b-a3b-reasoning": {
     "provider": "nvidia",
     "name": "NVIDIA: Nemotron 3 Nano Omni (free)",
@@ -92,7 +132,7 @@
     "name": "MoonshotAI Kimi Latest",
     "description": "This model always redirects to the latest model in the MoonshotAI Kimi family.",
     "supports_image": true,
-    "context_length": 256000,
+    "context_length": 262142,
     "inputs": [
       "text",
       "image"
@@ -406,7 +446,7 @@
     "name": "MoonshotAI: Kimi K2.6",
     "description": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rust, and Go, and...",
     "supports_image": true,
-    "context_length": 256000,
+    "context_length": 262142,
     "inputs": [
       "text",
       "image"
@@ -3701,7 +3741,7 @@
     "name": "Google: Gemini 2.0 Flash",
     "description": "Gemini Flash 2.0 offers a significantly faster time to first token (TTFT) compared to [Gemini Flash 1.5](/google/gemini-flash-1.5), while maintaining quality on par with larger models like [Gemini Pro 1.5](/google/gemini-pro-1.5). It...",
     "supports_image": true,
-    "context_length": 1048576,
+    "context_length": 1000000,
     "inputs": [
       "text",
       "image",
