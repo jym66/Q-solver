@@ -26,6 +26,20 @@
       "text"
     ]
   },
+  "mistral-medium-3-5": {
+    "provider": "mistralai",
+    "name": "Mistral: Mistral Medium 3.5",
+    "description": "Mistral Medium 3.5 is a dense 128B instruction-following model from Mistral AI. It supports text and image inputs with text output, and is designed for agentic workflows, coding, and complex...",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "owl-alpha": {
     "provider": "openrouter",
     "name": "Owl Alpha",
