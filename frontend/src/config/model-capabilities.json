@@ -1,4 +1,19 @@
 {
+  "gpt-chat-latest": {
+    "provider": "openai",
+    "name": "OpenAI: GPT Chat Latest",
+    "description": "GPT Chat Latest points to OpenAI's stable API alias `chat-latest` that always resolves to the latest Instant chat model used in ChatGPT. As OpenAI rolls out new Instant model updates...",
+    "supports_image": true,
+    "context_length": 400000,
+    "inputs": [
+      "text",
+      "image",
+      "file"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "grok-4.3": {
     "provider": "x-ai",
     "name": "xAI: Grok 4.3",
@@ -1966,6 +1981,19 @@
       "text"
     ]
   },
+  "phi-4-mini-instruct": {
+    "provider": "microsoft",
+    "name": "Microsoft: Phi 4 Mini Instruct",
+    "description": "Phi-4-mini-instruct is a lightweight open model built upon synthetic data and filtered publicly available websites - with a focus on high-quality, reasoning dense data. The model belongs to the Phi-4...",
+    "supports_image": false,
+    "context_length": 128000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "gpt-5-image-mini": {
     "provider": "openai",
     "name": "OpenAI: GPT-5 Image Mini",
@@ -2902,19 +2930,6 @@
       "text"
     ]
   },
-  "gemma-3n-e2b-it": {
-    "provider": "google",
-    "name": "Google: Gemma 3n 2B (free)",
-    "description": "Gemma 3n E2B IT is a multimodal, instruction-tuned model developed by Google DeepMind, designed to operate efficiently at an effective parameter size of 2B while leveraging a 6B architecture. Based...",
-    "supports_image": false,
-    "context_length": 8192,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "hunyuan-a13b-instruct": {
     "provider": "tencent",
     "name": "Tencent: Hunyuan A13B Instruct",
@@ -3755,7 +3770,7 @@
     "name": "Google: Gemini 2.0 Flash",
     "description": "Gemini Flash 2.0 offers a significantly faster time to first token (TTFT) compared to [Gemini Flash 1.5](/google/gemini-flash-1.5), while maintaining quality on par with larger models like [Gemini Pro 1.5](/google/gemini-pro-1.5). It...",
     "supports_image": true,
-    "context_length": 1000000,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "image",
