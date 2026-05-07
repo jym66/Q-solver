@@ -1,4 +1,17 @@
 {
+  "cobuddy": {
+    "provider": "baidu",
+    "name": "Baidu Qianfan: CoBuddy (free)",
+    "description": "CoBuddy is a code generation model from Baidu, optimized for coding tasks and AI Agent workflows. It features high inference throughput and low end-to-end latency, with native support for tool...",
+    "supports_image": false,
+    "context_length": 131072,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "gpt-chat-latest": {
     "provider": "openai",
     "name": "OpenAI: GPT Chat Latest",
@@ -161,7 +174,7 @@
     "name": "MoonshotAI Kimi Latest",
     "description": "This model always redirects to the latest model in the MoonshotAI Kimi family.",
     "supports_image": true,
-    "context_length": 262142,
+    "context_length": 262144,
     "inputs": [
       "text",
       "image"
@@ -475,7 +488,7 @@
     "name": "MoonshotAI: Kimi K2.6",
     "description": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rust, and Go, and...",
     "supports_image": true,
-    "context_length": 262142,
+    "context_length": 262144,
     "inputs": [
       "text",
       "image"
@@ -1354,19 +1367,6 @@
       "text"
     ]
   },
-  "olmo-3.1-32b-instruct": {
-    "provider": "allenai",
-    "name": "AllenAI: Olmo 3.1 32B Instruct",
-    "description": "Olmo 3.1 32B Instruct is a large-scale, 32-billion-parameter instruction-tuned language model engineered for high-performance conversational AI, multi-turn dialogue, and practical instruction following. As part of the Olmo 3.1 family, this...",
-    "supports_image": false,
-    "context_length": 65536,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "seed-1.6-flash": {
     "provider": "bytedance-seed",
     "name": "ByteDance Seed: Seed 1.6 Flash",
@@ -1928,10 +1928,10 @@
   },
   "nemotron-nano-12b-v2-vl": {
     "provider": "nvidia",
-    "name": "NVIDIA: Nemotron Nano 12B 2 VL",
+    "name": "NVIDIA: Nemotron Nano 12B 2 VL (free)",
     "description": "NVIDIA Nemotron Nano 2 VL is a 12-billion-parameter open multimodal reasoning model designed for video understanding and document intelligence. It introduces a hybrid Transformer-Mamba architecture, combining transformer-level accuracy with Mamba’s...",
     "supports_image": true,
-    "context_length": 131072,
+    "context_length": 128000,
     "inputs": [
       "image",
       "text",
