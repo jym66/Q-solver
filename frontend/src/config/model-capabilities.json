@@ -1,4 +1,17 @@
 {
+  "ring-2.6-1t": {
+    "provider": "inclusionai",
+    "name": "inclusionAI: Ring-2.6-1T (free)",
+    "description": "Ring-2.6-1T is a 1T-parameter-scale thinking model with 63B active parameters, built for real-world agent workflows that require both strong capability and operational efficiency. It is optimized for coding agents, tool...",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "gemini-3.1-flash-lite": {
     "provider": "google",
     "name": "Google: Gemini 3.1 Flash Lite",
@@ -390,7 +403,7 @@
   },
   "hy3-preview": {
     "provider": "tencent",
-    "name": "Tencent: Hy3 preview (free)",
+    "name": "Tencent: Hy3 preview",
     "description": "Hy3 preview is a high-efficiency Mixture-of-Experts model from Tencent designed for agentic workflows and production use. It supports configurable reasoning levels across disabled, low, and high modes, allowing it to...",
     "supports_image": false,
     "context_length": 262144,
@@ -476,7 +489,7 @@
   "pareto-code": {
     "provider": "openrouter",
     "name": "Pareto Code Router",
-    "description": "The Pareto Router is a way to have OpenRouter always pick a strong coding model for your needs without committing to a specific one. You express a single `min_coding_score` preference...",
+    "description": "The Pareto Router maintains a tiered shortlist of strong coding models, ranked by [Artificial Analysis](https://artificialanalysis.ai/) coding percentiles. Set min_coding_score between 0 and 1 on the [pareto-router plugin](https://openrouter.ai/docs/guides/routing/routers/pareto-router#the-min_coding_score-parameter) to control how...",
     "supports_image": false,
     "context_length": 200000,
     "inputs": [
@@ -2960,19 +2973,6 @@
       "text"
     ]
   },
-  "deepseek-r1t2-chimera": {
-    "provider": "tngtech",
-    "name": "TNG: DeepSeek R1T2 Chimera",
-    "description": "DeepSeek-TNG-R1T2-Chimera is the second-generation Chimera model from TNG Tech. It is a 671 B-parameter mixture-of-experts text-generation model assembled from DeepSeek-AI’s R1-0528, R1, and V3-0324 checkpoints with an Assembly-of-Experts merge. The...",
-    "supports_image": false,
-    "context_length": 163840,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "morph-v3-large": {
     "provider": "morph",
     "name": "Morph: Morph V3 Large",
@@ -3787,7 +3787,7 @@
     "name": "Google: Gemini 2.0 Flash",
     "description": "Gemini Flash 2.0 offers a significantly faster time to first token (TTFT) compared to [Gemini Flash 1.5](/google/gemini-flash-1.5), while maintaining quality on par with larger models like [Gemini Pro 1.5](/google/gemini-pro-1.5). It...",
     "supports_image": true,
-    "context_length": 1048576,
+    "context_length": 1000000,
     "inputs": [
       "text",
       "image",
@@ -4726,7 +4726,7 @@
   "auto": {
     "provider": "openrouter",
     "name": "Auto Router",
-    "description": "\"Your prompt will be processed by a meta-model and routed to one of dozens of models (see below), optimizing for the best possible output. To see which model was used,...",
+    "description": "\"Your prompt will be processed by a meta-model and routed to one of dozens of models (see below), optimizing for the best possible output.\\n\\nTo see which model was used, visit...",
     "supports_image": true,
     "context_length": 2000000,
     "inputs": [
