@@ -491,7 +491,7 @@
     "name": "Pareto Code Router",
     "description": "The Pareto Router maintains a tiered shortlist of strong coding models, ranked by [Artificial Analysis](https://artificialanalysis.ai/) coding percentiles. Set min_coding_score between 0 and 1 on the [pareto-router plugin](https://openrouter.ai/docs/guides/routing/routers/pareto-router#the-min_coding_score-parameter) to control how...",
     "supports_image": false,
-    "context_length": 200000,
+    "context_length": 2000000,
     "inputs": [
       "text"
     ],
@@ -4726,7 +4726,7 @@
   "auto": {
     "provider": "openrouter",
     "name": "Auto Router",
-    "description": "\"Your prompt will be processed by a meta-model and routed to one of dozens of models (see below), optimizing for the best possible output.\\n\\nTo see which model was used, visit...",
+    "description": "Your prompt will be processed by a meta-model and routed to one of dozens of models (see below), optimizing for the best possible output. To see which model was used,...",
     "supports_image": true,
     "context_length": 2000000,
     "inputs": [
