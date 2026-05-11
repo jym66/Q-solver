@@ -3727,21 +3727,6 @@
       "text"
     ]
   },
-  "claude-3.7-sonnet": {
-    "provider": "anthropic",
-    "name": "Anthropic: Claude 3.7 Sonnet (thinking)",
-    "description": "Claude 3.7 Sonnet is an advanced large language model with improved reasoning, coding, and problem-solving capabilities. It introduces a hybrid reasoning approach, allowing users to choose between rapid responses and...",
-    "supports_image": true,
-    "context_length": 200000,
-    "inputs": [
-      "text",
-      "image",
-      "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "mistral-saba": {
     "provider": "mistralai",
     "name": "Mistral: Saba",
