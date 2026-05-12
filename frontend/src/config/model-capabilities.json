@@ -160,8 +160,9 @@
     "supports_image": true,
     "context_length": 200000,
     "inputs": [
+      "text",
       "image",
-      "text"
+      "file"
     ],
     "outputs": [
       "text"
@@ -204,7 +205,7 @@
     "name": "MoonshotAI Kimi Latest",
     "description": "This model always redirects to the latest model in the MoonshotAI Kimi family.",
     "supports_image": true,
-    "context_length": 262144,
+    "context_length": 32768,
     "inputs": [
       "text",
       "image"
@@ -238,7 +239,8 @@
     "context_length": 1000000,
     "inputs": [
       "text",
-      "image"
+      "image",
+      "file"
     ],
     "outputs": [
       "text"
@@ -480,7 +482,8 @@
     "context_length": 1000000,
     "inputs": [
       "text",
-      "image"
+      "image",
+      "file"
     ],
     "outputs": [
       "text"
@@ -518,7 +521,7 @@
     "name": "MoonshotAI: Kimi K2.6",
     "description": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rust, and Go, and...",
     "supports_image": true,
-    "context_length": 262144,
+    "context_length": 32768,
     "inputs": [
       "text",
       "image"
@@ -535,7 +538,8 @@
     "context_length": 1000000,
     "inputs": [
       "text",
-      "image"
+      "image",
+      "file"
     ],
     "outputs": [
       "text"
@@ -549,7 +553,8 @@
     "context_length": 1000000,
     "inputs": [
       "text",
-      "image"
+      "image",
+      "file"
     ],
     "outputs": [
       "text"
@@ -631,7 +636,7 @@
   "trinity-large-thinking": {
     "provider": "arcee-ai",
     "name": "Arcee AI: Trinity Large Thinking",
-    "description": "Trinity Large Thinking is a powerful open source reasoning model from the team at Arcee AI. It shows strong performance in PinchBench, agentic workloads, and reasoning tasks. Launch video: https://youtu.be/Gc82AXLa0Rg?si=4RLn6WBz33qT--B7",
+    "description": "Trinity Large Thinking is a powerful open source reasoning model from the team at Arcee AI. It shows strong performance in PinchBench, agentic workloads, and reasoning tasks. Launch video: https://youtu.be/Gc82AXLa0Rg?si=4RLn6WBz33qT--B7...",
     "supports_image": false,
     "context_length": 262144,
     "inputs": [
@@ -1119,7 +1124,8 @@
     "context_length": 1000000,
     "inputs": [
       "text",
-      "image"
+      "image",
+      "file"
     ],
     "outputs": [
       "text"
@@ -1202,7 +1208,8 @@
     "context_length": 1000000,
     "inputs": [
       "text",
-      "image"
+      "image",
+      "file"
     ],
     "outputs": [
       "text"
@@ -2047,8 +2054,9 @@
     "supports_image": true,
     "context_length": 200000,
     "inputs": [
+      "text",
       "image",
-      "text"
+      "file"
     ],
     "outputs": [
       "text"
@@ -2540,7 +2548,7 @@
     "name": "DeepSeek: DeepSeek V3.1",
     "description": "DeepSeek-V3.1 is a large hybrid reasoning model (671B parameters, 37B active) that supports both thinking and non-thinking modes via prompt templates. It extends the DeepSeek-V3 base with a two-phase long-context...",
     "supports_image": false,
-    "context_length": 32768,
+    "context_length": 163840,
     "inputs": [
       "text"
     ],
@@ -3772,7 +3780,7 @@
     "name": "Google: Gemini 2.0 Flash",
     "description": "Gemini Flash 2.0 offers a significantly faster time to first token (TTFT) compared to [Gemini Flash 1.5](/google/gemini-flash-1.5), while maintaining quality on par with larger models like [Gemini Pro 1.5](/google/gemini-pro-1.5). It...",
     "supports_image": true,
-    "context_length": 1000000,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "image",
@@ -4253,10 +4261,10 @@
       "text"
     ]
   },
-  "inflection-3-productivity": {
+  "inflection-3-pi": {
     "provider": "inflection",
-    "name": "Inflection: Inflection 3 Productivity",
-    "description": "Inflection 3 Productivity is optimized for following instructions. It is better for tasks requiring JSON output or precise adherence to provided guidelines. It has access to recent news. For emotional...",
+    "name": "Inflection: Inflection 3 Pi",
+    "description": "Inflection 3 Pi powers Inflection's [Pi](https://pi.ai) chatbot, including backstory, emotional intelligence, productivity, and safety. It has access to recent news, and excels in scenarios like customer support and roleplay. Pi...",
     "supports_image": false,
     "context_length": 8000,
     "inputs": [
@@ -4266,10 +4274,10 @@
       "text"
     ]
   },
-  "inflection-3-pi": {
+  "inflection-3-productivity": {
     "provider": "inflection",
-    "name": "Inflection: Inflection 3 Pi",
-    "description": "Inflection 3 Pi powers Inflection's [Pi](https://pi.ai) chatbot, including backstory, emotional intelligence, productivity, and safety. It has access to recent news, and excels in scenarios like customer support and roleplay. Pi...",
+    "name": "Inflection: Inflection 3 Productivity",
+    "description": "Inflection 3 Productivity is optimized for following instructions. It is better for tasks requiring JSON output or precise adherence to provided guidelines. It has access to recent news. For emotional...",
     "supports_image": false,
     "context_length": 8000,
     "inputs": [
@@ -4345,10 +4353,10 @@
       "text"
     ]
   },
-  "command-r-plus-08-2024": {
+  "command-r-08-2024": {
     "provider": "cohere",
-    "name": "Cohere: Command R+ (08-2024)",
-    "description": "command-r-plus-08-2024 is an update of the [Command R+](/models/cohere/command-r-plus) with roughly 50% higher throughput and 25% lower latencies as compared to the previous Command R+ version, while keeping the hardware footprint...",
+    "name": "Cohere: Command R (08-2024)",
+    "description": "command-r-08-2024 is an update of the [Command R](/models/cohere/command-r) with improved performance for multilingual retrieval-augmented generation (RAG) and tool use. More broadly, it is better at math, code and reasoning and...",
     "supports_image": false,
     "context_length": 128000,
     "inputs": [
@@ -4358,10 +4366,10 @@
       "text"
     ]
   },
-  "command-r-08-2024": {
+  "command-r-plus-08-2024": {
     "provider": "cohere",
-    "name": "Cohere: Command R (08-2024)",
-    "description": "command-r-08-2024 is an update of the [Command R](/models/cohere/command-r) with improved performance for multilingual retrieval-augmented generation (RAG) and tool use. More broadly, it is better at math, code and reasoning and...",
+    "name": "Cohere: Command R+ (08-2024)",
+    "description": "command-r-plus-08-2024 is an update of the [Command R+](/models/cohere/command-r-plus) with roughly 50% higher throughput and 25% lower latencies as compared to the previous Command R+ version, while keeping the hardware footprint...",
     "supports_image": false,
     "context_length": 128000,
     "inputs": [
@@ -4438,12 +4446,12 @@
       "text"
     ]
   },
-  "llama-3.1-8b-instruct": {
+  "llama-3.1-70b-instruct": {
     "provider": "meta-llama",
-    "name": "Meta: Llama 3.1 8B Instruct",
-    "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 8B instruct-tuned version is fast and efficient. It has demonstrated strong performance compared to...",
+    "name": "Meta: Llama 3.1 70B Instruct",
+    "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 70B instruct-tuned version is optimized for high quality dialogue usecases. It has demonstrated strong...",
     "supports_image": false,
-    "context_length": 16384,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -4451,12 +4459,12 @@
       "text"
     ]
   },
-  "llama-3.1-70b-instruct": {
+  "llama-3.1-8b-instruct": {
     "provider": "meta-llama",
-    "name": "Meta: Llama 3.1 70B Instruct",
-    "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 70B instruct-tuned version is optimized for high quality dialogue usecases. It has demonstrated strong...",
+    "name": "Meta: Llama 3.1 8B Instruct",
+    "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 8B instruct-tuned version is fast and efficient. It has demonstrated strong performance compared to...",
     "supports_image": false,
-    "context_length": 131072,
+    "context_length": 16384,
     "inputs": [
       "text"
     ],
@@ -4669,19 +4677,6 @@
       "text"
     ]
   },
-  "gpt-4-turbo-preview": {
-    "provider": "openai",
-    "name": "OpenAI: GPT-4 Turbo Preview",
-    "description": "The preview GPT-4 model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Training data: up to Dec 2023. **Note:** heavily rate limited by OpenAI while...",
-    "supports_image": false,
-    "context_length": 128000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "gpt-3.5-turbo-0613": {
     "provider": "openai",
     "name": "OpenAI: GPT-3.5 Turbo (older v0613)",
@@ -4695,12 +4690,12 @@
       "text"
     ]
   },
-  "goliath-120b": {
-    "provider": "alpindale",
-    "name": "Goliath 120B",
-    "description": "A large LLM created by combining two fine-tuned Llama 70B models into one 120B model. Combines Xwin and Euryale. Credits to - [@chargoddard](https://huggingface.co/chargoddard) for developing the framework used to merge...",
+  "gpt-4-turbo-preview": {
+    "provider": "openai",
+    "name": "OpenAI: GPT-4 Turbo Preview",
+    "description": "The preview GPT-4 model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Training data: up to Dec 2023. **Note:** heavily rate limited by OpenAI while...",
     "supports_image": false,
-    "context_length": 6144,
+    "context_length": 128000,
     "inputs": [
       "text"
     ],
@@ -4817,19 +4812,6 @@
       "text"
     ]
   },
-  "gpt-4-0314": {
-    "provider": "openai",
-    "name": "OpenAI: GPT-4 (older v0314)",
-    "description": "GPT-4-0314 is the first version of GPT-4 released, with a context length of 8,192 tokens, and was supported until June 14. Training data: up to Sep 2021.",
-    "supports_image": false,
-    "context_length": 8191,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "gpt-4": {
     "provider": "openai",
     "name": "OpenAI: GPT-4",
@@ -4849,6 +4831,19 @@
     "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
     "supports_image": false,
     "context_length": 16385,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gpt-4-0314": {
+    "provider": "openai",
+    "name": "OpenAI: GPT-4 (older v0314)",
+    "description": "GPT-4-0314 is the first version of GPT-4 released, with a context length of 8,192 tokens, and was supported until June 14. Training data: up to Sep 2021.",
+    "supports_image": false,
+    "context_length": 8191,
     "inputs": [
       "text"
     ],
