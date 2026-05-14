@@ -2255,7 +2255,7 @@
     "name": "Z.ai: GLM 4.6",
     "description": "Compared with GLM-4.5, this generation brings several key improvements: Longer context window: The context window has been expanded from 128K to 200K tokens, enabling the model to handle more complex...",
     "supports_image": false,
-    "context_length": 204800,
+    "context_length": 202752,
     "inputs": [
       "text"
     ],
