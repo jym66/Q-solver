@@ -122,7 +122,8 @@
     "context_length": 262144,
     "inputs": [
       "text",
-      "image"
+      "image",
+      "file"
     ],
     "outputs": [
       "text"
@@ -534,7 +535,7 @@
   },
   "qianfan-ocr-fast": {
     "provider": "baidu",
-    "name": "Baidu: Qianfan-OCR-Fast (free)",
+    "name": "Baidu: Qianfan-OCR-Fast",
     "description": "Qianfan-OCR-Fast is a domain-specific multimodal large model purpose-built for OCR. By leveraging specialized OCR training data while preserving versatile multimodal intelligence, it provides a powerful performance upgrade over Qianfan-OCR.",
     "supports_image": true,
     "context_length": 65536,
@@ -1585,7 +1586,8 @@
     "supports_image": false,
     "context_length": 262144,
     "inputs": [
-      "text"
+      "text",
+      "file"
     ],
     "outputs": [
       "text"
@@ -1738,7 +1740,8 @@
     "context_length": 262144,
     "inputs": [
       "text",
-      "image"
+      "image",
+      "file"
     ],
     "outputs": [
       "text"
@@ -1974,7 +1977,8 @@
     "context_length": 32000,
     "inputs": [
       "text",
-      "audio"
+      "audio",
+      "file"
     ],
     "outputs": [
       "text"
@@ -2609,7 +2613,8 @@
     "context_length": 131072,
     "inputs": [
       "text",
-      "image"
+      "image",
+      "file"
     ],
     "outputs": [
       "text"
@@ -2777,7 +2782,8 @@
     "supports_image": false,
     "context_length": 256000,
     "inputs": [
-      "text"
+      "text",
+      "file"
     ],
     "outputs": [
       "text"
@@ -2951,7 +2957,8 @@
     "supports_image": false,
     "context_length": 131072,
     "inputs": [
-      "text"
+      "text",
+      "file"
     ],
     "outputs": [
       "text"
@@ -2964,7 +2971,8 @@
     "supports_image": false,
     "context_length": 131072,
     "inputs": [
-      "text"
+      "text",
+      "file"
     ],
     "outputs": [
       "text"
@@ -3246,7 +3254,8 @@
     "context_length": 131072,
     "inputs": [
       "text",
-      "image"
+      "image",
+      "file"
     ],
     "outputs": [
       "text"
@@ -3772,7 +3781,8 @@
     "supports_image": false,
     "context_length": 32768,
     "inputs": [
-      "text"
+      "text",
+      "file"
     ],
     "outputs": [
       "text"
@@ -4138,7 +4148,8 @@
     "supports_image": false,
     "context_length": 131072,
     "inputs": [
-      "text"
+      "text",
+      "file"
     ],
     "outputs": [
       "text"
@@ -4151,7 +4162,8 @@
     "supports_image": false,
     "context_length": 131072,
     "inputs": [
-      "text"
+      "text",
+      "file"
     ],
     "outputs": [
       "text"
@@ -4165,7 +4177,8 @@
     "context_length": 131072,
     "inputs": [
       "text",
-      "image"
+      "image",
+      "file"
     ],
     "outputs": [
       "text"
@@ -4237,10 +4250,10 @@
       "text"
     ]
   },
-  "inflection-3-pi": {
+  "inflection-3-productivity": {
     "provider": "inflection",
-    "name": "Inflection: Inflection 3 Pi",
-    "description": "Inflection 3 Pi powers Inflection's [Pi](https://pi.ai) chatbot, including backstory, emotional intelligence, productivity, and safety. It has access to recent news, and excels in scenarios like customer support and roleplay. Pi...",
+    "name": "Inflection: Inflection 3 Productivity",
+    "description": "Inflection 3 Productivity is optimized for following instructions. It is better for tasks requiring JSON output or precise adherence to provided guidelines. It has access to recent news. For emotional...",
     "supports_image": false,
     "context_length": 8000,
     "inputs": [
@@ -4250,10 +4263,10 @@
       "text"
     ]
   },
-  "inflection-3-productivity": {
+  "inflection-3-pi": {
     "provider": "inflection",
-    "name": "Inflection: Inflection 3 Productivity",
-    "description": "Inflection 3 Productivity is optimized for following instructions. It is better for tasks requiring JSON output or precise adherence to provided guidelines. It has access to recent news. For emotional...",
+    "name": "Inflection: Inflection 3 Pi",
+    "description": "Inflection 3 Pi powers Inflection's [Pi](https://pi.ai) chatbot, including backstory, emotional intelligence, productivity, and safety. It has access to recent news, and excels in scenarios like customer support and roleplay. Pi...",
     "supports_image": false,
     "context_length": 8000,
     "inputs": [
@@ -4422,12 +4435,12 @@
       "text"
     ]
   },
-  "llama-3.1-8b-instruct": {
+  "llama-3.1-70b-instruct": {
     "provider": "meta-llama",
-    "name": "Meta: Llama 3.1 8B Instruct",
-    "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 8B instruct-tuned version is fast and efficient. It has demonstrated strong performance compared to...",
+    "name": "Meta: Llama 3.1 70B Instruct",
+    "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 70B instruct-tuned version is optimized for high quality dialogue usecases. It has demonstrated strong...",
     "supports_image": false,
-    "context_length": 16384,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -4435,12 +4448,12 @@
       "text"
     ]
   },
-  "llama-3.1-70b-instruct": {
+  "llama-3.1-8b-instruct": {
     "provider": "meta-llama",
-    "name": "Meta: Llama 3.1 70B Instruct",
-    "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 70B instruct-tuned version is optimized for high quality dialogue usecases. It has demonstrated strong...",
+    "name": "Meta: Llama 3.1 8B Instruct",
+    "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 8B instruct-tuned version is fast and efficient. It has demonstrated strong performance compared to...",
     "supports_image": false,
-    "context_length": 131072,
+    "context_length": 16384,
     "inputs": [
       "text"
     ],
@@ -4461,9 +4474,9 @@
       "text"
     ]
   },
-  "gpt-4o-mini": {
+  "gpt-4o-mini-2024-07-18": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4o-mini",
+    "name": "OpenAI: GPT-4o-mini (2024-07-18)",
     "description": "GPT-4o mini is OpenAI's newest model after [GPT-4 Omni](/models/openai/gpt-4o), supporting both text and image inputs with text outputs. As their most advanced small model, it is many multiples more affordable...",
     "supports_image": true,
     "context_length": 128000,
@@ -4476,9 +4489,9 @@
       "text"
     ]
   },
-  "gpt-4o-mini-2024-07-18": {
+  "gpt-4o-mini": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4o-mini (2024-07-18)",
+    "name": "OpenAI: GPT-4o-mini",
     "description": "GPT-4o mini is OpenAI's newest model after [GPT-4 Omni](/models/openai/gpt-4o), supporting both text and image inputs with text outputs. As their most advanced small model, it is many multiples more affordable...",
     "supports_image": true,
     "context_length": 128000,
@@ -4593,7 +4606,8 @@
     "supports_image": false,
     "context_length": 65536,
     "inputs": [
-      "text"
+      "text",
+      "file"
     ],
     "outputs": [
       "text"
@@ -4647,7 +4661,8 @@
     "supports_image": false,
     "context_length": 128000,
     "inputs": [
-      "text"
+      "text",
+      "file"
     ],
     "outputs": [
       "text"
@@ -4788,10 +4803,10 @@
       "text"
     ]
   },
-  "gpt-4": {
+  "gpt-4-0314": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4",
-    "description": "OpenAI's flagship model, GPT-4 is a large-scale multimodal language model capable of solving difficult problems with greater accuracy than previous models due to its broader general knowledge and advanced reasoning...",
+    "name": "OpenAI: GPT-4 (older v0314)",
+    "description": "GPT-4-0314 is the first version of GPT-4 released, with a context length of 8,192 tokens, and was supported until June 14. Training data: up to Sep 2021.",
     "supports_image": false,
     "context_length": 8191,
     "inputs": [
@@ -4801,10 +4816,10 @@
       "text"
     ]
   },
-  "gpt-4-0314": {
+  "gpt-4": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4 (older v0314)",
-    "description": "GPT-4-0314 is the first version of GPT-4 released, with a context length of 8,192 tokens, and was supported until June 14. Training data: up to Sep 2021.",
+    "name": "OpenAI: GPT-4",
+    "description": "OpenAI's flagship model, GPT-4 is a large-scale multimodal language model capable of solving difficult problems with greater accuracy than previous models due to its broader general knowledge and advanced reasoning...",
     "supports_image": false,
     "context_length": 8191,
     "inputs": [
