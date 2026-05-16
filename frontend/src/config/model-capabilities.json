@@ -31,7 +31,7 @@
   },
   "ring-2.6-1t": {
     "provider": "inclusionai",
-    "name": "inclusionAI: Ring-2.6-1T (free)",
+    "name": "inclusionAI: Ring-2.6-1T",
     "description": "Ring-2.6-1T is a 1T-parameter-scale thinking model with 63B active parameters, built for real-world agent workflows that require both strong capability and operational efficiency. It is optimized for coding agents, tool...",
     "supports_image": false,
     "context_length": 262144,
@@ -236,7 +236,7 @@
     "name": "MoonshotAI Kimi Latest",
     "description": "This model always redirects to the latest model in the MoonshotAI Kimi family.",
     "supports_image": true,
-    "context_length": 262142,
+    "context_length": 262144,
     "inputs": [
       "text",
       "image"
@@ -552,7 +552,7 @@
     "name": "MoonshotAI: Kimi K2.6",
     "description": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rust, and Go, and...",
     "supports_image": true,
-    "context_length": 262142,
+    "context_length": 262144,
     "inputs": [
       "text",
       "image"
@@ -799,7 +799,7 @@
     "name": "MiniMax: MiniMax M2.7",
     "description": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic capabilities through multi-agent...",
     "supports_image": false,
-    "context_length": 196608,
+    "context_length": 204800,
     "inputs": [
       "text"
     ],
@@ -869,7 +869,7 @@
     "name": "NVIDIA: Nemotron 3 Super",
     "description": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer...",
     "supports_image": false,
-    "context_length": 262144,
+    "context_length": 1000000,
     "inputs": [
       "text"
     ],
@@ -1002,7 +1002,7 @@
     "name": "Google: Nano Banana 2 (Gemini 3.1 Flash Image Preview)",
     "description": "Gemini 3.1 Flash Image Preview, a.k.a. \"Nano Banana 2,\" is Google’s latest state of the art image generation and editing model, delivering Pro-level visual quality at Flash speed. It combines...",
     "supports_image": true,
-    "context_length": 65536,
+    "context_length": 131072,
     "inputs": [
       "image",
       "text"
@@ -1077,7 +1077,7 @@
     "name": "LiquidAI: LFM2-24B-A2B",
     "description": "LFM2-24B-A2B is the largest model in the LFM2 family of hybrid architectures designed for efficient on-device deployment. Built as a 24B parameter Mixture-of-Experts model with only 2B active parameters per...",
     "supports_image": false,
-    "context_length": 32768,
+    "context_length": 128000,
     "inputs": [
       "text"
     ],
@@ -1090,7 +1090,7 @@
     "name": "Google: Gemini 3.1 Pro Preview Custom Tools",
     "description": "Gemini 3.1 Pro Preview Custom Tools is a variant of Gemini 3.1 Pro that improves tool selection behavior by preventing overuse of a general bash tool when more efficient third-party...",
     "supports_image": true,
-    "context_length": 1048576,
+    "context_length": 1048756,
     "inputs": [
       "text",
       "audio",
@@ -1197,7 +1197,7 @@
     "name": "MiniMax: MiniMax M2.5",
     "description": "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1...",
     "supports_image": false,
-    "context_length": 196608,
+    "context_length": 204800,
     "inputs": [
       "text"
     ],
@@ -1470,7 +1470,7 @@
     "name": "MiniMax: MiniMax M2.1",
     "description": "MiniMax-M2.1 is a lightweight, state-of-the-art large language model optimized for coding, agentic workflows, and modern application development. With only 10 billion activated parameters, it delivers a major jump in real-world...",
     "supports_image": false,
-    "context_length": 196608,
+    "context_length": 204800,
     "inputs": [
       "text"
     ],
@@ -1842,21 +1842,6 @@
       "text"
     ]
   },
-  "grok-4.1-fast": {
-    "provider": "x-ai",
-    "name": "xAI: Grok 4.1 Fast",
-    "description": "Grok 4.1 Fast is xAI's best agentic tool calling model that shines in real-world use cases like customer support and deep research. 2M context window. Reasoning can be enabled/disabled using...",
-    "supports_image": true,
-    "context_length": 2000000,
-    "inputs": [
-      "text",
-      "image",
-      "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "cogito-v2.1-671b": {
     "provider": "deepcogito",
     "name": "Deep Cogito: Cogito v2.1 671B",
@@ -2017,7 +2002,7 @@
     "name": "MiniMax: MiniMax M2",
     "description": "MiniMax-M2 is a compact, high-efficiency large language model optimized for end-to-end coding and agentic workflows. With 10 billion activated parameters (230 billion total), it delivers near-frontier intelligence across general reasoning,...",
     "supports_image": false,
-    "context_length": 196608,
+    "context_length": 204800,
     "inputs": [
       "text"
     ],
@@ -2030,7 +2015,7 @@
     "name": "Qwen: Qwen3 VL 32B Instruct",
     "description": "Qwen3-VL-32B-Instruct is a large-scale multimodal vision-language model designed for high-precision understanding and reasoning across text, images, and video. With 32 billion parameters, it combines deep visual perception with advanced text...",
     "supports_image": true,
-    "context_length": 131072,
+    "context_length": 262144,
     "inputs": [
       "text",
       "image"
@@ -2057,7 +2042,7 @@
     "name": "Microsoft: Phi 4 Mini Instruct",
     "description": "Phi-4-mini-instruct is a lightweight open model built upon synthetic data and filtered publicly available websites - with a focus on high-quality, reasoning dense data. The model belongs to the Phi-4...",
     "supports_image": false,
-    "context_length": 128000,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -2101,7 +2086,7 @@
     "name": "Qwen: Qwen3 VL 8B Thinking",
     "description": "Qwen3-VL-8B-Thinking is the reasoning-optimized variant of the Qwen3-VL-8B multimodal model, designed for advanced visual and textual reasoning across complex scenes, documents, and temporal sequences. It integrates enhanced multimodal alignment and...",
     "supports_image": true,
-    "context_length": 131072,
+    "context_length": 256000,
     "inputs": [
       "image",
       "text"
@@ -2115,7 +2100,7 @@
     "name": "Qwen: Qwen3 VL 8B Instruct",
     "description": "Qwen3-VL-8B-Instruct is a multimodal vision-language model from the Qwen3-VL series, built for high-fidelity understanding and reasoning across text, images, and video. It features improved multimodal fusion with Interleaved-MRoPE for long-horizon...",
     "supports_image": true,
-    "context_length": 131072,
+    "context_length": 256000,
     "inputs": [
       "image",
       "text"
@@ -2230,7 +2215,7 @@
     "name": "Qwen: Qwen3 VL 30B A3B Instruct",
     "description": "Qwen3-VL-30B-A3B-Instruct is a multimodal model that unifies strong text generation with visual understanding for images and videos. Its Instruct variant optimizes instruction-following for general multimodal tasks. It excels in perception...",
     "supports_image": true,
-    "context_length": 131072,
+    "context_length": 262144,
     "inputs": [
       "text",
       "image"
@@ -2419,21 +2404,6 @@
       "text"
     ]
   },
-  "grok-4-fast": {
-    "provider": "x-ai",
-    "name": "xAI: Grok 4 Fast",
-    "description": "Grok 4 Fast is xAI's latest multimodal model with SOTA cost-efficiency and a 2M token context window. It comes in two flavors: non-reasoning and reasoning. Read more about the model...",
-    "supports_image": true,
-    "context_length": 2000000,
-    "inputs": [
-      "text",
-      "image",
-      "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "tongyi-deepresearch-30b-a3b": {
     "provider": "alibaba",
     "name": "Tongyi DeepResearch 30B A3B",
@@ -2465,7 +2435,7 @@
     "name": "Qwen: Qwen3 Next 80B A3B Thinking",
     "description": "Qwen3-Next-80B-A3B-Thinking is a reasoning-first chat model in the Qwen3-Next line that outputs structured “thinking” traces by default. It’s designed for hard multi-step problems; math proofs, code synthesis/debugging, logic, and agentic...",
     "supports_image": false,
-    "context_length": 131072,
+    "context_length": 262144,
     "inputs": [
       "text"
     ],
@@ -2531,19 +2501,6 @@
     "description": "Qwen3-30B-A3B-Thinking-2507 is a 30B parameter Mixture-of-Experts reasoning model optimized for complex tasks requiring extended multi-step thinking. The model is designed specifically for “thinking mode,” where internal reasoning traces are separated...",
     "supports_image": false,
     "context_length": 131072,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "grok-code-fast-1": {
-    "provider": "x-ai",
-    "name": "xAI: Grok Code Fast 1",
-    "description": "Grok Code Fast 1 is a speedy and economical reasoning model that excels at agentic coding. With reasoning traces visible in the response, developers can steer Grok Code for high-quality...",
-    "supports_image": false,
-    "context_length": 256000,
     "inputs": [
       "text"
     ],
@@ -2625,7 +2582,7 @@
     "name": "Baidu: ERNIE 4.5 21B A3B",
     "description": "A sophisticated text-based Mixture-of-Experts (MoE) model featuring 21B total parameters with 3B activated per token, delivering exceptional multimodal understanding and generation through heterogeneous MoE structures and modality-isolated routing. Supporting an...",
     "supports_image": false,
-    "context_length": 120000,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -2638,7 +2595,7 @@
     "name": "Baidu: ERNIE 4.5 VL 28B A3B",
     "description": "A powerful multimodal Mixture-of-Experts chat model featuring 28B total parameters with 3B activated per token, delivering exceptional text and vision understanding through its innovative heterogeneous MoE structure with modality-isolated routing....",
     "supports_image": true,
-    "context_length": 30000,
+    "context_length": 131072,
     "inputs": [
       "text",
       "image"
@@ -2846,7 +2803,7 @@
     "name": "Qwen: Qwen3 235B A22B Thinking 2507",
     "description": "Qwen3-235B-A22B-Thinking-2507 is a high-performance, open-weight Mixture-of-Experts (MoE) language model optimized for complex reasoning tasks. It activates 22B of its 235B parameters per forward pass and natively supports up to 262,144...",
     "supports_image": false,
-    "context_length": 131072,
+    "context_length": 262144,
     "inputs": [
       "text"
     ],
@@ -2872,7 +2829,7 @@
     "name": "Qwen: Qwen3 Coder 480B A35B",
     "description": "Qwen3-Coder-480B-A35B-Instruct is a Mixture-of-Experts (MoE) code generation model developed by the Qwen team. It is optimized for agentic coding tasks such as function calling, tool use, and long-context reasoning over...",
     "supports_image": false,
-    "context_length": 262144,
+    "context_length": 1048576,
     "inputs": [
       "text"
     ],
@@ -2991,21 +2948,6 @@
       "text"
     ]
   },
-  "grok-4": {
-    "provider": "x-ai",
-    "name": "xAI: Grok 4",
-    "description": "Grok 4 is xAI's latest reasoning model with a 256k context window. It supports parallel tool calling, structured outputs, and both image and text inputs. Note that reasoning is not...",
-    "supports_image": true,
-    "context_length": 256000,
-    "inputs": [
-      "image",
-      "text",
-      "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "hunyuan-a13b-instruct": {
     "provider": "tencent",
     "name": "Tencent: Hunyuan A13B Instruct",
@@ -3050,7 +2992,7 @@
     "name": "Baidu: ERNIE 4.5 VL 424B A47B ",
     "description": "ERNIE-4.5-VL-424B-A47B is a multimodal Mixture-of-Experts (MoE) model from Baidu’s ERNIE 4.5 series, featuring 424B total parameters with 47B active per token. It is trained jointly on text and image data...",
     "supports_image": true,
-    "context_length": 123000,
+    "context_length": 131072,
     "inputs": [
       "image",
       "text"
@@ -3064,7 +3006,7 @@
     "name": "Baidu: ERNIE 4.5 300B A47B ",
     "description": "ERNIE-4.5-300B-A47B is a 300B parameter Mixture-of-Experts (MoE) language model developed by Baidu as part of the ERNIE 4.5 series. It activates 47B parameters per token and supports text generation in...",
     "supports_image": false,
-    "context_length": 123000,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -3143,32 +3085,6 @@
       "text",
       "file",
       "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "grok-3-mini": {
-    "provider": "x-ai",
-    "name": "xAI: Grok 3 Mini",
-    "description": "A lightweight model that thinks before responding. Fast, smart, and great for logic-based tasks that do not require deep domain knowledge. The raw thinking traces are accessible.",
-    "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "grok-3": {
-    "provider": "x-ai",
-    "name": "xAI: Grok 3",
-    "description": "Grok 3 is the latest model from xAI. It's their flagship model that excels at enterprise use cases like data extraction, coding, and text summarization. Possesses deep domain knowledge in...",
-    "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
@@ -3350,7 +3266,7 @@
     "name": "Qwen: Qwen3 30B A3B",
     "description": "Qwen3, the latest generation in the Qwen large language model series, features both dense and mixture-of-experts (MoE) architectures to excel in reasoning, multilingual support, and advanced agent tasks. Its unique...",
     "supports_image": false,
-    "context_length": 40960,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -3363,7 +3279,7 @@
     "name": "Qwen: Qwen3 8B",
     "description": "Qwen3-8B is a dense 8.2B parameter causal language model from the Qwen3 series, designed for both reasoning-heavy tasks and efficient dialogue. It supports seamless switching between \"thinking\" mode for math,...",
     "supports_image": false,
-    "context_length": 40960,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -3376,7 +3292,7 @@
     "name": "Qwen: Qwen3 14B",
     "description": "Qwen3-14B is a dense 14.8B parameter causal language model from the Qwen3 series, designed for both complex reasoning and efficient dialogue. It supports seamless switching between a \"thinking\" mode for...",
     "supports_image": false,
-    "context_length": 40960,
+    "context_length": 131702,
     "inputs": [
       "text"
     ],
@@ -3389,7 +3305,7 @@
     "name": "Qwen: Qwen3 32B",
     "description": "Qwen3-32B is a dense 32.8B parameter causal language model from the Qwen3 series, optimized for both complex reasoning and efficient dialogue. It supports seamless switching between a \"thinking\" mode for...",
     "supports_image": false,
-    "context_length": 40960,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -3513,32 +3429,6 @@
       "text"
     ]
   },
-  "grok-3-mini-beta": {
-    "provider": "x-ai",
-    "name": "xAI: Grok 3 Mini Beta",
-    "description": "Grok 3 Mini is a lightweight, smaller thinking model. Unlike traditional models that generate answers immediately, Grok 3 Mini thinks before responding. It’s ideal for reasoning-heavy tasks that don’t demand...",
-    "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "grok-3-beta": {
-    "provider": "x-ai",
-    "name": "xAI: Grok 3 Beta",
-    "description": "Grok 3 is the latest model from xAI. It's their flagship model that excels at enterprise use cases like data extraction, coding, and text summarization. Possesses deep domain knowledge in...",
-    "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "llama-4-maverick": {
     "provider": "meta-llama",
     "name": "Meta: Llama 4 Maverick",
@@ -3558,7 +3448,7 @@
     "name": "Meta: Llama 4 Scout",
     "description": "Llama 4 Scout 17B Instruct (16E) is a mixture-of-experts (MoE) language model developed by Meta, activating 17 billion parameters out of a total of 109B. It supports native multimodal input...",
     "supports_image": true,
-    "context_length": 327680,
+    "context_length": 10000000,
     "inputs": [
       "text",
       "image"
@@ -3876,7 +3766,7 @@
     "name": "Qwen: Qwen2.5 VL 72B Instruct",
     "description": "Qwen2.5-VL is proficient in recognizing common objects such as flowers, birds, fish, and insects. It is also highly capable of analyzing texts, charts, icons, graphics, and layouts within images.",
     "supports_image": true,
-    "context_length": 32000,
+    "context_length": 131072,
     "inputs": [
       "text",
       "image"
@@ -3930,7 +3820,7 @@
     "name": "DeepSeek: R1 Distill Qwen 32B",
     "description": "DeepSeek R1 Distill Qwen 32B is a distilled large language model based on [Qwen 2.5 32B](https://huggingface.co/Qwen/Qwen2.5-32B), using outputs from [DeepSeek R1](/deepseek/deepseek-r1). It outperforms OpenAI's o1-mini across various benchmarks, achieving new...",
     "supports_image": false,
-    "context_length": 32768,
+    "context_length": 128000,
     "inputs": [
       "text"
     ],
@@ -3970,7 +3860,7 @@
     "name": "DeepSeek: R1",
     "description": "DeepSeek R1 is here: Performance on par with [OpenAI o1](/openai/o1), but open-sourced and with fully open reasoning tokens. It's 671B parameters in size, with 37B active in an inference pass....",
     "supports_image": false,
-    "context_length": 64000,
+    "context_length": 163840,
     "inputs": [
       "text"
     ],
@@ -4189,7 +4079,7 @@
     "name": "Qwen2.5 Coder 32B Instruct",
     "description": "Qwen2.5-Coder is the latest series of Code-Specific Qwen large language models (formerly known as CodeQwen). Qwen2.5-Coder brings the following improvements upon CodeQwen1.5: - Significantly improvements in **code generation**, **code reasoning**...",
     "supports_image": false,
-    "context_length": 32768,
+    "context_length": 128000,
     "inputs": [
       "text"
     ],
@@ -4229,7 +4119,7 @@
     "name": "Magnum v4 72B",
     "description": "This is a series of models designed to replicate the prose quality of the Claude 3 models, specifically Sonnet(https://openrouter.ai/anthropic/claude-3.5-sonnet) and Opus(https://openrouter.ai/anthropic/claude-3-opus).\n\nThe model is fine-tuned on top of [Qwen2.5 72B](https://openrouter.ai/qwen/qwen-2.5-72b-instruct).",
     "supports_image": false,
-    "context_length": 16384,
+    "context_length": 32768,
     "inputs": [
       "text"
     ],
@@ -4242,7 +4132,7 @@
     "name": "Qwen: Qwen2.5 7B Instruct",
     "description": "Qwen2.5 7B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2: - Significantly more knowledge and has greatly improved capabilities in coding and...",
     "supports_image": false,
-    "context_length": 32768,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -4289,32 +4179,6 @@
       "text"
     ]
   },
-  "llama-3.2-1b-instruct": {
-    "provider": "meta-llama",
-    "name": "Meta: Llama 3.2 1B Instruct",
-    "description": "Llama 3.2 1B is a 1-billion-parameter language model focused on efficiently performing natural language tasks, such as summarization, dialogue, and multilingual text analysis. Its smaller size allows it to operate...",
-    "supports_image": false,
-    "context_length": 60000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "llama-3.2-3b-instruct": {
-    "provider": "meta-llama",
-    "name": "Meta: Llama 3.2 3B Instruct",
-    "description": "Llama 3.2 3B is a 3-billion-parameter multilingual large language model, optimized for advanced natural language processing tasks like dialogue generation, reasoning, and summarization. Designed with the latest transformer architecture, it...",
-    "supports_image": false,
-    "context_length": 80000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "llama-3.2-11b-vision-instruct": {
     "provider": "meta-llama",
     "name": "Meta: Llama 3.2 11B Vision Instruct",
@@ -4329,12 +4193,38 @@
       "text"
     ]
   },
+  "llama-3.2-1b-instruct": {
+    "provider": "meta-llama",
+    "name": "Meta: Llama 3.2 1B Instruct",
+    "description": "Llama 3.2 1B is a 1-billion-parameter language model focused on efficiently performing natural language tasks, such as summarization, dialogue, and multilingual text analysis. Its smaller size allows it to operate...",
+    "supports_image": false,
+    "context_length": 131072,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "llama-3.2-3b-instruct": {
+    "provider": "meta-llama",
+    "name": "Meta: Llama 3.2 3B Instruct",
+    "description": "Llama 3.2 3B is a 3-billion-parameter multilingual large language model, optimized for advanced natural language processing tasks like dialogue generation, reasoning, and summarization. Designed with the latest transformer architecture, it...",
+    "supports_image": false,
+    "context_length": 131072,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "qwen-2.5-72b-instruct": {
     "provider": "qwen",
     "name": "Qwen2.5 72B Instruct",
     "description": "Qwen2.5 72B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2: - Significantly more knowledge and has greatly improved capabilities in coding and...",
     "supports_image": false,
-    "context_length": 32768,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -4453,7 +4343,7 @@
     "name": "Meta: Llama 3.1 8B Instruct",
     "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 8B instruct-tuned version is fast and efficient. It has demonstrated strong performance compared to...",
     "supports_image": false,
-    "context_length": 16384,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -4573,10 +4463,10 @@
       "text"
     ]
   },
-  "llama-3-8b-instruct": {
+  "llama-3-70b-instruct": {
     "provider": "meta-llama",
-    "name": "Meta: Llama 3 8B Instruct",
-    "description": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 8B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
+    "name": "Meta: Llama 3 70B Instruct",
+    "description": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 70B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
     "supports_image": false,
     "context_length": 8192,
     "inputs": [
@@ -4586,10 +4476,10 @@
       "text"
     ]
   },
-  "llama-3-70b-instruct": {
+  "llama-3-8b-instruct": {
     "provider": "meta-llama",
-    "name": "Meta: Llama 3 70B Instruct",
-    "description": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 70B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
+    "name": "Meta: Llama 3 8B Instruct",
+    "description": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 8B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
     "supports_image": false,
     "context_length": 8192,
     "inputs": [
@@ -4618,7 +4508,7 @@
     "name": "WizardLM-2 8x22B",
     "description": "WizardLM-2 8x22B is Microsoft AI's most advanced Wizard model. It demonstrates highly competitive performance compared to leading proprietary models, and it consistently outperforms all existing state-of-the-art opensource models. It is...",
     "supports_image": false,
-    "context_length": 65535,
+    "context_length": 65536,
     "inputs": [
       "text"
     ],
@@ -4668,12 +4558,12 @@
       "text"
     ]
   },
-  "gpt-3.5-turbo-0613": {
+  "gpt-4-turbo-preview": {
     "provider": "openai",
-    "name": "OpenAI: GPT-3.5 Turbo (older v0613)",
-    "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
+    "name": "OpenAI: GPT-4 Turbo Preview",
+    "description": "The preview GPT-4 model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Training data: up to Dec 2023. **Note:** heavily rate limited by OpenAI while...",
     "supports_image": false,
-    "context_length": 4095,
+    "context_length": 128000,
     "inputs": [
       "text"
     ],
@@ -4681,12 +4571,12 @@
       "text"
     ]
   },
-  "gpt-4-turbo-preview": {
+  "gpt-3.5-turbo-0613": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4 Turbo Preview",
-    "description": "The preview GPT-4 model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Training data: up to Dec 2023. **Note:** heavily rate limited by OpenAI while...",
+    "name": "OpenAI: GPT-3.5 Turbo (older v0613)",
+    "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
     "supports_image": false,
-    "context_length": 128000,
+    "context_length": 4095,
     "inputs": [
       "text"
     ],
@@ -4730,7 +4620,7 @@
     "name": "Mistral: Mistral 7B Instruct v0.1",
     "description": "A 7.3B parameter model that outperforms Llama 2 13B on all benchmarks, with optimizations for speed and context length.",
     "supports_image": false,
-    "context_length": 2824,
+    "context_length": 4096,
     "inputs": [
       "text"
     ],
@@ -4816,12 +4706,12 @@
       "text"
     ]
   },
-  "gpt-4": {
+  "gpt-3.5-turbo": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4",
-    "description": "OpenAI's flagship model, GPT-4 is a large-scale multimodal language model capable of solving difficult problems with greater accuracy than previous models due to its broader general knowledge and advanced reasoning...",
+    "name": "OpenAI: GPT-3.5 Turbo",
+    "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
     "supports_image": false,
-    "context_length": 8191,
+    "context_length": 16385,
     "inputs": [
       "text"
     ],
@@ -4829,12 +4719,12 @@
       "text"
     ]
   },
-  "gpt-3.5-turbo": {
+  "gpt-4": {
     "provider": "openai",
-    "name": "OpenAI: GPT-3.5 Turbo",
-    "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
+    "name": "OpenAI: GPT-4",
+    "description": "OpenAI's flagship model, GPT-4 is a large-scale multimodal language model capable of solving difficult problems with greater accuracy than previous models due to its broader general knowledge and advanced reasoning...",
     "supports_image": false,
-    "context_length": 16385,
+    "context_length": 8191,
     "inputs": [
       "text"
     ],
