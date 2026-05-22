@@ -1,4 +1,17 @@
 {
+  "qwen3.7-max": {
+    "provider": "qwen",
+    "name": "Qwen: Qwen3.7 Max",
+    "description": "Qwen3.7-Max is the flagship model in Alibaba's Qwen3.7 series. It supports text input and output and is designed for agent-centric workloads, with particular strengths in coding, office and productivity tasks,...",
+    "supports_image": false,
+    "context_length": 1000000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "grok-build-0.1": {
     "provider": "x-ai",
     "name": "xAI: Grok Build 0.1",
@@ -627,7 +640,7 @@
     "name": "Z.ai: GLM 5.1",
     "description": "GLM-5.1 delivers a major leap in coding capability, with particularly significant gains in handling long-horizon tasks. Unlike previous models built around minute-level interactions, GLM-5.1 can work independently and continuously on...",
     "supports_image": false,
-    "context_length": 202800,
+    "context_length": 202752,
     "inputs": [
       "text"
     ],
@@ -1310,19 +1323,6 @@
     "description": "Step 3.5 Flash is StepFun's most capable open-source foundation model. Built on a sparse Mixture of Experts (MoE) architecture, it selectively activates only 11B of its 196B parameters per token....",
     "supports_image": false,
     "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "trinity-large-preview": {
-    "provider": "arcee-ai",
-    "name": "Arcee AI: Trinity Large Preview",
-    "description": "Trinity-Large-Preview is a frontier-scale open-weight language model from Arcee, built as a 400B-parameter sparse Mixture-of-Experts with 13B active parameters per token using 4-of-256 expert routing. It excels in creative writing,...",
-    "supports_image": false,
-    "context_length": 131000,
     "inputs": [
       "text"
     ],
