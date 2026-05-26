@@ -2435,19 +2435,6 @@
       "text"
     ]
   },
-  "tongyi-deepresearch-30b-a3b": {
-    "provider": "alibaba",
-    "name": "Tongyi DeepResearch 30B A3B",
-    "description": "Tongyi DeepResearch is an agentic large language model developed by Tongyi Lab, with 30 billion total parameters activating only 3 billion per token. It's optimized for long-horizon, deep information-seeking tasks...",
-    "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "qwen3-coder-flash": {
     "provider": "qwen",
     "name": "Qwen: Qwen3 Coder Flash",
@@ -3944,7 +3931,7 @@
     "name": "DeepSeek: DeepSeek V3",
     "description": "DeepSeek-V3 is the latest model from the DeepSeek team, building upon the instruction following and coding abilities of the previous versions. Pre-trained on nearly 15 trillion tokens, the reported evaluations...",
     "supports_image": false,
-    "context_length": 163840,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
