@@ -1362,19 +1362,6 @@
       "text"
     ]
   },
-  "solar-pro-3": {
-    "provider": "upstage",
-    "name": "Upstage: Solar Pro 3",
-    "description": "Solar Pro 3 is Upstage's powerful Mixture-of-Experts (MoE) language model. With 102B total parameters and 12B active parameters per forward pass, it delivers exceptional performance while maintaining computational efficiency. Optimized...",
-    "supports_image": false,
-    "context_length": 128000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "minimax-m2-her": {
     "provider": "minimax",
     "name": "MiniMax: MiniMax M2-her",
@@ -2204,19 +2191,6 @@
       "text"
     ]
   },
-  "ernie-4.5-21b-a3b-thinking": {
-    "provider": "baidu",
-    "name": "Baidu: ERNIE 4.5 21B A3B Thinking",
-    "description": "ERNIE-4.5-21B-A3B-Thinking is Baidu's upgraded lightweight MoE model, refined to boost reasoning depth and quality for top-tier performance in logical puzzles, math, science, coding, text generation, and expert-level academic benchmarks.",
-    "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "gemini-2.5-flash-image": {
     "provider": "google",
     "name": "Google: Nano Banana (Gemini 2.5 Flash Image)",
@@ -2580,19 +2554,6 @@
       "text",
       "image",
       "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "ernie-4.5-21b-a3b": {
-    "provider": "baidu",
-    "name": "Baidu: ERNIE 4.5 21B A3B",
-    "description": "A sophisticated text-based Mixture-of-Experts (MoE) model featuring 21B total parameters with 3B activated per token, delivering exceptional multimodal understanding and generation through heterogeneous MoE structures and modality-isolated routing. Supporting an...",
-    "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
@@ -3419,19 +3380,6 @@
       "image",
       "text",
       "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "codellama-7b-instruct-solidity": {
-    "provider": "alfredpros",
-    "name": "AlfredPros: CodeLLaMa 7B Instruct Solidity",
-    "description": "A finetuned 7 billion parameters Code LLaMA - Instruct model to generate Solidity smart contract using 4-bit QLoRA finetuning provided by PEFT library.",
-    "supports_image": false,
-    "context_length": 4096,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
@@ -4616,19 +4564,6 @@
     "description": "The latest GPT-4 Turbo model with vision capabilities. Vision requests can now use JSON mode and function calling.\n\nTraining data: up to April 2023.",
     "supports_image": false,
     "context_length": 128000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "mistral-7b-instruct-v0.1": {
-    "provider": "mistralai",
-    "name": "Mistral: Mistral 7B Instruct v0.1",
-    "description": "A 7.3B parameter model that outperforms Llama 2 13B on all benchmarks, with optimizations for speed and context length.",
-    "supports_image": false,
-    "context_length": 4096,
     "inputs": [
       "text"
     ],
