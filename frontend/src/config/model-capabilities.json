@@ -1,4 +1,18 @@
 {
+  "qwen3.7-plus": {
+    "provider": "qwen",
+    "name": "Qwen: Qwen3.7 Plus",
+    "description": "Qwen3.7-Plus is a cost-effective model in Alibaba's Qwen3.7 series. It supports text and image input with text output, building on the series' text capabilities with a comprehensive upgrade to its...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "minimax-m3": {
     "provider": "minimax",
     "name": "MiniMax: MiniMax M3",
@@ -4096,10 +4110,10 @@
       "text"
     ]
   },
-  "command-r-plus-08-2024": {
+  "command-r-08-2024": {
     "provider": "cohere",
-    "name": "Cohere: Command R+ (08-2024)",
-    "description": "command-r-plus-08-2024 is an update of the [Command R+](/models/cohere/command-r-plus) with roughly 50% higher throughput and 25% lower latencies as compared to the previous Command R+ version, while keeping the hardware footprint...",
+    "name": "Cohere: Command R (08-2024)",
+    "description": "command-r-08-2024 is an update of the [Command R](/models/cohere/command-r) with improved performance for multilingual retrieval-augmented generation (RAG) and tool use. More broadly, it is better at math, code and reasoning and...",
     "supports_image": false,
     "context_length": 128000,
     "inputs": [
@@ -4109,10 +4123,10 @@
       "text"
     ]
   },
-  "command-r-08-2024": {
+  "command-r-plus-08-2024": {
     "provider": "cohere",
-    "name": "Cohere: Command R (08-2024)",
-    "description": "command-r-08-2024 is an update of the [Command R](/models/cohere/command-r) with improved performance for multilingual retrieval-augmented generation (RAG) and tool use. More broadly, it is better at math, code and reasoning and...",
+    "name": "Cohere: Command R+ (08-2024)",
+    "description": "command-r-plus-08-2024 is an update of the [Command R+](/models/cohere/command-r-plus) with roughly 50% higher throughput and 25% lower latencies as compared to the previous Command R+ version, while keeping the hardware footprint...",
     "supports_image": false,
     "context_length": 128000,
     "inputs": [
@@ -4189,10 +4203,10 @@
       "text"
     ]
   },
-  "llama-3.1-70b-instruct": {
+  "llama-3.1-8b-instruct": {
     "provider": "meta-llama",
-    "name": "Meta: Llama 3.1 70B Instruct",
-    "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 70B instruct-tuned version is optimized for high quality dialogue usecases. It has demonstrated strong...",
+    "name": "Meta: Llama 3.1 8B Instruct",
+    "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 8B instruct-tuned version is fast and efficient. It has demonstrated strong performance compared to...",
     "supports_image": false,
     "context_length": 131072,
     "inputs": [
@@ -4202,10 +4216,10 @@
       "text"
     ]
   },
-  "llama-3.1-8b-instruct": {
+  "llama-3.1-70b-instruct": {
     "provider": "meta-llama",
-    "name": "Meta: Llama 3.1 8B Instruct",
-    "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 8B instruct-tuned version is fast and efficient. It has demonstrated strong performance compared to...",
+    "name": "Meta: Llama 3.1 70B Instruct",
+    "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 70B instruct-tuned version is optimized for high quality dialogue usecases. It has demonstrated strong...",
     "supports_image": false,
     "context_length": 131072,
     "inputs": [
@@ -4327,10 +4341,10 @@
       "text"
     ]
   },
-  "llama-3-70b-instruct": {
+  "llama-3-8b-instruct": {
     "provider": "meta-llama",
-    "name": "Meta: Llama 3 70B Instruct",
-    "description": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 70B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
+    "name": "Meta: Llama 3 8B Instruct",
+    "description": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 8B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
     "supports_image": false,
     "context_length": 8192,
     "inputs": [
@@ -4340,10 +4354,10 @@
       "text"
     ]
   },
-  "llama-3-8b-instruct": {
+  "llama-3-70b-instruct": {
     "provider": "meta-llama",
-    "name": "Meta: Llama 3 8B Instruct",
-    "description": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 8B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
+    "name": "Meta: Llama 3 70B Instruct",
+    "description": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 70B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
     "supports_image": false,
     "context_length": 8192,
     "inputs": [
@@ -4544,12 +4558,12 @@
       "text"
     ]
   },
-  "gpt-4-0314": {
+  "gpt-3.5-turbo": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4 (older v0314)",
-    "description": "GPT-4-0314 is the first version of GPT-4 released, with a context length of 8,192 tokens, and was supported until June 14. Training data: up to Sep 2021.",
+    "name": "OpenAI: GPT-3.5 Turbo",
+    "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
     "supports_image": false,
-    "context_length": 8191,
+    "context_length": 16385,
     "inputs": [
       "text"
     ],
@@ -4563,19 +4577,6 @@
     "description": "OpenAI's flagship model, GPT-4 is a large-scale multimodal language model capable of solving difficult problems with greater accuracy than previous models due to its broader general knowledge and advanced reasoning...",
     "supports_image": false,
     "context_length": 8191,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "gpt-3.5-turbo": {
-    "provider": "openai",
-    "name": "OpenAI: GPT-3.5 Turbo",
-    "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
-    "supports_image": false,
-    "context_length": 16385,
     "inputs": [
       "text"
     ],
