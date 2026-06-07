@@ -2612,20 +2612,6 @@
       "text"
     ]
   },
-  "ernie-4.5-vl-28b-a3b": {
-    "provider": "baidu",
-    "name": "Baidu: ERNIE 4.5 VL 28B A3B",
-    "description": "A powerful multimodal Mixture-of-Experts chat model featuring 28B total parameters with 3B activated per token, delivering exceptional text and vision understanding through its innovative heterogeneous MoE structure with modality-isolated routing....",
-    "supports_image": true,
-    "context_length": 131072,
-    "inputs": [
-      "text",
-      "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "glm-4.5v": {
     "provider": "z-ai",
     "name": "Z.ai: GLM 4.5V",
@@ -3170,20 +3156,6 @@
       "file",
       "audio",
       "video"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "spotlight": {
-    "provider": "arcee-ai",
-    "name": "Arcee AI: Spotlight",
-    "description": "Spotlight is a 7‑billion‑parameter vision‑language model derived from Qwen 2.5‑VL and fine‑tuned by Arcee AI for tight image‑text grounding tasks. It offers a 32 k‑token context window, enabling rich multimodal...",
-    "supports_image": true,
-    "context_length": 131072,
-    "inputs": [
-      "image",
-      "text"
     ],
     "outputs": [
       "text"
@@ -4479,19 +4451,6 @@
     "outputs": [
       "text",
       "image"
-    ]
-  },
-  "gpt-4-1106-preview": {
-    "provider": "openai",
-    "name": "OpenAI: GPT-4 Turbo (older v1106)",
-    "description": "The latest GPT-4 Turbo model with vision capabilities. Vision requests can now use JSON mode and function calling.\n\nTraining data: up to April 2023.",
-    "supports_image": false,
-    "context_length": 128000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
     ]
   },
   "gpt-3.5-turbo-instruct": {
