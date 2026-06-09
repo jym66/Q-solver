@@ -1,4 +1,18 @@
 {
+  "nex-n2-pro": {
+    "provider": "nex-agi",
+    "name": "Nex AGI: Nex-N2-Pro (free)",
+    "description": "Nex-N2-Pro is an agentic mixture-of-experts model from Nex AGI, with 17B active parameters out of 397B total. Built on the Qwen3.5 architecture, it accepts text and image input and produces...",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "nemotron-3.5-content-safety": {
     "provider": "nvidia",
     "name": "NVIDIA: Nemotron 3.5 Content Safety (free)",
@@ -1705,19 +1719,6 @@
       "image",
       "text",
       "video"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "deepseek-v3.1-nex-n1": {
-    "provider": "nex-agi",
-    "name": "Nex AGI: DeepSeek V3.1 Nex N1",
-    "description": "DeepSeek V3.1 Nex-N1 is the flagship release of the Nex-N1 series — a post-trained model designed to highlight agent autonomy, tool use, and real-world productivity. Nex-N1 demonstrates competitive performance across...",
-    "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
