@@ -1,4 +1,34 @@
 {
+  "claude-fable-latest": {
+    "provider": "~anthropic",
+    "name": "Anthropic: Claude Fable Latest",
+    "description": "This model always redirects to the latest model in the Claude Fable family.",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "file"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "claude-fable-5": {
+    "provider": "anthropic",
+    "name": "Anthropic: Claude Fable 5",
+    "description": "Claude Fable 5 is a Mythos-class model from Anthropic, built for autonomous knowledge work and coding. It supports text, image, and file inputs with text output, with reasoning support and...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "file"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "nex-n2-pro": {
     "provider": "nex-agi",
     "name": "Nex AGI: Nex-N2-Pro (free)",
@@ -794,21 +824,6 @@
       "text"
     ]
   },
-  "glm-5v-turbo": {
-    "provider": "z-ai",
-    "name": "Z.ai: GLM 5V Turbo",
-    "description": "GLM-5V-Turbo is Z.ai’s first native multimodal agent foundation model, built for vision-based coding and agent-driven tasks. It natively handles image, video, and text inputs, excels at long-horizon planning, complex coding,...",
-    "supports_image": true,
-    "context_length": 202752,
-    "inputs": [
-      "image",
-      "text",
-      "video"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "trinity-large-thinking": {
     "provider": "arcee-ai",
     "name": "Arcee AI: Trinity Large Thinking",
@@ -972,7 +987,7 @@
     "name": "Z.ai: GLM 5 Turbo",
     "description": "GLM-5 Turbo is a new model from Z.ai designed for fast inference and strong performance in agent-driven environments such as OpenClaw scenarios. It is deeply optimized for real-world agent workflows...",
     "supports_image": false,
-    "context_length": 202752,
+    "context_length": 262144,
     "inputs": [
       "text"
     ],
@@ -2820,19 +2835,6 @@
       "text"
     ]
   },
-  "glm-4-32b": {
-    "provider": "z-ai",
-    "name": "Z.ai: GLM 4 32B ",
-    "description": "GLM 4 32B is a cost-effective foundation language model. It can efficiently perform complex tasks and has significantly enhanced capabilities in tool use, online search, and code-related intelligent tasks. It...",
-    "supports_image": false,
-    "context_length": 128000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "qwen3-coder": {
     "provider": "qwen",
     "name": "Qwen: Qwen3 Coder 480B A35B",
@@ -3157,19 +3159,6 @@
       "file",
       "audio",
       "video"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "maestro-reasoning": {
-    "provider": "arcee-ai",
-    "name": "Arcee AI: Maestro Reasoning",
-    "description": "Maestro Reasoning is Arcee's flagship analysis model: a 32 B‑parameter derivative of Qwen 2.5‑32 B tuned with DPO and chain‑of‑thought RL for step‑by‑step logic. Compared to the earlier 7 B...",
-    "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
