@@ -2537,10 +2537,10 @@
   },
   "nemotron-nano-9b-v2": {
     "provider": "nvidia",
-    "name": "NVIDIA: Nemotron Nano 9B V2",
+    "name": "NVIDIA: Nemotron Nano 9B V2 (free)",
     "description": "NVIDIA-Nemotron-Nano-9B-v2 is a large language model (LLM) trained from scratch by NVIDIA, and designed as a unified model for both reasoning and non-reasoning tasks. It responds to user queries and...",
     "supports_image": false,
-    "context_length": 131072,
+    "context_length": 128000,
     "inputs": [
       "text"
     ],
@@ -3392,7 +3392,7 @@
     "name": "DeepSeek: DeepSeek V3 0324",
     "description": "DeepSeek V3, a 685B-parameter, mixture-of-experts model, is the latest iteration of the flagship chat model family from the DeepSeek team. It succeeds the [DeepSeek V3](/deepseek/deepseek-chat-v3) model and performs really well...",
     "supports_image": false,
-    "context_length": 131072,
+    "context_length": 163840,
     "inputs": [
       "text"
     ],
@@ -3743,7 +3743,7 @@
     "name": "DeepSeek: R1 Distill Llama 70B",
     "description": "DeepSeek R1 Distill Llama 70B is a distilled large language model based on [Llama-3.3-70B-Instruct](/meta-llama/llama-3.3-70b-instruct), using outputs from [DeepSeek R1](/deepseek/deepseek-r1). The model combines advanced distillation techniques to achieve high performance across...",
     "supports_image": false,
-    "context_length": 131072,
+    "context_length": 128000,
     "inputs": [
       "text"
     ],
