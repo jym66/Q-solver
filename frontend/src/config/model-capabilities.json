@@ -1,4 +1,19 @@
 {
+  "kimi-k2.7-code": {
+    "provider": "moonshotai",
+    "name": "MoonshotAI: Kimi K2.7 Code",
+    "description": "MoonshotAI: Kimi K2.7 Code is a coding-focused model in Moonshot AI's Kimi K2 family, built to complete end-to-end programming tasks reliably over long contexts. It uses a native multimodal mixture-of-experts...",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "claude-fable-latest": {
     "provider": "~anthropic",
     "name": "Anthropic: Claude Fable Latest",
@@ -3586,19 +3601,6 @@
     "inputs": [
       "text",
       "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "llama-guard-3-8b": {
-    "provider": "meta-llama",
-    "name": "Llama Guard 3 8B",
-    "description": "Llama Guard 3 is a Llama-3.1-8B pretrained model, fine-tuned for content safety classification. Similar to previous versions, it can be used to classify content in both LLM inputs (prompt classification)...",
-    "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
