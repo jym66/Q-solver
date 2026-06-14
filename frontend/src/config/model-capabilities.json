@@ -1,4 +1,17 @@
 {
+  "fusion": {
+    "provider": "openrouter",
+    "name": "OpenRouter: Fusion",
+    "description": "Fusion turns your prompt into a small multi-model deliberation. A panel of expert models (see below) analyzes your prompt in parallel with web search and web fetch enabled, then a...",
+    "supports_image": false,
+    "context_length": 128000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "kimi-k2.7-code": {
     "provider": "moonshotai",
     "name": "MoonshotAI: Kimi K2.7 Code",
@@ -7,8 +20,7 @@
     "context_length": 262144,
     "inputs": [
       "text",
-      "image",
-      "video"
+      "image"
     ],
     "outputs": [
       "text"
@@ -213,19 +225,6 @@
       "text",
       "image",
       "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "fusion": {
-    "provider": "openrouter",
-    "name": "OpenRouter: Fusion",
-    "description": "Fusion turns your prompt into a small multi-model deliberation. A panel of expert models (see below) analyzes your prompt in parallel with web search and web fetch enabled, then a...",
-    "supports_image": false,
-    "context_length": 128000,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
