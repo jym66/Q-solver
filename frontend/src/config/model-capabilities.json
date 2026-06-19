@@ -1,4 +1,34 @@
 {
+  "gemini-3.1-flash-image": {
+    "provider": "google",
+    "name": "Google: Nano Banana 2 (Gemini 3.1 Flash Image)",
+    "description": "Gemini 3.1 Flash Image, a.k.a. \"Nano Banana 2,\" is Google’s latest state of the art image generation and editing model, delivering Pro-level visual quality at Flash speed. It combines advanced...",
+    "supports_image": true,
+    "context_length": 131072,
+    "inputs": [
+      "image",
+      "text"
+    ],
+    "outputs": [
+      "image",
+      "text"
+    ]
+  },
+  "gemini-3-pro-image": {
+    "provider": "google",
+    "name": "Google: Nano Banana Pro (Gemini 3 Pro Image)",
+    "description": "Nano Banana Pro is Google’s most advanced image-generation and editing model, built on Gemini 3 Pro. It extends the original Nano Banana with significantly improved multimodal reasoning, real-world grounding, and...",
+    "supports_image": true,
+    "context_length": 65536,
+    "inputs": [
+      "image",
+      "text"
+    ],
+    "outputs": [
+      "image",
+      "text"
+    ]
+  },
   "north-mini-code": {
     "provider": "cohere",
     "name": "Cohere: North Mini Code (free)",
@@ -389,7 +419,7 @@
   },
   "laguna-xs.2": {
     "provider": "poolside",
-    "name": "Poolside: Laguna XS.2 (free)",
+    "name": "Poolside: Laguna XS.2",
     "description": "Laguna XS.2 is the second-generation model in the XS size class from [Poolside](https://poolside.ai/), their efficient coding agent series. It combines tool calling and reasoning capabilities with a compact footprint, offering...",
     "supports_image": false,
     "context_length": 262144,
@@ -402,8 +432,8 @@
   },
   "laguna-m.1": {
     "provider": "poolside",
-    "name": "Poolside: Laguna M.1 (free)",
-    "description": "Laguna M.1 is the flagship coding agent model from [Poolside](https://poolside.ai), optimized for complex software engineering tasks. Designed for agentic coding workflows, it supports tool calling and reasoning, with a 128K...",
+    "name": "Poolside: Laguna M.1",
+    "description": "Laguna M.1 is the flagship coding agent model from [Poolside](https://poolside.ai/), optimized for complex software engineering tasks. Designed for agentic coding workflows, it supports tool calling and reasoning, with a 256K...",
     "supports_image": false,
     "context_length": 262144,
     "inputs": [
