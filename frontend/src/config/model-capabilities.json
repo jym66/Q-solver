@@ -4348,19 +4348,6 @@
       "text"
     ]
   },
-  "llama-3-70b-instruct": {
-    "provider": "meta-llama",
-    "name": "Meta: Llama 3 70B Instruct",
-    "description": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 70B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
-    "supports_image": false,
-    "context_length": 8192,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "mixtral-8x22b-instruct": {
     "provider": "mistralai",
     "name": "Mistral: Mixtral 8x22B Instruct",
