@@ -894,6 +894,21 @@
       "text"
     ]
   },
+  "glm-5v-turbo": {
+    "provider": "z-ai",
+    "name": "Z.ai: GLM 5V Turbo",
+    "description": "GLM-5V-Turbo is Z.ai’s first native multimodal agent foundation model, built for vision-based coding and agent-driven tasks. It natively handles image, video, and text inputs, excels at long-horizon planning, complex coding,...",
+    "supports_image": true,
+    "context_length": 202752,
+    "inputs": [
+      "image",
+      "text",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "trinity-large-thinking": {
     "provider": "arcee-ai",
     "name": "Arcee AI: Trinity Large Thinking",
