@@ -1811,19 +1811,6 @@
       "text"
     ]
   },
-  "rnj-1-instruct": {
-    "provider": "essentialai",
-    "name": "EssentialAI: Rnj 1 Instruct",
-    "description": "Rnj-1 is an 8B-parameter, dense, open-weight model family developed by Essential AI and trained from scratch with a focus on programming, math, and scientific reasoning. The model demonstrates strong performance...",
-    "supports_image": false,
-    "context_length": 32768,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "bodybuilder": {
     "provider": "openrouter",
     "name": "Body Builder (beta)",
@@ -1941,19 +1928,6 @@
     "provider": "deepseek",
     "name": "DeepSeek: DeepSeek V3.2",
     "description": "DeepSeek-V3.2 is a large language model designed to harmonize high computational efficiency with strong reasoning and agentic tool-use performance. It introduces DeepSeek Sparse Attention (DSA), a fine-grained sparse attention mechanism...",
-    "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "intellect-3": {
-    "provider": "prime-intellect",
-    "name": "Prime Intellect: INTELLECT-3",
-    "description": "INTELLECT-3 is a 106B-parameter Mixture-of-Experts model (12B active) post-trained from GLM-4.5-Air-Base using supervised fine-tuning (SFT) followed by large-scale reinforcement learning (RL). It offers state-of-the-art performance for its size across math,...",
     "supports_image": false,
     "context_length": 131072,
     "inputs": [
