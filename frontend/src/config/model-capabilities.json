@@ -836,21 +836,6 @@
       "text"
     ]
   },
-  "claude-opus-4.6-fast": {
-    "provider": "anthropic",
-    "name": "Anthropic: Claude Opus 4.6 (Fast)",
-    "description": "Fast-mode variant of [Opus 4.6](/anthropic/claude-opus-4.6) - identical capabilities with higher output speed at premium 6x pricing.\n\nLearn more in Anthropic's docs: https://platform.claude.com/docs/en/build-with-claude/fast-mode",
-    "supports_image": true,
-    "context_length": 1000000,
-    "inputs": [
-      "text",
-      "image",
-      "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "glm-5.1": {
     "provider": "z-ai",
     "name": "Z.ai: GLM 5.1",
