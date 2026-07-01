@@ -1,4 +1,34 @@
 {
+  "claude-sonnet-5": {
+    "provider": "anthropic",
+    "name": "Anthropic: Claude Sonnet 5",
+    "description": "Sonnet 5 is Anthropic's most capable Sonnet-class model, with frontier performance across coding, agents, and professional work. It supports adaptive thinking with selectable reasoning effort levels (low, medium, high, max,...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "file"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gemini-3.1-flash-lite-image": {
+    "provider": "google",
+    "name": "Google: Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
+    "description": "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image) is Google's fastest, most cost-efficient Gemini image model, built for high-velocity developer pipelines and rapid-fire visual exploration. It delivers text-to-image generation...",
+    "supports_image": true,
+    "context_length": 65536,
+    "inputs": [
+      "image",
+      "text"
+    ],
+    "outputs": [
+      "image",
+      "text"
+    ]
+  },
   "fugu-ultra": {
     "provider": "sakana",
     "name": "Sakana: Fugu Ultra",
@@ -398,19 +428,6 @@
       "text",
       "image",
       "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "owl-alpha": {
-    "provider": "openrouter",
-    "name": "Owl Alpha",
-    "description": "Owl Alpha is a high-performance foundation model designed for agentic workloads. Natively supports tool use, and long-context tasks, with strong performance in code generation, automated workflows, and complex instruction execution....",
-    "supports_image": false,
-    "context_length": 1048756,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
@@ -2168,19 +2185,6 @@
     "description": "Granite-4.0-H-Micro is a 3B parameter from the Granite 4 family of models. These models are the latest in a series of models released by IBM. They are fine-tuned for long...",
     "supports_image": false,
     "context_length": 131000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "phi-4-mini-instruct": {
-    "provider": "microsoft",
-    "name": "Microsoft: Phi 4 Mini Instruct",
-    "description": "Phi-4-mini-instruct is a lightweight open model built upon synthetic data and filtered publicly available websites - with a focus on high-quality, reasoning dense data. The model belongs to the Phi-4...",
-    "supports_image": false,
-    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -4013,10 +4017,10 @@
       "text"
     ]
   },
-  "inflection-3-productivity": {
+  "inflection-3-pi": {
     "provider": "inflection",
-    "name": "Inflection: Inflection 3 Productivity",
-    "description": "Inflection 3 Productivity is optimized for following instructions. It is better for tasks requiring JSON output or precise adherence to provided guidelines. It has access to recent news. For emotional...",
+    "name": "Inflection: Inflection 3 Pi",
+    "description": "Inflection 3 Pi powers Inflection's [Pi](https://pi.ai) chatbot, including backstory, emotional intelligence, productivity, and safety. It has access to recent news, and excels in scenarios like customer support and roleplay. Pi...",
     "supports_image": false,
     "context_length": 8000,
     "inputs": [
@@ -4026,10 +4030,10 @@
       "text"
     ]
   },
-  "inflection-3-pi": {
+  "inflection-3-productivity": {
     "provider": "inflection",
-    "name": "Inflection: Inflection 3 Pi",
-    "description": "Inflection 3 Pi powers Inflection's [Pi](https://pi.ai) chatbot, including backstory, emotional intelligence, productivity, and safety. It has access to recent news, and excels in scenarios like customer support and roleplay. Pi...",
+    "name": "Inflection: Inflection 3 Productivity",
+    "description": "Inflection 3 Productivity is optimized for following instructions. It is better for tasks requiring JSON output or precise adherence to provided guidelines. It has access to recent news. For emotional...",
     "supports_image": false,
     "context_length": 8000,
     "inputs": [
@@ -4045,19 +4049,6 @@
     "description": "Rocinante 12B is designed for engaging storytelling and rich prose. Early testers have reported: - Expanded vocabulary with unique and expressive word choices - Enhanced creativity for vivid narratives -...",
     "supports_image": false,
     "context_length": 32768,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "llama-3.2-3b-instruct": {
-    "provider": "meta-llama",
-    "name": "Meta: Llama 3.2 3B Instruct",
-    "description": "Llama 3.2 3B is a 3-billion-parameter multilingual large language model, optimized for advanced natural language processing tasks like dialogue generation, reasoning, and summarization. Designed with the latest transformer architecture, it...",
-    "supports_image": false,
-    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -4087,6 +4078,19 @@
     "inputs": [
       "text",
       "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "llama-3.2-3b-instruct": {
+    "provider": "meta-llama",
+    "name": "Meta: Llama 3.2 3B Instruct",
+    "description": "Llama 3.2 3B is a 3-billion-parameter multilingual large language model, optimized for advanced natural language processing tasks like dialogue generation, reasoning, and summarization. Designed with the latest transformer architecture, it...",
+    "supports_image": false,
+    "context_length": 131072,
+    "inputs": [
+      "text"
     ],
     "outputs": [
       "text"
@@ -4237,9 +4241,9 @@
       "text"
     ]
   },
-  "gpt-4o-mini": {
+  "gpt-4o-mini-2024-07-18": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4o-mini",
+    "name": "OpenAI: GPT-4o-mini (2024-07-18)",
     "description": "GPT-4o mini is OpenAI's newest model after [GPT-4 Omni](/models/openai/gpt-4o), supporting both text and image inputs with text outputs. As their most advanced small model, it is many multiples more affordable...",
     "supports_image": true,
     "context_length": 128000,
@@ -4252,9 +4256,9 @@
       "text"
     ]
   },
-  "gpt-4o-mini-2024-07-18": {
+  "gpt-4o-mini": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4o-mini (2024-07-18)",
+    "name": "OpenAI: GPT-4o-mini",
     "description": "GPT-4o mini is OpenAI's newest model after [GPT-4 Omni](/models/openai/gpt-4o), supporting both text and image inputs with text outputs. As their most advanced small model, it is many multiples more affordable...",
     "supports_image": true,
     "context_length": 128000,
@@ -4392,12 +4396,12 @@
       "text"
     ]
   },
-  "gpt-4-turbo-preview": {
+  "gpt-3.5-turbo-0613": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4 Turbo Preview",
-    "description": "The preview GPT-4 model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Training data: up to Dec 2023. **Note:** heavily rate limited by OpenAI while...",
+    "name": "OpenAI: GPT-3.5 Turbo (older v0613)",
+    "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
     "supports_image": false,
-    "context_length": 128000,
+    "context_length": 4095,
     "inputs": [
       "text"
     ],
@@ -4405,12 +4409,12 @@
       "text"
     ]
   },
-  "gpt-3.5-turbo-0613": {
+  "gpt-4-turbo-preview": {
     "provider": "openai",
-    "name": "OpenAI: GPT-3.5 Turbo (older v0613)",
-    "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
+    "name": "OpenAI: GPT-4 Turbo Preview",
+    "description": "The preview GPT-4 model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Training data: up to Dec 2023. **Note:** heavily rate limited by OpenAI while...",
     "supports_image": false,
-    "context_length": 4095,
+    "context_length": 128000,
     "inputs": [
       "text"
     ],
