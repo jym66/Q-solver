@@ -1,4 +1,30 @@
 {
+  "aion-3.0-mini": {
+    "provider": "aion-labs",
+    "name": "AionLabs: Aion-3.0-Mini",
+    "description": "Aion-3.0 Mini is a multi-model roleplaying and storytelling system from AionLabs, built on the DeepSeek family of models. It uses a collaborative generation process in which multiple specialized models each...",
+    "supports_image": false,
+    "context_length": 131072,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "aion-3.0": {
+    "provider": "aion-labs",
+    "name": "AionLabs: Aion-3.0",
+    "description": "Aion-3.0 is a multi-model roleplaying and storytelling system from AionLabs, built on the GLM family of models. It uses a collaborative generation process in which multiple specialized models each contribute...",
+    "supports_image": false,
+    "context_length": 131072,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "hy3": {
     "provider": "tencent",
     "name": "Tencent: Hy3",
@@ -332,7 +358,8 @@
     "context_length": 256000,
     "inputs": [
       "text",
-      "image"
+      "image",
+      "file"
     ],
     "outputs": [
       "text"
@@ -3695,32 +3722,6 @@
       "text"
     ]
   },
-  "aion-1.0": {
-    "provider": "aion-labs",
-    "name": "AionLabs: Aion-1.0",
-    "description": "Aion-1.0 is a multi-model system designed for high performance across various tasks, including reasoning and coding. It is built on DeepSeek-R1, augmented with additional models and techniques such as Tree...",
-    "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "aion-1.0-mini": {
-    "provider": "aion-labs",
-    "name": "AionLabs: Aion-1.0-Mini",
-    "description": "Aion-1.0-Mini 32B parameter model is a distilled version of the DeepSeek-R1 model, designed for strong performance in reasoning domains such as mathematics, coding, and logic. It is a modified variant...",
-    "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "aion-rp-llama-3.1-8b": {
     "provider": "aion-labs",
     "name": "AionLabs: Aion-RP 1.0 (8B)",
@@ -4057,10 +4058,10 @@
       "text"
     ]
   },
-  "inflection-3-pi": {
+  "inflection-3-productivity": {
     "provider": "inflection",
-    "name": "Inflection: Inflection 3 Pi",
-    "description": "Inflection 3 Pi powers Inflection's [Pi](https://pi.ai) chatbot, including backstory, emotional intelligence, productivity, and safety. It has access to recent news, and excels in scenarios like customer support and roleplay. Pi...",
+    "name": "Inflection: Inflection 3 Productivity",
+    "description": "Inflection 3 Productivity is optimized for following instructions. It is better for tasks requiring JSON output or precise adherence to provided guidelines. It has access to recent news. For emotional...",
     "supports_image": false,
     "context_length": 8000,
     "inputs": [
@@ -4070,10 +4071,10 @@
       "text"
     ]
   },
-  "inflection-3-productivity": {
+  "inflection-3-pi": {
     "provider": "inflection",
-    "name": "Inflection: Inflection 3 Productivity",
-    "description": "Inflection 3 Productivity is optimized for following instructions. It is better for tasks requiring JSON output or precise adherence to provided guidelines. It has access to recent news. For emotional...",
+    "name": "Inflection: Inflection 3 Pi",
+    "description": "Inflection 3 Pi powers Inflection's [Pi](https://pi.ai) chatbot, including backstory, emotional intelligence, productivity, and safety. It has access to recent news, and excels in scenarios like customer support and roleplay. Pi...",
     "supports_image": false,
     "context_length": 8000,
     "inputs": [
@@ -4088,7 +4089,20 @@
     "name": "TheDrummer: Rocinante 12B",
     "description": "Rocinante 12B is designed for engaging storytelling and rich prose. Early testers have reported: - Expanded vocabulary with unique and expressive word choices - Enhanced creativity for vivid narratives -...",
     "supports_image": false,
-    "context_length": 32768,
+    "context_length": 65536,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "llama-3.2-1b-instruct": {
+    "provider": "meta-llama",
+    "name": "Meta: Llama 3.2 1B Instruct",
+    "description": "Llama 3.2 1B is a 1-billion-parameter language model focused on efficiently performing natural language tasks, such as summarization, dialogue, and multilingual text analysis. Its smaller size allows it to operate...",
+    "supports_image": false,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -4118,19 +4132,6 @@
     "inputs": [
       "text",
       "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "llama-3.2-1b-instruct": {
-    "provider": "meta-llama",
-    "name": "Meta: Llama 3.2 1B Instruct",
-    "description": "Llama 3.2 1B is a 1-billion-parameter language model focused on efficiently performing natural language tasks, such as summarization, dialogue, and multilingual text analysis. Its smaller size allows it to operate...",
-    "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
@@ -4242,10 +4243,10 @@
       "text"
     ]
   },
-  "llama-3.1-8b-instruct": {
+  "llama-3.1-70b-instruct": {
     "provider": "meta-llama",
-    "name": "Meta: Llama 3.1 8B Instruct",
-    "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 8B instruct-tuned version is fast and efficient. It has demonstrated strong performance compared to...",
+    "name": "Meta: Llama 3.1 70B Instruct",
+    "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 70B instruct-tuned version is optimized for high quality dialogue usecases. It has demonstrated strong...",
     "supports_image": false,
     "context_length": 131072,
     "inputs": [
@@ -4255,10 +4256,10 @@
       "text"
     ]
   },
-  "llama-3.1-70b-instruct": {
+  "llama-3.1-8b-instruct": {
     "provider": "meta-llama",
-    "name": "Meta: Llama 3.1 70B Instruct",
-    "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 70B instruct-tuned version is optimized for high quality dialogue usecases. It has demonstrated strong...",
+    "name": "Meta: Llama 3.1 8B Instruct",
+    "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 8B instruct-tuned version is fast and efficient. It has demonstrated strong performance compared to...",
     "supports_image": false,
     "context_length": 131072,
     "inputs": [
@@ -4281,9 +4282,9 @@
       "text"
     ]
   },
-  "gpt-4o-mini-2024-07-18": {
+  "gpt-4o-mini": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4o-mini (2024-07-18)",
+    "name": "OpenAI: GPT-4o-mini",
     "description": "GPT-4o mini is OpenAI's newest model after [GPT-4 Omni](/models/openai/gpt-4o), supporting both text and image inputs with text outputs. As their most advanced small model, it is many multiples more affordable...",
     "supports_image": true,
     "context_length": 128000,
@@ -4296,9 +4297,9 @@
       "text"
     ]
   },
-  "gpt-4o-mini": {
+  "gpt-4o-mini-2024-07-18": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4o-mini",
+    "name": "OpenAI: GPT-4o-mini (2024-07-18)",
     "description": "GPT-4o mini is OpenAI's newest model after [GPT-4 Omni](/models/openai/gpt-4o), supporting both text and image inputs with text outputs. As their most advanced small model, it is many multiples more affordable...",
     "supports_image": true,
     "context_length": 128000,
@@ -4324,9 +4325,9 @@
       "text"
     ]
   },
-  "gpt-4o": {
+  "gpt-4o-2024-05-13": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4o",
+    "name": "OpenAI: GPT-4o (2024-05-13)",
     "description": "GPT-4o (\"o\" for \"omni\") is OpenAI's latest AI model, supporting both text and image inputs with text outputs. It maintains the intelligence level of [GPT-4 Turbo](/models/openai/gpt-4-turbo) while being twice as...",
     "supports_image": true,
     "context_length": 128000,
@@ -4339,9 +4340,9 @@
       "text"
     ]
   },
-  "gpt-4o-2024-05-13": {
+  "gpt-4o": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4o (2024-05-13)",
+    "name": "OpenAI: GPT-4o",
     "description": "GPT-4o (\"o\" for \"omni\") is OpenAI's latest AI model, supporting both text and image inputs with text outputs. It maintains the intelligence level of [GPT-4 Turbo](/models/openai/gpt-4-turbo) while being twice as...",
     "supports_image": true,
     "context_length": 128000,
@@ -4436,12 +4437,12 @@
       "text"
     ]
   },
-  "gpt-4-turbo-preview": {
+  "gpt-3.5-turbo-0613": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4 Turbo Preview",
-    "description": "The preview GPT-4 model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Training data: up to Dec 2023. **Note:** heavily rate limited by OpenAI while...",
+    "name": "OpenAI: GPT-3.5 Turbo (older v0613)",
+    "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
     "supports_image": false,
-    "context_length": 128000,
+    "context_length": 4095,
     "inputs": [
       "text"
     ],
@@ -4449,12 +4450,12 @@
       "text"
     ]
   },
-  "gpt-3.5-turbo-0613": {
+  "gpt-4-turbo-preview": {
     "provider": "openai",
-    "name": "OpenAI: GPT-3.5 Turbo (older v0613)",
-    "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
+    "name": "OpenAI: GPT-4 Turbo Preview",
+    "description": "The preview GPT-4 model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Training data: up to Dec 2023. **Note:** heavily rate limited by OpenAI while...",
     "supports_image": false,
-    "context_length": 4095,
+    "context_length": 128000,
     "inputs": [
       "text"
     ],
@@ -4545,12 +4546,12 @@
       "text"
     ]
   },
-  "gpt-4": {
+  "gpt-3.5-turbo": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4",
-    "description": "OpenAI's flagship model, GPT-4 is a large-scale multimodal language model capable of solving difficult problems with greater accuracy than previous models due to its broader general knowledge and advanced reasoning...",
+    "name": "OpenAI: GPT-3.5 Turbo",
+    "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
     "supports_image": false,
-    "context_length": 8191,
+    "context_length": 16385,
     "inputs": [
       "text"
     ],
@@ -4558,12 +4559,12 @@
       "text"
     ]
   },
-  "gpt-3.5-turbo": {
+  "gpt-4": {
     "provider": "openai",
-    "name": "OpenAI: GPT-3.5 Turbo",
-    "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
+    "name": "OpenAI: GPT-4",
+    "description": "OpenAI's flagship model, GPT-4 is a large-scale multimodal language model capable of solving difficult problems with greater accuracy than previous models due to its broader general knowledge and advanced reasoning...",
     "supports_image": false,
-    "context_length": 16385,
+    "context_length": 8191,
     "inputs": [
       "text"
     ],
