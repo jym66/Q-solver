@@ -1,4 +1,30 @@
 {
+  "kat-coder-air-v2.5": {
+    "provider": "kwaipilot",
+    "name": "Kwaipilot: KAT-Coder-Air V2.5",
+    "description": "KAT-Coder-Air V2.5 is a flagship-level Agentic Coding model that can directly hand over an entire issue or an entire business workflow to it, allowing it to autonomously locate and make...",
+    "supports_image": false,
+    "context_length": 256000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "kat-coder-pro-v2.5": {
+    "provider": "kwaipilot",
+    "name": "Kwaipilot: KAT-Coder-Pro V2.5",
+    "description": "KAT-Coder-Pro V2.5 is a flagship-level Agentic Coding model that can directly hand over an entire issue or an entire business workflow to it, allowing it to autonomously locate and make...",
+    "supports_image": false,
+    "context_length": 256000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "gpt-5.6-luna-pro": {
     "provider": "openai",
     "name": "OpenAI: GPT-5.6 Luna Pro",
@@ -3874,19 +3900,6 @@
     "description": "[Microsoft Research](/microsoft) Phi-4 is designed to perform well in complex reasoning tasks and can operate efficiently in situations with limited memory or where quick responses are needed. At 14 billion...",
     "supports_image": false,
     "context_length": 16384,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "l3.1-70b-hanami-x1": {
-    "provider": "sao10k",
-    "name": "Sao10K: Llama 3.1 70B Hanami x1",
-    "description": "This is [Sao10K](/sao10k)'s experiment over [Euryale v2.2](/sao10k/l3.1-euryale-70b).",
-    "supports_image": false,
-    "context_length": 16000,
     "inputs": [
       "text"
     ],
