@@ -1289,7 +1289,7 @@
     "name": "Z.ai: GLM 5 Turbo",
     "description": "GLM-5 Turbo is a new model from Z.ai designed for fast inference and strong performance in agent-driven environments such as OpenClaw scenarios. It is deeply optimized for real-world agent workflows...",
     "supports_image": false,
-    "context_length": 262144,
+    "context_length": 202752,
     "inputs": [
       "text"
     ],
@@ -1602,7 +1602,7 @@
     "name": "Qwen: Qwen3.5 397B A17B",
     "description": "The Qwen3.5 series 397B-A17B native vision-language model is built on a hybrid architecture that integrates a linear attention mechanism with a sparse mixture-of-experts model, achieving higher inference efficiency. It delivers...",
     "supports_image": true,
-    "context_length": 256000,
+    "context_length": 262144,
     "inputs": [
       "text",
       "image",
@@ -2094,7 +2094,7 @@
     "name": "DeepSeek: DeepSeek V3.2",
     "description": "DeepSeek-V3.2 is a large language model designed to harmonize high computational efficiency with strong reasoning and agentic tool-use performance. It introduces DeepSeek Sparse Attention (DSA), a fine-grained sparse attention mechanism...",
     "supports_image": false,
-    "context_length": 131072,
+    "context_length": 163840,
     "inputs": [
       "text"
     ],
@@ -2521,7 +2521,7 @@
     "name": "Z.ai: GLM 4.6",
     "description": "Compared with GLM-4.5, this generation brings several key improvements: Longer context window: The context window has been expanded from 128K to 200K tokens, enabling the model to handle more complex...",
     "supports_image": false,
-    "context_length": 200000,
+    "context_length": 202752,
     "inputs": [
       "text"
     ],
@@ -2602,7 +2602,7 @@
     "name": "Qwen: Qwen3 VL 235B A22B Instruct",
     "description": "Qwen3-VL-235B-A22B Instruct is an open-weight multimodal model that unifies strong text generation with visual understanding across images and video. The Instruct model targets general vision-language use (VQA, document parsing, chart/table...",
     "supports_image": true,
-    "context_length": 262144,
+    "context_length": 131072,
     "inputs": [
       "text",
       "image"
@@ -2656,7 +2656,7 @@
     "name": "DeepSeek: DeepSeek V3.1 Terminus",
     "description": "DeepSeek-V3.1 Terminus is an update to [DeepSeek V3.1](/deepseek/deepseek-chat-v3.1) that maintains the model's original capabilities while addressing issues reported by users, including language consistency and agent capabilities, further optimizing the model's...",
     "supports_image": false,
-    "context_length": 163840,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -2969,7 +2969,7 @@
     "name": "Qwen: Qwen3 30B A3B Instruct 2507",
     "description": "Qwen3-30B-A3B-Instruct-2507 is a 30.5B-parameter mixture-of-experts language model from Qwen, with 3.3B active parameters per inference. It operates in non-thinking mode and is designed for high-quality instruction following, multilingual understanding, and...",
     "supports_image": false,
-    "context_length": 131072,
+    "context_length": 262144,
     "inputs": [
       "text"
     ],
@@ -3157,7 +3157,7 @@
     "name": "Mistral: Mistral Small 3.2 24B",
     "description": "Mistral-Small-3.2-24B-Instruct-2506 is an updated 24B parameter model from Mistral optimized for instruction following, repetition reduction, and improved function calling. Compared to the 3.1 release, version 3.2 significantly improves accuracy on...",
     "supports_image": true,
-    "context_length": 128000,
+    "context_length": 131072,
     "inputs": [
       "image",
       "text"
@@ -3338,19 +3338,6 @@
     "description": "Virtuoso‑Large is Arcee's top‑tier general‑purpose LLM at 72 B parameters, tuned to tackle cross‑domain reasoning, creative writing and enterprise QA. Unlike many 70 B peers, it retains the 128 k...",
     "supports_image": false,
     "context_length": 131072,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "coder-large": {
-    "provider": "arcee-ai",
-    "name": "Arcee AI: Coder Large",
-    "description": "Coder‑Large is a 32 B‑parameter offspring of Qwen 2.5‑Instruct that has been further trained on permissively‑licensed GitHub, CodeSearchNet and synthetic bug‑fix corpora. It supports a 32k context window, enabling multi‑file...",
-    "supports_image": false,
-    "context_length": 32768,
     "inputs": [
       "text"
     ],
