@@ -1,4 +1,35 @@
 {
+  "kimi-k3": {
+    "provider": "moonshotai",
+    "name": "MoonshotAI: Kimi K3",
+    "description": "Kimi K3 is a 2.8T parameter open-weight multimodal reasoning model from Moonshot AI. It is suited for complex coding, knowledge work, and long-horizon agentic workflows, and is particularly strong at...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "muse-spark-1.1": {
+    "provider": "meta",
+    "name": "Meta: Muse Spark 1.1",
+    "description": "Muse Spark 1.1 is a multimodal reasoning model from Meta, built for agentic tasks. It accepts text, images, video, audio, and PDF documents and returns text, with a 1M-token context...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image",
+      "video",
+      "file",
+      "audio"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "kat-coder-air-v2.5": {
     "provider": "kwaipilot",
     "name": "Kwaipilot: KAT-Coder-Air V2.5",
@@ -727,7 +758,7 @@
     "name": "MoonshotAI Kimi Latest",
     "description": "This model always redirects to the latest model in the MoonshotAI Kimi family.",
     "supports_image": true,
-    "context_length": 262144,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "image"
