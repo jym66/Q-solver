@@ -1,4 +1,17 @@
 {
+  "longcat-2.0": {
+    "provider": "meituan",
+    "name": "Meituan: LongCat 2.0",
+    "description": "LongCat 2.0 is a sparse mixture-of-experts language model from Meituan, with 48B active parameters out of 1.6T total. It is suited for coding, repository-level changes, long-horizon problem solving, and agentic...",
+    "supports_image": false,
+    "context_length": 1048756,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "inkling": {
     "provider": "thinkingmachines",
     "name": "Thinking Machines: Inkling",
@@ -237,7 +250,7 @@
   },
   "hy3": {
     "provider": "tencent",
-    "name": "Tencent: Hy3 (free)",
+    "name": "Tencent: Hy3",
     "description": "Hy3 is a 295B-parameter Mixture-of-Experts model from Tencent (21B active, 192 experts with top-8 routing) built for reasoning, agentic workflows, and real-world production use. It supports a configurable reasoning effort:...",
     "supports_image": false,
     "context_length": 262144,
