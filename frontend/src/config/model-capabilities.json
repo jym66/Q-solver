@@ -1,4 +1,51 @@
 {
+  "laguna-s-2.1": {
+    "provider": "poolside",
+    "name": "Poolside: Laguna S 2.1 (free)",
+    "description": "Laguna S 2.1 is the latest coding agent model from [Poolside](<https://poolside.ai/>). Laguna S 2.1 is a 118B total parameter model with 8B active parameters, scoring 70.2% on Terminal-Bench 2.1 and...",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gemini-3.6-flash": {
+    "provider": "google",
+    "name": "Google: Gemini 3.6 Flash",
+    "description": "Gemini 3.6 Flash is a high-efficiency model from Google for coding, agentic workflows, and web and app development. It is designed to produce polished outputs with fewer unnecessary edits and...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image",
+      "video",
+      "file",
+      "audio"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gemini-3.5-flash-lite": {
+    "provider": "google",
+    "name": "Google: Gemini 3.5 Flash-Lite",
+    "description": "Gemini 3.5 Flash-Lite is a high-efficiency model from Google with upgraded agentic capabilities. It is suited for subagents that execute focused tasks within complex, multi-agent workflows.",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image",
+      "video",
+      "file",
+      "audio"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "longcat-2.0": {
     "provider": "meituan",
     "name": "Meituan: LongCat 2.0",
@@ -17,7 +64,7 @@
     "name": "Thinking Machines: Inkling",
     "description": "Inkling is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 41B active parameters out of 975B total. It is designed for general-purpose reasoning, coding, agentic and tool-use systems,...",
     "supports_image": true,
-    "context_length": 1048576,
+    "context_length": 524288,
     "inputs": [
       "text",
       "image",
@@ -352,7 +399,7 @@
     "name": "Google: Nano Banana Pro (Gemini 3 Pro Image)",
     "description": "Nano Banana Pro is Google’s most advanced image-generation and editing model, built on Gemini 3 Pro. It extends the original Nano Banana with significantly improved multimodal reasoning, real-world grounding, and...",
     "supports_image": true,
-    "context_length": 65536,
+    "context_length": 131072,
     "inputs": [
       "image",
       "text"
@@ -520,7 +567,7 @@
     "name": "StepFun: Step 3.7 Flash",
     "description": "Step 3.7 Flash is StepFun's latest high-efficiency multimodal Mixture-of-Experts model. It pairs a 196B-parameter language backbone with a vision encoder for native image and video understanding, activating roughly 11B parameters...",
     "supports_image": true,
-    "context_length": 256000,
+    "context_length": 262144,
     "inputs": [
       "text",
       "image",
@@ -1020,7 +1067,7 @@
     "name": "Xiaomi: MiMo-V2.5-Pro",
     "description": "MiMo-V2.5-Pro is Xiaomi’s flagship model, delivering strong performance in general agentic capabilities, complex software engineering, and long-horizon tasks, with top rankings on benchmarks such as ClawEval, GDPVal, and SWE-bench Pro....",
     "supports_image": false,
-    "context_length": 1048576,
+    "context_length": 1050000,
     "inputs": [
       "text"
     ],
@@ -1033,7 +1080,7 @@
     "name": "Xiaomi: MiMo-V2.5",
     "description": "MiMo-V2.5 is a native omnimodal model by Xiaomi. It delivers Pro-level agentic performance at roughly half the inference cost, while surpassing MiMo-V2-Omni in multimodal perception across image and video understanding...",
     "supports_image": true,
-    "context_length": 1048576,
+    "context_length": 1050000,
     "inputs": [
       "text",
       "audio",
@@ -1135,7 +1182,7 @@
     "name": "Z.ai: GLM 5.1",
     "description": "GLM-5.1 delivers a major leap in coding capability, with particularly significant gains in handling long-horizon tasks. Unlike previous models built around minute-level interactions, GLM-5.1 can work independently and continuously on...",
     "supports_image": false,
-    "context_length": 202752,
+    "context_length": 204800,
     "inputs": [
       "text"
     ],
@@ -1281,7 +1328,7 @@
     "name": "Kwaipilot: KAT-Coder-Pro V2",
     "description": "KAT-Coder-Pro V2 is the latest high-performance model in KwaiKAT’s KAT-Coder series, designed for complex enterprise-grade software engineering and SaaS integration. It builds on the agentic coding strengths of earlier versions,...",
     "supports_image": false,
-    "context_length": 256000,
+    "context_length": 262144,
     "inputs": [
       "text"
     ],
@@ -1379,7 +1426,7 @@
     "name": "NVIDIA: Nemotron 3 Super (free)",
     "description": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer...",
     "supports_image": false,
-    "context_length": 1000000,
+    "context_length": 262144,
     "inputs": [
       "text"
     ],
@@ -1587,7 +1634,7 @@
     "name": "Google: Gemini 3.1 Pro Preview Custom Tools",
     "description": "Gemini 3.1 Pro Preview Custom Tools is a variant of Gemini 3.1 Pro that improves tool selection behavior by preventing overuse of a general bash tool when more efficient third-party...",
     "supports_image": true,
-    "context_length": 1048756,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "audio",
@@ -1871,7 +1918,7 @@
     "name": "Z.ai: GLM 4.7 Flash",
     "description": "As a 30B-class SOTA model, GLM-4.7-Flash offers a new option that balances performance and efficiency. It is further optimized for agentic coding use cases, strengthening coding capabilities, long-horizon task planning,...",
     "supports_image": false,
-    "context_length": 200000,
+    "context_length": 202752,
     "inputs": [
       "text"
     ],
@@ -1941,7 +1988,7 @@
     "name": "Z.ai: GLM 4.7",
     "description": "GLM-4.7 is Z.ai’s latest flagship model, featuring upgrades in two key areas: enhanced programming capabilities and more stable multi-step reasoning/execution. It demonstrates significant improvements in executing complex agent tasks while...",
     "supports_image": false,
-    "context_length": 202752,
+    "context_length": 204800,
     "inputs": [
       "text"
     ],
@@ -2395,7 +2442,7 @@
     "name": "Qwen: Qwen3 VL 32B Instruct",
     "description": "Qwen3-VL-32B-Instruct is a large-scale multimodal vision-language model designed for high-precision understanding and reasoning across text, images, and video. With 32 billion parameters, it combines deep visual perception with advanced text...",
     "supports_image": true,
-    "context_length": 262144,
+    "context_length": 131072,
     "inputs": [
       "text",
       "image"
@@ -2453,7 +2500,7 @@
     "name": "Qwen: Qwen3 VL 8B Thinking",
     "description": "Qwen3-VL-8B-Thinking is the reasoning-optimized variant of the Qwen3-VL-8B multimodal model, designed for advanced visual and textual reasoning across complex scenes, documents, and temporal sequences. It integrates enhanced multimodal alignment and...",
     "supports_image": true,
-    "context_length": 256000,
+    "context_length": 131072,
     "inputs": [
       "image",
       "text"
@@ -2467,7 +2514,7 @@
     "name": "Qwen: Qwen3 VL 8B Instruct",
     "description": "Qwen3-VL-8B-Instruct is a multimodal vision-language model from the Qwen3-VL series, built for high-fidelity understanding and reasoning across text, images, and video. It features improved multimodal fusion with Interleaved-MRoPE for long-horizon...",
     "supports_image": true,
-    "context_length": 256000,
+    "context_length": 262144,
     "inputs": [
       "image",
       "text"
@@ -2542,7 +2589,7 @@
     "name": "Qwen: Qwen3 VL 30B A3B Thinking",
     "description": "Qwen3-VL-30B-A3B-Thinking is a multimodal model that unifies strong text generation with visual understanding for images and videos. Its Thinking variant enhances reasoning in STEM, math, and complex tasks. It excels...",
     "supports_image": true,
-    "context_length": 131072,
+    "context_length": 262144,
     "inputs": [
       "text",
       "image"
@@ -2585,7 +2632,7 @@
     "name": "Z.ai: GLM 4.6",
     "description": "Compared with GLM-4.5, this generation brings several key improvements: Longer context window: The context window has been expanded from 128K to 200K tokens, enabling the model to handle more complex...",
     "supports_image": false,
-    "context_length": 202752,
+    "context_length": 204800,
     "inputs": [
       "text"
     ],
@@ -2666,7 +2713,7 @@
     "name": "Qwen: Qwen3 VL 235B A22B Instruct",
     "description": "Qwen3-VL-235B-A22B Instruct is an open-weight multimodal model that unifies strong text generation with visual understanding across images and video. The Instruct model targets general vision-language use (VQA, document parsing, chart/table...",
     "supports_image": true,
-    "context_length": 131072,
+    "context_length": 262144,
     "inputs": [
       "text",
       "image"
@@ -2720,7 +2767,7 @@
     "name": "DeepSeek: DeepSeek V3.1 Terminus",
     "description": "DeepSeek-V3.1 Terminus is an update to [DeepSeek V3.1](/deepseek/deepseek-chat-v3.1) that maintains the model's original capabilities while addressing issues reported by users, including language consistency and agent capabilities, further optimizing the model's...",
     "supports_image": false,
-    "context_length": 131072,
+    "context_length": 163840,
     "inputs": [
       "text"
     ],
@@ -2811,7 +2858,7 @@
     "name": "Qwen: Qwen3 30B A3B Thinking 2507",
     "description": "Qwen3-30B-A3B-Thinking-2507 is a 30B parameter Mixture-of-Experts reasoning model optimized for complex tasks requiring extended multi-step thinking. The model is designed specifically for “thinking mode,” where internal reasoning traces are separated...",
     "supports_image": false,
-    "context_length": 131072,
+    "context_length": 81920,
     "inputs": [
       "text"
     ],
@@ -3020,7 +3067,7 @@
     "name": "Qwen: Qwen3 Coder 30B A3B Instruct",
     "description": "Qwen3-Coder-30B-A3B-Instruct is a 30.5B parameter Mixture-of-Experts (MoE) model with 128 experts (8 active per forward pass), designed for advanced code generation, repository-scale understanding, and agentic tool use. Built on the...",
     "supports_image": false,
-    "context_length": 160000,
+    "context_length": 262144,
     "inputs": [
       "text"
     ],
@@ -3085,7 +3132,7 @@
     "name": "Qwen: Qwen3 Coder 480B A35B",
     "description": "Qwen3-Coder-480B-A35B-Instruct is a Mixture-of-Experts (MoE) code generation model developed by the Qwen team. It is optimized for agentic coding tasks such as function calling, tool use, and long-context reasoning over...",
     "supports_image": false,
-    "context_length": 1048576,
+    "context_length": 262144,
     "inputs": [
       "text"
     ],
@@ -3207,7 +3254,7 @@
     "name": "Baidu: ERNIE 4.5 VL 424B A47B ",
     "description": "ERNIE-4.5-VL-424B-A47B is a multimodal Mixture-of-Experts (MoE) model from Baidu’s ERNIE 4.5 series, featuring 424B total parameters with 47B active per token. It is trained jointly on text and image data...",
     "supports_image": true,
-    "context_length": 131072,
+    "context_length": 123000,
     "inputs": [
       "image",
       "text"
@@ -3221,7 +3268,7 @@
     "name": "Mistral: Mistral Small 3.2 24B",
     "description": "Mistral-Small-3.2-24B-Instruct-2506 is an updated 24B parameter model from Mistral optimized for instruction following, repetition reduction, and improved function calling. Compared to the 3.1 release, version 3.2 significantly improves accuracy on...",
     "supports_image": true,
-    "context_length": 131072,
+    "context_length": 256000,
     "inputs": [
       "image",
       "text"
@@ -3414,7 +3461,7 @@
     "name": "Meta: Llama Guard 4 12B",
     "description": "Llama Guard 4 is a Llama 4 Scout-derived multimodal pretrained model, fine-tuned for content safety classification. Similar to previous versions, it can be used to classify content in both LLM...",
     "supports_image": true,
-    "context_length": 163840,
+    "context_length": 1048576,
     "inputs": [
       "image",
       "text"
@@ -3454,7 +3501,7 @@
     "name": "Qwen: Qwen3 14B",
     "description": "Qwen3-14B is a dense 14.8B parameter causal language model from the Qwen3 series, designed for both complex reasoning and efficient dialogue. It supports seamless switching between a \"thinking\" mode for...",
     "supports_image": false,
-    "context_length": 131702,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -3597,7 +3644,7 @@
     "name": "Meta: Llama 4 Scout",
     "description": "Llama 4 Scout 17B Instruct (16E) is a mixture-of-experts (MoE) language model developed by Meta, activating 17 billion parameters out of a total of 109B. It supports native multimodal input...",
     "supports_image": true,
-    "context_length": 10000000,
+    "context_length": 1310720,
     "inputs": [
       "text",
       "image"
@@ -3733,7 +3780,7 @@
     "name": "Google: Gemma 3 27B",
     "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities,...",
     "supports_image": true,
-    "context_length": 131072,
+    "context_length": 262144,
     "inputs": [
       "text",
       "image"
@@ -3842,7 +3889,7 @@
     "name": "Qwen: Qwen2.5 VL 72B Instruct",
     "description": "Qwen2.5-VL is proficient in recognizing common objects such as flowers, birds, fish, and insects. It is also highly capable of analyzing texts, charts, icons, graphics, and layouts within images.",
     "supports_image": true,
-    "context_length": 131072,
+    "context_length": 128000,
     "inputs": [
       "text",
       "image"
@@ -3910,7 +3957,7 @@
     "name": "DeepSeek: R1 Distill Llama 70B",
     "description": "DeepSeek R1 Distill Llama 70B is a distilled large language model based on [Llama-3.3-70B-Instruct](/meta-llama/llama-3.3-70b-instruct), using outputs from [DeepSeek R1](/deepseek/deepseek-r1). The model combines advanced distillation techniques to achieve high performance across...",
     "supports_image": false,
-    "context_length": 128000,
+    "context_length": 8192,
     "inputs": [
       "text"
     ],
@@ -3963,7 +4010,7 @@
     "name": "DeepSeek: DeepSeek V3",
     "description": "DeepSeek-V3 is the latest model from the DeepSeek team, building upon the instruction following and coding abilities of the previous versions. Pre-trained on nearly 15 trillion tokens, the reported evaluations...",
     "supports_image": false,
-    "context_length": 131072,
+    "context_length": 163840,
     "inputs": [
       "text"
     ],
@@ -4100,7 +4147,7 @@
     "name": "Qwen2.5 Coder 32B Instruct",
     "description": "Qwen2.5-Coder is the latest series of Code-Specific Qwen large language models (formerly known as CodeQwen). Qwen2.5-Coder brings the following improvements upon CodeQwen1.5: - Significantly improvements in **code generation**, **code reasoning**...",
     "supports_image": false,
-    "context_length": 128000,
+    "context_length": 32768,
     "inputs": [
       "text"
     ],
@@ -4126,7 +4173,7 @@
     "name": "Magnum v4 72B",
     "description": "This is a series of models designed to replicate the prose quality of the Claude 3 models, specifically Sonnet(https://openrouter.ai/anthropic/claude-3.5-sonnet) and Opus(https://openrouter.ai/anthropic/claude-3-opus).\n\nThe model is fine-tuned on top of [Qwen2.5 72B](https://openrouter.ai/qwen/qwen-2.5-72b-instruct).",
     "supports_image": false,
-    "context_length": 32768,
+    "context_length": 16384,
     "inputs": [
       "text"
     ],
@@ -4139,7 +4186,7 @@
     "name": "Qwen: Qwen2.5 7B Instruct",
     "description": "Qwen2.5 7B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2: - Significantly more knowledge and has greatly improved capabilities in coding and...",
     "supports_image": false,
-    "context_length": 131072,
+    "context_length": 32768,
     "inputs": [
       "text"
     ],
@@ -4191,7 +4238,7 @@
     "name": "Meta: Llama 3.2 1B Instruct",
     "description": "Llama 3.2 1B is a 1-billion-parameter language model focused on efficiently performing natural language tasks, such as summarization, dialogue, and multilingual text analysis. Its smaller size allows it to operate...",
     "supports_image": false,
-    "context_length": 131072,
+    "context_length": 60000,
     "inputs": [
       "text"
     ],
@@ -4217,7 +4264,7 @@
     "name": "Qwen2.5 72B Instruct",
     "description": "Qwen2.5 72B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2: - Significantly more knowledge and has greatly improved capabilities in coding and...",
     "supports_image": false,
-    "context_length": 131072,
+    "context_length": 32768,
     "inputs": [
       "text"
     ],
@@ -4449,7 +4496,7 @@
     "name": "WizardLM-2 8x22B",
     "description": "WizardLM-2 8x22B is Microsoft AI's most advanced Wizard model. It demonstrates highly competitive performance compared to leading proprietary models, and it consistently outperforms all existing state-of-the-art opensource models. It is...",
     "supports_image": false,
-    "context_length": 65536,
+    "context_length": 65535,
     "inputs": [
       "text"
     ],
@@ -4600,7 +4647,7 @@
     "name": "MythoMax 13B",
     "description": "One of the highest performing and most popular fine-tunes of Llama 2 13B, with rich descriptions and roleplay. #merge",
     "supports_image": false,
-    "context_length": 4096,
+    "context_length": 8192,
     "inputs": [
       "text"
     ],
