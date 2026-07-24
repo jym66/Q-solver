@@ -1,4 +1,17 @@
 {
+  "ling-3.0-flash": {
+    "provider": "inclusionai",
+    "name": "Ling-3.0-flash (free)",
+    "description": "*Ling-3.0-flash* is a *124B-parameter Mixture-of-Experts (MoE) model*, with approximately *5.1B parameters activated per token*. The model is designed with *token efficiency and production-scale agentic inference* as key priorities, enabling developers...",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "laguna-s-2.1": {
     "provider": "poolside",
     "name": "Poolside: Laguna S 2.1 (free)",
@@ -64,7 +77,7 @@
     "name": "Thinking Machines: Inkling",
     "description": "Inkling is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 41B active parameters out of 975B total. It is designed for general-purpose reasoning, coding, agentic and tool-use systems,...",
     "supports_image": true,
-    "context_length": 524288,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "image",
