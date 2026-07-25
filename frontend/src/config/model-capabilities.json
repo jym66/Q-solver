@@ -1,4 +1,34 @@
 {
+  "claude-opus-5-fast": {
+    "provider": "anthropic",
+    "name": "Claude Opus 5 (Fast)",
+    "description": "Fast-mode variant of [Opus 5](/anthropic/claude-opus-5) - identical capabilities with higher output speed at 2x pricing relative to regular Opus 5.\n\nLearn more in Anthropic's docs: https://platform.claude.com/docs/en/build-with-claude/fast-mode",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "file"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "claude-opus-5": {
+    "provider": "anthropic",
+    "name": "Claude Opus 5",
+    "description": "Claude Opus 5 is Anthropic’s flagship model for demanding reasoning, coding, and long-horizon agentic work. It is particularly strong at end-to-end software tasks, code review and bug finding, visual analysis...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "file"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "ling-3.0-flash": {
     "provider": "inclusionai",
     "name": "Ling-3.0-flash (free)",
