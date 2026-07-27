@@ -4237,32 +4237,6 @@
       "text"
     ]
   },
-  "inflection-3-pi": {
-    "provider": "inflection",
-    "name": "Inflection: Inflection 3 Pi",
-    "description": "Inflection 3 Pi powers Inflection's [Pi](https://pi.ai) chatbot, including backstory, emotional intelligence, productivity, and safety. It has access to recent news, and excels in scenarios like customer support and roleplay. Pi...",
-    "supports_image": false,
-    "context_length": 8000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "inflection-3-productivity": {
-    "provider": "inflection",
-    "name": "Inflection: Inflection 3 Productivity",
-    "description": "Inflection 3 Productivity is optimized for following instructions. It is better for tasks requiring JSON output or precise adherence to provided guidelines. It has access to recent news. For emotional...",
-    "supports_image": false,
-    "context_length": 8000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "rocinante-12b": {
     "provider": "thedrummer",
     "name": "TheDrummer: Rocinante 12B",
