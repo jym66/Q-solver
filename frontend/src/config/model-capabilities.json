@@ -1,4 +1,19 @@
 {
+  "qwen3.7-flash": {
+    "provider": "qwen",
+    "name": "Qwen: Qwen3.7 Flash",
+    "description": "Qwen3.7 Flash is a vision-language reasoning model from Alibaba. It is suited for multimodal agents, visual coding, search, and computer interaction, with strengths in object recognition, spatial understanding, and real-world...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "claude-opus-5-fast": {
     "provider": "anthropic",
     "name": "Claude Opus 5 (Fast)",
@@ -1602,7 +1617,7 @@
     "name": "Google: Nano Banana 2 (Gemini 3.1 Flash Image Preview)",
     "description": "Gemini 3.1 Flash Image Preview, a.k.a. \"Nano Banana 2,\" is Google’s latest state of the art image generation and editing model, delivering Pro-level visual quality at Flash speed. It combines...",
     "supports_image": true,
-    "context_length": 131072,
+    "context_length": 65536,
     "inputs": [
       "image",
       "text"
@@ -2990,21 +3005,6 @@
       "text"
     ]
   },
-  "gpt-5-chat": {
-    "provider": "openai",
-    "name": "OpenAI: GPT-5 Chat",
-    "description": "GPT-5 Chat is designed for advanced, natural, multimodal, and context-aware conversations for enterprise applications.",
-    "supports_image": true,
-    "context_length": 128000,
-    "inputs": [
-      "file",
-      "image",
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "gpt-5": {
     "provider": "openai",
     "name": "OpenAI: GPT-5",
@@ -3772,32 +3772,6 @@
     "description": "Command A is an open-weights 111B parameter model with a 256k context window focused on delivering great performance across agentic, multilingual, and coding use cases. Compared to other leading proprietary...",
     "supports_image": false,
     "context_length": 256000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "gpt-4o-mini-search-preview": {
-    "provider": "openai",
-    "name": "OpenAI: GPT-4o-mini Search Preview",
-    "description": "GPT-4o mini Search Preview is a specialized model for web search in Chat Completions. It is trained to understand and execute web search queries.",
-    "supports_image": false,
-    "context_length": 128000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "gpt-4o-search-preview": {
-    "provider": "openai",
-    "name": "OpenAI: GPT-4o Search Preview",
-    "description": "GPT-4o Search Previewis a specialized model for web search in Chat Completions. It is trained to understand and execute web search queries.",
-    "supports_image": false,
-    "context_length": 128000,
     "inputs": [
       "text"
     ],
