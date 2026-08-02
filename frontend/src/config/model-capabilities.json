@@ -1,4 +1,17 @@
 {
+  "deepseek-v4-flash-latest": {
+    "provider": "~deepseek",
+    "name": "DeepSeek V4 Flash Latest",
+    "description": "This model always redirects to the latest model in the DeepSeek V4 Flash family.",
+    "supports_image": false,
+    "context_length": 1048576,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "deepseek-v4-flash-0731": {
     "provider": "deepseek",
     "name": "DeepSeek: DeepSeek V4 Flash 0731",
