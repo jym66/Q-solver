@@ -1,4 +1,19 @@
 {
+  "qwen3.8-max": {
+    "provider": "qwen",
+    "name": "Qwen: Qwen3.8 Max",
+    "description": "Qwen3.8 Max is the flagship model in Alibaba's Qwen3.8 series, the general-availability successor to the Qwen3.8 Max Preview. It is a multimodal reasoning model intended for complex reasoning, visual understanding,...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "deepseek-v4-flash-latest": {
     "provider": "~deepseek",
     "name": "DeepSeek V4 Flash Latest",
@@ -1111,7 +1126,7 @@
   },
   "deepseek-v4-flash": {
     "provider": "deepseek",
-    "name": "DeepSeek: DeepSeek V4 Flash",
+    "name": "DeepSeek: DeepSeek V4 Flash 0423",
     "description": "DeepSeek V4 Flash is an efficiency-optimized Mixture-of-Experts model from DeepSeek with 284B total parameters and 13B activated parameters, supporting a 1M-token context window. It is designed for fast inference and...",
     "supports_image": false,
     "context_length": 1048576,
