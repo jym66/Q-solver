@@ -1,4 +1,21 @@
 {
+  "muse-spark-1.2": {
+    "provider": "meta",
+    "name": "Meta: Muse Spark 1.2",
+    "description": "Muse Spark 1.2 is a reasoning model from Meta, designed for complex agentic tasks. It accepts text, images, video, audio, and PDF documents, returns text, and offers a 1M-token context...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image",
+      "video",
+      "file",
+      "audio"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "qwen3.8-max": {
     "provider": "qwen",
     "name": "Qwen: Qwen3.8 Max",
@@ -1950,7 +1967,7 @@
     "name": "Upstage: Solar Pro 3",
     "description": "Solar Pro 3 is Upstage's powerful Mixture-of-Experts (MoE) language model. With 102B total parameters and 12B active parameters per forward pass, it delivers exceptional performance while maintaining computational efficiency. Optimized...",
     "supports_image": false,
-    "context_length": 128000,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
