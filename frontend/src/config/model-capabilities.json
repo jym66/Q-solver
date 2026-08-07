@@ -1,4 +1,17 @@
 {
+  "ling-3.0-tiny": {
+    "provider": "inclusionai",
+    "name": "inclusionAI: Ling 3.0 Tiny (free)",
+    "description": "Ling 3.0 Tiny is a mixture-of-experts model from InclusionAI, with 1.3B active parameters out of 7.9B total. It is designed for responsive agents, instruction following, and multi-turn conversations, with switchable...",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "muse-spark-1.2": {
     "provider": "meta",
     "name": "Meta: Muse Spark 1.2",
@@ -104,7 +117,7 @@
   },
   "claude-opus-5": {
     "provider": "anthropic",
-    "name": "Claude Opus 5",
+    "name": "Claude Opus 5 (batch)",
     "description": "Claude Opus 5 is Anthropic’s flagship model for demanding reasoning, coding, and long-horizon agentic work. It is particularly strong at end-to-end software tasks, code review and bug finding, visual analysis...",
     "supports_image": true,
     "context_length": 1000000,
@@ -119,7 +132,7 @@
   },
   "ling-3.0-flash": {
     "provider": "inclusionai",
-    "name": "Ling-3.0-flash (free)",
+    "name": "Ling-3.0-flash",
     "description": "*Ling-3.0-flash* is a *124B-parameter Mixture-of-Experts (MoE) model*, with approximately *5.1B parameters activated per token*. The model is designed with *token efficiency and production-scale agentic inference* as key priorities, enabling developers...",
     "supports_image": false,
     "context_length": 262144,
@@ -145,7 +158,7 @@
   },
   "gemini-3.6-flash": {
     "provider": "google",
-    "name": "Google: Gemini 3.6 Flash",
+    "name": "Google: Gemini 3.6 Flash (batch)",
     "description": "Gemini 3.6 Flash is a high-efficiency model from Google for coding, agentic workflows, and web and app development. It is designed to produce polished outputs with fewer unnecessary edits and...",
     "supports_image": true,
     "context_length": 1048576,
@@ -162,7 +175,7 @@
   },
   "gemini-3.5-flash-lite": {
     "provider": "google",
-    "name": "Google: Gemini 3.5 Flash Lite",
+    "name": "Google: Gemini 3.5 Flash Lite (batch)",
     "description": "Gemini 3.5 Flash Lite is a high-efficiency model from Google with upgraded agentic capabilities. It is suited for subagents that execute focused tasks within complex, multi-agent workflows.",
     "supports_image": true,
     "context_length": 1048576,
@@ -192,10 +205,10 @@
   },
   "inkling": {
     "provider": "thinkingmachines",
-    "name": "Thinking Machines: Inkling",
+    "name": "Thinking Machines: Inkling (batch)",
     "description": "Inkling is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 41B active parameters out of 975B total. It is designed for general-purpose reasoning, coding, agentic and tool-use systems,...",
     "supports_image": true,
-    "context_length": 1048576,
+    "context_length": 524288,
     "inputs": [
       "text",
       "image",
@@ -282,7 +295,7 @@
   },
   "gpt-5.6-luna-pro": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.6 Luna Pro",
+    "name": "OpenAI: GPT-5.6 Luna Pro (batch)",
     "description": "GPT-5.6 Luna Pro is the same underlying model as [GPT-5.6 Luna](https://openrouter.ai/openai/gpt-5.6-luna), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks.\n\nLearn more in OpenAI's docs: https://developers.openai.com/api/docs/guides/reasoning#reasoning-mode",
     "supports_image": true,
     "context_length": 1050000,
@@ -297,7 +310,7 @@
   },
   "gpt-5.6-luna": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.6 Luna",
+    "name": "OpenAI: GPT-5.6 Luna (batch)",
     "description": "GPT-5.6 Luna is a fast, cost-efficient model in OpenAI's GPT-5.6 series. It is suited for high-volume, latency-sensitive tasks such as chat, classification, and lightweight agentic workflows, providing capable reasoning for...",
     "supports_image": true,
     "context_length": 1050000,
@@ -312,7 +325,7 @@
   },
   "gpt-5.6-terra-pro": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.6 Terra Pro",
+    "name": "OpenAI: GPT-5.6 Terra Pro (batch)",
     "description": "GPT-5.6 Terra Pro is the same underlying model as [GPT-5.6 Terra](https://openrouter.ai/openai/gpt-5.6-terra), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks.\n\nLearn more in OpenAI's docs: https://developers.openai.com/api/docs/guides/reasoning#reasoning-mode",
     "supports_image": true,
     "context_length": 1050000,
@@ -327,7 +340,7 @@
   },
   "gpt-5.6-terra": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.6 Terra",
+    "name": "OpenAI: GPT-5.6 Terra (batch)",
     "description": "GPT-5.6 Terra is a balanced model in OpenAI's GPT-5.6 series, positioned between the flagship Sol tier and the cost-efficient Luna tier. It is suited for everyday coding, reasoning, and agentic...",
     "supports_image": true,
     "context_length": 1050000,
@@ -342,7 +355,7 @@
   },
   "gpt-5.6-sol-pro": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.6 Sol Pro",
+    "name": "OpenAI: GPT-5.6 Sol Pro (batch)",
     "description": "GPT-5.6 Sol Pro is the same underlying model as [GPT-5.6 Sol](https://openrouter.ai/openai/gpt-5.6-sol), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks.\n\nLearn more in OpenAI's docs: https://developers.openai.com/api/docs/guides/reasoning#reasoning-mode",
     "supports_image": true,
     "context_length": 1050000,
@@ -357,7 +370,7 @@
   },
   "gpt-5.6-sol": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.6 Sol",
+    "name": "OpenAI: GPT-5.6 Sol (batch)",
     "description": "GPT-5.6 Sol is the flagship model in OpenAI's GPT-5.6 series. It is suited for complex reasoning, coding, and agentic workflows, and is particularly strong at command-line and multi-step coding tasks...",
     "supports_image": true,
     "context_length": 1050000,
@@ -454,7 +467,7 @@
   },
   "claude-sonnet-5": {
     "provider": "anthropic",
-    "name": "Anthropic: Claude Sonnet 5",
+    "name": "Anthropic: Claude Sonnet 5 (batch)",
     "description": "Sonnet 5 is Anthropic's most capable Sonnet-class model, with frontier performance across coding, agents, and professional work. It supports adaptive thinking with selectable reasoning effort levels (low, medium, high, max,...",
     "supports_image": true,
     "context_length": 1000000,
@@ -555,10 +568,10 @@
   },
   "glm-5.2": {
     "provider": "z-ai",
-    "name": "Z.ai: GLM 5.2",
+    "name": "Z.ai: GLM 5.2 (batch)",
     "description": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
     "supports_image": false,
-    "context_length": 1048576,
+    "context_length": 512000,
     "inputs": [
       "text"
     ],
@@ -581,7 +594,7 @@
   },
   "kimi-k2.7-code": {
     "provider": "moonshotai",
-    "name": "MoonshotAI: Kimi K2.7 Code",
+    "name": "MoonshotAI: Kimi K2.7 Code (batch)",
     "description": "MoonshotAI: Kimi K2.7 Code is a coding-focused model in Moonshot AI's Kimi K2 family, built to complete end-to-end programming tasks reliably over long contexts. It uses a native multimodal mixture-of-experts...",
     "supports_image": true,
     "context_length": 262144,
@@ -610,7 +623,7 @@
   },
   "claude-fable-5": {
     "provider": "anthropic",
-    "name": "Anthropic: Claude Fable 5",
+    "name": "Anthropic: Claude Fable 5 (batch)",
     "description": "Claude Fable 5 is a Mythos-class model from Anthropic, built for autonomous knowledge work and coding. It supports text, image, and file inputs with text output, with reasoning support and...",
     "supports_image": true,
     "context_length": 1000000,
@@ -680,10 +693,10 @@
   },
   "minimax-m3": {
     "provider": "minimax",
-    "name": "MiniMax: MiniMax M3",
+    "name": "MiniMax: MiniMax M3 (batch)",
     "description": "MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for long-horizon agentic work, coding,...",
     "supports_image": true,
-    "context_length": 1048576,
+    "context_length": 524288,
     "inputs": [
       "text",
       "image",
@@ -725,7 +738,7 @@
   },
   "claude-opus-4.8": {
     "provider": "anthropic",
-    "name": "Anthropic: Claude Opus 4.8",
+    "name": "Anthropic: Claude Opus 4.8 (batch)",
     "description": "Claude Opus 4.8 is Anthropic's most capable generally available model in the Opus family. It supports text, image, and file inputs with text output, with reasoning support and a 1M-token...",
     "supports_image": true,
     "context_length": 1000000,
@@ -768,7 +781,7 @@
   },
   "gemini-3.5-flash": {
     "provider": "google",
-    "name": "Google: Gemini 3.5 Flash",
+    "name": "Google: Gemini 3.5 Flash (batch)",
     "description": "Gemini 3.5 Flash is Google's high-efficiency multimodal model, bringing near-Pro level coding and reasoning at Flash-tier cost and speed. It is highly optimized for coding proficiency and parallel agentic execution...",
     "supports_image": true,
     "context_length": 1048576,
@@ -828,7 +841,7 @@
   },
   "gemini-3.1-flash-lite": {
     "provider": "google",
-    "name": "Google: Gemini 3.1 Flash Lite",
+    "name": "Google: Gemini 3.1 Flash Lite (batch)",
     "description": "Gemini 3.1 Flash Lite is Google’s GA high-efficiency multimodal model optimized for low-latency, high-volume workloads. It supports text, image, video, audio, and PDF inputs, and is designed for lightweight agentic...",
     "supports_image": true,
     "context_length": 1048576,
@@ -1100,7 +1113,7 @@
   },
   "gpt-5.5-pro": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.5 Pro",
+    "name": "OpenAI: GPT-5.5 Pro (batch)",
     "description": "GPT-5.5 Pro is OpenAI’s high-capability model optimized for deep reasoning and accuracy on complex, high-stakes workloads. It features a 1M+ token context window (922K input, 128K output) with support for...",
     "supports_image": true,
     "context_length": 1050000,
@@ -1115,7 +1128,7 @@
   },
   "gpt-5.5": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.5",
+    "name": "OpenAI: GPT-5.5 (batch)",
     "description": "GPT-5.5 is OpenAI’s frontier model designed for complex professional workloads, building on GPT-5.4 with stronger reasoning, higher reliability, and improved token efficiency on hard tasks. It features a 1M+ token...",
     "supports_image": true,
     "context_length": 1050000,
@@ -1282,7 +1295,7 @@
   },
   "claude-opus-4.7": {
     "provider": "anthropic",
-    "name": "Anthropic: Claude Opus 4.7",
+    "name": "Anthropic: Claude Opus 4.7 (batch)",
     "description": "Opus 4.7 is the next generation of Anthropic's Opus family, built for long-running, asynchronous agents. Building on the coding and agentic strengths of Opus 4.6, it delivers stronger performance on...",
     "supports_image": true,
     "context_length": 1000000,
@@ -1484,7 +1497,7 @@
   },
   "gpt-5.4-nano": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.4 Nano",
+    "name": "OpenAI: GPT-5.4 Nano (batch)",
     "description": "GPT-5.4 nano is the most lightweight and cost-efficient variant of the GPT-5.4 family, optimized for speed-critical and high-volume tasks. It supports text and image inputs and is designed for low-latency...",
     "supports_image": true,
     "context_length": 400000,
@@ -1499,7 +1512,7 @@
   },
   "gpt-5.4-mini": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.4 Mini",
+    "name": "OpenAI: GPT-5.4 Mini (batch)",
     "description": "GPT-5.4 mini brings the core capabilities of GPT-5.4 to a faster, more efficient model optimized for high-throughput workloads. It supports text and image inputs with strong performance across reasoning, coding,...",
     "supports_image": true,
     "context_length": 400000,
@@ -1584,7 +1597,7 @@
   },
   "gpt-5.4-pro": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.4 Pro",
+    "name": "OpenAI: GPT-5.4 Pro (batch)",
     "description": "GPT-5.4 Pro is OpenAI's most advanced model, building on GPT-5.4's unified architecture with enhanced reasoning capabilities for complex, high-stakes tasks. It features a 1M+ token context window (922K input, 128K...",
     "supports_image": true,
     "context_length": 1050000,
@@ -1599,7 +1612,7 @@
   },
   "gpt-5.4": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.4",
+    "name": "OpenAI: GPT-5.4 (batch)",
     "description": "GPT-5.4 is OpenAI’s latest frontier model, unifying the Codex and GPT lines into a single system. It features a 1M+ token context window (922K input, 128K output) with support for...",
     "supports_image": true,
     "context_length": 1050000,
@@ -1794,7 +1807,7 @@
   },
   "gemini-3.1-pro-preview": {
     "provider": "google",
-    "name": "Google: Gemini 3.1 Pro Preview",
+    "name": "Google: Gemini 3.1 Pro Preview (batch)",
     "description": "Gemini 3.1 Pro Preview is Google’s frontier reasoning model, delivering enhanced software engineering performance, improved agentic reliability, and more efficient token usage across complex workflows. Building on the multimodal foundation...",
     "supports_image": true,
     "context_length": 1048576,
@@ -1811,7 +1824,7 @@
   },
   "claude-sonnet-4.6": {
     "provider": "anthropic",
-    "name": "Anthropic: Claude Sonnet 4.6",
+    "name": "Anthropic: Claude Sonnet 4.6 (batch)",
     "description": "Sonnet 4.6 is Anthropic's most capable Sonnet-class model yet, with frontier performance across coding, agents, and professional work. It excels at iterative development, complex codebase navigation, end-to-end project management with...",
     "supports_image": true,
     "context_length": 1000000,
@@ -1895,7 +1908,7 @@
   },
   "claude-opus-4.6": {
     "provider": "anthropic",
-    "name": "Anthropic: Claude Opus 4.6",
+    "name": "Anthropic: Claude Opus 4.6 (batch)",
     "description": "Opus 4.6 is Anthropic’s strongest model for coding and long-running professional tasks. It is built for agents that operate across entire workflows rather than single prompts, making it especially effective...",
     "supports_image": true,
     "context_length": 1000000,
@@ -2116,7 +2129,7 @@
   },
   "gemini-3-flash-preview": {
     "provider": "google",
-    "name": "Google: Gemini 3 Flash Preview",
+    "name": "Google: Gemini 3 Flash Preview (batch)",
     "description": "Gemini 3 Flash Preview is a high speed, high value thinking model designed for agentic workflows, multi turn chat, and coding assistance. It delivers near Pro level reasoning and tool...",
     "supports_image": true,
     "context_length": 1048576,
@@ -2161,7 +2174,7 @@
   },
   "gpt-5.2-pro": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.2 Pro",
+    "name": "OpenAI: GPT-5.2 Pro (batch)",
     "description": "GPT-5.2 Pro is OpenAI’s most advanced model, offering major improvements in agentic coding and long context performance over GPT-5 Pro. It is optimized for complex tasks that require step-by-step reasoning,...",
     "supports_image": true,
     "context_length": 400000,
@@ -2176,7 +2189,7 @@
   },
   "gpt-5.2": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.2",
+    "name": "OpenAI: GPT-5.2 (batch)",
     "description": "GPT-5.2 is the latest frontier-grade model in the GPT-5 series, offering stronger agentic and long context perfomance compared to GPT-5.1. It uses adaptive reasoning to allocate computation dynamically, responding quickly...",
     "supports_image": true,
     "context_length": 400000,
@@ -2332,7 +2345,7 @@
   },
   "claude-opus-4.5": {
     "provider": "anthropic",
-    "name": "Anthropic: Claude Opus 4.5",
+    "name": "Anthropic: Claude Opus 4.5 (batch)",
     "description": "Claude Opus 4.5 is Anthropic’s frontier reasoning model optimized for complex software engineering, agentic workflows, and long-horizon computer use. It offers strong multimodal capabilities, competitive performance across real-world coding and...",
     "supports_image": true,
     "context_length": 200000,
@@ -2388,7 +2401,7 @@
   },
   "gpt-5.1": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.1",
+    "name": "OpenAI: GPT-5.1 (batch)",
     "description": "GPT-5.1 is the latest frontier-grade model in the GPT-5 series, offering stronger general-purpose reasoning, improved instruction adherence, and a more natural conversational style compared to GPT-5. It uses adaptive reasoning...",
     "supports_image": true,
     "context_length": 400000,
@@ -2571,7 +2584,7 @@
   },
   "claude-haiku-4.5": {
     "provider": "anthropic",
-    "name": "Anthropic: Claude Haiku 4.5",
+    "name": "Anthropic: Claude Haiku 4.5 (batch)",
     "description": "Claude Haiku 4.5 is Anthropic’s fastest and most efficient model, delivering near-frontier intelligence at a fraction of the cost and latency of larger Claude models. Matching Claude Sonnet 4’s performance...",
     "supports_image": true,
     "context_length": 200000,
@@ -2673,7 +2686,7 @@
   },
   "gpt-5-pro": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5 Pro",
+    "name": "OpenAI: GPT-5 Pro (batch)",
     "description": "GPT-5 Pro is OpenAI’s most advanced model, offering major improvements in reasoning, code quality, and user experience. It is optimized for complex tasks that require step-by-step reasoning, instruction following, and...",
     "supports_image": true,
     "context_length": 400000,
@@ -2701,7 +2714,7 @@
   },
   "claude-sonnet-4.5": {
     "provider": "anthropic",
-    "name": "Anthropic: Claude Sonnet 4.5",
+    "name": "Anthropic: Claude Sonnet 4.5 (batch)",
     "description": "Claude Sonnet 4.5 is Anthropic’s most advanced Sonnet model to date, optimized for real-world agents and coding workflows. It delivers state-of-the-art performance on coding benchmarks such as SWE-bench Verified, with...",
     "supports_image": true,
     "context_length": 1000000,
@@ -2802,6 +2815,20 @@
     "context_length": 1000000,
     "inputs": [
       "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gpt-5-codex": {
+    "provider": "openai",
+    "name": "OpenAI: GPT-5 Codex (batch)",
+    "description": "GPT-5-Codex is a specialized version of GPT-5 optimized for software engineering and coding workflows. It is designed for both interactive development sessions and long, independent execution of complex engineering tasks....",
+    "supports_image": true,
+    "context_length": 400000,
+    "inputs": [
+      "text",
+      "image"
     ],
     "outputs": [
       "text"
@@ -2994,7 +3021,7 @@
   },
   "gpt-5": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5",
+    "name": "OpenAI: GPT-5 (batch)",
     "description": "GPT-5 is OpenAI’s most advanced model, offering major improvements in reasoning, code quality, and user experience. It is optimized for complex tasks that require step-by-step reasoning, instruction following, and accuracy...",
     "supports_image": true,
     "context_length": 400000,
@@ -3009,7 +3036,7 @@
   },
   "gpt-5-mini": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5 Mini",
+    "name": "OpenAI: GPT-5 Mini (batch)",
     "description": "GPT-5 Mini is a compact version of GPT-5, designed to handle lighter-weight reasoning tasks. It provides the same instruction-following and safety-tuning benefits as GPT-5, but with reduced latency and cost....",
     "supports_image": true,
     "context_length": 400000,
@@ -3024,7 +3051,7 @@
   },
   "gpt-5-nano": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5 Nano",
+    "name": "OpenAI: GPT-5 Nano (batch)",
     "description": "GPT-5-Nano is the smallest and fastest variant in the GPT-5 system, optimized for developer tools, rapid interactions, and ultra-low latency environments. While limited in reasoning depth compared to its larger...",
     "supports_image": true,
     "context_length": 400000,
@@ -3065,7 +3092,7 @@
   },
   "claude-opus-4.1": {
     "provider": "anthropic",
-    "name": "Anthropic: Claude Opus 4.1",
+    "name": "Anthropic: Claude Opus 4.1 (batch)",
     "description": "Claude Opus 4.1 is an updated version of Anthropic’s flagship model, offering improved performance in coding, reasoning, and agentic tasks. It achieves 74.5% on SWE-bench Verified and shows notable gains...",
     "supports_image": true,
     "context_length": 200000,
@@ -3186,7 +3213,7 @@
   },
   "gemini-2.5-flash-lite": {
     "provider": "google",
-    "name": "Google: Gemini 2.5 Flash Lite",
+    "name": "Google: Gemini 2.5 Flash Lite (batch)",
     "description": "Gemini 2.5 Flash-Lite is a lightweight reasoning model in the Gemini 2.5 family, optimized for ultra-low latency and cost efficiency. It offers improved throughput, faster token generation, and better performance...",
     "supports_image": true,
     "context_length": 1048576,
@@ -3322,7 +3349,7 @@
   },
   "gemini-2.5-flash": {
     "provider": "google",
-    "name": "Google: Gemini 2.5 Flash",
+    "name": "Google: Gemini 2.5 Flash (batch)",
     "description": "Gemini 2.5 Flash is Google's state-of-the-art workhorse model, specifically designed for advanced reasoning, coding, mathematics, and scientific tasks. It includes built-in \"thinking\" capabilities, enabling it to provide responses with greater...",
     "supports_image": true,
     "context_length": 1048576,
@@ -3339,7 +3366,7 @@
   },
   "gemini-2.5-pro": {
     "provider": "google",
-    "name": "Google: Gemini 2.5 Pro",
+    "name": "Google: Gemini 2.5 Pro (batch)",
     "description": "Gemini 2.5 Pro is Google’s state-of-the-art AI model designed for advanced reasoning, coding, mathematics, and scientific tasks. It employs “thinking” capabilities, enabling it to reason through responses with enhanced accuracy...",
     "supports_image": true,
     "context_length": 1048576,
@@ -3356,7 +3383,7 @@
   },
   "o3-pro": {
     "provider": "openai",
-    "name": "OpenAI: o3 Pro",
+    "name": "OpenAI: o3 Pro (batch)",
     "description": "The o-series of models are trained with reinforcement learning to think before they answer and perform complex reasoning. The o3-pro model uses more compute to think harder and provide consistently...",
     "supports_image": true,
     "context_length": 200000,
@@ -3567,7 +3594,7 @@
   },
   "o4-mini-high": {
     "provider": "openai",
-    "name": "OpenAI: o4 Mini High",
+    "name": "OpenAI: o4 Mini High (batch)",
     "description": "OpenAI o4-mini-high is the same model as [o4-mini](/openai/o4-mini) with reasoning_effort set to high. OpenAI o4-mini is a compact reasoning model in the o-series, optimized for fast, cost-efficient performance while retaining...",
     "supports_image": true,
     "context_length": 200000,
@@ -3582,7 +3609,7 @@
   },
   "o3": {
     "provider": "openai",
-    "name": "OpenAI: o3",
+    "name": "OpenAI: o3 (batch)",
     "description": "o3 is a well-rounded and powerful model across domains. It sets a new standard for math, science, coding, and visual reasoning tasks. It also excels at technical writing and instruction-following....",
     "supports_image": true,
     "context_length": 200000,
@@ -3597,7 +3624,7 @@
   },
   "o4-mini": {
     "provider": "openai",
-    "name": "OpenAI: o4 Mini",
+    "name": "OpenAI: o4 Mini (batch)",
     "description": "OpenAI o4-mini is a compact reasoning model in the o-series, optimized for fast, cost-efficient performance while retaining strong multimodal and agentic capabilities. It supports tool use and demonstrates competitive reasoning...",
     "supports_image": true,
     "context_length": 200000,
@@ -3612,7 +3639,7 @@
   },
   "gpt-4.1": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4.1",
+    "name": "OpenAI: GPT-4.1 (batch)",
     "description": "GPT-4.1 is a flagship large language model optimized for advanced instruction following, real-world software engineering, and long-context reasoning. It supports a 1 million token context window and outperforms GPT-4o and...",
     "supports_image": true,
     "context_length": 1047576,
@@ -3627,7 +3654,7 @@
   },
   "gpt-4.1-mini": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4.1 Mini",
+    "name": "OpenAI: GPT-4.1 Mini (batch)",
     "description": "GPT-4.1 Mini is a mid-sized model delivering performance competitive with GPT-4o at substantially lower latency and cost. It retains a 1 million token context window and scores 45.1% on hard...",
     "supports_image": true,
     "context_length": 1047576,
@@ -3642,7 +3669,7 @@
   },
   "gpt-4.1-nano": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4.1 Nano",
+    "name": "OpenAI: GPT-4.1 Nano (batch)",
     "description": "For tasks that demand low latency, GPT‑4.1 nano is the fastest and cheapest model in the GPT-4.1 series. It delivers exceptional performance at a small size with its 1 million...",
     "supports_image": true,
     "context_length": 1047576,
@@ -3698,7 +3725,7 @@
   },
   "o1-pro": {
     "provider": "openai",
-    "name": "OpenAI: o1-pro",
+    "name": "OpenAI: o1-pro (batch)",
     "description": "The o1 series of models are trained with reinforcement learning to think before they answer and perform complex reasoning. The o1-pro model uses more compute to think harder and provide...",
     "supports_image": true,
     "context_length": 200000,
@@ -3863,7 +3890,7 @@
   },
   "o3-mini-high": {
     "provider": "openai",
-    "name": "OpenAI: o3 Mini High",
+    "name": "OpenAI: o3 Mini High (batch)",
     "description": "OpenAI o3-mini-high is the same model as [o3-mini](/openai/o3-mini) with reasoning_effort set to high. o3-mini is a cost-efficient language model optimized for STEM reasoning tasks, particularly excelling in science, mathematics, and...",
     "supports_image": false,
     "context_length": 200000,
@@ -3917,7 +3944,7 @@
   },
   "o3-mini": {
     "provider": "openai",
-    "name": "OpenAI: o3 Mini",
+    "name": "OpenAI: o3 Mini (batch)",
     "description": "OpenAI o3-mini is a cost-efficient language model optimized for STEM reasoning tasks, particularly excelling in science, mathematics, and coding. This model supports the `reasoning_effort` parameter, which can be set to...",
     "supports_image": false,
     "context_length": 200000,
@@ -4037,7 +4064,7 @@
   },
   "o1": {
     "provider": "openai",
-    "name": "OpenAI: o1",
+    "name": "OpenAI: o1 (batch)",
     "description": "The latest and strongest model family from OpenAI, o1 is designed to spend more time thinking before responding. The o1 model series is trained with large-scale reinforcement learning to reason...",
     "supports_image": true,
     "context_length": 200000,
@@ -4384,7 +4411,7 @@
   },
   "gpt-4o-mini": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4o-mini",
+    "name": "OpenAI: GPT-4o-mini (batch)",
     "description": "GPT-4o mini is OpenAI's newest model after [GPT-4 Omni](/models/openai/gpt-4o), supporting both text and image inputs with text outputs. As their most advanced small model, it is many multiples more affordable...",
     "supports_image": true,
     "context_length": 128000,
@@ -4427,7 +4454,7 @@
   },
   "gpt-4o": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4o",
+    "name": "OpenAI: GPT-4o (batch)",
     "description": "GPT-4o (\"o\" for \"omni\") is OpenAI's latest AI model, supporting both text and image inputs with text outputs. It maintains the intelligence level of [GPT-4 Turbo](/models/openai/gpt-4-turbo) while being twice as...",
     "supports_image": true,
     "context_length": 128000,
@@ -4484,7 +4511,7 @@
   },
   "gpt-4-turbo": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4 Turbo",
+    "name": "OpenAI: GPT-4 Turbo (batch)",
     "description": "The latest GPT-4 Turbo model with vision capabilities. Vision requests can now use JSON mode and function calling.\n\nTraining data: up to December 2023.",
     "supports_image": true,
     "context_length": 128000,
@@ -4635,7 +4662,7 @@
   },
   "gpt-3.5-turbo": {
     "provider": "openai",
-    "name": "OpenAI: GPT-3.5 Turbo",
+    "name": "OpenAI: GPT-3.5 Turbo (batch)",
     "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
     "supports_image": false,
     "context_length": 16385,
