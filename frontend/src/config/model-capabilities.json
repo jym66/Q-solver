@@ -1,4 +1,31 @@
 {
+  "solar-pro4": {
+    "provider": "upstage",
+    "name": "Upstage: Solar Pro 4",
+    "description": "Solar Pro 4 is a large language model from Upstage. It is suited for agentic workflows, office productivity, document-intensive work, and coding.",
+    "supports_image": false,
+    "context_length": 524288,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "muse-glimmer-30b": {
+    "provider": "meta",
+    "name": "Meta: Muse Glimmer 30B",
+    "description": "Muse Glimmer 30B is a dense, open-weight multimodal model from Meta Superintelligence Labs, distilled from Muse Spark and optimized for autonomous agents on consumer hardware. It is suited for long-horizon...",
+    "supports_image": true,
+    "context_length": 131072,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "ling-3.0-tiny": {
     "provider": "inclusionai",
     "name": "inclusionAI: Ling 3.0 Tiny (free)",
@@ -1633,21 +1660,6 @@
     "context_length": 128000,
     "inputs": [
       "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "gpt-5.3-chat": {
-    "provider": "openai",
-    "name": "OpenAI: GPT-5.3 Chat",
-    "description": "GPT-5.3 Chat is an update to ChatGPT's most-used model that makes everyday conversations smoother, more useful, and more directly helpful. It delivers more accurate answers with better contextualization and significantly...",
-    "supports_image": true,
-    "context_length": 128000,
-    "inputs": [
-      "text",
-      "image",
-      "file"
     ],
     "outputs": [
       "text"
