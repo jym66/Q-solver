@@ -1,4 +1,45 @@
 {
+  "lfm-2.5-2.6b": {
+    "provider": "liquid",
+    "name": "LiquidAI: LFM2.5-2.6B (free)",
+    "description": "LFM2.5-2.6B is a compact reasoning model from Liquid AI. It is suited for agent workflows, data extraction, RAG, and long-context processing. Liquid advises against using it for agentic coding or...",
+    "supports_image": false,
+    "context_length": 128000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "nemotron-3.5-lightning": {
+    "provider": "nvidia",
+    "name": "NVIDIA: Nemotron 3.5 Lightning (free)",
+    "description": "NVIDIA Nemotron 3.5 Lightning is an open mixture-of-experts model from NVIDIA, with 3B active parameters out of 30B total. It is suited for high-throughput agentic workloads and specialized tasks that...",
+    "supports_image": false,
+    "context_length": 1000000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "sakana-namazu": {
+    "provider": "sakana",
+    "name": "Sakana: Sakana Namazu",
+    "description": "Sakana Namazu is a Japanese-specialized reasoning model from Sakana AI, based on Kimi K2.6 with additional training for Japanese language and business contexts. It is suited for Japanese instruction following,...",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image",
+      "file"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "solar-pro4": {
     "provider": "upstage",
     "name": "Upstage: Solar Pro 4",
@@ -92,6 +133,21 @@
     "context_length": 1048576,
     "inputs": [
       "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "seed-2.0-code": {
+    "provider": "bytedance-seed",
+    "name": "ByteDance Seed: Seed-2.0-Code",
+    "description": "Seed 2.0 Code is a model from ByteDance Seed optimized for agentic coding. It is suited for frontend development, multilingual programming tasks, and coding-agent workflows in tools such as Claude...",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image",
+      "video"
     ],
     "outputs": [
       "text"
@@ -271,7 +327,8 @@
     "context_length": 1048576,
     "inputs": [
       "text",
-      "image"
+      "image",
+      "video"
     ],
     "outputs": [
       "text"
@@ -1012,7 +1069,8 @@
     "context_length": 1048576,
     "inputs": [
       "text",
-      "image"
+      "image",
+      "video"
     ],
     "outputs": [
       "text"
