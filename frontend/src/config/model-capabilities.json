@@ -1,4 +1,75 @@
 {
+  "seed-2-1-turbo": {
+    "provider": "bytedance-seed",
+    "name": "ByteDance Seed: Seed 2.1 Turbo",
+    "description": "Seed 2.1 Turbo is a multimodal model from ByteDance Seed for coding and long-horizon agent workflows. It is suited for end-to-end software delivery, multi-step task execution, and understanding visual and...",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "qwen3.8-2.4t-a95b": {
+    "provider": "qwen",
+    "name": "Qwen: Qwen3.8 2.4T A95B",
+    "description": "Qwen3.8 2.4T A95B is an open-weight sparse mixture-of-experts model from Qwen and the open-weight variant of [Qwen3.8 Max](/qwen/qwen3.8-max), with 95 billion active parameters out of 2.4 trillion total. It is...",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "seed-2.0-code": {
+    "provider": "bytedance-seed",
+    "name": "ByteDance Seed: Seed-2.0-Code",
+    "description": "Seed 2.0 Code is a model from ByteDance Seed optimized for agentic coding. It is suited for frontend development, multilingual programming tasks, and coding-agent workflows in tools such as Claude...",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "deepseek-v4-pro-0813": {
+    "provider": "deepseek",
+    "name": "DeepSeek: DeepSeek V4 Pro 0813",
+    "description": "DeepSeek V4 Pro 0813 is a large-scale mixture-of-experts model from DeepSeek. This is the GA release of DeepSeek V4 Pro.",
+    "supports_image": false,
+    "context_length": 1048576,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "grok-4.6": {
+    "provider": "x-ai",
+    "name": "SpaceXAI: Grok 4.6",
+    "description": "Grok 4.6 is SpaceXAI's smartest model with frontier performance on coding, knowledge work, and STEM.",
+    "supports_image": true,
+    "context_length": 500000,
+    "inputs": [
+      "text",
+      "image",
+      "file"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "lfm-2.5-2.6b": {
     "provider": "liquid",
     "name": "LiquidAI: LFM2.5-2.6B (free)",
@@ -128,26 +199,11 @@
   "deepseek-v4-flash-0731": {
     "provider": "deepseek",
     "name": "DeepSeek: DeepSeek V4 Flash 0731",
-    "description": "DeepSeek V4 Flash 0731 is a sparse mixture-of-experts model from DeepSeek, with 13B active parameters out of 284B total. This re-post-trained revision is suited for coding, reasoning, and agent workflows.",
+    "description": "DeepSeek V4 Flash 0731 is a sparse mixture-of-experts model from DeepSeek, with 13B active parameters out of 284B total. This re-post-trained revision is suited for coding, reasoning, and agent workflows....",
     "supports_image": false,
     "context_length": 1048576,
     "inputs": [
       "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "seed-2.0-code": {
-    "provider": "bytedance-seed",
-    "name": "ByteDance Seed: Seed-2.0-Code",
-    "description": "Seed 2.0 Code is a model from ByteDance Seed optimized for agentic coding. It is suited for frontend development, multilingual programming tasks, and coding-agent workflows in tools such as Claude...",
-    "supports_image": true,
-    "context_length": 262144,
-    "inputs": [
-      "text",
-      "image",
-      "video"
     ],
     "outputs": [
       "text"
@@ -470,7 +526,7 @@
   "grok-4.5": {
     "provider": "x-ai",
     "name": "SpaceXAI: Grok 4.5",
-    "description": "Grok 4.5 is SpaceXAI's smartest model with frontier performance on coding, knowledge work, and STEM.",
+    "description": "Grok 4.5 is a model from SpaceXAI with frontier performance on coding, knowledge work, and STEM.",
     "supports_image": true,
     "context_length": 500000,
     "inputs": [
