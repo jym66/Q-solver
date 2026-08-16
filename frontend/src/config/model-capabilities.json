@@ -1,4 +1,33 @@
 {
+  "qwen3.8-27b": {
+    "provider": "qwen",
+    "name": "Qwen: Qwen3.8 27B",
+    "description": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thinking that can be...",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "dots-3-note-preview": {
+    "provider": "dots-studio",
+    "name": "Dots Studio: Dots3-Note Preview (free)",
+    "description": "Dots3-Note Preview is an open-weight mixture-of-experts model from Dots Studio, with 16B active parameters out of 280B total. It is the lightest model in the Dots 3 family and is...",
+    "supports_image": true,
+    "context_length": 512000,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "gemini-3.7-flash": {
     "provider": "google",
     "name": "Google: Gemini 3.7 Flash (batch)",
