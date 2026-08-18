@@ -221,7 +221,7 @@
     "name": "DeepSeek V4 Flash Latest",
     "description": "This model always redirects to the latest model in the DeepSeek V4 Flash family.",
     "supports_image": false,
-    "context_length": 1048576,
+    "context_length": 1310720,
     "inputs": [
       "text"
     ],
@@ -234,7 +234,7 @@
     "name": "DeepSeek: DeepSeek V4 Flash 0731",
     "description": "DeepSeek V4 Flash 0731 is a sparse mixture-of-experts model from DeepSeek, with 13B active parameters out of 284B total. This re-post-trained revision is suited for coding, reasoning, and agent workflows....",
     "supports_image": false,
-    "context_length": 1048576,
+    "context_length": 1310720,
     "inputs": [
       "text"
     ],
@@ -741,10 +741,10 @@
   },
   "glm-5.2": {
     "provider": "z-ai",
-    "name": "Z.ai: GLM 5.2 (batch)",
+    "name": "Z.ai: GLM 5.2 (free)",
     "description": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
     "supports_image": false,
-    "context_length": 512000,
+    "context_length": 128000,
     "inputs": [
       "text"
     ],
@@ -1317,7 +1317,7 @@
   },
   "deepseek-v4-pro": {
     "provider": "deepseek",
-    "name": "DeepSeek: DeepSeek V4 Pro",
+    "name": "DeepSeek: DeepSeek V4 Pro 0423",
     "description": "DeepSeek V4 Pro is a large-scale Mixture-of-Experts model from DeepSeek with 1.6T total parameters and 49B activated parameters, supporting a 1M-token context window. It is designed for advanced reasoning, coding,...",
     "supports_image": false,
     "context_length": 1048576,
