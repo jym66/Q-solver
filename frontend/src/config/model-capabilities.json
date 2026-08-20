@@ -1,4 +1,17 @@
 {
+  "glm-latest": {
+    "provider": "~z-ai",
+    "name": "Z.ai: GLM Latest",
+    "description": "This model always redirects to the latest GLM model from Z.ai.",
+    "supports_image": false,
+    "context_length": 1048576,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "glm-5.3": {
     "provider": "z-ai",
     "name": "Z.ai: GLM 5.3",
@@ -17,7 +30,7 @@
     "name": "Qwen: Qwen3.8 27B",
     "description": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thinking that can be...",
     "supports_image": true,
-    "context_length": 262144,
+    "context_length": 1000000,
     "inputs": [
       "text",
       "image",
@@ -3178,19 +3191,6 @@
       "text"
     ]
   },
-  "jamba-large-1.7": {
-    "provider": "ai21",
-    "name": "AI21: Jamba Large 1.7",
-    "description": "Jamba Large 1.7 is the latest model in the Jamba open family, offering improvements in grounding, instruction-following, and overall efficiency. Built on a hybrid SSM-Transformer architecture with a 256K context...",
-    "supports_image": false,
-    "context_length": 256000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "gpt-5": {
     "provider": "openai",
     "name": "OpenAI: GPT-5 (batch)",
@@ -4786,19 +4786,6 @@
     "description": "This model offers four times the context length of gpt-3.5-turbo, allowing it to support approximately 20 pages of text in a single request at a higher cost. Training data: up...",
     "supports_image": false,
     "context_length": 16385,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "weaver": {
-    "provider": "mancer",
-    "name": "Mancer: Weaver (alpha)",
-    "description": "An attempt to recreate Claude-style verbosity, but don't expect the same level of coherence or memory. Meant for use in roleplay/narrative situations.",
-    "supports_image": false,
-    "context_length": 8000,
     "inputs": [
       "text"
     ],
