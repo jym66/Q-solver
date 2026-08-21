@@ -1,4 +1,45 @@
 {
+  "ox-alpha": {
+    "provider": "stealth",
+    "name": "Ox Alpha",
+    "description": "Ox Alpha is a reasoning model designed for coding, sustained agentic work, and production workloads. It is suited for long-horizon software engineering, complex reasoning, and workflows that combine text with...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "hy-mt2-1.8b": {
+    "provider": "tencent",
+    "name": "Tencent: Hy-MT2-1.8B",
+    "description": "Hy-MT2-1.8B is a compact 1.8B-parameter translation model from Tencent. It supports 33 language pairs and five Chinese dialect and minority-language pairs, with workflows for structured, delimiter-based, contextual, glossary-based, and style-guided...",
+    "supports_image": false,
+    "context_length": 8192,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "hy-mt2-30b-a3b": {
+    "provider": "tencent",
+    "name": "Tencent: Hy-MT2-30B-A3B",
+    "description": "Hy-MT2-30B-A3B is Tencent's flagship translation model in the Hy-MT2 family. It supports 33 language pairs and five Chinese dialect and minority-language pairs, with workflows for structured, delimiter-based, contextual, glossary-based, and...",
+    "supports_image": false,
+    "context_length": 8192,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "glm-latest": {
     "provider": "~z-ai",
     "name": "Z.ai: GLM Latest",
@@ -273,7 +314,7 @@
     "name": "Thinking Machines: Inkling Small",
     "description": "Inkling Small is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 12B active parameters out of 276B total. It is positioned as the smaller, more efficient member of...",
     "supports_image": true,
-    "context_length": 524288,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "image",
@@ -4384,6 +4425,19 @@
       "text"
     ]
   },
+  "ministral-8b": {
+    "provider": "mistralai",
+    "name": "Mistral: Ministral 8B",
+    "description": "Ministral 8B is an 8B parameter model featuring a unique interleaved sliding-window attention pattern for faster, memory-efficient inference. Designed for edge use cases, it supports up to 128k context length...",
+    "supports_image": false,
+    "context_length": 128000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "qwen-2.5-7b-instruct": {
     "provider": "qwen",
     "name": "Qwen: Qwen2.5 7B Instruct",
@@ -4786,6 +4840,19 @@
     "description": "This model offers four times the context length of gpt-3.5-turbo, allowing it to support approximately 20 pages of text in a single request at a higher cost. Training data: up...",
     "supports_image": false,
     "context_length": 16385,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "weaver": {
+    "provider": "mancer",
+    "name": "Mancer: Weaver (alpha)",
+    "description": "An attempt to recreate Claude-style verbosity, but don't expect the same level of coherence or memory. Meant for use in roleplay/narrative situations.",
+    "supports_image": false,
+    "context_length": 8000,
     "inputs": [
       "text"
     ],
