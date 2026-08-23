@@ -84,6 +84,19 @@
       "text"
     ]
   },
+  "hy-mt2-7b": {
+    "provider": "tencent",
+    "name": "Tencent: Hy-MT2-7B",
+    "description": "Hy-MT2-7B is a 7B-parameter translation model from Tencent. It supports 33 language pairs and five Chinese dialect and minority-language pairs, with workflows for structured, delimiter-based, contextual, glossary-based, and style-guided translation.",
+    "supports_image": false,
+    "context_length": 8192,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "glm-5.3": {
     "provider": "z-ai",
     "name": "Z.ai: GLM 5.3",
