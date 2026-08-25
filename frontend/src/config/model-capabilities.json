@@ -358,7 +358,7 @@
     "name": "Thinking Machines: Inkling Small (free)",
     "description": "Inkling Small is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 12B active parameters out of 276B total. It is positioned as the smaller, more efficient member of...",
     "supports_image": true,
-    "context_length": 262144,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "image",
@@ -491,7 +491,7 @@
     "name": "Thinking Machines: Inkling (free)",
     "description": "Inkling is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 41B active parameters out of 975B total. It is designed for general-purpose reasoning, coding, agentic and tool-use systems,...",
     "supports_image": true,
-    "context_length": 262144,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "image",
@@ -1110,19 +1110,6 @@
       "text"
     ]
   },
-  "ring-2.6-1t": {
-    "provider": "inclusionai",
-    "name": "inclusionAI: Ring-2.6-1T",
-    "description": "Ring-2.6-1T is a 1T-parameter-scale thinking model with 63B active parameters, built for real-world agent workflows that require both strong capability and operational efficiency. It is optimized for coding agents, tool...",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "gemini-3.1-flash-lite": {
     "provider": "google",
     "name": "Google: Gemini 3.1 Flash Lite (batch)",
@@ -1452,19 +1439,6 @@
       "text"
     ]
   },
-  "ling-2.6-1t": {
-    "provider": "inclusionai",
-    "name": "inclusionAI: Ling-2.6-1T",
-    "description": "Ling-2.6-1T is an instant (instruct) model from inclusionAI and the company’s trillion-parameter flagship, designed for real-world agents that require fast execution and high efficiency at scale. It uses a “fast...",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "hy3-preview": {
     "provider": "tencent",
     "name": "Tencent: Hy3 preview",
@@ -1520,19 +1494,6 @@
     ],
     "outputs": [
       "image",
-      "text"
-    ]
-  },
-  "ling-2.6-flash": {
-    "provider": "inclusionai",
-    "name": "inclusionAI: Ling-2.6-flash",
-    "description": "Ling-2.6-flash is an instant (instruct) model from inclusionAI with 104B total parameters and 7.4B active parameters, designed for real-world agents that require fast responses, strong execution, and high token efficiency....",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
       "text"
     ]
   },
@@ -2416,10 +2377,10 @@
   },
   "nemotron-3-nano-30b-a3b": {
     "provider": "nvidia",
-    "name": "NVIDIA: Nemotron 3 Nano 30B A3B (free)",
+    "name": "NVIDIA: Nemotron 3 Nano 30B A3B",
     "description": "NVIDIA Nemotron 3 Nano 30B A3B is a small language MoE model with highest compute efficiency and accuracy for developers to build specialized agentic AI systems. The model is fully...",
     "supports_image": false,
-    "context_length": 256000,
+    "context_length": 262144,
     "inputs": [
       "text"
     ],
@@ -2467,6 +2428,20 @@
       "file",
       "image",
       "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "devstral-2512": {
+    "provider": "mistralai",
+    "name": "Mistral: Devstral 2 2512",
+    "description": "Devstral 2 is a state-of-the-art open-source model by Mistral AI specializing in agentic coding. It is a 123B-parameter dense transformer model supporting a 256K context window. Devstral 2 supports exploring...",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "file"
     ],
     "outputs": [
       "text"
@@ -2763,21 +2738,6 @@
     "context_length": 131072,
     "inputs": [
       "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "nemotron-nano-12b-v2-vl": {
-    "provider": "nvidia",
-    "name": "NVIDIA: Nemotron Nano 12B 2 VL (free)",
-    "description": "NVIDIA Nemotron Nano 2 VL is a 12-billion-parameter open multimodal reasoning model designed for video understanding and document intelligence. It introduces a hybrid Transformer-Mamba architecture, combining transformer-level accuracy with Mamba’s...",
-    "supports_image": true,
-    "context_length": 128000,
-    "inputs": [
-      "image",
-      "text",
-      "video"
     ],
     "outputs": [
       "text"
@@ -3156,19 +3116,6 @@
       "text"
     ]
   },
-  "nemotron-nano-9b-v2": {
-    "provider": "nvidia",
-    "name": "NVIDIA: Nemotron Nano 9B V2 (free)",
-    "description": "NVIDIA-Nemotron-Nano-9B-v2 is a large language model (LLM) trained from scratch by NVIDIA, and designed as a unified model for both reasoning and non-reasoning tasks. It responds to user queries and...",
-    "supports_image": false,
-    "context_length": 128000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "kimi-k2-0905": {
     "provider": "moonshotai",
     "name": "MoonshotAI: Kimi K2 0905",
@@ -3420,7 +3367,7 @@
     "name": "Qwen: Qwen3 235B A22B Thinking 2507",
     "description": "Qwen3-235B-A22B-Thinking-2507 is a high-performance, open-weight Mixture-of-Experts (MoE) language model optimized for complex reasoning tasks. It activates 22B of its 235B parameters per forward pass and natively supports up to 262,144...",
     "supports_image": false,
-    "context_length": 262144,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
