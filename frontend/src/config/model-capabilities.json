@@ -977,10 +977,10 @@
   },
   "minimax-m3": {
     "provider": "minimax",
-    "name": "MiniMax: MiniMax M3 (batch)",
+    "name": "MiniMax: MiniMax M3 (free)",
     "description": "MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for long-horizon agentic work, coding,...",
     "supports_image": true,
-    "context_length": 524288,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "image",
@@ -1730,10 +1730,10 @@
   },
   "minimax-m2.7": {
     "provider": "minimax",
-    "name": "MiniMax: MiniMax M2.7",
+    "name": "MiniMax: MiniMax M2.7 (free)",
     "description": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic capabilities through multi-agent...",
     "supports_image": false,
-    "context_length": 204800,
+    "context_length": 196608,
     "inputs": [
       "text"
     ],
@@ -3105,7 +3105,7 @@
   },
   "qwen-plus-2025-07-28": {
     "provider": "qwen",
-    "name": "Qwen: Qwen Plus 0728 (thinking)",
+    "name": "Qwen: Qwen Plus 0728",
     "description": "Qwen Plus 0728, based on the Qwen3 foundation model, is a 1 million context hybrid reasoning model with a balanced performance, speed, and cost combination.",
     "supports_image": false,
     "context_length": 1000000,
@@ -3646,19 +3646,6 @@
       "text"
     ]
   },
-  "gemma-3n-e4b-it": {
-    "provider": "google",
-    "name": "Google: Gemma 3n 4B",
-    "description": "Gemma 3n E4B-it is optimized for efficient execution on mobile and low-resource devices, such as phones, laptops, and tablets. It supports multimodal inputs—including text, visual data, and audio—enabling diverse tasks...",
-    "supports_image": false,
-    "context_length": 32768,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "mistral-medium-3": {
     "provider": "mistralai",
     "name": "Mistral: Mistral Medium 3",
@@ -3709,7 +3696,7 @@
     "name": "Meta: Llama Guard 4 12B",
     "description": "Llama Guard 4 is a Llama 4 Scout-derived multimodal pretrained model, fine-tuned for content safety classification. Similar to previous versions, it can be used to classify content in both LLM...",
     "supports_image": true,
-    "context_length": 1048576,
+    "context_length": 163840,
     "inputs": [
       "image",
       "text"
