@@ -1,4 +1,34 @@
 {
+  "qwen3.8-flash": {
+    "provider": "qwen",
+    "name": "Qwen: Qwen3.8 Flash",
+    "description": "Qwen3.8 Flash is a multimodal reasoning model from Alibaba. It is suited for coding assistance, agentic workflows, visual understanding, document and codebase analysis, desktop interaction, chart analysis, and long-video analysis.",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "glm-5.3-flash": {
+    "provider": "z-ai",
+    "name": "Z.ai: GLM 5.3 Flash",
+    "description": "GLM-5.3-Flash is a native multimodal model from Z.ai. It is suited for efficient coding and long-horizon agent tasks. Its hybrid sparse and linear attention architecture maintains accurate long-context behavior while...",
+    "supports_image": true,
+    "context_length": 1310720,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "muse-spark-1.2-contributor": {
     "provider": "meta",
     "name": "Meta: Muse Spark 1.2 Contributor",
@@ -25,21 +55,6 @@
     "inputs": [
       "text",
       "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "ox-alpha": {
-    "provider": "stealth",
-    "name": "Ox Alpha",
-    "description": "Ox Alpha is a reasoning model designed for coding, sustained agentic work, and production workloads. It is suited for long-horizon software engineering, complex reasoning, and workflows that combine text with...",
-    "supports_image": true,
-    "context_length": 1048576,
-    "inputs": [
-      "text",
-      "image",
-      "video"
     ],
     "outputs": [
       "text"
