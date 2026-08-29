@@ -42,10 +42,10 @@
   },
   "glm-5.3-flash": {
     "provider": "z-ai",
-    "name": "Z.ai: GLM 5.3 Flash",
+    "name": "Z.ai: GLM 5.3 Flash (batch)",
     "description": "GLM-5.3-Flash is a native multimodal model from Z.ai. It is suited for efficient coding and long-horizon agent tasks. Its hybrid sparse and linear attention architecture maintains accurate long-context behavior while...",
     "supports_image": true,
-    "context_length": 1310720,
+    "context_length": 1048575,
     "inputs": [
       "text",
       "image",
@@ -117,7 +117,7 @@
     "name": "Z.ai: GLM Latest",
     "description": "This model always redirects to the latest GLM model from Z.ai.",
     "supports_image": false,
-    "context_length": 1048576,
+    "context_length": 1310720,
     "inputs": [
       "text"
     ],
@@ -143,7 +143,7 @@
     "name": "Z.ai: GLM 5.3",
     "description": "GLM-5.3 is a large-scale reasoning model from Z.ai, built for complex software engineering and long-horizon agent tasks. It supports text input and output with a 1M-token context window, and improves...",
     "supports_image": false,
-    "context_length": 1048576,
+    "context_length": 1310720,
     "inputs": [
       "text"
     ],
@@ -214,10 +214,10 @@
   },
   "qwen3.8-2.4t-a95b": {
     "provider": "qwen",
-    "name": "Qwen: Qwen3.8 2.4T A95B",
+    "name": "Qwen: Qwen3.8 2.4T A95B (batch)",
     "description": "Qwen3.8 2.4T A95B is an open-weight sparse mixture-of-experts model from Qwen and the open-weight variant of [Qwen3.8 Max](/qwen/qwen3.8-max), with 95 billion active parameters out of 2.4 trillion total. It is...",
     "supports_image": false,
-    "context_length": 1048576,
+    "context_length": 1010000,
     "inputs": [
       "text"
     ],
@@ -242,7 +242,7 @@
   },
   "deepseek-v4-pro-0813": {
     "provider": "deepseek",
-    "name": "DeepSeek: DeepSeek V4 Pro 0813",
+    "name": "DeepSeek: DeepSeek V4 Pro 0813 (batch)",
     "description": "DeepSeek V4 Pro 0813 is a large-scale mixture-of-experts model from DeepSeek. This is the GA release of DeepSeek V4 Pro.",
     "supports_image": false,
     "context_length": 1048576,
@@ -324,7 +324,7 @@
   },
   "muse-glimmer-30b": {
     "provider": "meta",
-    "name": "Meta: Muse Glimmer 30B",
+    "name": "Meta: Muse Glimmer 30B (batch)",
     "description": "Muse Glimmer 30B is a dense, open-weight multimodal model from Meta Superintelligence Labs, distilled from Muse Spark and optimized for autonomous agents on consumer hardware. It is suited for long-horizon...",
     "supports_image": true,
     "context_length": 131072,
@@ -383,10 +383,10 @@
   },
   "deepseek-v4-flash-0731": {
     "provider": "deepseek",
-    "name": "DeepSeek: DeepSeek V4 Flash 0731",
+    "name": "DeepSeek: DeepSeek V4 Flash 0731 (batch)",
     "description": "DeepSeek V4 Flash 0731 is a sparse mixture-of-experts model from DeepSeek, with 13B active parameters out of 284B total. This re-post-trained revision is suited for coding, reasoning, and agent workflows....",
     "supports_image": false,
-    "context_length": 1310720,
+    "context_length": 1048576,
     "inputs": [
       "text"
     ],
@@ -562,7 +562,7 @@
   },
   "kimi-k3": {
     "provider": "moonshotai",
-    "name": "MoonshotAI: Kimi K3",
+    "name": "MoonshotAI: Kimi K3 (batch)",
     "description": "Kimi K3 is a 2.8T parameter open-weight multimodal reasoning model from Moonshot AI. It is suited for complex coding, knowledge work, and long-horizon agentic workflows, and is particularly strong at...",
     "supports_image": true,
     "context_length": 1048576,
@@ -1869,7 +1869,7 @@
   },
   "qwen3.5-9b": {
     "provider": "qwen",
-    "name": "Qwen: Qwen3.5-9B",
+    "name": "Qwen: Qwen3.5-9B (batch)",
     "description": "Qwen3.5-9B is a multimodal foundation model from the Qwen3.5 family, designed to deliver strong reasoning, coding, and visual understanding in an efficient 9B-parameter architecture. It uses a unified vision-language design...",
     "supports_image": true,
     "context_length": 262144,
@@ -2644,19 +2644,6 @@
       "text"
     ]
   },
-  "olmo-3-32b-think": {
-    "provider": "allenai",
-    "name": "AllenAI: Olmo 3 32B Think",
-    "description": "Olmo 3 32B Think is a large-scale, 32-billion-parameter model purpose-built for deep reasoning, complex logic chains and advanced instruction-following scenarios. Its capacity enables strong performance on demanding evaluation tasks and...",
-    "supports_image": false,
-    "context_length": 65536,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "gemini-3-pro-image-preview": {
     "provider": "google",
     "name": "Google: Nano Banana Pro (Gemini 3 Pro Image Preview)",
@@ -2761,7 +2748,7 @@
     "name": "Mistral: Voxtral Small 24B 2507",
     "description": "Voxtral Small is an enhancement of Mistral Small 3, incorporating state-of-the-art audio input capabilities while retaining best-in-class text performance. It excels at speech transcription, translation and audio understanding. Input audio...",
     "supports_image": false,
-    "context_length": 32000,
+    "context_length": 32768,
     "inputs": [
       "text",
       "audio",
@@ -3284,7 +3271,7 @@
   },
   "gpt-oss-120b": {
     "provider": "openai",
-    "name": "OpenAI: gpt-oss-120b",
+    "name": "OpenAI: gpt-oss-120b (batch)",
     "description": "gpt-oss-120b is an open-weight, 117B-parameter Mixture-of-Experts (MoE) language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. It activates 5.1B parameters per forward pass and is optimized...",
     "supports_image": false,
     "context_length": 131072,
@@ -3297,7 +3284,7 @@
   },
   "gpt-oss-20b": {
     "provider": "openai",
-    "name": "OpenAI: gpt-oss-20b",
+    "name": "OpenAI: gpt-oss-20b (batch)",
     "description": "gpt-oss-20b is an open-weight 21B parameter model released by OpenAI under the Apache 2.0 license. It uses a Mixture-of-Experts (MoE) architecture with 3.6B active parameters per forward pass, optimized for...",
     "supports_image": false,
     "context_length": 131072,
@@ -3705,19 +3692,6 @@
       "text"
     ]
   },
-  "virtuoso-large": {
-    "provider": "arcee-ai",
-    "name": "Arcee AI: Virtuoso Large",
-    "description": "Virtuoso‑Large is Arcee's top‑tier general‑purpose LLM at 72 B parameters, tuned to tackle cross‑domain reasoning, creative writing and enterprise QA. Unlike many 70 B peers, it retains the 128 k...",
-    "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "llama-guard-4-12b": {
     "provider": "meta-llama",
     "name": "Meta: Llama Guard 4 12B",
@@ -4016,7 +3990,7 @@
     "name": "Google: Gemma 3 27B",
     "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities,...",
     "supports_image": true,
-    "context_length": 262144,
+    "context_length": 131072,
     "inputs": [
       "text",
       "image"
