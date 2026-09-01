@@ -1,4 +1,17 @@
 {
+  "granite-4.2-8b": {
+    "provider": "ibm-granite",
+    "name": "IBM: Granite 4.2 8B",
+    "description": "Granite 4.2 8B is a dense reasoning model from IBM. It is suited for mathematics, code generation, multilingual dialogue, and agentic workflows that need multi-step reasoning. It supports full, low-effort,...",
+    "supports_image": false,
+    "context_length": 131072,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "hy4-preview": {
     "provider": "tencent",
     "name": "Tencent: Hy4 preview",
@@ -592,19 +605,6 @@
       "text"
     ]
   },
-  "kat-coder-air-v2.5": {
-    "provider": "kwaipilot",
-    "name": "Kwaipilot: KAT-Coder-Air V2.5",
-    "description": "KAT-Coder-Air V2.5 is a flagship-level Agentic Coding model that can directly hand over an entire issue or an entire business workflow to it, allowing it to autonomously locate and make...",
-    "supports_image": false,
-    "context_length": 256000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "kat-coder-pro-v2.5": {
     "provider": "kwaipilot",
     "name": "Kwaipilot: KAT-Coder-Pro V2.5",
@@ -620,7 +620,7 @@
   },
   "gpt-5.6-luna-pro": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.6 Luna Pro",
+    "name": "OpenAI: GPT-5.6 Luna Pro (batch)",
     "description": "GPT-5.6 Luna Pro is the same underlying model as [GPT-5.6 Luna](https://openrouter.ai/openai/gpt-5.6-luna), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks.\n\nLearn more in OpenAI's docs: https://developers.openai.com/api/docs/guides/reasoning#reasoning-mode",
     "supports_image": true,
     "context_length": 1050000,
@@ -635,7 +635,7 @@
   },
   "gpt-5.6-luna": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.6 Luna",
+    "name": "OpenAI: GPT-5.6 Luna (batch)",
     "description": "GPT-5.6 Luna is a fast, cost-efficient model in OpenAI's GPT-5.6 series. It is suited for high-volume, latency-sensitive tasks such as chat, classification, and lightweight agentic workflows, providing capable reasoning for...",
     "supports_image": true,
     "context_length": 1050000,
@@ -650,7 +650,7 @@
   },
   "gpt-5.6-terra-pro": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.6 Terra Pro",
+    "name": "OpenAI: GPT-5.6 Terra Pro (batch)",
     "description": "GPT-5.6 Terra Pro is the same underlying model as [GPT-5.6 Terra](https://openrouter.ai/openai/gpt-5.6-terra), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks.\n\nLearn more in OpenAI's docs: https://developers.openai.com/api/docs/guides/reasoning#reasoning-mode",
     "supports_image": true,
     "context_length": 1050000,
@@ -665,7 +665,7 @@
   },
   "gpt-5.6-terra": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.6 Terra",
+    "name": "OpenAI: GPT-5.6 Terra (batch)",
     "description": "GPT-5.6 Terra is a balanced model in OpenAI's GPT-5.6 series, positioned between the flagship Sol tier and the cost-efficient Luna tier. It is suited for everyday coding, reasoning, and agentic...",
     "supports_image": true,
     "context_length": 1050000,
@@ -680,7 +680,7 @@
   },
   "gpt-5.6-sol-pro": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.6 Sol Pro",
+    "name": "OpenAI: GPT-5.6 Sol Pro (batch)",
     "description": "GPT-5.6 Sol Pro is the same underlying model as [GPT-5.6 Sol](https://openrouter.ai/openai/gpt-5.6-sol), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks.\n\nLearn more in OpenAI's docs: https://developers.openai.com/api/docs/guides/reasoning#reasoning-mode",
     "supports_image": true,
     "context_length": 1050000,
@@ -695,7 +695,7 @@
   },
   "gpt-5.6-sol": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.6 Sol",
+    "name": "OpenAI: GPT-5.6 Sol (batch)",
     "description": "GPT-5.6 Sol is the flagship model in OpenAI's GPT-5.6 series. It is suited for complex reasoning, coding, and agentic workflows, and is particularly strong at command-line and multi-step coding tasks...",
     "supports_image": true,
     "context_length": 1050000,
@@ -1426,7 +1426,7 @@
   },
   "gpt-5.5-pro": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.5 Pro",
+    "name": "OpenAI: GPT-5.5 Pro (batch)",
     "description": "GPT-5.5 Pro is OpenAI’s high-capability model optimized for deep reasoning and accuracy on complex, high-stakes workloads. It features a 1M+ token context window (922K input, 128K output) with support for...",
     "supports_image": true,
     "context_length": 1050000,
@@ -1441,7 +1441,7 @@
   },
   "gpt-5.5": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.5",
+    "name": "OpenAI: GPT-5.5 (batch)",
     "description": "GPT-5.5 is OpenAI’s frontier model designed for complex professional workloads, building on GPT-5.4 with stronger reasoning, higher reliability, and improved token efficiency on hard tasks. It features a 1M+ token...",
     "supports_image": true,
     "context_length": 1050000,
@@ -1784,7 +1784,7 @@
   },
   "gpt-5.4-nano": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.4 Nano",
+    "name": "OpenAI: GPT-5.4 Nano (batch)",
     "description": "GPT-5.4 nano is the most lightweight and cost-efficient variant of the GPT-5.4 family, optimized for speed-critical and high-volume tasks. It supports text and image inputs and is designed for low-latency...",
     "supports_image": true,
     "context_length": 400000,
@@ -1799,7 +1799,7 @@
   },
   "gpt-5.4-mini": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.4 Mini",
+    "name": "OpenAI: GPT-5.4 Mini (batch)",
     "description": "GPT-5.4 mini brings the core capabilities of GPT-5.4 to a faster, more efficient model optimized for high-throughput workloads. It supports text and image inputs with strong performance across reasoning, coding,...",
     "supports_image": true,
     "context_length": 400000,
@@ -1884,7 +1884,7 @@
   },
   "gpt-5.4-pro": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.4 Pro",
+    "name": "OpenAI: GPT-5.4 Pro (batch)",
     "description": "GPT-5.4 Pro is OpenAI's most advanced model, building on GPT-5.4's unified architecture with enhanced reasoning capabilities for complex, high-stakes tasks. It features a 1M+ token context window (922K input, 128K...",
     "supports_image": true,
     "context_length": 1050000,
@@ -1899,7 +1899,7 @@
   },
   "gpt-5.4": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.4",
+    "name": "OpenAI: GPT-5.4 (batch)",
     "description": "GPT-5.4 is OpenAI’s latest frontier model, unifying the Codex and GPT lines into a single system. It features a 1M+ token context window (922K input, 128K output) with support for...",
     "supports_image": true,
     "context_length": 1050000,
@@ -2446,7 +2446,7 @@
   },
   "gpt-5.2-pro": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.2 Pro",
+    "name": "OpenAI: GPT-5.2 Pro (batch)",
     "description": "GPT-5.2 Pro is OpenAI’s most advanced model, offering major improvements in agentic coding and long context performance over GPT-5 Pro. It is optimized for complex tasks that require step-by-step reasoning,...",
     "supports_image": true,
     "context_length": 400000,
@@ -2461,7 +2461,7 @@
   },
   "gpt-5.2": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.2",
+    "name": "OpenAI: GPT-5.2 (batch)",
     "description": "GPT-5.2 is the latest frontier-grade model in the GPT-5 series, offering stronger agentic and long context perfomance compared to GPT-5.1. It uses adaptive reasoning to allocate computation dynamically, responding quickly...",
     "supports_image": true,
     "context_length": 400000,
@@ -2661,7 +2661,7 @@
   },
   "gpt-5.1": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5.1",
+    "name": "OpenAI: GPT-5.1 (batch)",
     "description": "GPT-5.1 is the latest frontier-grade model in the GPT-5 series, offering stronger general-purpose reasoning, improved instruction adherence, and a more natural conversational style compared to GPT-5. It uses adaptive reasoning...",
     "supports_image": true,
     "context_length": 400000,
@@ -2931,7 +2931,7 @@
   },
   "gpt-5-pro": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5 Pro",
+    "name": "OpenAI: GPT-5 Pro (batch)",
     "description": "GPT-5 Pro is OpenAI’s most advanced model, offering major improvements in reasoning, code quality, and user experience. It is optimized for complex tasks that require step-by-step reasoning, instruction following, and...",
     "supports_image": true,
     "context_length": 400000,
@@ -3226,7 +3226,7 @@
   },
   "gpt-5": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5",
+    "name": "OpenAI: GPT-5 (batch)",
     "description": "GPT-5 is OpenAI’s most advanced model, offering major improvements in reasoning, code quality, and user experience. It is optimized for complex tasks that require step-by-step reasoning, instruction following, and accuracy...",
     "supports_image": true,
     "context_length": 400000,
@@ -3241,7 +3241,7 @@
   },
   "gpt-5-mini": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5 Mini",
+    "name": "OpenAI: GPT-5 Mini (batch)",
     "description": "GPT-5 Mini is a compact version of GPT-5, designed to handle lighter-weight reasoning tasks. It provides the same instruction-following and safety-tuning benefits as GPT-5, but with reduced latency and cost....",
     "supports_image": true,
     "context_length": 400000,
@@ -3256,7 +3256,7 @@
   },
   "gpt-5-nano": {
     "provider": "openai",
-    "name": "OpenAI: GPT-5 Nano",
+    "name": "OpenAI: GPT-5 Nano (batch)",
     "description": "GPT-5-Nano is the smallest and fastest variant in the GPT-5 system, optimized for developer tools, rapid interactions, and ultra-low latency environments. While limited in reasoning depth compared to its larger...",
     "supports_image": true,
     "context_length": 400000,
@@ -3788,7 +3788,7 @@
   },
   "o3": {
     "provider": "openai",
-    "name": "OpenAI: o3",
+    "name": "OpenAI: o3 (batch)",
     "description": "o3 is a well-rounded and powerful model across domains. It sets a new standard for math, science, coding, and visual reasoning tasks. It also excels at technical writing and instruction-following....",
     "supports_image": true,
     "context_length": 200000,
@@ -3803,7 +3803,7 @@
   },
   "o4-mini": {
     "provider": "openai",
-    "name": "OpenAI: o4 Mini",
+    "name": "OpenAI: o4 Mini (batch)",
     "description": "OpenAI o4-mini is a compact reasoning model in the o-series, optimized for fast, cost-efficient performance while retaining strong multimodal and agentic capabilities. It supports tool use and demonstrates competitive reasoning...",
     "supports_image": true,
     "context_length": 200000,
@@ -3818,7 +3818,7 @@
   },
   "gpt-4.1": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4.1",
+    "name": "OpenAI: GPT-4.1 (batch)",
     "description": "GPT-4.1 is a flagship large language model optimized for advanced instruction following, real-world software engineering, and long-context reasoning. It supports a 1 million token context window and outperforms GPT-4o and...",
     "supports_image": true,
     "context_length": 1047576,
@@ -3833,7 +3833,7 @@
   },
   "gpt-4.1-mini": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4.1 Mini",
+    "name": "OpenAI: GPT-4.1 Mini (batch)",
     "description": "GPT-4.1 Mini is a mid-sized model delivering performance competitive with GPT-4o at substantially lower latency and cost. It retains a 1 million token context window and scores 45.1% on hard...",
     "supports_image": true,
     "context_length": 1047576,
@@ -3848,7 +3848,7 @@
   },
   "gpt-4.1-nano": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4.1 Nano",
+    "name": "OpenAI: GPT-4.1 Nano (batch)",
     "description": "For tasks that demand low latency, GPT‑4.1 nano is the fastest and cheapest model in the GPT-4.1 series. It delivers exceptional performance at a small size with its 1 million...",
     "supports_image": true,
     "context_length": 1047576,
@@ -4123,7 +4123,7 @@
   },
   "o3-mini": {
     "provider": "openai",
-    "name": "OpenAI: o3 Mini",
+    "name": "OpenAI: o3 Mini (batch)",
     "description": "OpenAI o3-mini is a cost-efficient language model optimized for STEM reasoning tasks, particularly excelling in science, mathematics, and coding. This model supports the `reasoning_effort` parameter, which can be set to...",
     "supports_image": false,
     "context_length": 200000,
@@ -4577,7 +4577,7 @@
   },
   "gpt-4o-mini": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4o-mini",
+    "name": "OpenAI: GPT-4o-mini (batch)",
     "description": "GPT-4o mini is OpenAI's newest model after [GPT-4 Omni](/models/openai/gpt-4o), supporting both text and image inputs with text outputs. As their most advanced small model, it is many multiples more affordable...",
     "supports_image": true,
     "context_length": 128000,
@@ -4620,7 +4620,7 @@
   },
   "gpt-4o": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4o",
+    "name": "OpenAI: GPT-4o (batch)",
     "description": "GPT-4o (\"o\" for \"omni\") is OpenAI's latest AI model, supporting both text and image inputs with text outputs. It maintains the intelligence level of [GPT-4 Turbo](/models/openai/gpt-4-turbo) while being twice as...",
     "supports_image": true,
     "context_length": 128000,
@@ -4677,7 +4677,7 @@
   },
   "gpt-4-turbo": {
     "provider": "openai",
-    "name": "OpenAI: GPT-4 Turbo",
+    "name": "OpenAI: GPT-4 Turbo (batch)",
     "description": "The latest GPT-4 Turbo model with vision capabilities. Vision requests can now use JSON mode and function calling.\n\nTraining data: up to December 2023.",
     "supports_image": true,
     "context_length": 128000,
@@ -4828,7 +4828,7 @@
   },
   "gpt-3.5-turbo": {
     "provider": "openai",
-    "name": "OpenAI: GPT-3.5 Turbo",
+    "name": "OpenAI: GPT-3.5 Turbo (batch)",
     "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
     "supports_image": false,
     "context_length": 16385,
