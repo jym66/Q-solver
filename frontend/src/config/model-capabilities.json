@@ -1,4 +1,32 @@
 {
+  "claude-fable-5.1": {
+    "provider": "anthropic",
+    "name": "Anthropic: Claude Fable 5.1",
+    "description": "Claude Fable 5.1 improves on Claude Fable 5 across the board, with the biggest gains in agentic coding, long-running agentic workflows, and knowledge work: long code refactors, front-end and visual...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "file"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "mercury-2.5-preview": {
+    "provider": "inception",
+    "name": "Inception: Mercury 2.5 Preview",
+    "description": "Mercury 2.5 is the fastest reasoning LLM, and the latest diffusion LLM (dLLM) from Inception. Instead of generating tokens sequentially, Mercury 2.5 produces and refines multiple tokens in parallel, achieving...",
+    "supports_image": false,
+    "context_length": 260000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "granite-4.2-8b": {
     "provider": "ibm-granite",
     "name": "IBM: Granite 4.2 8B",
@@ -33,6 +61,21 @@
     "context_length": 262144,
     "inputs": [
       "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "glm-flash-latest": {
+    "provider": "~z-ai",
+    "name": "Z.ai: GLM Flash Latest",
+    "description": "This model always redirects to the latest model in the GLM Flash family.",
+    "supports_image": true,
+    "context_length": 1310720,
+    "inputs": [
+      "text",
+      "image",
+      "video"
     ],
     "outputs": [
       "text"
@@ -432,21 +475,6 @@
       "text",
       "image",
       "video"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "claude-opus-5-fast": {
-    "provider": "anthropic",
-    "name": "Claude Opus 5 (Fast)",
-    "description": "Fast-mode variant of [Opus 5](/anthropic/claude-opus-5) - identical capabilities with higher output speed at 2x pricing relative to regular Opus 5.\n\nLearn more in Anthropic's docs: https://platform.claude.com/docs/en/build-with-claude/fast-mode",
-    "supports_image": true,
-    "context_length": 1000000,
-    "inputs": [
-      "text",
-      "image",
-      "file"
     ],
     "outputs": [
       "text"
@@ -1046,21 +1074,6 @@
       "text"
     ]
   },
-  "claude-opus-4.8-fast": {
-    "provider": "anthropic",
-    "name": "Anthropic: Claude Opus 4.8 (Fast)",
-    "description": "Fast-mode variant of [Opus 4.8](/anthropic/claude-opus-4.8) - identical capabilities with higher output speed at 2x pricing relative to regular Opus 4.8.\n\nLearn more in Anthropic's docs: https://platform.claude.com/docs/en/build-with-claude/fast-mode",
-    "supports_image": true,
-    "context_length": 1000000,
-    "inputs": [
-      "text",
-      "image",
-      "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "claude-opus-4.8": {
     "provider": "anthropic",
     "name": "Anthropic: Claude Opus 4.8 (batch)",
@@ -1116,21 +1129,6 @@
       "video",
       "file",
       "audio"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "claude-opus-4.7-fast": {
-    "provider": "anthropic",
-    "name": "Anthropic: Claude Opus 4.7 (Fast)",
-    "description": "Fast-mode variant of [Opus 4.7](/anthropic/claude-opus-4.7) - identical capabilities with higher output speed at premium 6x pricing.\n\nLearn more in Anthropic's docs: https://platform.claude.com/docs/en/build-with-claude/fast-mode",
-    "supports_image": true,
-    "context_length": 1000000,
-    "inputs": [
-      "text",
-      "image",
-      "file"
     ],
     "outputs": [
       "text"
@@ -1814,7 +1812,7 @@
   },
   "mistral-small-2603": {
     "provider": "mistralai",
-    "name": "Mistral: Mistral Small 4 (batch)",
+    "name": "Mistral: Mistral Small 4",
     "description": "Mistral Small 4 is the next major release in the Mistral Small family, unifying the capabilities of several flagship Mistral models into a single system. It combines strong reasoning from...",
     "supports_image": true,
     "context_length": 262144,
@@ -2575,7 +2573,7 @@
   },
   "ministral-8b-2512": {
     "provider": "mistralai",
-    "name": "Mistral: Ministral 3 8B 2512 (batch)",
+    "name": "Mistral: Ministral 3 8B 2512",
     "description": "A balanced model in the Ministral 3 family, Ministral 3 8B is a powerful, efficient tiny language model with vision capabilities.",
     "supports_image": true,
     "context_length": 262144,
@@ -2603,7 +2601,7 @@
   },
   "mistral-large-2512": {
     "provider": "mistralai",
-    "name": "Mistral: Mistral Large 3 2512 (batch)",
+    "name": "Mistral: Mistral Large 3 2512",
     "description": "Mistral Large 3 2512 is Mistral’s most capable model to date, featuring a sparse mixture-of-experts architecture with 41B active parameters (675B total), and released under the Apache 2.0 license.",
     "supports_image": true,
     "context_length": 262144,
@@ -3197,7 +3195,7 @@
   },
   "mistral-medium-3.1": {
     "provider": "mistralai",
-    "name": "Mistral: Mistral Medium 3.1 (batch)",
+    "name": "Mistral: Mistral Medium 3.1",
     "description": "Mistral Medium 3.1 is an updated version of Mistral Medium 3, which is a high-performance enterprise-grade language model designed to deliver frontier-level capabilities at significantly reduced operational cost. It balances...",
     "supports_image": true,
     "context_length": 131072,
@@ -3312,7 +3310,7 @@
   },
   "codestral-2508": {
     "provider": "mistralai",
-    "name": "Mistral: Codestral 2508 (batch)",
+    "name": "Mistral: Codestral 2508",
     "description": "Mistral's cutting-edge language model for coding released end of July 2025. Codestral specializes in low-latency, high-frequency tasks such as fill-in-the-middle (FIM), code correction and test generation.\n\n[Blog Post](https://mistral.ai/news/codestral-25-08)",
     "supports_image": false,
     "context_length": 256000,
