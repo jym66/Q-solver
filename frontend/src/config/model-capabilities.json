@@ -1,7 +1,58 @@
 {
+  "muse-spark-1.3-contributor": {
+    "provider": "meta",
+    "name": "Meta: Muse Spark 1.3 Contributor",
+    "description": "Muse Spark 1.3 Contributor is the cost-efficient contributor tier of Meta’s multimodal reasoning model for experimentation, learning, and early-stage agentic, multi-agent, and coding workflows. It is designed to track information...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image",
+      "video",
+      "file",
+      "audio"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "muse-spark-1.3": {
+    "provider": "meta",
+    "name": "Meta: Muse Spark 1.3",
+    "description": "Muse Spark 1.3 is a multimodal reasoning model from Meta for long-running agentic, multi-agent, and coding workflows. It is designed to keep track of information across extended tasks, work through...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image",
+      "video",
+      "file",
+      "audio"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gemini-3.8-flash": {
+    "provider": "google",
+    "name": "Google: Gemini 3.8 Flash (batch)",
+    "description": "Gemini 3.8 Flash is Google's most intelligent Flash model with significant gains from 3.7 Flash across software engineering, agentic tasks, and multi-step reasoning.",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image",
+      "video",
+      "file",
+      "audio"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "claude-fable-5.1": {
     "provider": "anthropic",
-    "name": "Anthropic: Claude Fable 5.1",
+    "name": "Anthropic: Claude Fable 5.1 (batch)",
     "description": "Claude Fable 5.1 improves on Claude Fable 5 across the board, with the biggest gains in agentic coding, long-running agentic workflows, and knowledge work: long code refactors, front-end and visual...",
     "supports_image": true,
     "context_length": 1000000,
