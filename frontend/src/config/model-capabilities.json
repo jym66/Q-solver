@@ -1234,7 +1234,7 @@
   },
   "grok-4.3": {
     "provider": "x-ai",
-    "name": "SpaceXAI: Grok 4.3",
+    "name": "SpaceXAI: Grok 4.3 (batch)",
     "description": "Grok 4.3 is a reasoning model from SpaceXAI. It accepts text and image inputs with text output, and is suited for agentic workflows, instruction-following tasks, and applications requiring high factual...",
     "supports_image": true,
     "context_length": 1000000,
@@ -1265,7 +1265,7 @@
     "name": "Mistral: Mistral Medium 3.5 (batch)",
     "description": "Mistral Medium 3.5 is a dense 128B instruction-following model from Mistral AI. It supports text and image inputs with text output, and is designed for agentic workflows, coding, and complex...",
     "supports_image": true,
-    "context_length": 262144,
+    "context_length": 32768,
     "inputs": [
       "text",
       "image",
