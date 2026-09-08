@@ -1140,10 +1140,10 @@
   },
   "minimax-m3": {
     "provider": "minimax",
-    "name": "MiniMax: MiniMax M3 (free)",
+    "name": "MiniMax: MiniMax M3 (batch)",
     "description": "MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for long-horizon agentic work, coding,...",
     "supports_image": true,
-    "context_length": 1048576,
+    "context_length": 524288,
     "inputs": [
       "text",
       "image",
@@ -1295,7 +1295,7 @@
     "name": "Mistral: Mistral Medium 3.5 (batch)",
     "description": "Mistral Medium 3.5 is a dense 128B instruction-following model from Mistral AI. It supports text and image inputs with text output, and is designed for agentic workflows, coding, and complex...",
     "supports_image": true,
-    "context_length": 32768,
+    "context_length": 262144,
     "inputs": [
       "text",
       "image",
@@ -1850,10 +1850,10 @@
   },
   "minimax-m2.7": {
     "provider": "minimax",
-    "name": "MiniMax: MiniMax M2.7 (free)",
+    "name": "MiniMax: MiniMax M2.7",
     "description": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic capabilities through multi-agent...",
     "supports_image": false,
-    "context_length": 196608,
+    "context_length": 204800,
     "inputs": [
       "text"
     ],
