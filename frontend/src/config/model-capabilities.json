@@ -1,4 +1,44 @@
 {
+  "mercury-2.5": {
+    "provider": "inception",
+    "name": "Inception: Mercury 2.5",
+    "description": "Mercury 2.5 is the fastest reasoning LLM, and the latest diffusion LLM (dLLM) from Inception. Instead of generating tokens sequentially, Mercury 2.5 produces and refines multiple tokens in parallel, achieving...",
+    "supports_image": false,
+    "context_length": 260000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "nex-n2.5-mini": {
+    "provider": "nex-agi",
+    "name": "Nex AGI: Nex-N2.5-Mini (free)",
+    "description": "Nex-N2.5 is an agentic model built to turn goals into working, verified outcomes. Its core strength is agentic coding within a visual feedback loop: it can explore codebases, implement multi-file...",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "nex-n2.5-pro": {
+    "provider": "nex-agi",
+    "name": "Nex AGI: Nex-N2.5-Pro (free)",
+    "description": "Nex-N2.5 is an agentic model built to turn goals into working, verified outcomes. Its core strength is agentic coding within a visual feedback loop: it can explore codebases, implement multi-file...",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "gpt-6-astra": {
     "provider": "openai",
     "name": "OpenAI: GPT-6 Astra (batch)",
@@ -123,19 +163,6 @@
       "text"
     ]
   },
-  "mercury-2.5-preview": {
-    "provider": "inception",
-    "name": "Inception: Mercury 2.5 Preview",
-    "description": "Mercury 2.5 is the fastest reasoning LLM, and the latest diffusion LLM (dLLM) from Inception. Instead of generating tokens sequentially, Mercury 2.5 produces and refines multiple tokens in parallel, achieving...",
-    "supports_image": false,
-    "context_length": 260000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "granite-4.2-8b": {
     "provider": "ibm-granite",
     "name": "IBM: Granite 4.2 8B",
@@ -210,7 +237,7 @@
     "name": "Z.ai: GLM 5.3 Flash (batch)",
     "description": "GLM-5.3-Flash is a native multimodal model from Z.ai. It is suited for efficient coding and long-horizon agent tasks. Its hybrid sparse and linear attention architecture maintains accurate long-context behavior while...",
     "supports_image": true,
-    "context_length": 1048575,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "image",
@@ -239,7 +266,7 @@
   },
   "deepseek-v4-flash-vision-exp": {
     "provider": "deepseek",
-    "name": "DeepSeek: DeepSeek V4 Flash Vision Exp",
+    "name": "DeepSeek: DeepSeek V4 Flash Vision Exp (batch)",
     "description": "DeepSeek V4 Flash Vision Exp is an experimental vision-enabled version of [DeepSeek V4 Flash 0731](https://openrouter.ai/deepseek/deepseek-v4-flash-0731) from DeepSeek, adding image understanding while matching the base model on text capabilities including agents,...",
     "supports_image": true,
     "context_length": 1048576,
@@ -305,10 +332,10 @@
   },
   "glm-5.3": {
     "provider": "z-ai",
-    "name": "Z.ai: GLM 5.3",
+    "name": "Z.ai: GLM 5.3 (batch)",
     "description": "GLM-5.3 is a large-scale reasoning model from Z.ai, built for complex software engineering and long-horizon agent tasks. It supports text input and output with a 1M-token context window, and improves...",
     "supports_image": false,
-    "context_length": 1310720,
+    "context_length": 1048576,
     "inputs": [
       "text"
     ],
@@ -942,20 +969,6 @@
       "text"
     ]
   },
-  "nex-n2-mini": {
-    "provider": "nex-agi",
-    "name": "Nex AGI: Nex-N2-Mini",
-    "description": "Nex-N2-Mini is an open-source agentic mixture-of-experts model from Nex AGI, the smaller sibling in the Nex-N2 series. It accepts text and image input and is built for coding, tool use,...",
-    "supports_image": true,
-    "context_length": 262144,
-    "inputs": [
-      "text",
-      "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "fugu-ultra": {
     "provider": "sakana",
     "name": "Sakana: Fugu Ultra",
@@ -1015,7 +1028,7 @@
   },
   "glm-5.2": {
     "provider": "z-ai",
-    "name": "Z.ai: GLM 5.2",
+    "name": "Z.ai: GLM 5.2 (batch)",
     "description": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
     "supports_image": false,
     "context_length": 1048576,
@@ -1078,20 +1091,6 @@
       "text",
       "image",
       "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "nex-n2-pro": {
-    "provider": "nex-agi",
-    "name": "Nex AGI: Nex-N2-Pro",
-    "description": "Nex-N2-Pro is an agentic mixture-of-experts model from Nex AGI, with 17B active parameters out of 397B total. Built on the Qwen3.5 architecture, it accepts text and image input and produces...",
-    "supports_image": true,
-    "context_length": 262144,
-    "inputs": [
-      "text",
-      "image"
     ],
     "outputs": [
       "text"
