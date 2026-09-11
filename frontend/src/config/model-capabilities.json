@@ -1,4 +1,33 @@
 {
+  "ling-3.0-flash-vl": {
+    "provider": "inclusionai",
+    "name": "inclusionAI: Ling 3.0 Flash VL (free)",
+    "description": "Ling 3.0 Flash VL builds on Ling 3.0 Flash (124B total / 5.5B active MoE from InclusionAI), further strengthening its language capabilities while adding native visual perception and advanced visual...",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "deepseek-v4.1-flash": {
+    "provider": "deepseek",
+    "name": "DeepSeek: DeepSeek V4.1 Flash",
+    "description": "DeepSeek V4.1 Flash is a sparse mixture-of-experts model from DeepSeek, and the first built on the company's Causal Encoder-Decoder (CED) architecture. It activates 8B parameters on input and 16B on...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "mercury-2.5": {
     "provider": "inception",
     "name": "Inception: Mercury 2.5",
@@ -2400,7 +2429,7 @@
     "name": "Z.ai: GLM 4.7 Flash",
     "description": "As a 30B-class SOTA model, GLM-4.7-Flash offers a new option that balances performance and efficiency. It is further optimized for agentic coding use cases, strengthening coding capabilities, long-horizon task planning,...",
     "supports_image": false,
-    "context_length": 202752,
+    "context_length": 200000,
     "inputs": [
       "text"
     ],
