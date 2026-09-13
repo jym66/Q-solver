@@ -27,8 +27,8 @@
   },
   "gpt-astra-latest": {
     "provider": "~openai",
-    "name": "OpenAI GPT Astra Latest",
-    "description": "This model always redirects to the latest model in the OpenAI GPT Astra family.",
+    "name": "OpenAI: GPT Astra Latest",
+    "description": "This model always redirects to the latest model in the GPT Astra family.",
     "supports_image": true,
     "context_length": 1050000,
     "inputs": [
@@ -42,8 +42,8 @@
   },
   "gpt-sol-latest": {
     "provider": "~openai",
-    "name": "OpenAI GPT Sol Latest",
-    "description": "This model always redirects to the latest model in the OpenAI GPT Sol family.",
+    "name": "OpenAI: GPT Sol Latest",
+    "description": "This model always redirects to the latest model in the GPT Sol family.",
     "supports_image": true,
     "context_length": 1050000,
     "inputs": [
@@ -57,8 +57,8 @@
   },
   "gpt-terra-latest": {
     "provider": "~openai",
-    "name": "OpenAI GPT Terra Latest",
-    "description": "This model always redirects to the latest model in the OpenAI GPT Terra family.",
+    "name": "OpenAI: GPT Terra Latest",
+    "description": "This model always redirects to the latest model in the GPT Terra family.",
     "supports_image": true,
     "context_length": 1050000,
     "inputs": [
@@ -72,8 +72,8 @@
   },
   "gpt-luna-latest": {
     "provider": "~openai",
-    "name": "OpenAI GPT Luna Latest",
-    "description": "This model always redirects to the latest model in the OpenAI GPT Luna family.",
+    "name": "OpenAI: GPT Luna Latest",
+    "description": "This model always redirects to the latest model in the GPT Luna family.",
     "supports_image": true,
     "context_length": 1050000,
     "inputs": [
@@ -693,7 +693,7 @@
   },
   "deepseek-v4-flash-latest": {
     "provider": "~deepseek",
-    "name": "DeepSeek V4 Flash Latest",
+    "name": "DeepSeek: DeepSeek V4 Flash Latest",
     "description": "This model always redirects to the latest model in the DeepSeek V4 Flash family.",
     "supports_image": false,
     "context_length": 1310720,
@@ -1468,8 +1468,8 @@
   },
   "claude-haiku-latest": {
     "provider": "~anthropic",
-    "name": "Anthropic Claude Haiku Latest",
-    "description": "This model always redirects to the latest model in the Anthropic Claude Haiku family.",
+    "name": "Anthropic: Claude Haiku Latest",
+    "description": "This model always redirects to the latest model in the Claude Haiku family.",
     "supports_image": true,
     "context_length": 200000,
     "inputs": [
@@ -1483,8 +1483,8 @@
   },
   "gpt-mini-latest": {
     "provider": "~openai",
-    "name": "OpenAI GPT Mini Latest",
-    "description": "This model always redirects to the latest model in the OpenAI GPT Mini family.",
+    "name": "OpenAI: GPT Mini Latest",
+    "description": "This model always redirects to the latest model in the GPT Mini family.",
     "supports_image": true,
     "context_length": 400000,
     "inputs": [
@@ -1498,8 +1498,8 @@
   },
   "gemini-pro-latest": {
     "provider": "~google",
-    "name": "Google Gemini Pro Latest",
-    "description": "This model always redirects to the latest model in the Google Gemini Pro family.",
+    "name": "Google: Gemini Pro Latest",
+    "description": "This model always redirects to the latest model in the Gemini Pro family.",
     "supports_image": true,
     "context_length": 1048576,
     "inputs": [
@@ -1515,8 +1515,8 @@
   },
   "kimi-latest": {
     "provider": "~moonshotai",
-    "name": "MoonshotAI Kimi Latest",
-    "description": "This model always redirects to the latest model in the MoonshotAI Kimi family.",
+    "name": "MoonshotAI: Kimi Latest",
+    "description": "This model always redirects to the latest model in the Kimi family.",
     "supports_image": true,
     "context_length": 1048576,
     "inputs": [
@@ -1530,8 +1530,8 @@
   },
   "gemini-flash-latest": {
     "provider": "~google",
-    "name": "Google Gemini Flash Latest",
-    "description": "This model always redirects to the latest model in the Google Gemini Flash family.",
+    "name": "Google: Gemini Flash Latest",
+    "description": "This model always redirects to the latest model in the Gemini Flash family.",
     "supports_image": true,
     "context_length": 1048576,
     "inputs": [
@@ -1547,8 +1547,8 @@
   },
   "claude-sonnet-latest": {
     "provider": "~anthropic",
-    "name": "Anthropic Claude Sonnet Latest",
-    "description": "This model always redirects to the latest model in the Anthropic Claude Sonnet family.",
+    "name": "Anthropic: Claude Sonnet Latest",
+    "description": "This model always redirects to the latest model in the Claude Sonnet family.",
     "supports_image": true,
     "context_length": 1000000,
     "inputs": [
