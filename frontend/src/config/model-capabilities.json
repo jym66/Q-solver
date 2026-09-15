@@ -1,4 +1,31 @@
 {
+  "deepseek-pro-latest": {
+    "provider": "~deepseek",
+    "name": "DeepSeek: DeepSeek Pro Latest",
+    "description": "This model always redirects to the latest model in the DeepSeek Pro family.",
+    "supports_image": false,
+    "context_length": 1048576,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "deepseek-flash-latest": {
+    "provider": "~deepseek",
+    "name": "DeepSeek: DeepSeek Flash Latest",
+    "description": "This model always redirects to the latest model in the DeepSeek Flash family.",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "schematron-v2-turbo": {
     "provider": "inference-net",
     "name": "Inference.net: Schematron V2 Turbo",
@@ -3871,23 +3898,6 @@
       "text"
     ]
   },
-  "gemini-2.5-pro-preview-05-06": {
-    "provider": "google",
-    "name": "Google: Gemini 2.5 Pro Preview 05-06",
-    "description": "Gemini 2.5 Pro is Google’s state-of-the-art AI model designed for advanced reasoning, coding, mathematics, and scientific tasks. It employs “thinking” capabilities, enabling it to reason through responses with enhanced accuracy...",
-    "supports_image": true,
-    "context_length": 1048576,
-    "inputs": [
-      "text",
-      "image",
-      "file",
-      "audio",
-      "video"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "llama-guard-4-12b": {
     "provider": "meta-llama",
     "name": "Meta: Llama Guard 4 12B",
@@ -4919,19 +4929,6 @@
     "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
     "supports_image": false,
     "context_length": 4095,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "gpt-4-turbo-preview": {
-    "provider": "openai",
-    "name": "OpenAI: GPT-4 Turbo Preview",
-    "description": "The preview GPT-4 model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Training data: up to Dec 2023. **Note:** heavily rate limited by OpenAI while...",
-    "supports_image": false,
-    "context_length": 128000,
     "inputs": [
       "text"
     ],
