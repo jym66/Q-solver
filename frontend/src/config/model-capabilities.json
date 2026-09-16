@@ -776,7 +776,7 @@
   },
   "claude-opus-5": {
     "provider": "anthropic",
-    "name": "Claude Opus 5 (batch)",
+    "name": "Anthropic: Claude Opus 5 (batch)",
     "description": "Claude Opus 5 is Anthropic’s flagship model for demanding reasoning, coding, and long-horizon agentic work. It is particularly strong at end-to-end software tasks, code review and bug finding, visual analysis...",
     "supports_image": true,
     "context_length": 1000000,
@@ -1201,10 +1201,10 @@
   },
   "glm-5.2": {
     "provider": "z-ai",
-    "name": "Z.ai: GLM 5.2 (batch)",
+    "name": "Z.ai: GLM 5.2 (free)",
     "description": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
     "supports_image": false,
-    "context_length": 1048576,
+    "context_length": 32768,
     "inputs": [
       "text"
     ],
@@ -3507,7 +3507,7 @@
   },
   "gpt-oss-20b": {
     "provider": "openai",
-    "name": "OpenAI: gpt-oss-20b (batch)",
+    "name": "OpenAI: gpt-oss-20b",
     "description": "gpt-oss-20b is an open-weight 21B parameter model released by OpenAI under the Apache 2.0 license. It uses a Mixture-of-Experts (MoE) architecture with 3.6B active parameters per forward pass, optimized for...",
     "supports_image": false,
     "context_length": 131072,
