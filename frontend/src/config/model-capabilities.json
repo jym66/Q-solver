@@ -1,4 +1,18 @@
 {
+  "union-alpha": {
+    "provider": "stealth",
+    "name": "Union Alpha",
+    "description": "Union Alpha is a multimodal model built for research, coding, and agentic workflows, while delivering frontier-level performance across a broad range of general-purpose tasks. Union Alpha is a stealth model....",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "deepseek-pro-latest": {
     "provider": "~deepseek",
     "name": "DeepSeek: DeepSeek Pro Latest",
