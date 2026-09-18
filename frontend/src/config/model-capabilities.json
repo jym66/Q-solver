@@ -1,8 +1,8 @@
 {
-  "union-alpha": {
-    "provider": "stealth",
-    "name": "Union Alpha",
-    "description": "Union Alpha is a multimodal model built for research, coding, and agentic workflows, while delivering frontier-level performance across a broad range of general-purpose tasks. Union Alpha is a stealth model....",
+  "pareto": {
+    "provider": "unbiased",
+    "name": "Pareto",
+    "description": "Pareto is a multimodal composite model built for research, coding, and agentic workflows, while delivering frontier-level performance across a broad range of general-purpose tasks.",
     "supports_image": true,
     "context_length": 262144,
     "inputs": [
@@ -532,10 +532,10 @@
   },
   "qwen3.8-27b": {
     "provider": "qwen",
-    "name": "Qwen: Qwen3.8 27B",
+    "name": "Qwen: Qwen3.8 27B (free)",
     "description": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thinking that can be...",
     "supports_image": true,
-    "context_length": 1000000,
+    "context_length": 262144,
     "inputs": [
       "text",
       "image",
@@ -747,7 +747,7 @@
   },
   "deepseek-v4-flash-0731": {
     "provider": "deepseek",
-    "name": "DeepSeek: DeepSeek V4 Flash 0731 (batch)",
+    "name": "DeepSeek: DeepSeek V4 Flash 0731 (free)",
     "description": "DeepSeek V4 Flash 0731 is a sparse mixture-of-experts model from DeepSeek, with 13B active parameters out of 284B total. This re-post-trained revision is suited for coding, reasoning, and agent workflows....",
     "supports_image": false,
     "context_length": 1048576,
