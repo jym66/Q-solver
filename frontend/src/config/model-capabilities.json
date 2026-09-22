@@ -1,4 +1,67 @@
 {
+  "mimo-v2.6-pro-ultraspeed": {
+    "provider": "xiaomi",
+    "name": "Xiaomi: MiMo-V2.6-Pro-UltraSpeed",
+    "description": "MiMo-V2.6-Pro-UltraSpeed is the fast speed edition of Xiaomi's flagship foundation model, MiMo-V2.6-Pro. Built from the same 1T MiMo-V2.6-Pro checkpoint, it matches the original model in quality while delivering roughly 10x...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image",
+      "video",
+      "audio"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "mimo-v2.6-flash": {
+    "provider": "xiaomi",
+    "name": "Xiaomi: MiMo-V2.6-Flash",
+    "description": "MiMo-V2.6-Flash is an open-source foundation model developed by Xiaomi. Built on a Mixture-of-Experts architecture with 309B total parameters and 15B activated per token, it employs a hybrid attention mechanism for...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image",
+      "video",
+      "audio"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "mimo-v2.6-pro": {
+    "provider": "xiaomi",
+    "name": "Xiaomi: MiMo-V2.6-Pro",
+    "description": "MiMo-V2.6-Pro is the flagship foundation model developed by Xiaomi. Built at a scale of over 1T parameters, it is designed to push the ceiling of capability for the most demanding...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image",
+      "video",
+      "audio"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "grok-4.7": {
+    "provider": "x-ai",
+    "name": "SpaceXAI: Grok 4.7",
+    "description": "Grok 4.7 is SpaceXAI's flagship model for coding, agentic tasks, and knowledge work, succeeding Grok 4.6. It is particularly strong at long-running software engineering tasks, verifying its own work, and...",
+    "supports_image": true,
+    "context_length": 500000,
+    "inputs": [
+      "text",
+      "image",
+      "file"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "ternary-bonsai-2-27b": {
     "provider": "prism-ml",
     "name": "PrismML: Ternary Bonsai 2 27B",
@@ -622,10 +685,10 @@
   },
   "qwen3.8-2.4t-a95b": {
     "provider": "qwen",
-    "name": "Qwen: Qwen3.8 2.4T A95B (batch)",
+    "name": "Qwen: Qwen3.8 2.4T A95B",
     "description": "Qwen3.8 2.4T A95B is an open-weight sparse mixture-of-experts model from Qwen and the open-weight variant of [Qwen3.8 Max](/qwen/qwen3.8-max), with 95 billion active parameters out of 2.4 trillion total. It is...",
     "supports_image": false,
-    "context_length": 1010000,
+    "context_length": 1048576,
     "inputs": [
       "text"
     ],
@@ -664,7 +727,7 @@
   "grok-4.6": {
     "provider": "x-ai",
     "name": "SpaceXAI: Grok 4.6",
-    "description": "Grok 4.6 is SpaceXAI's smartest model with frontier performance on coding, knowledge work, and STEM.",
+    "description": "Grok 4.6 is a model from SpaceXAI with frontier performance on coding, knowledge work, and STEM. It is succeeded by [Grok 4.7](/x-ai/grok-4.7).",
     "supports_image": true,
     "context_length": 500000,
     "inputs": [
@@ -940,7 +1003,7 @@
   },
   "kimi-k3": {
     "provider": "moonshotai",
-    "name": "MoonshotAI: Kimi K3 (batch)",
+    "name": "MoonshotAI: Kimi K3",
     "description": "Kimi K3 is a 2.8T parameter open-weight multimodal reasoning model from Moonshot AI. It is suited for complex coding, knowledge work, and long-horizon agentic workflows, and is particularly strong at...",
     "supports_image": true,
     "context_length": 1048576,
@@ -1355,10 +1418,10 @@
   },
   "minimax-m3": {
     "provider": "minimax",
-    "name": "MiniMax: MiniMax M3 (batch)",
+    "name": "MiniMax: MiniMax M3",
     "description": "MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for long-horizon agentic work, coding,...",
     "supports_image": true,
-    "context_length": 524288,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "image",
@@ -2148,7 +2211,7 @@
   },
   "qwen3.5-9b": {
     "provider": "qwen",
-    "name": "Qwen: Qwen3.5-9B (batch)",
+    "name": "Qwen: Qwen3.5-9B",
     "description": "Qwen3.5-9B is a multimodal foundation model from the Qwen3.5 family, designed to deliver strong reasoning, coding, and visual understanding in an efficient 9B-parameter architecture. It uses a unified vision-language design...",
     "supports_image": true,
     "context_length": 262144,
@@ -3537,7 +3600,7 @@
   },
   "gpt-oss-120b": {
     "provider": "openai",
-    "name": "OpenAI: gpt-oss-120b (batch)",
+    "name": "OpenAI: gpt-oss-120b",
     "description": "gpt-oss-120b is an open-weight, 117B-parameter Mixture-of-Experts (MoE) language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. It activates 5.1B parameters per forward pass and is optimized...",
     "supports_image": false,
     "context_length": 131072,
@@ -3896,27 +3959,12 @@
       "text"
     ]
   },
-  "claude-opus-4": {
-    "provider": "anthropic",
-    "name": "Anthropic: Claude Opus 4",
-    "description": "Claude Opus 4 is benchmarked as the world’s best coding model, at time of release, bringing sustained performance on complex, long-running tasks and agent workflows. It sets new benchmarks in...",
-    "supports_image": true,
-    "context_length": 200000,
-    "inputs": [
-      "image",
-      "text",
-      "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "claude-sonnet-4": {
     "provider": "anthropic",
     "name": "Anthropic: Claude Sonnet 4",
     "description": "Claude Sonnet 4 significantly enhances the capabilities of its predecessor, Sonnet 3.7, excelling in both coding and reasoning tasks with improved precision and controllability. Achieving state-of-the-art performance on SWE-bench (72.7%),...",
     "supports_image": true,
-    "context_length": 1000000,
+    "context_length": 200000,
     "inputs": [
       "image",
       "text",
