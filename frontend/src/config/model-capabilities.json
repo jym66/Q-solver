@@ -1,4 +1,93 @@
 {
+  "command-a-plus": {
+    "provider": "cohere",
+    "name": "Cohere: Command A+",
+    "description": "Command A+ is Cohere's flagship model for enterprise agentic workflows. It accepts text and image inputs with a 192K context window, supports native tool calling with strict tool schemas, structured...",
+    "supports_image": true,
+    "context_length": 192000,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gpt-6-luna-pro": {
+    "provider": "openai",
+    "name": "OpenAI: GPT-6 Luna Pro (batch)",
+    "description": "GPT-6 Luna Pro is the same underlying model as [GPT-6 Luna](https://openrouter.ai/openai/gpt-6-luna), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks.\n\nLearn more in OpenAI's docs: https://developers.openai.com/api/docs/guides/reasoning#reasoning-mode",
+    "supports_image": true,
+    "context_length": 1050000,
+    "inputs": [
+      "file",
+      "image",
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gpt-6-luna": {
+    "provider": "openai",
+    "name": "OpenAI: GPT-6 Luna (batch)",
+    "description": "GPT-6 Luna is the fast, cost-efficient model in OpenAI's GPT-6 series, positioned below GPT-6 Sol. It is suited for high-volume and latency-sensitive workloads such as chat, classification, and lightweight agentic...",
+    "supports_image": true,
+    "context_length": 1050000,
+    "inputs": [
+      "file",
+      "image",
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gpt-6-sol-pro": {
+    "provider": "openai",
+    "name": "OpenAI: GPT-6 Sol Pro (batch)",
+    "description": "GPT-6 Sol Pro is the same underlying model as [GPT-6 Sol](https://openrouter.ai/openai/gpt-6-sol), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks.\n\nLearn more in OpenAI's docs: https://developers.openai.com/api/docs/guides/reasoning#reasoning-mode",
+    "supports_image": true,
+    "context_length": 1050000,
+    "inputs": [
+      "file",
+      "image",
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gpt-6-sol": {
+    "provider": "openai",
+    "name": "OpenAI: GPT-6 Sol (batch)",
+    "description": "GPT-6 Sol is the cost-efficient high-end model in OpenAI's GPT-6 series, positioned below the flagship GPT-6 Astra and above the fast GPT-6 Luna tier. It is suited for demanding professional...",
+    "supports_image": true,
+    "context_length": 1050000,
+    "inputs": [
+      "file",
+      "image",
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "claude-opus-5.5": {
+    "provider": "anthropic",
+    "name": "Anthropic: Claude Opus 5.5 (batch)",
+    "description": "Claude Opus 5.5 is Anthropic's flagship model for demanding reasoning, coding, and long-horizon agentic work, succeeding Claude Opus 5. It is particularly strong at multi-step changes in large codebases, code...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "file"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "mimo-v2.6-pro-ultraspeed": {
     "provider": "xiaomi",
     "name": "Xiaomi: MiMo-V2.6-Pro-UltraSpeed",
@@ -57,6 +146,22 @@
       "text",
       "image",
       "file"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "qwen3.8-omni-flash": {
+    "provider": "qwen",
+    "name": "Qwen: Qwen3.8 Omni Flash",
+    "description": "Qwen3.8 Omni Flash is an omni-modal reasoning model from Alibaba, the first Qwen model built around agentic capabilities with native audio-video understanding. It is suited for audio-video analysis and summarization,...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "audio",
+      "video"
     ],
     "outputs": [
       "text"
@@ -265,7 +370,7 @@
   },
   "deepseek-v4.1-flash": {
     "provider": "deepseek",
-    "name": "DeepSeek: DeepSeek V4.1 Flash",
+    "name": "DeepSeek: DeepSeek V4.1 Flash (batch)",
     "description": "DeepSeek V4.1 Flash is a sparse mixture-of-experts model from DeepSeek, and the first built on the company's Causal Encoder-Decoder (CED) architecture. It activates 8B parameters on input and 16B on...",
     "supports_image": true,
     "context_length": 1048576,
@@ -545,7 +650,7 @@
   },
   "deepseek-v4-flash-vision-exp": {
     "provider": "deepseek",
-    "name": "DeepSeek: DeepSeek V4 Flash Vision Exp (batch)",
+    "name": "DeepSeek: DeepSeek V4 Flash Vision Exp",
     "description": "DeepSeek V4 Flash Vision Exp is an experimental vision-enabled version of [DeepSeek V4 Flash 0731](https://openrouter.ai/deepseek/deepseek-v4-flash-0731) from DeepSeek, adding image understanding while matching the base model on text capabilities including agents,...",
     "supports_image": true,
     "context_length": 1048576,
@@ -713,7 +818,7 @@
   },
   "deepseek-v4-pro-0813": {
     "provider": "deepseek",
-    "name": "DeepSeek: DeepSeek V4 Pro 0813 (batch)",
+    "name": "DeepSeek: DeepSeek V4 Pro 0813",
     "description": "DeepSeek V4 Pro 0813 is a large-scale mixture-of-experts model from DeepSeek. This is the GA release of DeepSeek V4 Pro.",
     "supports_image": false,
     "context_length": 1048576,
@@ -795,7 +900,7 @@
   },
   "muse-glimmer-30b": {
     "provider": "meta",
-    "name": "Meta: Muse Glimmer 30B (batch)",
+    "name": "Meta: Muse Glimmer 30B",
     "description": "Muse Glimmer 30B is a dense, open-weight multimodal model from Meta Superintelligence Labs, distilled from Muse Spark and optimized for autonomous agents on consumer hardware. It is suited for long-horizon...",
     "supports_image": true,
     "context_length": 131072,
@@ -839,10 +944,10 @@
   },
   "deepseek-v4-flash-0731": {
     "provider": "deepseek",
-    "name": "DeepSeek: DeepSeek V4 Flash 0731 (batch)",
+    "name": "DeepSeek: DeepSeek V4 Flash 0731",
     "description": "DeepSeek V4 Flash 0731 is a sparse mixture-of-experts model from DeepSeek, with 13B active parameters out of 284B total. This re-post-trained revision is suited for coding, reasoning, and agent workflows....",
     "supports_image": false,
-    "context_length": 1048576,
+    "context_length": 1310720,
     "inputs": [
       "text"
     ],
@@ -1003,7 +1108,7 @@
   },
   "kimi-k3": {
     "provider": "moonshotai",
-    "name": "MoonshotAI: Kimi K3",
+    "name": "MoonshotAI: Kimi K3 (batch)",
     "description": "Kimi K3 is a 2.8T parameter open-weight multimodal reasoning model from Moonshot AI. It is suited for complex coding, knowledge work, and long-horizon agentic workflows, and is particularly strong at...",
     "supports_image": true,
     "context_length": 1048576,
@@ -2081,19 +2186,6 @@
     "outputs": [
       "text",
       "audio"
-    ]
-  },
-  "kat-coder-pro-v2": {
-    "provider": "kwaipilot",
-    "name": "Kwaipilot: KAT-Coder-Pro V2",
-    "description": "KAT-Coder-Pro V2 is the latest high-performance model in KwaiKAT’s KAT-Coder series, designed for complex enterprise-grade software engineering and SaaS integration. It builds on the agentic coding strengths of earlier versions,...",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
     ]
   },
   "reka-edge": {
@@ -3613,7 +3705,7 @@
   },
   "gpt-oss-20b": {
     "provider": "openai",
-    "name": "OpenAI: gpt-oss-20b",
+    "name": "OpenAI: gpt-oss-20b (batch)",
     "description": "gpt-oss-20b is an open-weight 21B parameter model released by OpenAI under the Apache 2.0 license. It uses a Mixture-of-Experts (MoE) architecture with 3.6B active parameters per forward pass, optimized for...",
     "supports_image": false,
     "context_length": 131072,
