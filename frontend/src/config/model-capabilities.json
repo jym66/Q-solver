@@ -1,4 +1,18 @@
 {
+  "ember-1": {
+    "provider": "fireworks",
+    "name": "Fireworks: Ember-1",
+    "description": "Ember-1 is a specialized reasoning model from Fireworks Research, built on [Kimi K3](https://openrouter.ai/moonshotai/kimi-k3). It is designed to make every token go further: it produces shorter reasoning traces, using roughly 40%...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "glm-5.3-prime": {
     "provider": "z-ai",
     "name": "Z.ai: GLM 5.3 Prime",
@@ -2985,6 +2999,20 @@
       "file",
       "image",
       "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "devstral-2512": {
+    "provider": "mistralai",
+    "name": "Mistral: Devstral 2 2512",
+    "description": "Devstral 2 is a state-of-the-art open-source model by Mistral AI specializing in agentic coding. It is a 123B-parameter dense transformer model supporting a 256K context window. Devstral 2 supports exploring...",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "file"
     ],
     "outputs": [
       "text"
