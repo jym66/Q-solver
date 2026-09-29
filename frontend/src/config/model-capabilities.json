@@ -1,4 +1,19 @@
 {
+  "claude-sonnet-5.5": {
+    "provider": "anthropic",
+    "name": "Anthropic: Claude Sonnet 5.5 (batch)",
+    "description": "Claude Sonnet 5.5 is Anthropic's Sonnet-class model for well-scoped everyday work, succeeding Claude Sonnet 5 as a direct upgrade. It is especially strong at building features, fixing bugs, and producing...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "file"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "jev-router": {
     "provider": "typesafe",
     "name": "TypeSafe: Jev Router",
@@ -524,6 +539,34 @@
       "text"
     ]
   },
+  "nex-n2.5-mini": {
+    "provider": "nex-agi",
+    "name": "Nex AGI: Nex-N2.5-Mini",
+    "description": "Nex-N2.5 is an agentic model built to turn goals into working, verified outcomes. Its core strength is agentic coding within a visual feedback loop: it can explore codebases, implement multi-file...",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "nex-n2.5-pro": {
+    "provider": "nex-agi",
+    "name": "Nex AGI: Nex-N2.5-Pro",
+    "description": "Nex-N2.5 is an agentic model built to turn goals into working, verified outcomes. Its core strength is agentic coding within a visual feedback loop: it can explore codebases, implement multi-file...",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "gpt-6-astra": {
     "provider": "openai",
     "name": "OpenAI: GPT-6 Astra (batch)",
@@ -592,8 +635,7 @@
       "text",
       "image",
       "video",
-      "file",
-      "audio"
+      "file"
     ],
     "outputs": [
       "text"
@@ -609,8 +651,7 @@
       "text",
       "image",
       "video",
-      "file",
-      "audio"
+      "file"
     ],
     "outputs": [
       "text"
@@ -676,7 +717,7 @@
   },
   "ling-3.0-flash-fin": {
     "provider": "inclusionai",
-    "name": "inclusionAI: Ling 3.0 Flash Fin (free)",
+    "name": "inclusionAI: Ling 3.0 Flash Fin",
     "description": "Ling 3.0 Flash Fin is a finance-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for real-world investment...",
     "supports_image": false,
     "context_length": 262144,
@@ -742,8 +783,7 @@
       "text",
       "image",
       "video",
-      "file",
-      "audio"
+      "file"
     ],
     "outputs": [
       "text"
@@ -1016,15 +1056,14 @@
   "muse-spark-1.2": {
     "provider": "meta",
     "name": "Meta: Muse Spark 1.2",
-    "description": "Muse Spark 1.2 is a reasoning model from Meta, designed for complex agentic tasks. It accepts text, images, video, audio, and PDF documents, returns text, and offers a 1M-token context...",
+    "description": "Muse Spark 1.2 is a reasoning model from Meta, designed for complex agentic tasks. It accepts text, images, video, and PDF documents, returns text, and offers a 1M-token context window....",
     "supports_image": true,
     "context_length": 1048576,
     "inputs": [
       "text",
       "image",
       "video",
-      "file",
-      "audio"
+      "file"
     ],
     "outputs": [
       "text"
@@ -1225,15 +1264,14 @@
   "muse-spark-1.1": {
     "provider": "meta",
     "name": "Meta: Muse Spark 1.1",
-    "description": "Muse Spark 1.1 is a multimodal reasoning model from Meta, built for agentic tasks. It accepts text, images, video, audio, and PDF documents and returns text, with a 1M-token context...",
+    "description": "Muse Spark 1.1 is a multimodal reasoning model from Meta, built for agentic tasks. It accepts text, images, video, and PDF documents and returns text, with a 1M-token context window....",
     "supports_image": true,
     "context_length": 1048576,
     "inputs": [
       "text",
       "image",
       "video",
-      "file",
-      "audio"
+      "file"
     ],
     "outputs": [
       "text"
@@ -4647,19 +4685,6 @@
     "inputs": [
       "text",
       "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "deepseek-r1-distill-llama-70b": {
-    "provider": "deepseek",
-    "name": "DeepSeek: R1 Distill Llama 70B",
-    "description": "DeepSeek R1 Distill Llama 70B is a distilled large language model based on [Llama-3.3-70B-Instruct](/meta-llama/llama-3.3-70b-instruct), using outputs from [DeepSeek R1](/deepseek/deepseek-r1). The model combines advanced distillation techniques to achieve high performance across...",
-    "supports_image": false,
-    "context_length": 8192,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
