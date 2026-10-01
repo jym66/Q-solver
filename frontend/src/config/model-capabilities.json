@@ -1,7 +1,7 @@
 {
   "gpt-6.1-sol-pro": {
     "provider": "openai",
-    "name": "OpenAI: GPT-6.1 Sol Pro (batch)",
+    "name": "OpenAI: GPT-6.1 Sol Pro",
     "description": "GPT-6.1 Sol Pro is the same underlying model as [GPT-6.1 Sol](https://openrouter.ai/openai/gpt-6.1-sol), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks. **Cost note:** pro mode spends far more...",
     "supports_image": true,
     "context_length": 1050000,
@@ -16,7 +16,7 @@
   },
   "gpt-6.1-sol": {
     "provider": "openai",
-    "name": "OpenAI: GPT-6.1 Sol (batch)",
+    "name": "OpenAI: GPT-6.1 Sol",
     "description": "GPT-6.1 Sol is an upgrade to GPT-6 Sol from OpenAI, positioned below the flagship GPT-6 Astra in the GPT-6 series. It is suited for agentic coding, computer use, document-heavy professional...",
     "supports_image": true,
     "context_length": 1050000,
@@ -283,7 +283,7 @@
     "name": "Xiaomi: MiMo-V2.6-Flash",
     "description": "MiMo-V2.6-Flash is an open-source foundation model developed by Xiaomi. Built on a Mixture-of-Experts architecture with 309B total parameters and 15B activated per token, it employs a hybrid attention mechanism for...",
     "supports_image": true,
-    "context_length": 1048576,
+    "context_length": 1050000,
     "inputs": [
       "text",
       "image",
