@@ -1,4 +1,31 @@
 {
+  "apodex-1.1-mini": {
+    "provider": "apodex",
+    "name": "Apodex: Apodex 1.1 Mini (free)",
+    "description": "Apodex 1.1 Mini is a reasoning-first model from Apodex, built for complex, long-horizon research and forecasting tasks. It works directly with files, data, code, and tools to produce verifiable results,...",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "pareto-26.10-preview": {
+    "provider": "unbiased",
+    "name": "Pareto 26.10 Preview",
+    "description": "Pareto is a multimodal composite model built for research, coding, and agentic workflows, while delivering frontier-level performance across a broad range of general-purpose tasks. This is a preview of the...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "gpt-6.1-sol-pro": {
     "provider": "openai",
     "name": "OpenAI: GPT-6.1 Sol Pro",
