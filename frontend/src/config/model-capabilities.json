@@ -1,4 +1,17 @@
 {
+  "ling-3.1-flash": {
+    "provider": "inclusionai",
+    "name": "inclusionAI: Ling 3.1 Flash",
+    "description": "Ling 3.1 Flash is a hybrid reasoning mixture-of-experts model from inclusionAI, with 25B active parameters out of 560B total.",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "apodex-1.1-mini": {
     "provider": "apodex",
     "name": "Apodex: Apodex 1.1 Mini (free)",
@@ -284,6 +297,19 @@
       "text",
       "image",
       "file"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "switchyard": {
+    "provider": "nvidia",
+    "name": "NVIDIA: Switchyard",
+    "description": "Switchyard is an open-source model router that switches between multiple models to optimize the cost of requests. By default it will use OpenRouter market data to select the most popular...",
+    "supports_image": false,
+    "context_length": 1000000,
+    "inputs": [
+      "text"
     ],
     "outputs": [
       "text"
