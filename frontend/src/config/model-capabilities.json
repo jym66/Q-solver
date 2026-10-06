@@ -159,21 +159,6 @@
       "text"
     ]
   },
-  "space-bunny-alpha": {
-    "provider": "stealth",
-    "name": "Space Bunny Alpha",
-    "description": "Space Bunny Alpha is an anonymous large model with blazing-fast inference, strong coding capabilities and native multimodal input support. It delivers adjustable reasoning effort, and a 1M-token context window. Space...",
-    "supports_image": true,
-    "context_length": 1000000,
-    "inputs": [
-      "text",
-      "image",
-      "video"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "aion-3.5-mini": {
     "provider": "aion-labs",
     "name": "AionLabs: Aion 3.5 Mini",
@@ -953,10 +938,10 @@
   },
   "qwen3.8-27b": {
     "provider": "qwen",
-    "name": "Qwen: Qwen3.8 27B (free)",
+    "name": "Qwen: Qwen3.8 27B",
     "description": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thinking that can be...",
     "supports_image": true,
-    "context_length": 262144,
+    "context_length": 1000000,
     "inputs": [
       "text",
       "image",
