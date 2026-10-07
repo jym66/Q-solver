@@ -1,4 +1,33 @@
 {
+  "gemini-nano-banana-2.1": {
+    "provider": "google",
+    "name": "Google: Nano Banana 2.1",
+    "description": "Nano Banana 2.1 (Gemini Nano Banana 2.1) is Google's image generation and editing model on the Flash tier, succeeding Nano Banana 2 and Nano Banana Pro. It improves product recontextualization,...",
+    "supports_image": true,
+    "context_length": 65536,
+    "inputs": [
+      "image",
+      "text"
+    ],
+    "outputs": [
+      "image",
+      "text"
+    ]
+  },
+  "mistral-large-4-0": {
+    "provider": "mistralai",
+    "name": "Mistral: Mistral Large 4",
+    "description": "Mistral Large 4 is a frontier multimodal (text and image input) model from Mistral AI built for reasoning, coding, and agentic workloads. It offers a 512K-token context window with up...",
+    "supports_image": true,
+    "context_length": 524288,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "ling-3.1-flash": {
     "provider": "inclusionai",
     "name": "inclusionAI: Ling 3.1 Flash",
@@ -1340,19 +1369,6 @@
       "image",
       "video",
       "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "kat-coder-pro-v2.5": {
-    "provider": "kwaipilot",
-    "name": "Kwaipilot: KAT-Coder-Pro V2.5",
-    "description": "KAT-Coder-Pro V2.5 is a flagship-level Agentic Coding model that can directly hand over an entire issue or an entire business workflow to it, allowing it to autonomously locate and make...",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
