@@ -1,4 +1,19 @@
 {
+  "step-5-preview": {
+    "provider": "stepfun",
+    "name": "StepFun: Step 5 Preview",
+    "description": "Step 5 Preview is StepFun's flagship model for agentic work, built on a sparse Mixture-of-Experts architecture (27B active / 600B total parameters). It performs strongly in software engineering and professional...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "claude-haiku-5.5": {
     "provider": "anthropic",
     "name": "Anthropic: Claude Haiku 5.5 (batch)",
@@ -32,9 +47,9 @@
   "mistral-large-4-0": {
     "provider": "mistralai",
     "name": "Mistral: Mistral Large 4",
-    "description": "Mistral Large 4 is a frontier multimodal (text and image input) model from Mistral AI built for reasoning, coding, and agentic workloads. It offers a 512K-token context window with up...",
+    "description": "Mistral Large 4 is a frontier multimodal (text and image input) model from Mistral AI built for reasoning, coding, and agentic workloads. It offers a 1M-token context window with up...",
     "supports_image": true,
-    "context_length": 524288,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "image"
@@ -85,7 +100,7 @@
   },
   "gpt-6.1-sol-pro": {
     "provider": "openai",
-    "name": "OpenAI: GPT-6.1 Sol Pro",
+    "name": "OpenAI: GPT-6.1 Sol Pro (batch)",
     "description": "GPT-6.1 Sol Pro is the same underlying model as [GPT-6.1 Sol](https://openrouter.ai/openai/gpt-6.1-sol), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks. **Cost note:** pro mode spends far more...",
     "supports_image": true,
     "context_length": 1050000,
@@ -100,7 +115,7 @@
   },
   "gpt-6.1-sol": {
     "provider": "openai",
-    "name": "OpenAI: GPT-6.1 Sol",
+    "name": "OpenAI: GPT-6.1 Sol (batch)",
     "description": "GPT-6.1 Sol is an upgrade to GPT-6 Sol from OpenAI, positioned below the flagship GPT-6 Astra in the GPT-6 series. It is suited for agentic coding, computer use, document-heavy professional...",
     "supports_image": true,
     "context_length": 1050000,
@@ -711,7 +726,7 @@
   },
   "ling-3.0-flash-sante": {
     "provider": "inclusionai",
-    "name": "inclusionAI: Ling 3.0 Flash Sante (free)",
+    "name": "inclusionAI: Ling 3.0 Flash Sante",
     "description": "Ling 3.0 Flash Sante is a health and medicine-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for...",
     "supports_image": false,
     "context_length": 262144,
@@ -4164,20 +4179,6 @@
     "supports_image": false,
     "context_length": 81920,
     "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "ernie-4.5-vl-424b-a47b": {
-    "provider": "baidu",
-    "name": "Baidu: ERNIE 4.5 VL 424B A47B ",
-    "description": "ERNIE-4.5-VL-424B-A47B is a multimodal Mixture-of-Experts (MoE) model from Baidu’s ERNIE 4.5 series, featuring 424B total parameters with 47B active per token. It is trained jointly on text and image data...",
-    "supports_image": true,
-    "context_length": 123000,
-    "inputs": [
-      "image",
       "text"
     ],
     "outputs": [
