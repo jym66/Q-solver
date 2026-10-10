@@ -2096,19 +2096,6 @@
       "text"
     ]
   },
-  "qwen3.6-max-preview": {
-    "provider": "qwen",
-    "name": "Qwen: Qwen3.6 Max Preview",
-    "description": "Qwen3.6-Max-Preview is a proprietary frontier model from Alibaba Cloud built on a sparse mixture-of-experts architecture with approximately 1 trillion total parameters. It is optimized for agentic coding, tool use, and...",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "qwen3.6-27b": {
     "provider": "qwen",
     "name": "Qwen: Qwen3.6 27B",
@@ -2852,19 +2839,6 @@
       "text"
     ]
   },
-  "qwen3-max-thinking": {
-    "provider": "qwen",
-    "name": "Qwen: Qwen3 Max Thinking",
-    "description": "Qwen3-Max-Thinking is the flagship reasoning model in the Qwen3 series, designed for high-stakes cognitive tasks that require deep, multi-step reasoning. By significantly scaling model capacity and reinforcement learning compute, it...",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "claude-opus-4.6": {
     "provider": "anthropic",
     "name": "Anthropic: Claude Opus 4.6 (batch)",
@@ -3471,20 +3445,6 @@
       "text"
     ]
   },
-  "qwen3-vl-32b-instruct": {
-    "provider": "qwen",
-    "name": "Qwen: Qwen3 VL 32B Instruct",
-    "description": "Qwen3-VL-32B-Instruct is a large-scale multimodal vision-language model designed for high-precision understanding and reasoning across text, images, and video. With 32 billion parameters, it combines deep visual perception with advanced text...",
-    "supports_image": true,
-    "context_length": 131072,
-    "inputs": [
-      "text",
-      "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "granite-4.0-h-micro": {
     "provider": "ibm-granite",
     "name": "IBM: Granite 4.0 Micro",
@@ -3524,20 +3484,6 @@
       "text",
       "image",
       "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "qwen3-vl-8b-thinking": {
-    "provider": "qwen",
-    "name": "Qwen: Qwen3 VL 8B Thinking",
-    "description": "Qwen3-VL-8B-Thinking is the reasoning-optimized variant of the Qwen3-VL-8B multimodal model, designed for advanced visual and textual reasoning across complex scenes, documents, and temporal sequences. It integrates enhanced multimodal alignment and...",
-    "supports_image": true,
-    "context_length": 131072,
-    "inputs": [
-      "image",
-      "text"
     ],
     "outputs": [
       "text"
@@ -3698,20 +3644,6 @@
       "text"
     ]
   },
-  "qwen3-vl-235b-a22b-thinking": {
-    "provider": "qwen",
-    "name": "Qwen: Qwen3 VL 235B A22B Thinking",
-    "description": "Qwen3-VL-235B-A22B Thinking is a multimodal model that unifies strong text generation with visual understanding across images and video. The Thinking model is optimized for multimodal reasoning in STEM and math....",
-    "supports_image": true,
-    "context_length": 131072,
-    "inputs": [
-      "text",
-      "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "qwen3-vl-235b-a22b-instruct": {
     "provider": "qwen",
     "name": "Qwen: Qwen3 VL 235B A22B Instruct",
@@ -3721,32 +3653,6 @@
     "inputs": [
       "text",
       "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "qwen3-max": {
-    "provider": "qwen",
-    "name": "Qwen: Qwen3 Max",
-    "description": "Qwen3-Max is an updated release built on the Qwen3 series, offering major improvements in reasoning, instruction following, multilingual support, and long-tail knowledge coverage compared to the January 2025 version. It...",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "qwen3-coder-plus": {
-    "provider": "qwen",
-    "name": "Qwen: Qwen3 Coder Plus",
-    "description": "Qwen3 Coder Plus is Alibaba's proprietary version of the Open Source Qwen3 Coder 480B A35B. It is a powerful coding agent model specializing in autonomous programming via tool calling and...",
-    "supports_image": false,
-    "context_length": 1000000,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
@@ -3804,38 +3710,12 @@
       "text"
     ]
   },
-  "qwen-plus-2025-07-28": {
-    "provider": "qwen",
-    "name": "Qwen: Qwen Plus 0728",
-    "description": "Qwen Plus 0728, based on the Qwen3 foundation model, is a 1 million context hybrid reasoning model with a balanced performance, speed, and cost combination.",
-    "supports_image": false,
-    "context_length": 1000000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "kimi-k2-0905": {
     "provider": "moonshotai",
     "name": "MoonshotAI: Kimi K2 0905",
     "description": "Kimi K2 0905 is the September update of [Kimi K2 0711](moonshotai/kimi-k2). It is a large-scale Mixture-of-Experts (MoE) language model developed by Moonshot AI, featuring 1 trillion total parameters with 32...",
     "supports_image": false,
     "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "qwen3-30b-a3b-thinking-2507": {
-    "provider": "qwen",
-    "name": "Qwen: Qwen3 30B A3B Thinking 2507",
-    "description": "Qwen3-30B-A3B-Thinking-2507 is a 30B parameter Mixture-of-Experts reasoning model optimized for complex tasks requiring extended multi-step thinking. The model is designed specifically for “thinking mode,” where internal reasoning traces are separated...",
-    "supports_image": false,
-    "context_length": 81920,
     "inputs": [
       "text"
     ],
@@ -4055,7 +3935,7 @@
     "name": "Qwen: Qwen3 235B A22B Thinking 2507",
     "description": "Qwen3-235B-A22B-Thinking-2507 is a high-performance, open-weight Mixture-of-Experts (MoE) language model optimized for complex reasoning tasks. It activates 22B of its 235B parameters per forward pass and natively supports up to 262,144...",
     "supports_image": false,
-    "context_length": 131072,
+    "context_length": 128000,
     "inputs": [
       "text"
     ],
@@ -4339,20 +4219,7 @@
     "name": "Qwen: Qwen3 30B A3B",
     "description": "Qwen3, the latest generation in the Qwen large language model series, features both dense and mixture-of-experts (MoE) architectures to excel in reasoning, multilingual support, and advanced agent tasks. Its unique...",
     "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "qwen3-8b": {
-    "provider": "qwen",
-    "name": "Qwen: Qwen3 8B",
-    "description": "Qwen3-8B is a dense 8.2B parameter causal language model from the Qwen3 series, designed for both reasoning-heavy tasks and efficient dialogue. It supports seamless switching between \"thinking\" mode for math,...",
-    "supports_image": false,
-    "context_length": 131072,
+    "context_length": 40960,
     "inputs": [
       "text"
     ],
@@ -4365,7 +4232,7 @@
     "name": "Qwen: Qwen3 14B",
     "description": "Qwen3-14B is a dense 14.8B parameter causal language model from the Qwen3 series, designed for both complex reasoning and efficient dialogue. It supports seamless switching between a \"thinking\" mode for...",
     "supports_image": false,
-    "context_length": 131072,
+    "context_length": 40960,
     "inputs": [
       "text"
     ],
@@ -4377,19 +4244,6 @@
     "provider": "qwen",
     "name": "Qwen: Qwen3 32B",
     "description": "Qwen3-32B is a dense 32.8B parameter causal language model from the Qwen3 series, optimized for both complex reasoning and efficient dialogue. It supports seamless switching between a \"thinking\" mode for...",
-    "supports_image": false,
-    "context_length": 131072,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "qwen3-235b-a22b": {
-    "provider": "qwen",
-    "name": "Qwen: Qwen3 235B A22B",
-    "description": "Qwen3-235B-A22B is a 235B parameter mixture-of-experts (MoE) model developed by Qwen, activating 22B parameters per forward pass. It supports seamless switching between a \"thinking\" mode for complex reasoning, math, and...",
     "supports_image": false,
     "context_length": 131072,
     "inputs": [
