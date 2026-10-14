@@ -1,4 +1,92 @@
 {
+  "pareto-latest": {
+    "provider": "~unbiased",
+    "name": "Pareto Latest",
+    "description": "This model always redirects to the latest model in the Pareto family.",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "pareto-26.9": {
+    "provider": "unbiased",
+    "name": "Pareto 26.9",
+    "description": "Pareto is a multimodal composite model built for research, coding, and agentic workflows, while delivering frontier-level performance across a broad range of general-purpose tasks.",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "lfm-2.5-24b-a2b": {
+    "provider": "liquid",
+    "name": "LiquidAI: LFM2.5-24B-A2B",
+    "description": "LFM2.5-24B-A2B is a mixture-of-experts reasoning model from Liquid AI with 24B total and 2.45B active parameters. It always reasons before answering and is built for agents that call tools. Liquid...",
+    "supports_image": false,
+    "context_length": 128000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gemini-4-argon": {
+    "provider": "google",
+    "name": "Google: Gemini 4 Argon (batch)",
+    "description": "Gemini 4 Argon is Google's flagship reasoning model, built for complex software engineering, deep mathematical and scientific problem solving, and autonomous multi-step agents. Google trained it to keep context across...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "audio",
+      "file",
+      "image",
+      "text",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "summarize": {
+    "provider": "scaledown",
+    "name": "ScaleDown: Summarize",
+    "description": "Summarize is an abstractive summarization model from ScaleDown. It condenses long text and documents into a fluent, faithful rewrite rather than lifting sentences from the source, and is suited for...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "file"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "extract": {
+    "provider": "scaledown",
+    "name": "ScaleDown: Extract",
+    "description": "Extract is a description-driven entity extraction model from ScaleDown. Instead of a fixed set of entity types, callers describe the fields they want in plain English through `provider.options.scaledown.entities`, and the...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "file"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "muse-wonder": {
     "provider": "meta",
     "name": "Meta: Muse Wonder",
@@ -79,19 +167,6 @@
     "provider": "inclusionai",
     "name": "inclusionAI: Ling 3.1 Flash",
     "description": "Ling 3.1 Flash is a hybrid reasoning mixture-of-experts model from inclusionAI, with 25B active parameters out of 560B total.",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "apodex-1.1-mini": {
-    "provider": "apodex",
-    "name": "Apodex: Apodex 1.1 Mini (free)",
-    "description": "Apodex 1.1 Mini is a reasoning-first model from Apodex, built for complex, long-horizon research and forecasting tasks. It works directly with files, data, code, and tools to produce verifiable results,...",
     "supports_image": false,
     "context_length": 262144,
     "inputs": [
@@ -484,20 +559,6 @@
       "text"
     ]
   },
-  "pareto": {
-    "provider": "unbiased",
-    "name": "Pareto",
-    "description": "Pareto is a multimodal composite model built for research, coding, and agentic workflows, while delivering frontier-level performance across a broad range of general-purpose tasks.",
-    "supports_image": true,
-    "context_length": 262144,
-    "inputs": [
-      "text",
-      "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "deepseek-pro-latest": {
     "provider": "~deepseek",
     "name": "DeepSeek: DeepSeek Pro Latest",
@@ -646,7 +707,7 @@
     "name": "inclusionAI: Ling 3.0 Flash VL",
     "description": "Ling 3.0 Flash VL builds on Ling 3.0 Flash (124B total / 5.5B active MoE from InclusionAI), further strengthening its language capabilities while adding native visual perception and advanced visual...",
     "supports_image": true,
-    "context_length": 262144,
+    "context_length": 131072,
     "inputs": [
       "text",
       "image",
@@ -735,19 +796,6 @@
     "inputs": [
       "file",
       "image",
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "ling-3.0-flash-sante": {
-    "provider": "inclusionai",
-    "name": "inclusionAI: Ling 3.0 Flash Sante",
-    "description": "Ling 3.0 Flash Sante is a health and medicine-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for...",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
       "text"
     ],
     "outputs": [
@@ -852,19 +900,6 @@
     "description": "Tencent: Hy4 preview is a mixture-of-experts model from Tencent, with 49B active parameters out of 770B total. It is designed for coding agents, complex tool-use workflows, and productivity tasks that...",
     "supports_image": false,
     "context_length": 1048576,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "ling-3.0-flash-fin": {
-    "provider": "inclusionai",
-    "name": "inclusionAI: Ling 3.0 Flash Fin",
-    "description": "Ling 3.0 Flash Fin is a finance-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for real-world investment...",
-    "supports_image": false,
-    "context_length": 262144,
     "inputs": [
       "text"
     ],
