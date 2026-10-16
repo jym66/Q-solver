@@ -1,4 +1,64 @@
 {
+  "moondream3-preview": {
+    "provider": "moondream",
+    "name": "Moondream: Moondream 3 Preview",
+    "description": "Moondream 3 Preview is a vision-language model from Moondream with 9B total parameters and 2B active (mixture-of-experts). It handles visual question answering, captioning, OCR, and visual reasoning over images, with...",
+    "supports_image": true,
+    "context_length": 32000,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "moondream3.1-9b-a2b": {
+    "provider": "moondream",
+    "name": "Moondream: Moondream 3.1",
+    "description": "Moondream 3.1 is a vision-language model from Moondream, the successor to Moondream 3 Preview, with 9B total parameters and 2B active (mixture-of-experts). It handles visual question answering, captioning, OCR, and...",
+    "supports_image": true,
+    "context_length": 32000,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "muse-spark-open": {
+    "provider": "meta",
+    "name": "Meta: Muse Spark Open",
+    "description": "Muse Spark Open is a coding-optimized open-weight model. Trained specifically for agentic coding workflows, it delivers higher first-attempt accuracy, reliable tool calling, and deep codebase understanding across the repos developers...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image",
+      "video",
+      "file",
+      "audio"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "nemotron-3.5-super-vl": {
+    "provider": "nvidia",
+    "name": "NVIDIA: Nemotron 3.5 Super VL (free)",
+    "description": "NVIDIA Nemotron 3.5 Super VL is an open multimodal mixture-of-experts model from NVIDIA, with 12B active parameters out of 120B total. It takes text, images, documents, GUI screenshots, and video...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "pareto-latest": {
     "provider": "~unbiased",
     "name": "Pareto Latest",
@@ -109,7 +169,7 @@
     "name": "StepFun: Step 5 Preview",
     "description": "Step 5 Preview is StepFun's flagship model for agentic work, built on a sparse Mixture-of-Experts architecture (27B active / 600B total parameters). It performs strongly in software engineering and professional...",
     "supports_image": true,
-    "context_length": 1000000,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "image",
@@ -171,20 +231,6 @@
     "context_length": 262144,
     "inputs": [
       "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "pareto-26.10-preview": {
-    "provider": "unbiased",
-    "name": "Pareto 26.10 Preview",
-    "description": "Pareto is a multimodal composite model built for research, coding, and agentic workflows, while delivering frontier-level performance across a broad range of general-purpose tasks. This is a preview of the...",
-    "supports_image": true,
-    "context_length": 1048576,
-    "inputs": [
-      "text",
-      "image"
     ],
     "outputs": [
       "text"
@@ -4217,21 +4263,6 @@
     "context_length": 163840,
     "inputs": [
       "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "claude-sonnet-4": {
-    "provider": "anthropic",
-    "name": "Anthropic: Claude Sonnet 4",
-    "description": "Claude Sonnet 4 significantly enhances the capabilities of its predecessor, Sonnet 3.7, excelling in both coding and reasoning tasks with improved precision and controllability. Achieving state-of-the-art performance on SWE-bench (72.7%),...",
-    "supports_image": true,
-    "context_length": 200000,
-    "inputs": [
-      "image",
-      "text",
-      "file"
     ],
     "outputs": [
       "text"
