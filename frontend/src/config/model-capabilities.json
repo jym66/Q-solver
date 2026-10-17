@@ -1,4 +1,30 @@
 {
+  "xing4.0-29b-a4b": {
+    "provider": "xingchen-agi",
+    "name": "XingChen: Xing4.0 29B A4B (free)",
+    "description": "Xing4.0-29B-A4B is an open-weight mixture-of-experts language model from China Telecom's AI team (TeleAI) and the successor to the TeleChat series. It has 29B total parameters with 4B active per token...",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "beam-1.0-501b-a23b": {
+    "provider": "reflection",
+    "name": "Reflection: Beam 1.0 501B A23B",
+    "description": "Beam 1.0 is Reflection's open-weight reasoning model for coding and long-horizon agentic workflows. It uses a sparse mixture-of-experts architecture with 501B total and 23B active parameters per token, and a...",
+    "supports_image": false,
+    "context_length": 1048576,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "moondream3-preview": {
     "provider": "moondream",
     "name": "Moondream: Moondream 3 Preview",
@@ -1860,10 +1886,10 @@
   },
   "qwen3.7-plus": {
     "provider": "qwen",
-    "name": "Qwen: Qwen3.7 Plus",
+    "name": "Qwen: Qwen3.7 Plus (batch)",
     "description": "Qwen3.7-Plus is a cost-effective model in Alibaba's Qwen3.7 series. It supports text and image input with text output, building on the series' text capabilities with a comprehensive upgrade to its...",
     "supports_image": true,
-    "context_length": 1000000,
+    "context_length": 262144,
     "inputs": [
       "text",
       "image"
