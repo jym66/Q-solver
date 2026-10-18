@@ -1,4 +1,33 @@
 {
+  "deepseek-v4.1-flash-1017": {
+    "provider": "deepseek",
+    "name": "DeepSeek: DeepSeek V4.1 Flash 1017",
+    "description": "DeepSeek V4.1 Flash 1017 is the October 17, 2026 snapshot of DeepSeek V4.1 Flash, served by DeepSeek under the `deepseek-flash` API model name. V4.1 Flash is a sparse mixture-of-experts model...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "glimpse": {
+    "provider": "elorian",
+    "name": "Elorian: Glimpse",
+    "description": "Glimpse is a multimodal visual reasoning model from Elorian, built for visual understanding and complex visual reasoning in the physical world. It reasons directly over images and video rather than...",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "xing4.0-29b-a4b": {
     "provider": "xingchen-agi",
     "name": "XingChen: Xing4.0 29B A4B (free)",
@@ -85,12 +114,26 @@
       "text"
     ]
   },
+  "pareto-26.10": {
+    "provider": "unbiased",
+    "name": "Pareto 26.10",
+    "description": "Pareto is a multimodal composite model built for research, coding, and agentic workflows, while delivering frontier-level performance across a broad range of general-purpose tasks.",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "pareto-latest": {
     "provider": "~unbiased",
     "name": "Pareto Latest",
     "description": "This model always redirects to the latest model in the Pareto family.",
     "supports_image": true,
-    "context_length": 262144,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "image"
