@@ -4224,7 +4224,7 @@
     "name": "Morph: Morph V3 Fast",
     "description": "Morph's fastest apply model for code edits. ~10,500 tokens/sec with 96% accuracy for rapid code transformations. The model requires the prompt to be in the following format: <instruction>{instruction}</instruction> <code>{initial_code}</code> <update>{edit_snippet}</update>...",
     "supports_image": false,
-    "context_length": 81920,
+    "context_length": 262144,
     "inputs": [
       "text"
     ],
