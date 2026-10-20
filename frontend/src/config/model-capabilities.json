@@ -1,4 +1,19 @@
 {
+  "minimax-m3.1-flash": {
+    "provider": "minimax",
+    "name": "MiniMax: MiniMax M3.1 Flash (free)",
+    "description": "MiniMax-M3.1-Flash is a multimodal model from MiniMax. Compared with M3, it delivers significant improvements across multiple benchmarks, particularly in complex agentic tasks, coding, and cybersecurity. It is built for complex,...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "deepseek-v4.1-flash-1017": {
     "provider": "deepseek",
     "name": "DeepSeek: DeepSeek V4.1 Flash 1017",
@@ -47,6 +62,19 @@
     "description": "Beam 1.0 is Reflection's open-weight reasoning model for coding and long-horizon agentic workflows. It uses a sparse mixture-of-experts architecture with 501B total and 23B active parameters per token, and a...",
     "supports_image": false,
     "context_length": 1048576,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "mercury-3": {
+    "provider": "inception",
+    "name": "Inception: Mercury 3",
+    "description": "Mercury 3 is a diffusion-based language model from Inception, and the lab's most capable model to date. It is suited for agentic workflows and real-time applications where latency compounds, such...",
+    "supports_image": false,
+    "context_length": 1000000,
     "inputs": [
       "text"
     ],
@@ -4500,7 +4528,7 @@
     "name": "Meta: Llama 4 Maverick",
     "description": "Llama 4 Maverick 17B Instruct (128E) is a high-capacity multimodal language model from Meta, built on a mixture-of-experts (MoE) architecture with 128 experts and 17 billion active parameters per forward...",
     "supports_image": true,
-    "context_length": 1048576,
+    "context_length": 524288,
     "inputs": [
       "text",
       "image"
@@ -4796,19 +4824,6 @@
       "text"
     ]
   },
-  "deepseek-r1": {
-    "provider": "deepseek",
-    "name": "DeepSeek: R1",
-    "description": "DeepSeek R1 is here: Performance on par with [OpenAI o1](/openai/o1), but open-sourced and with fully open reasoning tokens. It's 671B parameters in size, with 37B active in an inference pass....",
-    "supports_image": false,
-    "context_length": 64000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "minimax-01": {
     "provider": "minimax",
     "name": "MiniMax: MiniMax-01",
@@ -4842,19 +4857,6 @@
     "description": "DeepSeek-V3 is the latest model from the DeepSeek team, building upon the instruction following and coding abilities of the previous versions. Pre-trained on nearly 15 trillion tokens, the reported evaluations...",
     "supports_image": false,
     "context_length": 163840,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "l3.3-euryale-70b": {
-    "provider": "sao10k",
-    "name": "Sao10K: Llama 3.3 Euryale 70B",
-    "description": "Euryale L3.3 70B is a model focused on creative roleplay from [Sao10k](https://ko-fi.com/sao10k). It is the successor of [Euryale L3 70B v2.2](/models/sao10k/l3-euryale-70b).",
-    "supports_image": false,
-    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -5278,19 +5280,6 @@
     "inputs": [
       "text",
       "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "wizardlm-2-8x22b": {
-    "provider": "microsoft",
-    "name": "WizardLM-2 8x22B",
-    "description": "WizardLM-2 8x22B is Microsoft AI's most advanced Wizard model. It demonstrates highly competitive performance compared to leading proprietary models, and it consistently outperforms all existing state-of-the-art opensource models. It is...",
-    "supports_image": false,
-    "context_length": 65535,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
