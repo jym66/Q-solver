@@ -4289,7 +4289,7 @@
   },
   "gemini-2.5-flash": {
     "provider": "google",
-    "name": "Google: Gemini 2.5 Flash (batch)",
+    "name": "Google: Gemini 2.5 Flash",
     "description": "Gemini 2.5 Flash is Google's state-of-the-art workhorse model, specifically designed for advanced reasoning, coding, mathematics, and scientific tasks. It includes built-in \"thinking\" capabilities, enabling it to provide responses with greater...",
     "supports_image": true,
     "context_length": 1048576,
@@ -4306,7 +4306,7 @@
   },
   "gemini-2.5-pro": {
     "provider": "google",
-    "name": "Google: Gemini 2.5 Pro (batch)",
+    "name": "Google: Gemini 2.5 Pro",
     "description": "Gemini 2.5 Pro is Google’s state-of-the-art AI model designed for advanced reasoning, coding, mathematics, and scientific tasks. It employs “thinking” capabilities, enabling it to reason through responses with enhanced accuracy...",
     "supports_image": true,
     "context_length": 1048576,
