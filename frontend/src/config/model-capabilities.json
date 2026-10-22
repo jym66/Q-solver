@@ -1,4 +1,17 @@
 {
+  "flint-v1.0": {
+    "provider": "recursive",
+    "name": "Recursive: Flint (free)",
+    "description": "Flint is an open-weight mixture-of-experts model from Recursive, with about 2.5B active parameters out of 40B total, built by Recursive's autoresearch system Eureka Machine for coding agents. It is suited...",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "minimax-m3.1-flash": {
     "provider": "minimax",
     "name": "MiniMax: MiniMax M3.1 Flash (free)",
@@ -4167,7 +4180,7 @@
   },
   "gemini-2.5-flash-lite": {
     "provider": "google",
-    "name": "Google: Gemini 2.5 Flash Lite (batch)",
+    "name": "Google: Gemini 2.5 Flash Lite",
     "description": "Gemini 2.5 Flash-Lite is a lightweight reasoning model in the Gemini 2.5 family, optimized for ultra-low latency and cost efficiency. It offers improved throughput, faster token generation, and better performance...",
     "supports_image": true,
     "context_length": 1048576,
