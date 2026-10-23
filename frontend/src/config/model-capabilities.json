@@ -14,10 +14,10 @@
   },
   "minimax-m3.1-flash": {
     "provider": "minimax",
-    "name": "MiniMax: MiniMax M3.1 Flash (free)",
+    "name": "MiniMax: MiniMax M3.1 Flash",
     "description": "MiniMax-M3.1-Flash is a multimodal model from MiniMax. Compared with M3, it delivers significant improvements across multiple benchmarks, particularly in complex agentic tasks, coding, and cybersecurity. It is built for complex,...",
     "supports_image": true,
-    "context_length": 1000000,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "image",
