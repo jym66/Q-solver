@@ -1,4 +1,19 @@
 {
+  "kimi-k3.1-pro": {
+    "provider": "moonshotai",
+    "name": "MoonshotAI: Kimi K3.1 Pro",
+    "description": "Kimi K3.1 Pro is Moonshot AI's flagship open-weight multimodal reasoning model and a post-trained successor to Kimi K3, with a 1M-token context window. It is built for long-horizon coding, 3D...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "flint-v1.0": {
     "provider": "recursive",
     "name": "Recursive: Flint (free)",
