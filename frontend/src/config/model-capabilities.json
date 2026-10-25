@@ -5372,19 +5372,6 @@
       "image"
     ]
   },
-  "gpt-3.5-turbo-instruct": {
-    "provider": "openai",
-    "name": "OpenAI: GPT-3.5 Turbo Instruct",
-    "description": "This model is a variant of GPT-3.5 Turbo tuned for instructional prompts and omitting chat-related optimizations. Training data: up to Sep 2021.",
-    "supports_image": false,
-    "context_length": 4095,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "gpt-3.5-turbo-16k": {
     "provider": "openai",
     "name": "OpenAI: GPT-3.5 Turbo 16k",
@@ -5430,19 +5417,6 @@
     "description": "One of the highest performing and most popular fine-tunes of Llama 2 13B, with rich descriptions and roleplay. #merge",
     "supports_image": false,
     "context_length": 8192,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "gpt-3.5-turbo": {
-    "provider": "openai",
-    "name": "OpenAI: GPT-3.5 Turbo (batch)",
-    "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
-    "supports_image": false,
-    "context_length": 16385,
     "inputs": [
       "text"
     ],
