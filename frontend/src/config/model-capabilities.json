@@ -1,4 +1,34 @@
 {
+  "gpt-6.1-terra-pro": {
+    "provider": "openai",
+    "name": "OpenAI: GPT-6.1 Terra Pro (batch)",
+    "description": "GPT-6.1 Terra Pro is the same underlying model as [GPT-6.1 Terra](https://openrouter.ai/openai/gpt-6.1-terra), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks. **Cost note:** pro mode spends far more...",
+    "supports_image": true,
+    "context_length": 1050000,
+    "inputs": [
+      "file",
+      "image",
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gpt-6.1-terra": {
+    "provider": "openai",
+    "name": "OpenAI: GPT-6.1 Terra (batch)",
+    "description": "GPT-6.1 Terra is the mid-tier model in OpenAI's GPT-6.1 series, priced below GPT-6.1 Sol. It is suited for everyday agentic, coding, and writing work, is particularly strong at understanding screenshots...",
+    "supports_image": true,
+    "context_length": 1050000,
+    "inputs": [
+      "file",
+      "image",
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "kimi-k3.1-pro": {
     "provider": "moonshotai",
     "name": "MoonshotAI: Kimi K3.1 Pro",
@@ -612,7 +642,7 @@
   "switchyard": {
     "provider": "nvidia",
     "name": "NVIDIA: Switchyard",
-    "description": "Switchyard is an open-source model router that switches between multiple models to optimize the cost of requests. By default it will use OpenRouter market data to select the most popular...",
+    "description": "Switchyard is an open-source model routing system that switches between multiple models to optimize the cost of requests. By default it will use OpenRouter market data to select the most...",
     "supports_image": false,
     "context_length": 1000000,
     "inputs": [
@@ -2578,19 +2608,6 @@
       "text"
     ]
   },
-  "trinity-large-thinking": {
-    "provider": "arcee-ai",
-    "name": "Arcee AI: Trinity Large Thinking",
-    "description": "Trinity Large Thinking is a powerful open source reasoning model from the team at Arcee AI. It shows strong performance in PinchBench, agentic workloads, and reasoning tasks. Launch video: https://youtu.be/Gc82AXLa0Rg?si=4RLn6WBz33qT--B7...",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "grok-4.20-multi-agent": {
     "provider": "x-ai",
     "name": "SpaceXAI: Grok 4.20 Multi-Agent",
@@ -2711,7 +2728,7 @@
   },
   "mistral-small-2603": {
     "provider": "mistralai",
-    "name": "Mistral: Mistral Small 4 (batch)",
+    "name": "Mistral: Mistral Small 4",
     "description": "Mistral Small 4 is the next major release in the Mistral Small family, unifying the capabilities of several flagship Mistral models into a single system. It combines strong reasoning from...",
     "supports_image": true,
     "context_length": 262144,
@@ -3459,7 +3476,7 @@
   },
   "ministral-8b-2512": {
     "provider": "mistralai",
-    "name": "Mistral: Ministral 3 8B 2512 (batch)",
+    "name": "Mistral: Ministral 3 8B 2512",
     "description": "A balanced model in the Ministral 3 family, Ministral 3 8B is a powerful, efficient tiny language model with vision capabilities.",
     "supports_image": true,
     "context_length": 262144,
@@ -3487,7 +3504,7 @@
   },
   "mistral-large-2512": {
     "provider": "mistralai",
-    "name": "Mistral: Mistral Large 3 2512 (batch)",
+    "name": "Mistral: Mistral Large 3 2512",
     "description": "Mistral Large 3 2512 is Mistral’s most capable model to date, featuring a sparse mixture-of-experts architecture with 41B active parameters (675B total), and released under the Apache 2.0 license.",
     "supports_image": true,
     "context_length": 262144,
@@ -3661,19 +3678,6 @@
     "description": "MiniMax-M2 is a compact, high-efficiency large language model optimized for end-to-end coding and agentic workflows. With 10 billion activated parameters (230 billion total), it delivers near-frontier intelligence across general reasoning,...",
     "supports_image": false,
     "context_length": 204800,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "granite-4.0-h-micro": {
-    "provider": "ibm-granite",
-    "name": "IBM: Granite 4.0 Micro",
-    "description": "Granite-4.0-H-Micro is a 3B parameter from the Granite 4 family of models. These models are the latest in a series of models released by IBM. They are fine-tuned for long...",
-    "supports_image": false,
-    "context_length": 131000,
     "inputs": [
       "text"
     ],
@@ -3974,7 +3978,7 @@
   },
   "mistral-medium-3.1": {
     "provider": "mistralai",
-    "name": "Mistral: Mistral Medium 3.1 (batch)",
+    "name": "Mistral: Mistral Medium 3.1",
     "description": "Mistral Medium 3.1 is an updated version of Mistral Medium 3, which is a high-performance enterprise-grade language model designed to deliver frontier-level capabilities at significantly reduced operational cost. It balances...",
     "supports_image": true,
     "context_length": 131072,
@@ -4089,7 +4093,7 @@
   },
   "codestral-2508": {
     "provider": "mistralai",
-    "name": "Mistral: Codestral 2508 (batch)",
+    "name": "Mistral: Codestral 2508",
     "description": "Mistral's cutting-edge language model for coding released end of July 2025. Codestral specializes in low-latency, high-frequency tasks such as fill-in-the-middle (FIM), code correction and test generation.\n\n[Blog Post](https://mistral.ai/news/codestral-25-08)",
     "supports_image": false,
     "context_length": 256000,
