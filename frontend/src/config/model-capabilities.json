@@ -140,6 +140,20 @@
       "text"
     ]
   },
+  "ternary-bonsai-2-9b": {
+    "provider": "prism-ml",
+    "name": "PrismML: Ternary Bonsai 2 9B",
+    "description": "Ternary Bonsai 2 9B is PrismML’s compact, open-weight language model for conversational AI, reasoning, and tool use. Built on Qwen3.5, it uses ternary weights packed into 2 bits for efficient...",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "moondream3-preview": {
     "provider": "moondream",
     "name": "Moondream: Moondream 3 Preview",
@@ -383,7 +397,7 @@
     "name": "inclusionAI: Ling 3.1 Flash",
     "description": "Ling 3.1 Flash is a hybrid reasoning mixture-of-experts model from inclusionAI, with 25B active parameters out of 560B total.",
     "supports_image": false,
-    "context_length": 262144,
+    "context_length": 1000000,
     "inputs": [
       "text"
     ],
@@ -2755,7 +2769,7 @@
   },
   "nemotron-3-super-120b-a12b": {
     "provider": "nvidia",
-    "name": "NVIDIA: Nemotron 3 Super (free)",
+    "name": "NVIDIA: Nemotron 3 Super",
     "description": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer...",
     "supports_image": false,
     "context_length": 262144,
