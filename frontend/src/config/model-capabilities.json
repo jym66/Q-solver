@@ -1,4 +1,18 @@
 {
+  "particle-1": {
+    "provider": "particle-ai",
+    "name": "Particle AI: Particle-1",
+    "description": "Particle-1 is a token-efficient agentic coding model from Particle AI, post-trained on DeepSeek V4.1 Flash. It is suited for software engineering work such as terminal workflows, codebase changes, and data...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "gpt-6.1-terra-pro": {
     "provider": "openai",
     "name": "OpenAI: GPT-6.1 Terra Pro (batch)",
@@ -2772,7 +2786,7 @@
     "name": "NVIDIA: Nemotron 3 Super",
     "description": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer...",
     "supports_image": false,
-    "context_length": 262144,
+    "context_length": 1048576,
     "inputs": [
       "text"
     ],
@@ -3925,19 +3939,6 @@
       "text"
     ]
   },
-  "qwen3-next-80b-a3b-thinking": {
-    "provider": "qwen",
-    "name": "Qwen: Qwen3 Next 80B A3B Thinking",
-    "description": "Qwen3-Next-80B-A3B-Thinking is a reasoning-first chat model in the Qwen3-Next line that outputs structured “thinking” traces by default. It’s designed for hard multi-step problems; math proofs, code synthesis/debugging, logic, and agentic...",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "qwen3-next-80b-a3b-instruct": {
     "provider": "qwen",
     "name": "Qwen: Qwen3 Next 80B A3B Instruct",
@@ -4479,21 +4480,6 @@
       "text"
     ]
   },
-  "o4-mini-high": {
-    "provider": "openai",
-    "name": "OpenAI: o4 Mini High",
-    "description": "OpenAI o4-mini-high is the same model as [o4-mini](/openai/o4-mini) with reasoning_effort set to high. OpenAI o4-mini is a compact reasoning model in the o-series, optimized for fast, cost-efficient performance while retaining...",
-    "supports_image": true,
-    "context_length": 200000,
-    "inputs": [
-      "image",
-      "text",
-      "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "o3": {
     "provider": "openai",
     "name": "OpenAI: o3 (batch)",
@@ -4605,21 +4591,6 @@
     "context_length": 163840,
     "inputs": [
       "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "o1-pro": {
-    "provider": "openai",
-    "name": "OpenAI: o1-pro",
-    "description": "The o1 series of models are trained with reinforcement learning to think before they answer and perform complex reasoning. The o1-pro model uses more compute to think harder and provide...",
-    "supports_image": true,
-    "context_length": 200000,
-    "inputs": [
-      "text",
-      "image",
-      "file"
     ],
     "outputs": [
       "text"
@@ -4775,20 +4746,6 @@
       "text"
     ]
   },
-  "o3-mini-high": {
-    "provider": "openai",
-    "name": "OpenAI: o3 Mini High",
-    "description": "OpenAI o3-mini-high is the same model as [o3-mini](/openai/o3-mini) with reasoning_effort set to high. o3-mini is a cost-efficient language model optimized for STEM reasoning tasks, particularly excelling in science, mathematics, and...",
-    "supports_image": false,
-    "context_length": 200000,
-    "inputs": [
-      "text",
-      "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "aion-rp-llama-3.1-8b": {
     "provider": "aion-labs",
     "name": "AionLabs: Aion-RP 1.0 (8B)",
@@ -4905,21 +4862,6 @@
     "context_length": 163840,
     "inputs": [
       "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "o1": {
-    "provider": "openai",
-    "name": "OpenAI: o1",
-    "description": "The latest and strongest model family from OpenAI, o1 is designed to spend more time thinking before responding. The o1 model series is trained with large-scale reinforcement learning to reason...",
-    "supports_image": true,
-    "context_length": 200000,
-    "inputs": [
-      "text",
-      "image",
-      "file"
     ],
     "outputs": [
       "text"
