@@ -464,23 +464,6 @@
       "text"
     ]
   },
-  "jev-router": {
-    "provider": "typesafe",
-    "name": "TypeSafe: Jev Router",
-    "description": "Jev Router picks the best model and reasoning effort for each request, balancing quality, speed, and cost. It runs on [Jev](https://openrouter.ai/~typesafe/jev-latest), TypeSafe's first System One model, and adapts as your...",
-    "supports_image": true,
-    "context_length": 1000000,
-    "inputs": [
-      "audio",
-      "file",
-      "image",
-      "text",
-      "video"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "perceptron-mk1.5": {
     "provider": "perceptron",
     "name": "Perceptron: Perceptron Mk1.5",
@@ -662,19 +645,6 @@
       "text",
       "image",
       "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "switchyard": {
-    "provider": "nvidia",
-    "name": "NVIDIA: Switchyard",
-    "description": "Switchyard is an open-source model routing system that switches between multiple models to optimize the cost of requests. By default it will use OpenRouter market data to select the most...",
-    "supports_image": false,
-    "context_length": 1000000,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
@@ -1636,24 +1606,6 @@
       "text"
     ]
   },
-  "auto-beta": {
-    "provider": "openrouter",
-    "name": "Auto Router (Beta)",
-    "description": "The experimental version of our Auto Router where we test new improvements. Use it to get the latest and greatest version of our general purpose auto router, but expect beta...",
-    "supports_image": true,
-    "context_length": 2000000,
-    "inputs": [
-      "text",
-      "image",
-      "audio",
-      "file",
-      "video"
-    ],
-    "outputs": [
-      "text",
-      "image"
-    ]
-  },
   "kimi-k3": {
     "provider": "moonshotai",
     "name": "MoonshotAI: Kimi K3 (batch)",
@@ -1950,19 +1902,6 @@
     "description": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
     "supports_image": false,
     "context_length": 1048576,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "fusion": {
-    "provider": "openrouter",
-    "name": "OpenRouter: Fusion",
-    "description": "Fusion turns your prompt into a small multi-model deliberation. A panel of expert models (see below) analyzes your prompt in parallel with web search and web fetch enabled, then a...",
-    "supports_image": false,
-    "context_length": 1000000,
     "inputs": [
       "text"
     ],
@@ -2516,19 +2455,6 @@
       "text",
       "image",
       "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "pareto-code": {
-    "provider": "openrouter",
-    "name": "Pareto Code Router",
-    "description": "The Pareto Router maintains a tiered shortlist of strong coding models, ranked by [Artificial Analysis](https://artificialanalysis.ai/) coding percentiles. Set min_coding_score between 0 and 1 on the [pareto-router plugin](https://openrouter.ai/docs/guides/routing/routers/pareto-router#the-min_coding_score-parameter) to control how...",
-    "supports_image": false,
-    "context_length": 2000000,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
@@ -3135,20 +3061,6 @@
       "text"
     ]
   },
-  "free": {
-    "provider": "openrouter",
-    "name": "Free Models Router",
-    "description": "The simplest way to get free inference. openrouter/free is a router that selects free models at random from the models available on OpenRouter. The router smartly filters for models that...",
-    "supports_image": true,
-    "context_length": 200000,
-    "inputs": [
-      "text",
-      "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "step-3.5-flash": {
     "provider": "stepfun",
     "name": "StepFun: Step 3.5 Flash",
@@ -3427,19 +3339,6 @@
       "image",
       "text",
       "video"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "bodybuilder": {
-    "provider": "openrouter",
-    "name": "Body Builder (beta)",
-    "description": "Transform your natural language requests into structured OpenRouter API request objects. Describe what you want to accomplish with AI models, and Body Builder will construct the appropriate API calls. Example:...",
-    "supports_image": false,
-    "context_length": 128000,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
@@ -5301,24 +5200,6 @@
       "text"
     ]
   },
-  "auto": {
-    "provider": "openrouter",
-    "name": "Auto Router",
-    "description": "The Auto Router automatically selects the best model for your prompt, powered by the wisdom of the market. It routes you based on what the OpenRouter community collectively spends on...",
-    "supports_image": true,
-    "context_length": 2000000,
-    "inputs": [
-      "text",
-      "image",
-      "audio",
-      "file",
-      "video"
-    ],
-    "outputs": [
-      "text",
-      "image"
-    ]
-  },
   "gpt-3.5-turbo-16k": {
     "provider": "openai",
     "name": "OpenAI: GPT-3.5 Turbo 16k",
@@ -5382,6 +5263,125 @@
     ],
     "outputs": [
       "text"
+    ]
+  },
+  "jev-router": {
+    "provider": "typesafe",
+    "name": "TypeSafe: Jev Router",
+    "description": "Jev Router picks the best model and reasoning effort for each request, balancing quality, speed, and cost. It runs on [Jev](https://openrouter.ai/~typesafe/jev-latest), TypeSafe's first System One model, and adapts as your...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "audio",
+      "file",
+      "image",
+      "text",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "switchyard": {
+    "provider": "nvidia",
+    "name": "NVIDIA: Switchyard",
+    "description": "Switchyard is an open-source model routing system that switches between multiple models to optimize the cost of requests. By default it will use OpenRouter market data to select the most...",
+    "supports_image": false,
+    "context_length": 1000000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "auto-beta": {
+    "provider": "openrouter",
+    "name": "Auto Router (Beta)",
+    "description": "The experimental version of our Auto Router where we test new improvements. Use it to get the latest and greatest version of our general purpose auto router, but expect beta...",
+    "supports_image": true,
+    "context_length": 2000000,
+    "inputs": [
+      "text",
+      "image",
+      "audio",
+      "file",
+      "video"
+    ],
+    "outputs": [
+      "text",
+      "image"
+    ]
+  },
+  "fusion": {
+    "provider": "openrouter",
+    "name": "OpenRouter: Fusion",
+    "description": "Fusion turns your prompt into a small multi-model deliberation. A panel of expert models (see below) analyzes your prompt in parallel with web search and web fetch enabled, then a...",
+    "supports_image": false,
+    "context_length": 1000000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "pareto-code": {
+    "provider": "openrouter",
+    "name": "Pareto Code Router",
+    "description": "The Pareto Router maintains a tiered shortlist of strong coding models, ranked by [Artificial Analysis](https://artificialanalysis.ai/) coding percentiles. Set min_coding_score between 0 and 1 on the [pareto-router plugin](https://openrouter.ai/docs/guides/routing/routers/pareto-router#the-min_coding_score-parameter) to control how...",
+    "supports_image": false,
+    "context_length": 2000000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "free": {
+    "provider": "openrouter",
+    "name": "Free Models Router",
+    "description": "The simplest way to get free inference. openrouter/free is a router that selects free models at random from the models available on OpenRouter. The router smartly filters for models that...",
+    "supports_image": true,
+    "context_length": 200000,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "bodybuilder": {
+    "provider": "openrouter",
+    "name": "Body Builder (beta)",
+    "description": "Transform your natural language requests into structured OpenRouter API request objects. Describe what you want to accomplish with AI models, and Body Builder will construct the appropriate API calls. Example:...",
+    "supports_image": false,
+    "context_length": 128000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "auto": {
+    "provider": "openrouter",
+    "name": "Auto Router",
+    "description": "The Auto Router automatically selects the best model for your prompt, powered by the wisdom of the market. It routes you based on what the OpenRouter community collectively spends on...",
+    "supports_image": true,
+    "context_length": 2000000,
+    "inputs": [
+      "text",
+      "image",
+      "audio",
+      "file",
+      "video"
+    ],
+    "outputs": [
+      "text",
+      "image"
     ]
   }
 }
