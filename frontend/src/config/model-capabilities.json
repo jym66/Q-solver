@@ -1531,19 +1531,6 @@
       "text"
     ]
   },
-  "laguna-s-2.1": {
-    "provider": "poolside",
-    "name": "Poolside: Laguna S 2.1 (free)",
-    "description": "Laguna S 2.1 is the latest coding agent model from [Poolside](<https://poolside.ai/>). Laguna S 2.1 is a 118B total parameter model with 8B active parameters, scoring 70.2% on Terminal-Bench 2.1 and...",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "gemini-3.6-flash": {
     "provider": "google",
     "name": "Google: Gemini 3.6 Flash (batch)",
@@ -1787,19 +1774,6 @@
     "provider": "tencent",
     "name": "Tencent: Hy3",
     "description": "Hy3 is a 295B-parameter Mixture-of-Experts model from Tencent (21B active, 192 experts with top-8 routing) built for reasoning, agentic workflows, and real-world production use. It supports a configurable reasoning effort:...",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "laguna-xs-2.1": {
-    "provider": "poolside",
-    "name": "Poolside: Laguna XS 2.1 (free)",
-    "description": "Laguna XS 2.1 is the latest coding agent model in the 33B-A3B category from [Poolside](https://poolside.ai/) and a step forward from their Laguna XS.2 model (released in April 2026). It combines...",
     "supports_image": false,
     "context_length": 262144,
     "inputs": [
