@@ -1,4 +1,21 @@
 {
+  "crouton-alpha": {
+    "provider": "stealth",
+    "name": "Crouton Alpha",
+    "description": "Crouton Alpha is a lightweight model built for scalable coding, agentic, and multimodal workflows. It's ideal for executing agentic sub-tasks, tool use, and document analysis in high-volume, repeated work. Developers...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image",
+      "video",
+      "file",
+      "audio"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "glm-5.3-flashx-legal": {
     "provider": "z-ai",
     "name": "Z.ai: GLM 5.3 FlashX Legal",
@@ -715,7 +732,7 @@
   },
   "grok-4.7": {
     "provider": "x-ai",
-    "name": "SpaceXAI: Grok 4.7",
+    "name": "SpaceXAI: Grok 4.7 (batch)",
     "description": "Grok 4.7 is SpaceXAI's flagship model for coding, agentic tasks, and knowledge work, succeeding Grok 4.6. It is particularly strong at long-running software engineering tasks, verifying its own work, and...",
     "supports_image": true,
     "context_length": 500000,
@@ -1365,7 +1382,7 @@
   },
   "grok-4.6": {
     "provider": "x-ai",
-    "name": "SpaceXAI: Grok 4.6",
+    "name": "SpaceXAI: Grok 4.6 (batch)",
     "description": "Grok 4.6 is a model from SpaceXAI with frontier performance on coding, knowledge work, and STEM. It is succeeded by [Grok 4.7](/x-ai/grok-4.7).",
     "supports_image": true,
     "context_length": 500000,
