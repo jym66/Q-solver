@@ -1,4 +1,31 @@
 {
+  "ripple-65b-preview": {
+    "provider": "ricursiveai",
+    "name": "ricursiveAI/Ripple-65B-Preview",
+    "description": "Ripple-65B-Preview by ricursiveAI, a 65B model with native tool calling, served in BF16.",
+    "supports_image": false,
+    "context_length": 1048576,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "hy4": {
+    "provider": "tencent",
+    "name": "Tencent: Hy4",
+    "description": "The official release of Hy4 delivers comprehensive and substantial improvements over Hy4 Preview, with particularly strong gains in agentic capabilities and performance across a wide range of long-horizon, real-world productivity...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "crouton-alpha": {
     "provider": "stealth",
     "name": "Crouton Alpha",
@@ -1507,10 +1534,10 @@
   },
   "inkling-small": {
     "provider": "thinkingmachines",
-    "name": "Thinking Machines: Inkling Small (free)",
+    "name": "Thinking Machines: Inkling Small",
     "description": "Inkling Small is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 12B active parameters out of 276B total. It is positioned as the smaller, more efficient member of...",
     "supports_image": true,
-    "context_length": 1048576,
+    "context_length": 524288,
     "inputs": [
       "text",
       "image",
@@ -1612,10 +1639,10 @@
   },
   "inkling": {
     "provider": "thinkingmachines",
-    "name": "Thinking Machines: Inkling (free)",
+    "name": "Thinking Machines: Inkling",
     "description": "Inkling is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 41B active parameters out of 975B total. It is designed for general-purpose reasoning, coding, agentic and tool-use systems,...",
     "supports_image": true,
-    "context_length": 1048576,
+    "context_length": 524288,
     "inputs": [
       "text",
       "image",
@@ -2424,7 +2451,7 @@
     "name": "Xiaomi: MiMo-V2.5",
     "description": "MiMo-V2.5 is a native omnimodal model by Xiaomi. It delivers Pro-level agentic performance at roughly half the inference cost, while surpassing MiMo-V2-Omni in multimodal perception across image and video understanding...",
     "supports_image": true,
-    "context_length": 1050000,
+    "context_length": 1000000,
     "inputs": [
       "text",
       "audio",
@@ -5349,7 +5376,7 @@
   "auto": {
     "provider": "openrouter",
     "name": "Auto Router",
-    "description": "The Auto Router automatically selects the best model for your prompt, powered by the wisdom of the market. It routes you based on what the OpenRouter community collectively spends on...",
+    "description": "Auto is OpenRouter’s general-purpose router, now powered by [Jev Router](https://openrouter.ai/typesafe/jev-router). It replaces market-spend rankings with request-aware selection of both the model and reasoning effort, weighing task difficulty, measured benchmark results,...",
     "supports_image": true,
     "context_length": 2000000,
     "inputs": [
