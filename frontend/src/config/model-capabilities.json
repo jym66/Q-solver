@@ -1,4 +1,36 @@
 {
+  "gemini-omni-1.2-flash": {
+    "provider": "google",
+    "name": "Google: Gemini Omni 1.2 Flash",
+    "description": "Gemini Omni 1.2 Flash is Google's native multimodal video generation and editing model, the successor to Gemini Omni 1.1 Flash. It generates clips up to 15 seconds long with native...",
+    "supports_image": true,
+    "context_length": 131072,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text",
+      "video"
+    ]
+  },
+  "gemini-omni-1.1-flash": {
+    "provider": "google",
+    "name": "Google: Gemini Omni 1.1 Flash",
+    "description": "Gemini Omni 1.1 Flash is Google's native multimodal video generation and editing model, the generally available successor to Gemini Omni Flash Preview. It is suited for text-to-video, image-to-video, first and...",
+    "supports_image": true,
+    "context_length": 131072,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text",
+      "video"
+    ]
+  },
   "ripple-65b-preview": {
     "provider": "ricursiveai",
     "name": "ricursiveAI/Ripple-65B-Preview",
@@ -1485,6 +1517,19 @@
     "inputs": [
       "text",
       "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "ling-3.0-tiny": {
+    "provider": "inclusionai",
+    "name": "inclusionAI: Ling 3.0 Tiny",
+    "description": "Ling 3.0 Tiny is a mixture-of-experts model from InclusionAI, with 1.3B active parameters out of 7.9B total. It is designed for responsive agents, instruction following, and multi-turn conversations, with switchable...",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text"
     ],
     "outputs": [
       "text"
@@ -3121,19 +3166,6 @@
       "text"
     ]
   },
-  "minimax-m2-her": {
-    "provider": "minimax",
-    "name": "MiniMax: MiniMax M2-her",
-    "description": "MiniMax M2-her is a dialogue-first large language model built for immersive roleplay, character-driven chat, and expressive multi-turn conversations. Designed to stay consistent in tone and personality, it supports rich message...",
-    "supports_image": false,
-    "context_length": 65536,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "palmyra-x5": {
     "provider": "writer",
     "name": "Writer: Palmyra X5",
@@ -3229,19 +3261,6 @@
       "image",
       "text",
       "video"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "minimax-m2.1": {
-    "provider": "minimax",
-    "name": "MiniMax: MiniMax M2.1",
-    "description": "MiniMax-M2.1 is a lightweight, state-of-the-art large language model optimized for coding, agentic workflows, and modern application development. With only 10 billion activated parameters, it delivers a major jump in real-world...",
-    "supports_image": false,
-    "context_length": 204800,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
@@ -3612,19 +3631,6 @@
     "description": "gpt-oss-safeguard-20b is a safety reasoning model from OpenAI built upon gpt-oss-20b. This open-weight, 21B-parameter Mixture-of-Experts (MoE) model offers lower latency for safety tasks like content classification, LLM filtering, and trust...",
     "supports_image": false,
     "context_length": 131072,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "minimax-m2": {
-    "provider": "minimax",
-    "name": "MiniMax: MiniMax M2",
-    "description": "MiniMax-M2 is a compact, high-efficiency large language model optimized for end-to-end coding and agentic workflows. With 10 billion activated parameters (230 billion total), it delivers near-frontier intelligence across general reasoning,...",
-    "supports_image": false,
-    "context_length": 204800,
     "inputs": [
       "text"
     ],
@@ -4746,20 +4752,6 @@
       "text"
     ]
   },
-  "minimax-01": {
-    "provider": "minimax",
-    "name": "MiniMax: MiniMax-01",
-    "description": "MiniMax-01 is a combines MiniMax-Text-01 for text generation and MiniMax-VL-01 for image understanding. It has 456 billion parameters, with 45.9 billion parameters activated per inference, and can handle a context...",
-    "supports_image": true,
-    "context_length": 1000192,
-    "inputs": [
-      "text",
-      "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "phi-4": {
     "provider": "microsoft",
     "name": "Microsoft: Phi 4",
@@ -5272,6 +5264,42 @@
       "text"
     ]
   },
+  "auto": {
+    "provider": "openrouter",
+    "name": "Auto Router",
+    "description": "Auto is OpenRouter’s flagship model router, built for general-purpose usage. It adapts to each request, choosing cost-optimal models and adjusting reasoning effort. It balances task difficulty, benchmark results, live prices,...",
+    "supports_image": true,
+    "context_length": 2000000,
+    "inputs": [
+      "text",
+      "image",
+      "audio",
+      "file",
+      "video"
+    ],
+    "outputs": [
+      "text",
+      "image"
+    ]
+  },
+  "auto-code": {
+    "provider": "openrouter",
+    "name": "Auto Code",
+    "description": "Auto Code is OpenRouter’s router built specifically for coding agents and harnesses. It uses the same routing engine as the [Auto Router](https://openrouter.ai/openrouter/auto), with every request treated as part of an...",
+    "supports_image": true,
+    "context_length": 2000000,
+    "inputs": [
+      "text",
+      "image",
+      "audio",
+      "file",
+      "video"
+    ],
+    "outputs": [
+      "text",
+      "image"
+    ]
+  },
   "jev-router": {
     "provider": "typesafe",
     "name": "TypeSafe: Jev Router",
@@ -5371,24 +5399,6 @@
     ],
     "outputs": [
       "text"
-    ]
-  },
-  "auto": {
-    "provider": "openrouter",
-    "name": "Auto Router",
-    "description": "Auto is OpenRouter’s general-purpose router, now powered by [Jev Router](https://openrouter.ai/typesafe/jev-router). It replaces market-spend rankings with request-aware selection of both the model and reasoning effort, weighing task difficulty, measured benchmark results,...",
-    "supports_image": true,
-    "context_length": 2000000,
-    "inputs": [
-      "text",
-      "image",
-      "audio",
-      "file",
-      "video"
-    ],
-    "outputs": [
-      "text",
-      "image"
     ]
   }
 }
