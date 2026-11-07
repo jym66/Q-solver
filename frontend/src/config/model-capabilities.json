@@ -1,4 +1,17 @@
 {
+  "lfm-3-1.7b": {
+    "provider": "liquid",
+    "name": "LiquidAI: LFM3-1.7B (free)",
+    "description": "A compact 1.7B-parameter text model with a 256K-token context, post-trained for agents, tool calling, and structured outputs. It reasons before it answers. Prompts and outputs may be retained and used...",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "gemini-omni-1.2-flash": {
     "provider": "google",
     "name": "Google: Gemini Omni 1.2 Flash",
@@ -33,7 +46,7 @@
   },
   "ripple-65b-preview": {
     "provider": "ricursiveai",
-    "name": "ricursiveAI/Ripple-65B-Preview",
+    "name": "Ricursive: Ripple 65B Preview",
     "description": "Ripple-65B-Preview by ricursiveAI, a 65B model with native tool calling, served in BF16.",
     "supports_image": false,
     "context_length": 1048576,
@@ -1339,10 +1352,10 @@
   },
   "qwen3.8-27b": {
     "provider": "qwen",
-    "name": "Qwen: Qwen3.8 27B",
+    "name": "Qwen: Qwen3.8 27B (batch)",
     "description": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thinking that can be...",
     "supports_image": true,
-    "context_length": 1024000,
+    "context_length": 262144,
     "inputs": [
       "text",
       "image",
@@ -1510,7 +1523,7 @@
   },
   "muse-glimmer-30b": {
     "provider": "meta",
-    "name": "Meta: Muse Glimmer 30B",
+    "name": "Meta: Muse Glimmer 30B (batch)",
     "description": "Muse Glimmer 30B is a dense, open-weight multimodal model from Meta Superintelligence Labs, distilled from Muse Spark and optimized for autonomous agents on consumer hardware. It is suited for long-horizon...",
     "supports_image": true,
     "context_length": 131072,
@@ -1566,7 +1579,7 @@
   },
   "deepseek-v4-flash-0731": {
     "provider": "deepseek",
-    "name": "DeepSeek: DeepSeek V4 Flash 0731",
+    "name": "DeepSeek: DeepSeek V4 Flash 0731 (batch)",
     "description": "DeepSeek V4 Flash 0731 is a sparse mixture-of-experts model from DeepSeek, with 13B active parameters out of 284B total. This re-post-trained revision is suited for coding, reasoning, and agent workflows....",
     "supports_image": false,
     "context_length": 1048576,
@@ -1579,7 +1592,7 @@
   },
   "inkling-small": {
     "provider": "thinkingmachines",
-    "name": "Thinking Machines: Inkling Small",
+    "name": "Thinking Machines: Inkling Small (batch)",
     "description": "Inkling Small is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 12B active parameters out of 276B total. It is positioned as the smaller, more efficient member of...",
     "supports_image": true,
     "context_length": 524288,
@@ -2033,10 +2046,10 @@
   },
   "nemotron-3.5-content-safety": {
     "provider": "nvidia",
-    "name": "NVIDIA: Nemotron 3.5 Content Safety (free)",
+    "name": "NVIDIA: Nemotron 3.5 Content Safety",
     "description": "NVIDIA Nemotron 3.5 Content Safety is a compact 4B-parameter multimodal guardrail model from NVIDIA, fine-tuned from Google Gemma-3-4B. It moderates both inputs to and responses from LLMs and VLMs, accepting...",
     "supports_image": true,
-    "context_length": 128000,
+    "context_length": 131072,
     "inputs": [
       "text",
       "image"
@@ -2074,10 +2087,10 @@
   },
   "minimax-m3": {
     "provider": "minimax",
-    "name": "MiniMax: MiniMax M3",
+    "name": "MiniMax: MiniMax M3 (batch)",
     "description": "MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for long-horizon agentic work, coding,...",
     "supports_image": true,
-    "context_length": 1048576,
+    "context_length": 524288,
     "inputs": [
       "text",
       "image",
