@@ -245,19 +245,6 @@
       "text"
     ]
   },
-  "mercury-3": {
-    "provider": "inception",
-    "name": "Inception: Mercury 3",
-    "description": "Mercury 3 is a diffusion-based language model from Inception, and the lab's most capable model to date. It is suited for agentic workflows and real-time applications where latency compounds, such...",
-    "supports_image": false,
-    "context_length": 1000000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "ternary-bonsai-2-9b": {
     "provider": "prism-ml",
     "name": "PrismML: Ternary Bonsai 2 9B",
@@ -1029,19 +1016,6 @@
     "inputs": [
       "text",
       "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "mercury-2.5": {
-    "provider": "inception",
-    "name": "Inception: Mercury 2.5",
-    "description": "Mercury 2.5 is the fastest reasoning LLM, and the latest diffusion LLM (dLLM) from Inception. Instead of generating tokens sequentially, Mercury 2.5 produces and refines multiple tokens in parallel, achieving...",
-    "supports_image": false,
-    "context_length": 260000,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
@@ -2866,19 +2840,6 @@
       "text",
       "image",
       "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "mercury-2": {
-    "provider": "inception",
-    "name": "Inception: Mercury 2",
-    "description": "Mercury 2 is an extremely fast reasoning LLM, and the first reasoning diffusion LLM (dLLM). Instead of generating tokens sequentially, Mercury 2 produces and refines multiple tokens in parallel, achieving...",
-    "supports_image": false,
-    "context_length": 128000,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
