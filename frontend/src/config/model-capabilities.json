@@ -1,4 +1,64 @@
 {
+  "nex-n2.6": {
+    "provider": "nex-agi",
+    "name": "Nex AGI: Nex-N2.6",
+    "description": "Nex-N2.6 is an agentic model from Nex AGI, built on [GLM-5.3-Flash](https://huggingface.co/zai-org/GLM-5.3-Flash-BF16) with about 321B parameters. It is suited for computer use, coding, and long-horizon tasks that involve tools. Compared with...",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "inkling-2-small": {
+    "provider": "thinkingmachines",
+    "name": "Thinking Machines: Inkling 2 Small (free)",
+    "description": "Inkling 2 Small is a multimodal mixture-of-experts reasoning model from Thinking Machines Lab, with 17B active parameters out of 594B total. It is the first model in the second Inkling...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "claude-fable-5.2": {
+    "provider": "anthropic",
+    "name": "Anthropic: Claude Fable 5.2 (batch)",
+    "description": "Claude Fable 5.2 is Anthropic's most capable model for the most demanding technical work, with gains over Fable 5.1 in coding, reasoning, and vision. In prerelease testing it completed otherwise-infeasible...",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "file"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "muse-ember": {
+    "provider": "meta",
+    "name": "Meta: Muse Ember",
+    "description": "Muse Ember is the smallest and most efficient model from Meta that’s designed for complex reasoning execution and the work agents repeat all day: tool calls, coding agent subtasks, routing,...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image",
+      "video",
+      "file",
+      "audio"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "lfm-3-1.7b": {
     "provider": "liquid",
     "name": "LiquidAI: LFM3-1.7B (free)",
@@ -66,23 +126,6 @@
     "inputs": [
       "text",
       "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "crouton-alpha": {
-    "provider": "stealth",
-    "name": "Crouton Alpha",
-    "description": "Crouton Alpha is a lightweight model built for scalable coding, agentic, and multimodal workflows. It's ideal for executing agentic sub-tasks, tool use, and document analysis in high-volume, repeated work. Developers...",
-    "supports_image": true,
-    "context_length": 1048576,
-    "inputs": [
-      "text",
-      "image",
-      "video",
-      "file",
-      "audio"
     ],
     "outputs": [
       "text"
@@ -443,7 +486,7 @@
     "name": "StepFun: Step 5 Preview",
     "description": "Step 5 Preview is StepFun's flagship model for agentic work, built on a sparse Mixture-of-Experts architecture (27B active / 600B total parameters). It performs strongly in software engineering and professional...",
     "supports_image": true,
-    "context_length": 1048576,
+    "context_length": 1000000,
     "inputs": [
       "text",
       "image",
@@ -1081,10 +1124,10 @@
   },
   "qwen3.8-max-0902": {
     "provider": "qwen",
-    "name": "Qwen: Qwen3.8 Max (0902)",
+    "name": "Qwen: Qwen3.8 Max (0902) (batch)",
     "description": "Qwen3.8 Max 0902 is an updated snapshot of Qwen3.8 Max from Alibaba's Qwen team. It is a 2.4-trillion-parameter mixture-of-experts model that accepts text, image, and video input and returns text,...",
     "supports_image": true,
-    "context_length": 1000000,
+    "context_length": 262144,
     "inputs": [
       "text",
       "image",
@@ -2470,7 +2513,7 @@
     "name": "Xiaomi: MiMo-V2.5-Pro",
     "description": "MiMo-V2.5-Pro is Xiaomi’s flagship model, delivering strong performance in general agentic capabilities, complex software engineering, and long-horizon tasks, with top rankings on benchmarks such as ClawEval, GDPVal, and SWE-bench Pro....",
     "supports_image": false,
-    "context_length": 1050000,
+    "context_length": 1024000,
     "inputs": [
       "text"
     ],
@@ -2707,7 +2750,7 @@
     "name": "MiniMax: MiniMax M2.7",
     "description": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic capabilities through multi-agent...",
     "supports_image": false,
-    "context_length": 204800,
+    "context_length": 196608,
     "inputs": [
       "text"
     ],
@@ -3064,7 +3107,7 @@
     "name": "MiniMax: MiniMax M2.5",
     "description": "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1...",
     "supports_image": false,
-    "context_length": 204800,
+    "context_length": 200000,
     "inputs": [
       "text"
     ],
@@ -4214,19 +4257,6 @@
     "context_length": 256000,
     "inputs": [
       "image",
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "minimax-m1": {
-    "provider": "minimax",
-    "name": "MiniMax: MiniMax M1",
-    "description": "MiniMax-M1 is a large-scale, open-weight reasoning model designed for extended context and high-efficiency inference. It leverages a hybrid Mixture-of-Experts (MoE) architecture paired with a custom \"lightning attention\" mechanism, allowing it...",
-    "supports_image": false,
-    "context_length": 1000000,
-    "inputs": [
       "text"
     ],
     "outputs": [
