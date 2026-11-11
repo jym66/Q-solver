@@ -1,4 +1,47 @@
 {
+  "ernie-5.5-flash-preview": {
+    "provider": "baidu",
+    "name": "Baidu: ERNIE-5.5-Flash-Preview",
+    "description": "ERNIE 5.5 Flash Preview is the latest foundation model in the ERNIE family, with comprehensive improvements in coding, agentic capabilities, knowledge work, and deep research. It has 280 billion total...",
+    "supports_image": false,
+    "context_length": 1024000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "ernie-light-dt-1.0-intl": {
+    "provider": "baidu",
+    "name": "Baidu: ERNIE-Light-DT-1.0",
+    "description": "ERNIE-Light-DT-1.0 is based on open-source GLM models and includes research findings from Baidu Search's Lightning large model. It features Baidu Sparse Attention (BSA), a unique sparse attention mechanism developed by...",
+    "supports_image": false,
+    "context_length": 1024000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gemini-4-carbon": {
+    "provider": "google",
+    "name": "Google: Gemini 4 Carbon (batch)",
+    "description": "Gemini 4 Carbon is a frontier Gemini 4 model from Google for coding, agentic and complex reasoning work. It takes text, image, audio, video and file input, supports long decode...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "audio",
+      "file",
+      "image",
+      "text",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "nex-n2.6": {
     "provider": "nex-agi",
     "name": "Nex AGI: Nex-N2.6",
@@ -88,6 +131,19 @@
       "video"
     ]
   },
+  "midm-k-3.0-pro": {
+    "provider": "kt",
+    "name": "KT: Mi:dm K 3.0 Pro",
+    "description": "Mi:dm K 3.0 Pro is a Mixture-of-Experts reasoning model from KT, with 120B total and 12B active parameters. It uses a hybrid architecture that mixes Mamba, MoE and attention layers.",
+    "supports_image": false,
+    "context_length": 261795,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "gemini-omni-1.1-flash": {
     "provider": "google",
     "name": "Google: Gemini Omni 1.1 Flash",
@@ -126,6 +182,19 @@
     "inputs": [
       "text",
       "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "motif-3": {
+    "provider": "motif-technologies",
+    "name": "Motif Technologies: Motif 3",
+    "description": "Motif 3 is a Mixture-of-Experts language model from Motif Technologies, with 314B total and 13.2B active parameters. It is a general-purpose multilingual model for English and Korean, particularly strong at...",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text"
     ],
     "outputs": [
       "text"
@@ -257,19 +326,6 @@
       "text",
       "image",
       "video"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "xing4.0-29b-a4b": {
-    "provider": "xingchen-agi",
-    "name": "XingChen: Xing4.0 29B A4B (free)",
-    "description": "Xing4.0-29B-A4B is an open-weight mixture-of-experts language model from China Telecom's AI team (TeleAI) and the successor to the TeleChat series. It has 29B total parameters with 4B active per token...",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
@@ -4908,19 +4964,6 @@
     "provider": "anthracite-org",
     "name": "Magnum v4 72B",
     "description": "This is a series of models designed to replicate the prose quality of the Claude 3 models, specifically Sonnet(https://openrouter.ai/anthropic/claude-3.5-sonnet) and Opus(https://openrouter.ai/anthropic/claude-3-opus).\n\nThe model is fine-tuned on top of [Qwen2.5 72B](https://openrouter.ai/qwen/qwen-2.5-72b-instruct).",
-    "supports_image": false,
-    "context_length": 32768,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "qwen-2.5-7b-instruct": {
-    "provider": "qwen",
-    "name": "Qwen: Qwen2.5 7B Instruct",
-    "description": "Qwen2.5 7B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2: - Significantly more knowledge and has greatly improved capabilities in coding and...",
     "supports_image": false,
     "context_length": 32768,
     "inputs": [
