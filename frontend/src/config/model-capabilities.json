@@ -1,7 +1,7 @@
 {
   "ernie-5.5-flash-preview": {
     "provider": "baidu",
-    "name": "Baidu: ERNIE-5.5-Flash-Preview",
+    "name": "Baidu: ERNIE-5.5-Flash-Preview (free)",
     "description": "ERNIE 5.5 Flash Preview is the latest foundation model in the ERNIE family, with comprehensive improvements in coding, agentic capabilities, knowledge work, and deep research. It has 280 billion total...",
     "supports_image": false,
     "context_length": 1024000,
@@ -604,6 +604,20 @@
     "context_length": 1000000,
     "inputs": [
       "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "pareto-26.10-preview": {
+    "provider": "unbiased",
+    "name": "Pareto 26.10 Preview",
+    "description": "Pareto is a multimodal composite model built for research, coding, and agentic workflows, while delivering frontier-level performance across a broad range of general-purpose tasks. This is a preview of the...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image"
     ],
     "outputs": [
       "text"
@@ -1492,21 +1506,6 @@
     "context_length": 1048576,
     "inputs": [
       "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "seed-2.0-code": {
-    "provider": "bytedance-seed",
-    "name": "ByteDance Seed: Seed-2.0-Code",
-    "description": "Seed 2.0 Code is a model from ByteDance Seed optimized for agentic coding. It is suited for frontend development, multilingual programming tasks, and coding-agent workflows in tools such as Claude...",
-    "supports_image": true,
-    "context_length": 262144,
-    "inputs": [
-      "text",
-      "image",
-      "video"
     ],
     "outputs": [
       "text"
@@ -2876,7 +2875,7 @@
     "name": "NVIDIA: Nemotron 3 Super",
     "description": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer...",
     "supports_image": false,
-    "context_length": 1048576,
+    "context_length": 262144,
     "inputs": [
       "text"
     ],
@@ -3304,36 +3303,6 @@
     "inputs": [
       "text",
       "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "seed-1.6-flash": {
-    "provider": "bytedance-seed",
-    "name": "ByteDance Seed: Seed 1.6 Flash",
-    "description": "Seed 1.6 Flash is an ultra-fast multimodal deep thinking model by ByteDance Seed, supporting both text and visual understanding. It features a 256k context window and can generate outputs of...",
-    "supports_image": true,
-    "context_length": 262144,
-    "inputs": [
-      "image",
-      "text",
-      "video"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "seed-1.6": {
-    "provider": "bytedance-seed",
-    "name": "ByteDance Seed: Seed 1.6",
-    "description": "Seed 1.6 is a general-purpose model released by the ByteDance Seed team. It incorporates multimodal capabilities and adaptive deep thinking with a 256K context window.",
-    "supports_image": true,
-    "context_length": 262144,
-    "inputs": [
-      "image",
-      "text",
-      "video"
     ],
     "outputs": [
       "text"
