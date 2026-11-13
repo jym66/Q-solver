@@ -1,4 +1,21 @@
 {
+  "gemini-4-hydrogen": {
+    "provider": "google",
+    "name": "Google: Gemini 4 Hydrogen (batch)",
+    "description": "Gemini 4 Hydrogen is the high-efficiency workhorse model of the Gemini 4 family from Google, built for high-throughput agentic workflows, coding and multi-model routing at lower cost and latency than...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "audio",
+      "file",
+      "image",
+      "text",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "ernie-5.5-flash-preview": {
     "provider": "baidu",
     "name": "Baidu: ERNIE-5.5-Flash-Preview (free)",
@@ -59,7 +76,7 @@
   "inkling-2-small": {
     "provider": "thinkingmachines",
     "name": "Thinking Machines: Inkling 2 Small (free)",
-    "description": "Inkling 2 Small is a multimodal mixture-of-experts reasoning model from Thinking Machines Lab, with 17B active parameters out of 594B total. It is the first model in the second Inkling...",
+    "description": "Inkling 2 Small is an open-weight multimodal mixture-of-experts reasoning model from Thinking Machines Lab, with 17B active parameters out of 594B total. It is the first model in the second...",
     "supports_image": true,
     "context_length": 1048576,
     "inputs": [
@@ -217,7 +234,7 @@
   },
   "particle-1": {
     "provider": "particle-ai",
-    "name": "Particle AI: Particle-1",
+    "name": "Particle AI: Particle-1 (free)",
     "description": "Particle-1 is a token-efficient agentic coding model from Particle AI, post-trained on DeepSeek V4.1 Flash. It is suited for software engineering work such as terminal workflows, codebase changes, and data...",
     "supports_image": true,
     "context_length": 1048576,
@@ -261,7 +278,7 @@
   },
   "kimi-k3.1-pro": {
     "provider": "moonshotai",
-    "name": "MoonshotAI: Kimi K3.1 Pro",
+    "name": "MoonshotAI: Kimi K3.1 Pro (batch)",
     "description": "Kimi K3.1 Pro is Moonshot AI's flagship open-weight multimodal reasoning model and a post-trained successor to Kimi K3, with a 1M-token context window. It is built for long-horizon coding, 3D...",
     "supports_image": true,
     "context_length": 1048576,
@@ -602,6 +619,19 @@
     "description": "Ling 3.1 Flash is a hybrid reasoning mixture-of-experts model from inclusionAI, with 25B active parameters out of 560B total.",
     "supports_image": false,
     "context_length": 1000000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "apodex-1.1-mini": {
+    "provider": "apodex",
+    "name": "Apodex: Apodex 1.1 Mini (free)",
+    "description": "Apodex 1.1 Mini is a reasoning-first model from Apodex, built for complex, long-horizon research and forecasting tasks. It works directly with files, data, code, and tools to produce verifiable results,...",
+    "supports_image": false,
+    "context_length": 262144,
     "inputs": [
       "text"
     ],
@@ -1192,6 +1222,19 @@
       "text"
     ]
   },
+  "ling-3.0-flash-sante": {
+    "provider": "inclusionai",
+    "name": "inclusionAI: Ling 3.0 Flash Sante",
+    "description": "Ling 3.0 Flash Sante is a health and medicine-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for...",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "qwen3.8-max-0902": {
     "provider": "qwen",
     "name": "Qwen: Qwen3.8 Max (0902) (batch)",
@@ -1290,6 +1333,19 @@
     "description": "Tencent: Hy4 preview is a mixture-of-experts model from Tencent, with 49B active parameters out of 770B total. It is designed for coding agents, complex tool-use workflows, and productivity tasks that...",
     "supports_image": false,
     "context_length": 1048576,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "ling-3.0-flash-fin": {
+    "provider": "inclusionai",
+    "name": "inclusionAI: Ling 3.0 Flash Fin",
+    "description": "Ling 3.0 Flash Fin is a finance-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for real-world investment...",
+    "supports_image": false,
+    "context_length": 262144,
     "inputs": [
       "text"
     ],
@@ -2409,11 +2465,11 @@
     "supports_image": true,
     "context_length": 1048576,
     "inputs": [
-      "text",
-      "image",
-      "video",
+      "audio",
       "file",
-      "audio"
+      "image",
+      "text",
+      "video"
     ],
     "outputs": [
       "text"
