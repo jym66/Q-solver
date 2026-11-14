@@ -1,4 +1,18 @@
 {
+  "ling-3.2-flash": {
+    "provider": "inclusionai",
+    "name": "inclusionAI: Ling 3.2 Flash (free)",
+    "description": "Ling 3.2 Flash is a hybrid reasoning model from inclusionAI that accepts text and image input, with a 1M-token context window and up to 200 images per request. Thinking can...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "gemini-4-hydrogen": {
     "provider": "google",
     "name": "Google: Gemini 4 Hydrogen (batch)",
@@ -626,19 +640,6 @@
       "text"
     ]
   },
-  "apodex-1.1-mini": {
-    "provider": "apodex",
-    "name": "Apodex: Apodex 1.1 Mini (free)",
-    "description": "Apodex 1.1 Mini is a reasoning-first model from Apodex, built for complex, long-horizon research and forecasting tasks. It works directly with files, data, code, and tools to produce verifiable results,...",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "pareto-26.10-preview": {
     "provider": "unbiased",
     "name": "Pareto 26.10 Preview",
@@ -1222,19 +1223,6 @@
       "text"
     ]
   },
-  "ling-3.0-flash-sante": {
-    "provider": "inclusionai",
-    "name": "inclusionAI: Ling 3.0 Flash Sante",
-    "description": "Ling 3.0 Flash Sante is a health and medicine-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for...",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "qwen3.8-max-0902": {
     "provider": "qwen",
     "name": "Qwen: Qwen3.8 Max (0902) (batch)",
@@ -1333,19 +1321,6 @@
     "description": "Tencent: Hy4 preview is a mixture-of-experts model from Tencent, with 49B active parameters out of 770B total. It is designed for coding agents, complex tool-use workflows, and productivity tasks that...",
     "supports_image": false,
     "context_length": 1048576,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "ling-3.0-flash-fin": {
-    "provider": "inclusionai",
-    "name": "inclusionAI: Ling 3.0 Flash Fin",
-    "description": "Ling 3.0 Flash Fin is a finance-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for real-world investment...",
-    "supports_image": false,
-    "context_length": 262144,
     "inputs": [
       "text"
     ],
@@ -1590,19 +1565,6 @@
       "text",
       "image",
       "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "lfm-2.5-2.6b": {
-    "provider": "liquid",
-    "name": "LiquidAI: LFM2.5-2.6B (free)",
-    "description": "LFM2.5-2.6B is a compact reasoning model from Liquid AI. It is suited for agent workflows, data extraction, RAG, and long-context processing. Liquid advises against using it for agentic coding or...",
-    "supports_image": false,
-    "context_length": 65536,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
@@ -3218,7 +3180,7 @@
     "name": "MiniMax: MiniMax M2.5",
     "description": "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1...",
     "supports_image": false,
-    "context_length": 200000,
+    "context_length": 198000,
     "inputs": [
       "text"
     ],
