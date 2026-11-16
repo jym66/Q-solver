@@ -1,4 +1,19 @@
 {
+  "qwen4-max": {
+    "provider": "qwen",
+    "name": "Qwen: Qwen4 Max",
+    "description": "Qwen4 Max is the flagship model in Alibaba's Qwen4 series. It accepts text, image, and video input and returns text, with a 1M-token context window and reasoning enabled by default....",
+    "supports_image": true,
+    "context_length": 1000000,
+    "inputs": [
+      "text",
+      "image",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "ling-3.2-flash": {
     "provider": "inclusionai",
     "name": "inclusionAI: Ling 3.2 Flash (free)",
@@ -3229,19 +3244,6 @@
       "text"
     ]
   },
-  "step-3.5-flash": {
-    "provider": "stepfun",
-    "name": "StepFun: Step 3.5 Flash",
-    "description": "Step 3.5 Flash is StepFun's most capable open-source foundation model. Built on a sparse Mixture of Experts (MoE) architecture, it selectively activates only 11B of its 196B parameters per token....",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "kimi-k2.5": {
     "provider": "moonshotai",
     "name": "MoonshotAI: Kimi K2.5",
@@ -3774,20 +3776,6 @@
       "text"
     ]
   },
-  "qwen3-vl-30b-a3b-thinking": {
-    "provider": "qwen",
-    "name": "Qwen: Qwen3 VL 30B A3B Thinking",
-    "description": "Qwen3-VL-30B-A3B-Thinking is a multimodal model that unifies strong text generation with visual understanding for images and videos. Its Thinking variant enhances reasoning in STEM, math, and complex tasks. It excels...",
-    "supports_image": true,
-    "context_length": 262144,
-    "inputs": [
-      "text",
-      "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "qwen3-vl-30b-a3b-instruct": {
     "provider": "qwen",
     "name": "Qwen: Qwen3 VL 30B A3B Instruct",
@@ -4246,19 +4234,6 @@
     "description": "Venice Uncensored Dolphin Mistral 24B Venice Edition is a fine-tuned variant of Mistral-Small-24B-Instruct-2501, developed by dphn.ai in collaboration with Venice.ai. This model is designed as an “uncensored” instruct-tuned LLM, preserving...",
     "supports_image": false,
     "context_length": 128000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "hunyuan-a13b-instruct": {
-    "provider": "tencent",
-    "name": "Tencent: Hunyuan A13B Instruct",
-    "description": "Hunyuan-A13B is a 13B active parameter Mixture-of-Experts (MoE) language model developed by Tencent, with a total parameter count of 80B and support for reasoning via Chain-of-Thought. It offers competitive benchmark...",
-    "supports_image": false,
-    "context_length": 131072,
     "inputs": [
       "text"
     ],
