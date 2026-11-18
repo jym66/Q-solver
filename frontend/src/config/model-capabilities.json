@@ -1,4 +1,64 @@
 {
+  "gpt-6.2-astra-pro": {
+    "provider": "openai",
+    "name": "OpenAI: GPT-6.2 Astra Pro (batch)",
+    "description": "GPT-6.2 Astra Pro is the same underlying model as [GPT-6.2 Astra](https://openrouter.ai/openai/gpt-6.2-astra), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks. **Cost note:** pro mode spends far more...",
+    "supports_image": true,
+    "context_length": 1050000,
+    "inputs": [
+      "file",
+      "image",
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gpt-6.2-astra": {
+    "provider": "openai",
+    "name": "OpenAI: GPT-6.2 Astra (batch)",
+    "description": "GPT-6.2 Astra is the flagship model in the GPT-6.2 series from OpenAI, built for the hardest projects. It is suited for real-world engineering, professional work and scientific research, with stronger...",
+    "supports_image": true,
+    "context_length": 1050000,
+    "inputs": [
+      "file",
+      "image",
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gpt-6.2-sol-pro": {
+    "provider": "openai",
+    "name": "OpenAI: GPT-6.2 Sol Pro (batch)",
+    "description": "GPT-6.2 Sol Pro is the same underlying model as [GPT-6.2 Sol](https://openrouter.ai/openai/gpt-6.2-sol), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks. **Cost note:** pro mode spends far more...",
+    "supports_image": true,
+    "context_length": 1050000,
+    "inputs": [
+      "file",
+      "image",
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "gpt-6.2-sol": {
+    "provider": "openai",
+    "name": "OpenAI: GPT-6.2 Sol (batch)",
+    "description": "GPT-6.2 Sol is an upgrade to GPT-6.1 Sol from OpenAI, positioned below the flagship GPT-6.2 Astra in the GPT-6.2 series. It is an efficient, versatile model for everyday work, suited...",
+    "supports_image": true,
+    "context_length": 1050000,
+    "inputs": [
+      "file",
+      "image",
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "hy4-flash": {
     "provider": "tencent",
     "name": "Tencent: Hy4 flash",
