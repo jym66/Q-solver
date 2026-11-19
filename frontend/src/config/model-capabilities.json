@@ -1,4 +1,21 @@
 {
+  "gemini-4-neon": {
+    "provider": "google",
+    "name": "Google: Gemini 4 Neon (batch)",
+    "description": "Gemini 4 Neon is a fast, mid-priced model in the Gemini 4 family from Google, built for coding and agentic work. It is suited for repository and terminal coding, web...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "audio",
+      "file",
+      "image",
+      "text",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "gpt-6.2-astra-pro": {
     "provider": "openai",
     "name": "OpenAI: GPT-6.2 Astra Pro (batch)",
@@ -2675,7 +2692,7 @@
     "name": "Xiaomi: MiMo-V2.5-Pro",
     "description": "MiMo-V2.5-Pro is Xiaomi’s flagship model, delivering strong performance in general agentic capabilities, complex software engineering, and long-horizon tasks, with top rankings on benchmarks such as ClawEval, GDPVal, and SWE-bench Pro....",
     "supports_image": false,
-    "context_length": 1024000,
+    "context_length": 262144,
     "inputs": [
       "text"
     ],
