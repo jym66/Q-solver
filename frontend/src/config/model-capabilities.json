@@ -1,4 +1,18 @@
 {
+  "pixtral-large-2502": {
+    "provider": "mistralai",
+    "name": "Mistral: Pixtral Large 2502",
+    "description": "Pixtral Large 2502 is the February 2025 version of Mistral AI's large multimodal model, following [Pixtral Large 2411](https://openrouter.ai/mistralai/pixtral-large-2411). It accepts text and image input, including documents, charts, and natural images,...",
+    "supports_image": true,
+    "context_length": 128000,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "gemini-4-neon": {
     "provider": "google",
     "name": "Google: Gemini 4 Neon (batch)",
@@ -195,7 +209,7 @@
   },
   "inkling-2-small": {
     "provider": "thinkingmachines",
-    "name": "Thinking Machines: Inkling 2 Small (free)",
+    "name": "Thinking Machines: Inkling 2 Small",
     "description": "Inkling 2 Small is an open-weight multimodal mixture-of-experts reasoning model from Thinking Machines Lab, with 17B active parameters out of 594B total. It is the first model in the second...",
     "supports_image": true,
     "context_length": 1048576,
@@ -1041,8 +1055,8 @@
   },
   "grok-4.7": {
     "provider": "x-ai",
-    "name": "SpaceXAI: Grok 4.7 (batch)",
-    "description": "Grok 4.7 is SpaceXAI's flagship model for coding, agentic tasks, and knowledge work, succeeding Grok 4.6. It is particularly strong at long-running software engineering tasks, verifying its own work, and...",
+    "name": "SpaceXSI: Grok 4.7 (batch)",
+    "description": "Grok 4.7 is SpaceXSI's flagship model for coding, agentic tasks, and knowledge work, succeeding Grok 4.6. It is particularly strong at long-running software engineering tasks, verifying its own work, and...",
     "supports_image": true,
     "context_length": 500000,
     "inputs": [
@@ -1663,8 +1677,8 @@
   },
   "grok-4.6": {
     "provider": "x-ai",
-    "name": "SpaceXAI: Grok 4.6 (batch)",
-    "description": "Grok 4.6 is a model from SpaceXAI with frontier performance on coding, knowledge work, and STEM. It is succeeded by [Grok 4.7](/x-ai/grok-4.7).",
+    "name": "SpaceXSI: Grok 4.6 (batch)",
+    "description": "Grok 4.6 is a model from SpaceXSI with frontier performance on coding, knowledge work, and STEM. It is succeeded by [Grok 4.7](/x-ai/grok-4.7).",
     "supports_image": true,
     "context_length": 500000,
     "inputs": [
@@ -2029,8 +2043,8 @@
   },
   "grok-4.5": {
     "provider": "x-ai",
-    "name": "SpaceXAI: Grok 4.5",
-    "description": "Grok 4.5 is a model from SpaceXAI with frontier performance on coding, knowledge work, and STEM.",
+    "name": "SpaceXSI: Grok 4.5",
+    "description": "Grok 4.5 is a model from SpaceXSI with frontier performance on coding, knowledge work, and STEM.",
     "supports_image": true,
     "context_length": 500000,
     "inputs": [
@@ -2167,19 +2181,6 @@
     ],
     "outputs": [
       "image",
-      "text"
-    ]
-  },
-  "north-mini-code": {
-    "provider": "cohere",
-    "name": "Cohere: North Mini Code (free)",
-    "description": "North Mini Code is Cohere's first agentic coding model and the debut of its North family. A sparse mixture-of-experts model with 30B total parameters and 3B active, it is optimized...",
-    "supports_image": false,
-    "context_length": 256000,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
       "text"
     ]
   },
@@ -2339,21 +2340,6 @@
       "text"
     ]
   },
-  "grok-build-0.1": {
-    "provider": "x-ai",
-    "name": "SpaceXAI: Grok Build 0.1",
-    "description": "Grok Build 0.1 is SpaceXAI’s fast coding model trained specifically for agentic software engineering workflows. It supports text and image inputs with text output, and is optimized for interactive coding...",
-    "supports_image": true,
-    "context_length": 256000,
-    "inputs": [
-      "text",
-      "image",
-      "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "gemini-3.5-flash": {
     "provider": "google",
     "name": "Google: Gemini 3.5 Flash (batch)",
@@ -2420,8 +2406,8 @@
   },
   "grok-4.3": {
     "provider": "x-ai",
-    "name": "SpaceXAI: Grok 4.3 (batch)",
-    "description": "Grok 4.3 is a reasoning model from SpaceXAI. It accepts text and image inputs with text output, and is suited for agentic workflows, instruction-following tasks, and applications requiring high factual...",
+    "name": "SpaceXSI: Grok 4.3 (batch)",
+    "description": "Grok 4.3 is a reasoning model from SpaceXSI. It accepts text and image inputs with text output, and is suited for agentic workflows, instruction-following tasks, and applications requiring high factual...",
     "supports_image": true,
     "context_length": 1000000,
     "inputs": [
@@ -2851,8 +2837,8 @@
   },
   "grok-4.20-multi-agent": {
     "provider": "x-ai",
-    "name": "SpaceXAI: Grok 4.20 Multi-Agent",
-    "description": "Grok 4.20 Multi-Agent is a variant of SpaceXAI’s Grok 4.20 designed for collaborative, agent-based workflows. Multiple agents operate in parallel to conduct deep research, coordinate tool use, and synthesize information...",
+    "name": "SpaceXSI: Grok 4.20 Multi-Agent",
+    "description": "Grok 4.20 Multi-Agent is a variant of SpaceXSI’s Grok 4.20 designed for collaborative, agent-based workflows. Multiple agents operate in parallel to conduct deep research, coordinate tool use, and synthesize information...",
     "supports_image": true,
     "context_length": 2000000,
     "inputs": [
@@ -2866,8 +2852,8 @@
   },
   "grok-4.20": {
     "provider": "x-ai",
-    "name": "SpaceXAI: Grok 4.20",
-    "description": "Grok 4.20 is a reasoning model from SpaceXAI with industry-leading speed and agentic tool calling capabilities. It combines the lowest hallucination rate on the market with strict prompt adherance, delivering...",
+    "name": "SpaceXSI: Grok 4.20",
+    "description": "Grok 4.20 is a reasoning model from SpaceXSI with industry-leading speed and agentic tool calling capabilities. It combines the lowest hallucination rate on the market with strict prompt adherance, delivering...",
     "supports_image": true,
     "context_length": 2000000,
     "inputs": [
@@ -5019,19 +5005,6 @@
     "description": "This is a series of models designed to replicate the prose quality of the Claude 3 models, specifically Sonnet(https://openrouter.ai/anthropic/claude-3.5-sonnet) and Opus(https://openrouter.ai/anthropic/claude-3-opus).\n\nThe model is fine-tuned on top of [Qwen2.5 72B](https://openrouter.ai/qwen/qwen-2.5-72b-instruct).",
     "supports_image": false,
     "context_length": 32768,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "llama-3.2-1b-instruct": {
-    "provider": "meta-llama",
-    "name": "Meta: Llama 3.2 1B Instruct",
-    "description": "Llama 3.2 1B is a 1-billion-parameter language model focused on efficiently performing natural language tasks, such as summarization, dialogue, and multilingual text analysis. Its smaller size allows it to operate...",
-    "supports_image": false,
-    "context_length": 60000,
     "inputs": [
       "text"
     ],
