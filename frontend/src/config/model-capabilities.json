@@ -1,4 +1,32 @@
 {
+  "inkling-2-mini": {
+    "provider": "thinkingmachines",
+    "name": "Thinking Machines: Inkling 2 Mini",
+    "description": "Inkling 2 Mini is an open-weight multimodal looped transformer from Thinking Machines Lab, with 3.4B active parameters out of 26.4B total (MoE). Its middle layers run three times with shared...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "daisyrose-27b": {
+    "provider": "radixark",
+    "name": "RadixArk: DaisyRose 27B",
+    "description": "DaisyRose 27B is an open-weight multimodal reasoning model from RadixArk, trained from [Qwen3.8 27B](https://openrouter.ai/qwen/qwen3.8-27b) using reinforcement learning only on long-horizon agent tasks, with no supervised fine-tuning or distillation. It is...",
+    "supports_image": true,
+    "context_length": 262144,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "pixtral-large-2502": {
     "provider": "mistralai",
     "name": "Mistral: Pixtral Large 2502",
@@ -1026,7 +1054,7 @@
     "name": "Xiaomi: MiMo-V2.6-Flash",
     "description": "MiMo-V2.6-Flash is an open-source foundation model developed by Xiaomi. Built on a Mixture-of-Experts architecture with 309B total parameters and 15B activated per token, it employs a hybrid attention mechanism for...",
     "supports_image": true,
-    "context_length": 1050000,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "image",
@@ -1042,7 +1070,7 @@
     "name": "Xiaomi: MiMo-V2.6-Pro",
     "description": "MiMo-V2.6-Pro is the flagship foundation model developed by Xiaomi. Built at a scale of over 1T parameters, it is designed to push the ceiling of capability for the most demanding...",
     "supports_image": true,
-    "context_length": 1050000,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "image",
@@ -1603,20 +1631,6 @@
       "text"
     ]
   },
-  "dots-3-note-preview": {
-    "provider": "dots-studio",
-    "name": "Dots Studio: Dots3-Note Preview (free)",
-    "description": "Dots3-Note Preview is an open-weight mixture-of-experts model from Dots Studio, with 16B active parameters out of 280B total. It is the lightest model in the Dots 3 family and is...",
-    "supports_image": true,
-    "context_length": 512000,
-    "inputs": [
-      "text",
-      "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "gemini-3.7-flash": {
     "provider": "google",
     "name": "Google: Gemini 3.7 Flash (batch)",
@@ -1887,19 +1901,6 @@
       "video",
       "file",
       "audio"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "longcat-2.0": {
-    "provider": "meituan",
-    "name": "Meituan: LongCat 2.0",
-    "description": "LongCat 2.0 is a sparse mixture-of-experts language model from Meituan, with 48B active parameters out of 1.6T total. It is suited for coding, repository-level changes, long-horizon problem solving, and agentic...",
-    "supports_image": false,
-    "context_length": 1048756,
-    "inputs": [
-      "text"
     ],
     "outputs": [
       "text"
@@ -2653,19 +2654,6 @@
     "description": "DeepSeek V4 Flash is an efficiency-optimized Mixture-of-Experts model from DeepSeek with 284B total parameters and 13B activated parameters, supporting a 1M-token context window. It is designed for fast inference and...",
     "supports_image": false,
     "context_length": 1048576,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "hy3-preview": {
-    "provider": "tencent",
-    "name": "Tencent: Hy3 preview",
-    "description": "Hy3 preview is a high-efficiency Mixture-of-Experts model from Tencent designed for agentic workflows and production use. It supports configurable reasoning levels across disabled, low, and high modes, allowing it to...",
-    "supports_image": false,
-    "context_length": 262144,
     "inputs": [
       "text"
     ],
