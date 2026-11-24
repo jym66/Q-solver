@@ -780,7 +780,7 @@
     "name": "inclusionAI: Ling 3.1 Flash",
     "description": "Ling 3.1 Flash is a hybrid reasoning mixture-of-experts model from inclusionAI, with 25B active parameters out of 560B total.",
     "supports_image": false,
-    "context_length": 1000000,
+    "context_length": 1048576,
     "inputs": [
       "text"
     ],
@@ -1925,7 +1925,7 @@
     "name": "Thinking Machines: Inkling",
     "description": "Inkling is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 41B active parameters out of 975B total. It is designed for general-purpose reasoning, coding, agentic and tool-use systems,...",
     "supports_image": true,
-    "context_length": 524288,
+    "context_length": 1048576,
     "inputs": [
       "text",
       "image",
@@ -2317,7 +2317,7 @@
     "name": "StepFun: Step 3.7 Flash",
     "description": "Step 3.7 Flash is StepFun's latest high-efficiency multimodal Mixture-of-Experts model. It pairs a 196B-parameter language backbone with a vision encoder for native image and video understanding, activating roughly 11B parameters...",
     "supports_image": true,
-    "context_length": 262144,
+    "context_length": 256000,
     "inputs": [
       "text",
       "image",
@@ -2668,19 +2668,6 @@
     "description": "DeepSeek V4 Flash is an efficiency-optimized Mixture-of-Experts model from DeepSeek with 284B total parameters and 13B activated parameters, supporting a 1M-token context window. It is designed for fast inference and...",
     "supports_image": false,
     "context_length": 1048576,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "mimo-v2.5-pro": {
-    "provider": "xiaomi",
-    "name": "Xiaomi: MiMo-V2.5-Pro",
-    "description": "MiMo-V2.5-Pro is Xiaomi’s flagship model, delivering strong performance in general agentic capabilities, complex software engineering, and long-horizon tasks, with top rankings on benchmarks such as ClawEval, GDPVal, and SWE-bench Pro....",
-    "supports_image": false,
-    "context_length": 262144,
     "inputs": [
       "text"
     ],
@@ -3710,19 +3697,6 @@
       "text"
     ]
   },
-  "kimi-k2-thinking": {
-    "provider": "moonshotai",
-    "name": "MoonshotAI: Kimi K2 Thinking",
-    "description": "Kimi K2 Thinking is Moonshot AI’s most advanced open reasoning model to date, extending the K2 series into agentic, long-horizon reasoning. Built on the trillion-parameter Mixture-of-Experts (MoE) architecture introduced in...",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "nova-premier-v1": {
     "provider": "amazon",
     "name": "Amazon: Nova Premier 1.0",
@@ -4004,19 +3978,6 @@
       "text"
     ]
   },
-  "kimi-k2-0905": {
-    "provider": "moonshotai",
-    "name": "MoonshotAI: Kimi K2 0905",
-    "description": "Kimi K2 0905 is the September update of [Kimi K2 0711](moonshotai/kimi-k2). It is a large-scale Mixture-of-Experts (MoE) language model developed by Moonshot AI, featuring 1 trillion total parameters with 32...",
-    "supports_image": false,
-    "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "hermes-4-405b": {
     "provider": "nousresearch",
     "name": "Nous: Hermes 4 405B",
@@ -4287,19 +4248,6 @@
     "description": "Qwen3-235B-A22B-Instruct-2507 is a multilingual, instruction-tuned mixture-of-experts language model based on the Qwen3-235B architecture, with 22B active parameters per forward pass. It is optimized for general-purpose text generation, including instruction following,...",
     "supports_image": false,
     "context_length": 262144,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "kimi-k2": {
-    "provider": "moonshotai",
-    "name": "MoonshotAI: Kimi K2 0711",
-    "description": "Kimi K2 Instruct is a large-scale Mixture-of-Experts (MoE) language model developed by Moonshot AI, featuring 1 trillion total parameters with 32 billion active per forward pass. It is optimized for...",
-    "supports_image": false,
-    "context_length": 131072,
     "inputs": [
       "text"
     ],
