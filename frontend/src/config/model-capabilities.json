@@ -1,4 +1,46 @@
 {
+  "solar-mini-4-5": {
+    "provider": "upstage",
+    "name": "Upstage: Solar Mini 4.5 (Preview)",
+    "description": "Solar Mini 4.5 is Upstage's compact language model, built on a proprietary mixture-of-experts architecture with 35B total and 3B active parameters and a 524K context window. It is a step...",
+    "supports_image": false,
+    "context_length": 524288,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "solar-pro-4-contributor": {
+    "provider": "upstage",
+    "name": "Upstage: Solar Pro 4 Contributor",
+    "description": "Solar Pro 4 Contributor is the same Solar Pro 4 model from Upstage, offered at a lower rate in exchange for allowing Upstage to use interaction data to improve its...",
+    "supports_image": false,
+    "context_length": 524288,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "mimo-v2.6-flash-mopd": {
+    "provider": "xiaomi",
+    "name": "Xiaomi: MiMo-V2.6-Flash-MOPD",
+    "description": "MiMo-V2.6-Flash-MOPD is an updated checkpoint of Xiaomi's MiMo-V2.6-Flash, a Mixture-of-Experts model with 309B total and 15B active parameters, a 1M-token context window, and native multimodal input. It adds a multi-teacher...",
+    "supports_image": true,
+    "context_length": 1048576,
+    "inputs": [
+      "text",
+      "image",
+      "video",
+      "audio"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "inkling-2-mini": {
     "provider": "thinkingmachines",
     "name": "Thinking Machines: Inkling 2 Mini",
@@ -1631,20 +1673,6 @@
       "text"
     ]
   },
-  "dots-3-note-preview": {
-    "provider": "dots-studio",
-    "name": "Dots Studio: Dots3-Note Preview (free)",
-    "description": "Dots3-Note Preview is an open-weight mixture-of-experts model from Dots Studio, with 16B active parameters out of 280B total. It is the lightest model in the Dots 3 family and is...",
-    "supports_image": true,
-    "context_length": 512000,
-    "inputs": [
-      "text",
-      "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "gemini-3.7-flash": {
     "provider": "google",
     "name": "Google: Gemini 3.7 Flash (batch)",
@@ -2675,22 +2703,6 @@
       "text"
     ]
   },
-  "mimo-v2.5": {
-    "provider": "xiaomi",
-    "name": "Xiaomi: MiMo-V2.5",
-    "description": "MiMo-V2.5 is a native omnimodal model by Xiaomi. It delivers Pro-level agentic performance at roughly half the inference cost, while surpassing MiMo-V2-Omni in multimodal perception across image and video understanding...",
-    "supports_image": true,
-    "context_length": 1000000,
-    "inputs": [
-      "text",
-      "audio",
-      "image",
-      "video"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "gpt-5.4-image-2": {
     "provider": "openai",
     "name": "OpenAI: GPT-5.4 Image 2",
@@ -3261,7 +3273,7 @@
     "name": "MiniMax: MiniMax M2.5",
     "description": "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1...",
     "supports_image": false,
-    "context_length": 198000,
+    "context_length": 65536,
     "inputs": [
       "text"
     ],
@@ -4004,21 +4016,6 @@
       "text"
     ]
   },
-  "mistral-medium-3.1": {
-    "provider": "mistralai",
-    "name": "Mistral: Mistral Medium 3.1",
-    "description": "Mistral Medium 3.1 is an updated version of Mistral Medium 3, which is a high-performance enterprise-grade language model designed to deliver frontier-level capabilities at significantly reduced operational cost. It balances...",
-    "supports_image": true,
-    "context_length": 131072,
-    "inputs": [
-      "text",
-      "image",
-      "file"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "glm-4.5v": {
     "provider": "z-ai",
     "name": "Z.ai: GLM 4.5V",
@@ -4381,21 +4378,6 @@
     "context_length": 163840,
     "inputs": [
       "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "mistral-medium-3": {
-    "provider": "mistralai",
-    "name": "Mistral: Mistral Medium 3",
-    "description": "Mistral Medium 3 is a high-performance enterprise-grade language model designed to deliver frontier-level capabilities at significantly reduced operational cost. It balances state-of-the-art reasoning and multimodal performance with 8× lower cost...",
-    "supports_image": true,
-    "context_length": 131072,
-    "inputs": [
-      "text",
-      "image",
-      "file"
     ],
     "outputs": [
       "text"
