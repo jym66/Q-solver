@@ -639,38 +639,10 @@
       "text"
     ]
   },
-  "pareto-26.10": {
-    "provider": "unbiased",
-    "name": "Pareto 26.10",
-    "description": "Pareto is a multimodal composite model built for research, coding, and agentic workflows, while delivering frontier-level performance across a broad range of general-purpose tasks.",
-    "supports_image": true,
-    "context_length": 1048576,
-    "inputs": [
-      "text",
-      "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
   "pareto-latest": {
     "provider": "~unbiased",
     "name": "Pareto Latest",
     "description": "This model always redirects to the latest model in the Pareto family.",
-    "supports_image": true,
-    "context_length": 1048576,
-    "inputs": [
-      "text",
-      "image"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "pareto-26.9": {
-    "provider": "unbiased",
-    "name": "Pareto 26.9",
-    "description": "Pareto is a multimodal composite model built for research, coding, and agentic workflows, while delivering frontier-level performance across a broad range of general-purpose tasks.",
     "supports_image": true,
     "context_length": 262144,
     "inputs": [
@@ -825,20 +797,6 @@
     "context_length": 1048576,
     "inputs": [
       "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "pareto-26.10-preview": {
-    "provider": "unbiased",
-    "name": "Pareto 26.10 Preview",
-    "description": "Pareto is a multimodal composite model built for research, coding, and agentic workflows, while delivering frontier-level performance across a broad range of general-purpose tasks. This is a preview of the...",
-    "supports_image": true,
-    "context_length": 1048576,
-    "inputs": [
-      "text",
-      "image"
     ],
     "outputs": [
       "text"
@@ -2956,7 +2914,7 @@
   },
   "mistral-small-2603": {
     "provider": "mistralai",
-    "name": "Mistral: Mistral Small 4",
+    "name": "Mistral: Mistral Small 4 (batch)",
     "description": "Mistral Small 4 is the next major release in the Mistral Small family, unifying the capabilities of several flagship Mistral models into a single system. It combines strong reasoning from...",
     "supports_image": true,
     "context_length": 262144,
@@ -3384,7 +3342,7 @@
     "name": "Z.ai: GLM 4.7 Flash",
     "description": "As a 30B-class SOTA model, GLM-4.7-Flash offers a new option that balances performance and efficiency. It is further optimized for agentic coding use cases, strengthening coding capabilities, long-horizon task planning,...",
     "supports_image": false,
-    "context_length": 200000,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
@@ -3582,7 +3540,7 @@
   },
   "ministral-8b-2512": {
     "provider": "mistralai",
-    "name": "Mistral: Ministral 3 8B 2512",
+    "name": "Mistral: Ministral 3 8B 2512 (batch)",
     "description": "A balanced model in the Ministral 3 family, Ministral 3 8B is a powerful, efficient tiny language model with vision capabilities.",
     "supports_image": true,
     "context_length": 262144,
@@ -3610,7 +3568,7 @@
   },
   "mistral-large-2512": {
     "provider": "mistralai",
-    "name": "Mistral: Mistral Large 3 2512",
+    "name": "Mistral: Mistral Large 3 2512 (batch)",
     "description": "Mistral Large 3 2512 is Mistral’s most capable model to date, featuring a sparse mixture-of-experts architecture with 41B active parameters (675B total), and released under the Apache 2.0 license.",
     "supports_image": true,
     "context_length": 262144,
@@ -4118,7 +4076,7 @@
   },
   "codestral-2508": {
     "provider": "mistralai",
-    "name": "Mistral: Codestral 2508",
+    "name": "Mistral: Codestral 2508 (batch)",
     "description": "Mistral's cutting-edge language model for coding released end of July 2025. Codestral specializes in low-latency, high-frequency tasks such as fill-in-the-middle (FIM), code correction and test generation.\n\n[Blog Post](https://mistral.ai/news/codestral-25-08)",
     "supports_image": false,
     "context_length": 256000,
@@ -4258,6 +4216,19 @@
     "description": "Venice Uncensored Dolphin Mistral 24B Venice Edition is a fine-tuned variant of Mistral-Small-24B-Instruct-2501, developed by dphn.ai in collaboration with Venice.ai. This model is designed as an “uncensored” instruct-tuned LLM, preserving...",
     "supports_image": false,
     "context_length": 128000,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "deepseek-r1t2-chimera": {
+    "provider": "tngtech",
+    "name": "TNG: DeepSeek R1T2 Chimera",
+    "description": "DeepSeek-TNG-R1T2-Chimera is the second-generation Chimera model from TNG Tech. It is a 671 B-parameter mixture-of-experts text-generation model assembled from DeepSeek-AI’s R1-0528, R1, and V3-0324 checkpoints with an Assembly-of-Experts merge. The...",
+    "supports_image": false,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
