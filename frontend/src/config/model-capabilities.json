@@ -1,4 +1,18 @@
 {
+  "lingsante-3.1-air-vl": {
+    "provider": "inclusionai",
+    "name": "inclusionAI: LingSante 3.1 Air VL",
+    "description": "LingSante 3.1 Air VL is inclusionAI's medical vision-language model, a 124B total / 5.5B active MoE. It takes text and up to 16 images (scans, skin and meal photos, lab...",
+    "supports_image": true,
+    "context_length": 131072,
+    "inputs": [
+      "text",
+      "image"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
   "solar-mini-4-5": {
     "provider": "upstage",
     "name": "Upstage: Solar Mini 4.5 (Preview)",
@@ -3833,7 +3847,7 @@
     "name": "Z.ai: GLM 4.6",
     "description": "Compared with GLM-4.5, this generation brings several key improvements: Longer context window: The context window has been expanded from 128K to 200K tokens, enabling the model to handle more complex...",
     "supports_image": false,
-    "context_length": 204800,
+    "context_length": 202752,
     "inputs": [
       "text"
     ],
@@ -3939,6 +3953,19 @@
     "provider": "qwen",
     "name": "Qwen: Qwen3 Next 80B A3B Instruct",
     "description": "Qwen3-Next-80B-A3B-Instruct is an instruction-tuned chat model in the Qwen3-Next series optimized for fast, stable responses without “thinking” traces. It targets complex tasks across reasoning, code generation, knowledge QA, and multilingual...",
+    "supports_image": false,
+    "context_length": 262144,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "kimi-k2-0905": {
+    "provider": "moonshotai",
+    "name": "MoonshotAI: Kimi K2 0905",
+    "description": "Kimi K2 0905 is the September update of [Kimi K2 0711](moonshotai/kimi-k2). It is a large-scale Mixture-of-Experts (MoE) language model developed by Moonshot AI, featuring 1 trillion total parameters with 32...",
     "supports_image": false,
     "context_length": 262144,
     "inputs": [
@@ -4203,6 +4230,19 @@
     "description": "Qwen3-235B-A22B-Instruct-2507 is a multilingual, instruction-tuned mixture-of-experts language model based on the Qwen3-235B architecture, with 22B active parameters per forward pass. It is optimized for general-purpose text generation, including instruction following,...",
     "supports_image": false,
     "context_length": 262144,
+    "inputs": [
+      "text"
+    ],
+    "outputs": [
+      "text"
+    ]
+  },
+  "kimi-k2": {
+    "provider": "moonshotai",
+    "name": "MoonshotAI: Kimi K2 0711",
+    "description": "Kimi K2 Instruct is a large-scale Mixture-of-Experts (MoE) language model developed by Moonshot AI, featuring 1 trillion total parameters with 32 billion active per forward pass. It is optimized for...",
+    "supports_image": false,
+    "context_length": 131072,
     "inputs": [
       "text"
     ],
