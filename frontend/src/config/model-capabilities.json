@@ -205,7 +205,7 @@
   },
   "ling-3.2-flash": {
     "provider": "inclusionai",
-    "name": "inclusionAI: Ling 3.2 Flash (free)",
+    "name": "inclusionAI: Ling 3.2 Flash",
     "description": "Ling 3.2 Flash is a hybrid reasoning model from inclusionAI that accepts text and image input, with a 1M-token context window and up to 200 images per request. Thinking can...",
     "supports_image": true,
     "context_length": 1048576,
@@ -1682,7 +1682,7 @@
     "name": "Qwen: Qwen3.8 2.4T A95B",
     "description": "Qwen3.8 2.4T A95B is an open-weight sparse mixture-of-experts model from Qwen and the open-weight variant of [Qwen3.8 Max](/qwen/qwen3.8-max), with 95 billion active parameters out of 2.4 trillion total. It is...",
     "supports_image": false,
-    "context_length": 1048576,
+    "context_length": 1000000,
     "inputs": [
       "text"
     ],
@@ -4160,19 +4160,6 @@
     "description": "GLM-4.5-Air is the lightweight variant of our latest flagship model family, also purpose-built for agent-centric applications. Like GLM-4.5, it adopts the Mixture-of-Experts (MoE) architecture but with a more compact parameter...",
     "supports_image": false,
     "context_length": 131072,
-    "inputs": [
-      "text"
-    ],
-    "outputs": [
-      "text"
-    ]
-  },
-  "qwen3-235b-a22b-thinking-2507": {
-    "provider": "qwen",
-    "name": "Qwen: Qwen3 235B A22B Thinking 2507",
-    "description": "Qwen3-235B-A22B-Thinking-2507 is a high-performance, open-weight Mixture-of-Experts (MoE) language model optimized for complex reasoning tasks. It activates 22B of its 235B parameters per forward pass and natively supports up to 262,144...",
-    "supports_image": false,
-    "context_length": 128000,
     "inputs": [
       "text"
     ],
